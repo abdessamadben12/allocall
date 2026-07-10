@@ -1,0 +1,29 @@
+* text=auto eol=lf
+
+*.blade.php diff=html
+*.css diff=css
+*.html diff=html
+*.md diff=markdown
+*.php diff=php
+
+CHANGELOG.md export-ignore
+README.md export-ignore
+
+.agents export-ignore
+.claude export-ignore
+.codex export-ignore
+.env export-ignore
+.env.backup export-ignore
+.env.production export-ignore
+.gitignore export-ignore
+_originals-backup export-ignore
+node_modules export-ignore
+public/build export-ignore
+public/hot export-ignore
+public/storage export-ignore
+storage/logs export-ignore
+storage/framework/cache export-ignore
+storage/framework/sessions export-ignore
+storage/framework/testing export-ignore
+storage/framework/views export-ignore
+vendor export-ignore

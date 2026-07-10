@@ -1,0 +1,163 @@
+@import 'tailwindcss';
+
+@theme {
+    --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+
+    --color-alidade-navy: #0d1a2d;
+    --color-alidade-dark: #070e19;
+    --color-alidade-gold: #ffe40f;
+    --color-alidade-gold-light: #ffea42;
+    --color-alidade-gold-dark: #e6cd00;
+    --color-alidade-gray: #f3f4f6;
+    --color-alidade-text: #1f2937;
+    --color-alidade-muted: #6b7280;
+}
+
+/* Custom styles and animations */
+@layer base {
+    /* Taille de police racine : toutes les tailles Tailwind (rem) s'agrandissent proportionnellement.
+       Augmente progressivement sur les écrans larges. */
+    html {
+        font-size: 17px;
+    }
+
+    @media (min-width: 1280px) {
+        html {
+            font-size: 18px;
+        }
+    }
+
+    @media (min-width: 1536px) {
+        html {
+            font-size: 19px;
+        }
+    }
+
+    /* Une seule police sur tout le site */
+    *,
+    *::before,
+    *::after {
+        font-family: var(--font-sans);
+    }
+
+    body {
+        font-family: var(--font-sans);
+        color: var(--color-alidade-text);
+        background-color: #fafafa;
+        overflow-x: hidden;
+    }
+
+    /* Mise en page « boxed » : sur très grands écrans le site reste centré
+       à 1536px max au lieu de s'étirer sur toute la largeur */
+    #app {
+        max-width: 96rem;
+        margin-inline: auto;
+        box-shadow: 0 0 40px rgb(13 26 45 / 0.12);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    button,
+    input,
+    textarea,
+    select,
+    .serif-font,
+    .serif-display {
+        font-family: var(--font-sans);
+    }
+}
+
+@layer components {
+    .form-input {
+        width: 100%;
+        border: 1px solid rgb(255 255 255 / 0.1);
+        background: #141413;
+        padding: 0.75rem 1rem;
+        font-size: 0.75rem;
+        color: white;
+        outline: none;
+    }
+
+    .form-input::placeholder {
+        color: rgb(255 255 255 / 0.2);
+    }
+
+    .form-input:focus {
+        border-color: #c5a880;
+    }
+}
+
+/* Défilement infini des logos clients (section partenaires) */
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 55s linear infinite;
+}
+
+.animate-marquee-reverse {
+    animation: marquee 55s linear infinite reverse;
+}
+
+.marquee-group:hover .animate-marquee,
+.marquee-group:hover .animate-marquee-reverse {
+    animation-play-state: paused;
+}
+
+/* Fondu sur les bords des rangées de logos */
+.marquee-mask {
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-marquee,
+    .animate-marquee-reverse {
+        animation: none;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #070e19;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c5a059;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e6cb95;
+}
+
+/* Subtle pattern background for sections */
+.wood-pattern {
+    background-image: radial-gradient(rgba(197, 160, 89, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+    background: rgba(13, 26, 45, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(197, 160, 89, 0.15);
+}
