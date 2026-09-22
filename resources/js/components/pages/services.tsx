@@ -145,126 +145,91 @@ export default function Services({
                     </h2>
                 </Reveal>
 
-                <Stagger
-                    stagger={0.1}
-                    amount={0.05}
-                    className="grid grid-cols-1 gap-x-12 gap-y-14 sm:grid-cols-2 lg:grid-cols-3"
-                >
-                    {serviceOverview.map((service) => (
-                        <StaggerItem key={service.slug}>
-                            <Link
-                                href={route('services.show', service.slug)}
-                                className="group mx-auto block max-w-[340px] text-center transition-transform duration-300 hover:-translate-y-1"
-                            >
-                                <div className="mx-auto flex h-16 w-16 items-center justify-center">
-                                    <img
-                                        src={service.icon}
-                                        alt=""
-                                        className="h-14 w-14 object-contain transition-transform duration-300 group-hover:scale-110"
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
-                                </div>
+            <Stagger
+    stagger={0.1}
+    amount={0.05}
+    className="grid grid-cols-1 gap-x-10 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+>
+    {serviceOverview.map((service, index) => (
+        <StaggerItem key={service.slug}>
+            <Link
+                href={route('services.show', service.slug)}
+                className="group relative mx-auto flex max-w-[350px] flex-col items-center text-center"
+            >
+                {/* Cercle principal */}
+                <div className="relative flex h-[150px] w-[150px] items-center justify-center">
+                    
+                    {/* Cercle externe */}
+                    <div className="absolute inset-0 rounded-full border border-[#74B946]/30 transition-all duration-500 group-hover:scale-110 group-hover:border-[#74B946]" />
 
-                                <h3 className="mt-4 text-lg leading-snug font-extrabold text-[#111827]">
-                                    {service.title}
-                                </h3>
+                    {/* Cercle pointillé */}
+                    <div className="absolute inset-[10px] rounded-full border border-dashed border-[#111827]/10 transition-all duration-700 group-hover:rotate-[45deg] group-hover:border-[#74B946]/40" />
 
-                                <p className="mx-auto mt-4 text-base leading-relaxed text-[#111827]">
-                                    {service.description}
-                                </p>
+                    {/* Petit point décoratif */}
+                    <span className="absolute top-[2px] left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-[#74B946] shadow-[0_0_0_5px_rgba(116,185,70,0.12)]" />
 
-                                {services.some(
-                                    (item) => item.slug === service.slug,
-                                ) && (
-                                    <span className="mt-5 inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[#74B946] uppercase opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                                        <span>Decouvrir</span>
-                                        <ArrowRight size={14} />
-                                    </span>
-                                )}
-                            </Link>
-                        </StaggerItem>
-                    ))}
-                </Stagger>
-            </div>
+                    {/* Numéro */}
+                    <span className="absolute -right-1 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 bg-white text-[10px] font-bold text-[#111827] shadow-sm">
+                        {String(index + 1).padStart(2, '0')}
+                    </span>
 
-            <div className="bg-[#F9F7F3]">
-                <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-18 lg:px-8">
-                    <Reveal className="mb-16 space-y-3 text-center">
-                        <h2 className="serif-display text-3xl font-bold text-alidade-navy sm:text-4xl">
-                            Comment nous travaillons
-                        </h2>
-                    </Reveal>
-
-                    <Stagger
-                        stagger={0.18}
-                        className="relative grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
-                    >
-                        {[
-                            {
-                                icon: MessageSquare,
-                                step: '01',
-                                title: 'Consultation',
-                                desc: 'Ecoute de votre besoin et cadrage des objectifs.',
-                            },
-                            {
-                                icon: FileSignature,
-                                step: '02',
-                                title: 'Plan d action',
-                                desc: 'Scripts, processus et indicateurs de suivi.',
-                            },
-                            {
-                                icon: HardHat,
-                                step: '03',
-                                title: 'Mise en place',
-                                desc: 'Formation des agents et demarrage controle.',
-                            },
-                            {
-                                icon: KeyRound,
-                                step: '04',
-                                title: 'Suivi',
-                                desc: 'Rapports, ajustements et amelioration continue.',
-                            },
-                        ].map((item, idx, arr) => {
-                            const StepIcon = item.icon;
-
-                            return (
-                                <StaggerItem
-                                    key={item.step}
-                                    className="relative space-y-4 text-center"
-                                >
-                                    {idx < arr.length - 1 && (
-                                        <span className="absolute top-8 left-[60%] hidden h-px w-full bg-[#ffe40f] lg:block" />
-                                    )}
-                                    <div className="relative z-10 mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[#2f302f] bg-[#101311] text-[#ffe40f] shadow-md">
-                                        <StepIcon size={26} />
-                                    </div>
-                                    <div className="text-[11px] font-bold tracking-[0.3em] text-[#5d5f5e] uppercase">
-                                        Etape {item.step}
-                                    </div>
-                                    <h4 className="text-lg font-bold text-alidade-navy">
-                                        {item.title}
-                                    </h4>
-                                    <p className="text-sm leading-relaxed text-alidade-muted">
-                                        {item.desc}
-                                    </p>
-                                </StaggerItem>
-                            );
-                        })}
-                    </Stagger>
+                    {/* Cercle intérieur */}
+                    <div className="relative flex h-[105px] w-[105px] items-center justify-center rounded-full bg-[#F7FAF5] shadow-[0_10px_35px_rgba(17,24,39,0.06)] transition-all duration-500 group-hover:bg-[#74B946] group-hover:shadow-[0_15px_40px_rgba(116,185,70,0.25)]">
+                        <img
+                            src={service.icon}
+                            alt=""
+                            className="h-12 w-12 object-contain transition-all duration-500 group-hover:scale-110 group-hover:brightness-0 group-hover:invert"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </div>
                 </div>
+
+                {/* Content */}
+                <div className="mt-7">
+                    <h3 className="text-xl font-extrabold tracking-[-0.02em] text-[#111827] transition-colors duration-300 group-hover:text-[#74B946]">
+                        {service.title}
+                    </h3>
+
+                    <p className="mx-auto mt-4 max-w-[310px] text-[15px] leading-7 text-[#667085]">
+                        {service.description}
+                    </p>
+
+                    {services.some(
+                        (item) => item.slug === service.slug,
+                    ) && (
+                        <div className="mt-6 inline-flex items-center gap-3">
+                            <span className="text-[11px] font-bold tracking-[0.18em] text-[#111827] uppercase transition-colors group-hover:text-[#74B946]">
+                                Découvrir
+                            </span>
+
+                            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#111827]/15 transition-all duration-300 group-hover:border-[#74B946] group-hover:bg-[#74B946] group-hover:text-white">
+                                <ArrowRight
+                                    size={14}
+                                    className="transition-transform duration-300 group-hover:translate-x-0.5"
+                                />
+                            </span>
+                        </div>
+                    )}
+                </div>
+            </Link>
+        </StaggerItem>
+    ))}
+</Stagger>
             </div>
+
+         
 
             <div className="bg-alidade-navy text-white">
                 <Stagger
-                    className="mx-auto max-w-6xl space-y-8 px-4 py-20 text-center sm:px-6 lg:px-8"
+                    className="mx-auto flex max-w-4xl flex-col items-center space-y-7 px-4 py-14 text-center sm:px-6 sm:py-18 lg:px-8"
                     amount={0.3}
                 >
                     <StaggerItem className="space-y-4">
-                        <span className="text-sm font-bold tracking-[0.3em] text-alidade-gold uppercase sm:text-xl">
-                            Un besoin a externaliser ?
+                        <span className="block text-xs font-extrabold tracking-[0.28em] text-[#74B946] uppercase sm:text-sm">
+                            Un besoin &agrave; externaliser ?
                         </span>
-                        <h2 className="serif-display text-3xl font-bold sm:text-4xl">
+                        <h2 className="text-2xl leading-tight font-extrabold text-white sm:text-4xl">
                             Parlons de votre organisation
                         </h2>
                     </StaggerItem>
@@ -282,9 +247,9 @@ export default function Services({
                                 stiffness: 400,
                                 damping: 20,
                             }}
-                            className="inline-flex items-center gap-2 rounded-lg bg-alidade-gold px-8 py-4 text-sm font-bold tracking-wider text-alidade-navy uppercase transition-colors hover:bg-alidade-gold-light"
+                            className="inline-flex w-full max-w-[290px] items-center justify-center gap-2 rounded-md bg-[#FFE83D] px-6 py-3.5 text-xs font-extrabold tracking-wide text-[#111827] uppercase transition-colors hover:bg-[#F6D92D] sm:max-w-none sm:px-8 sm:py-4 sm:text-sm"
                         >
-                            <span>Obtenir un devis gratuit</span>
+                            <span>Demander une soumission</span>
                             <ArrowRight size={16} />
                         </motion.button>
                     </StaggerItem>
