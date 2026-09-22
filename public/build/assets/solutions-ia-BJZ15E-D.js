@@ -1,0 +1,1 @@
+import{j as t}from"./ui-C0Vt0jii.js";import{M as a,b as o}from"./industry-pages-C4prxv68.js";import"./inertia-SOERDnsj.js";import"./seo-head-Clf_uMlO.js";function s(){return t.jsx(a,{page:o})}export{s as default};

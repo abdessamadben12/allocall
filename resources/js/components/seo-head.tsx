@@ -12,11 +12,11 @@ interface SeoHeadProps {
     structuredData?: Record<string, unknown>;
 }
 
-const siteName = 'Alidade';
+const siteName = 'ALLO CALL';
 const brandDescription =
-    'Alidade accompagne les particuliers et professionnels dans leurs projets de rénovation, agencement intérieur, menuiserie bois, aluminium, peinture et finitions au Maroc.';
-const defaultImage = '/images/alidade-social-card.png';
-const fallbackBaseUrl = 'https://www.alidade.ma/';
+    'ALLO CALL accompagne les entreprises dans la gestion des appels, la relation client, la televente, la prise de rendez-vous, la gestion de leads et les solutions de centre d appels propulsees par l IA.';
+const defaultImage = '/images/hero/allocall-call-center.webp';
+const fallbackBaseUrl = 'https://www.allocall.ma/';
 
 function normalizeBaseUrl(value: unknown) {
     if (typeof value === 'string' && value.trim() !== '') {
@@ -55,7 +55,9 @@ export default function SeoHead({
     const baseUrl = normalizeBaseUrl(props.appUrl);
     const canonicalUrl = absoluteUrl(url.split('?')[0], baseUrl);
     const imageUrl = absoluteUrl(image, baseUrl);
-    const robots = noIndex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+    const robots = noIndex
+        ? 'noindex, nofollow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
     const schema = structuredData ?? {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
@@ -69,39 +71,32 @@ export default function SeoHead({
         },
     };
 
-    // Fiche entreprise locale (SEO local) émise sur toutes les pages publiques.
     const localBusinessSchema = {
         '@context': 'https://schema.org',
-        '@type': 'HomeAndConstructionBusiness',
+        '@type': 'ProfessionalService',
         '@id': absoluteUrl('/#entreprise', baseUrl),
         name: siteName,
         url: absoluteUrl('/', baseUrl),
-        logo: absoluteUrl('/images/logo-alidade-traveaux-de-renovation-alimunium.png', baseUrl),
+        logo: absoluteUrl('/images/logo-allocall.png', baseUrl),
         image: absoluteUrl(defaultImage, baseUrl),
         description: brandDescription,
         telephone: '+212522484425',
         email: site.email,
         address: {
             '@type': 'PostalAddress',
-            streetAddress: '3, Avenue 2 Mars, Résidence Marwa, 5ème étage',
+            streetAddress: '3, Avenue 2 Mars',
             addressLocality: 'Casablanca',
             addressCountry: 'MA',
         },
-        geo: {
-            '@type': 'GeoCoordinates',
-            latitude: 33.5731,
-            longitude: -7.5898,
-        },
-        areaServed: ['Casablanca', 'Maroc'],
+        areaServed: ['Quebec', 'Canada', 'Maroc', 'France'],
         serviceType: [
-            'Rénovation',
-            'Agencement intérieur',
-            'Aménagement de locaux commerciaux',
-            'Menuiserie bois',
-            'Menuiserie aluminium',
-            'Peinture et finitions',
-            'Faux plafonds',
-            'Revêtements de sol',
+            'Reception telephonique',
+            'Televente',
+            'Prise de rendez-vous',
+            'Gestion de leads',
+            'Service a la clientele',
+            'Support technique niveau 1',
+            'Centre d appels IA',
         ],
         sameAs: Object.values(site.socials).filter((value) => value !== ''),
     };
@@ -114,11 +109,9 @@ export default function SeoHead({
             <meta name="author" content={siteName} />
             <meta name="application-name" content={siteName} />
             <meta name="format-detection" content="telephone=yes" />
-            <meta name="geo.region" content="MA-06" />
-            <meta name="geo.placename" content="Casablanca" />
             <link rel="canonical" href={canonicalUrl} />
-            <link rel="alternate" hrefLang="fr-MA" href={canonicalUrl} />
-            <meta property="og:locale" content="fr_FR" />
+            <link rel="alternate" hrefLang="fr-CA" href={canonicalUrl} />
+            <meta property="og:locale" content="fr_CA" />
             <meta property="og:type" content={type} />
             <meta property="og:site_name" content={siteName} />
             <meta property="og:title" content={title} />
@@ -126,10 +119,7 @@ export default function SeoHead({
             <meta property="og:url" content={canonicalUrl} />
             <meta property="og:image" content={imageUrl} />
             <meta property="og:image:secure_url" content={imageUrl} />
-            <meta property="og:image:type" content="image/png" />
             <meta property="og:image:alt" content={`${siteName} - ${title}`} />
-            <meta property="og:image:width" content="1200" />
-            <meta property="og:image:height" content="630" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={title} />
             <meta name="twitter:description" content={description} />
@@ -141,11 +131,15 @@ export default function SeoHead({
                     name: siteName,
                     url: absoluteUrl('/', baseUrl),
                     description: brandDescription,
-                    inLanguage: 'fr-MA',
+                    inLanguage: 'fr-CA',
                 })}
             </script>
-            <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
-            <script type="application/ld+json">{JSON.stringify(schema)}</script>
+            <script type="application/ld+json">
+                {JSON.stringify(localBusinessSchema)}
+            </script>
+            <script type="application/ld+json">
+                {JSON.stringify(schema)}
+            </script>
         </Head>
     );
 }

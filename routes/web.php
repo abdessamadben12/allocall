@@ -42,6 +42,18 @@ Route::get('services', function () {
     return Inertia::render('services/index');
 })->name('services');
 
+Route::get('solutions-ia', function () {
+    return Inertia::render('solutions-ia');
+})->name('solutions-ia');
+
+Route::get('industries', function () {
+    return Inertia::render('industries/index');
+})->name('industries');
+
+Route::get('industries/{industry}', function (string $industry) {
+    return Inertia::render('industries/show', ['slug' => $industry]);
+})->name('industries.show');
+
 Route::get('services/{service}', function (string $service) {
     return Inertia::render('services/show', ['slug' => $service]);
 })->name('services.show');
@@ -58,17 +70,19 @@ Route::get('sitemap.xml', function () {
     $paths = [
         '/',
         '/apropos',
-        '/etude-de-projet',
         '/services',
-        '/savoir-faire',
-        '/services/aluminium',
-        '/services/renovation',
-        '/services/peinture',
-        '/services/sol',
-        '/services/plafond',
-        '/services/amenagement',
-        '/services/menuiserie-bois',
-        '/configurateur',
+        '/services/assistants-virtuels',
+        '/services/televente-appels-sortants',
+        '/services/gestion-leads',
+        '/services/prise-rendez-vous',
+        '/services/service-clientele',
+        '/services/reception-telephonique',
+        '/services/support-technique-niveau-1',
+        '/services/confirmation-rappel-rendez-vous',
+        '/solutions-ia',
+        '/industries',
+        '/industries/automobile',
+        '/industries/sante',
         '/devis',
         '/contact',
     ];
