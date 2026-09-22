@@ -4,10 +4,11 @@
  */
 
 import Footer from '@/components/pages/Footer';
+import GlobalPresenceSection from '@/components/pages/global-presence';
 import HeroSlider from '@/components/pages/Hero';
+import IndustriesSection from '@/components/pages/industries';
 import Navbar from '@/components/pages/navbar';
 import MetiersSection from '@/components/pages/metiers';
-import PartnersSection from '@/components/pages/partners';
 import { router } from '@inertiajs/react';
 import { useEffect } from 'react';
 import { EngagementSection } from './featchuresection';
@@ -45,8 +46,11 @@ export default function App() {
                 {/* 3. Nos métiers */}
                 <MetiersSection />
 
-                {/* 4. Partenaires / clients */}
-                <PartnersSection />
+                <IndustriesSection />
+
+                <GlobalPresenceSection />
+
+              
             </main>
 
             <Footer />

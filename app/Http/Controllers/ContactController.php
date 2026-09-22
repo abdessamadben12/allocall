@@ -6,10 +6,12 @@ use App\Mail\ContactSubmitted;
 use App\Models\ContactMessage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Inertia\Response;
+use Throwable;
 
 class ContactController extends Controller
 {
@@ -51,34 +53,74 @@ class ContactController extends Controller
         unset($validated['attachment']);
 
         $contactMessage = ContactMessage::create($validated);
+        $recipient = config('mail.contact_to', env('CONTACT_MAIL_TO', 'contact@alidade.ma'));
 
-        Mail::to(env('CONTACT_MAIL_TO', 'enquiries@alidad.com'))->send(new ContactSubmitted($contactMessage));
+        try {
+            $this->logMailAttempt($contactMessage->id, $recipient);
 
-        return back()->with('success', 'Votre message a ete envoye avec succes !');
+            Mail::to($recipient)->send(new ContactSubmitted($contactMessage));
+
+            Log::info('Contact email sent successfully.', [
+                'contact_message_id' => $contactMessage->id,
+                'recipient' => $recipient,
+                'mailer' => config('mail.default'),
+            ]);
+
+            return back()->with('success', 'Votre message a ete envoye avec succes !');
+        } catch (Throwable $e) {
+            $errorId = (string) str()->uuid();
+
+            Log::error('Contact email failed.', [
+                'error_id' => $errorId,
+                'contact_message_id' => $contactMessage->id,
+                'recipient' => $recipient,
+                'mailer' => config('mail.default'),
+                'mail_host' => config('mail.mailers.smtp.host'),
+                'mail_port' => config('mail.mailers.smtp.port'),
+                'mail_encryption' => config('mail.mailers.smtp.encryption'),
+                'mail_username_present' => filled(config('mail.mailers.smtp.username')),
+                'mail_from_address' => config('mail.from.address'),
+                'exception_class' => $e::class,
+                'exception_message' => $e->getMessage(),
+                'exception_file' => $e->getFile(),
+                'exception_line' => $e->getLine(),
+            ]);
+
+            return back()
+                ->with('error', "Le message a ete enregistre, mais l'email n'a pas ete envoye. Reference erreur: {$errorId}")
+                ->with('mail_error_id', $errorId);
+        }
     }
 
-    public function dashboard(Request $request): Response
+    private function logMailAttempt(int $contactMessageId, string $recipient): void
     {
-        $filters = $request->validate([
-            'type' => 'nullable|in:contact,quote',
-            'date_from' => 'nullable|date',
-            'date_to' => 'nullable|date|after_or_equal:date_from',
+        Log::info('Contact email sending attempt.', [
+            'contact_message_id' => $contactMessageId,
+            'recipient' => $recipient,
+            'mailer' => config('mail.default'),
+            'mail_host' => config('mail.mailers.smtp.host'),
+            'mail_port' => config('mail.mailers.smtp.port'),
+            'mail_encryption' => config('mail.mailers.smtp.encryption'),
+            'mail_username_present' => filled(config('mail.mailers.smtp.username')),
+            'mail_password_present' => filled(config('mail.mailers.smtp.password')),
+            'mail_from_address' => config('mail.from.address'),
         ]);
 
+        if (config('mail.default') === 'log') {
+            Log::warning('MAIL_MAILER is set to log, so emails are written to logs and not delivered.', [
+                'contact_message_id' => $contactMessageId,
+            ]);
+        }
+    }
+
+    public function dashboard(): Response
+    {
         $messages = ContactMessage::latest()
-            ->when($filters['type'] ?? null, fn ($query, $type) => $query->where('request_type', $type))
-            ->when($filters['date_from'] ?? null, fn ($query, $date) => $query->whereDate('created_at', '>=', $date))
-            ->when($filters['date_to'] ?? null, fn ($query, $date) => $query->whereDate('created_at', '<=', $date))
             ->limit(100)
             ->get();
 
         return Inertia::render('dashboard', [
             'contactMessages' => $messages,
-            'filters' => [
-                'type' => $filters['type'] ?? '',
-                'date_from' => $filters['date_from'] ?? '',
-                'date_to' => $filters['date_to'] ?? '',
-            ],
         ]);
     }
 
@@ -95,10 +137,6 @@ class ContactController extends Controller
 
     public function destroyMessage(ContactMessage $contactMessage): RedirectResponse
     {
-        if ($contactMessage->attachment_path) {
-            Storage::delete($contactMessage->attachment_path);
-        }
-
         $contactMessage->delete();
 
         return redirect()->route('dashboard')->with('success', 'Message supprime avec succes.');

@@ -5,7 +5,7 @@ export const aboutProjectOne = '/images/agencement/agencement-et-réaménagement
 export const aboutProjectTwo = '/images/revetement-sol/revetement-sol-1.webp';
 export const aboutProjectThree = '/images/qui-sommes-nous/amenagement.webp';
 
-export const logoImage = '/logo.png';
+export const logoImage = '/logo_footer.png';
 
 export const homeHeroLarge = '/images/hero/alidade-Travaux-de-bois-1.webp';
 export const homeHeroGrid1 = '/images/hero/alidade-Travaux-de-bois-2.webp';
@@ -38,4 +38,9 @@ export const contactMapImage = '/images/qui-sommes-nous/agencement-casablanca-ma
 export const quoteBannerImage = '/images/bannieres/menuiserie-Bois2-final.webp';
 
 export const footerHeroImage = '/images/agencement/décoration_intérieure.webp';
+
+export const etudeHeroImage = '/images/qui-sommes-nous/amenagement.webp';
+export const etudePhaseEtude = '/images/qui-sommes-nous/atelier-finition.webp';
+export const etudePhasePilotage = '/images/hero/construction.webp';
+export const etudePhaseReception = '/images/hero/agencement.webp';
 

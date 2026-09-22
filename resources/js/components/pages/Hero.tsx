@@ -1,296 +1,670 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Hammer, CheckCircle2, DraftingCompass, ShieldCheck, ArrowRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import {
+    ArrowRight,
+    Bot,
+    CalendarCheck,
+    ChevronLeft,
+    ChevronRight,
+    Clock3,
+    PhoneCall,
+} from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
-import { EASE, Stagger, StaggerItem } from '@/components/motion';
+import { Link } from '@inertiajs/react';
+import {
+    EASE,
+    Stagger,
+    StaggerItem,
+} from '@/components/motion';
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
 
 const slideContent: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.14, delayChildren: 0.35 } },
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.14,
+            delayChildren: 0.35,
+        },
+    },
 };
 
 const slideItem: Variants = {
-  hidden: { opacity: 0, y: 26 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
+    hidden: {
+        opacity: 0,
+        y: 26,
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.7,
+            ease: EASE,
+        },
+    },
 };
 
+/* =========================================================
+   PROPS
+========================================================= */
+
 interface HeroSliderProps {
-  onDiscoverClick: () => void;
+    onDiscoverClick: () => void;
 }
 
-export default function Hero({ onDiscoverClick }: HeroSliderProps) {
-  const [currentSlide, setCurrentSlide] = useState(0);
+/* =========================================================
+   HERO
+========================================================= */
 
-  const slides = [
-    {
-      title: "MENUISERIE BOIS & CUISINE MODERNE",
-      subtitle: "MENUISERIE SUR MESURE",
-      description: "L'excellence du bois, pour des espaces uniques et durables. Des finitions soignées et un style adapté à vos goûts.",
-      cta: "Découvrir nos réalisations",
-      imageLarge: '/images/hero/alidade-Travaux-de-bois-1.webp', // Modern custom wood kitchen
-      imageGrid1: '/images/hero/alidade-Travaux-de-bois-2.webp', // Hand carving / Wood artisan
-      imageGrid2: '/images/hero/alidade-Travaux-de-bois-3.webp', // Wooden partition / door
-      imageGrid3: '/images/hero/Travaux-demolition-1.webp', // Luxury cabinet / bedroom woodwork
-      imageGrid4: '/images/hero/agencement.webp', // Elegant kitchen view
-    },
-    {
-      title: "TRAVAUX DE FINITION & RÉNOVATION",
-      subtitle: "CONSTRUCTION ET FINITIONS",
-      description: "Donnez vie à vos projets immobiliers grâce à notre expertise globale en rénovation, peinture, plâtrerie et aménagement intérieur.",
-      cta: "Estimer mon projet",
-      imageLarge: '/images/hero/peinture.webp', // Finished luxury living room
-      imageGrid1: '/images/hero/construction.webp', // Construction blueprint
-      imageGrid2: '/images/hero/renovation.webp', // Painting / Plaster works
-      imageGrid3: '/images/hero/plafond.webp', // Finished false ceiling with lighting
-      imageGrid4: '/images/hero/carellage.webp', // Flooring / Wood parquetry installation
-    }
-  ];
+export default function Hero({
+    onDiscoverClick: _onDiscoverClick,
+}: HeroSliderProps) {
+    const [currentSlide, setCurrentSlide] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 8000);
-    return () => clearInterval(timer);
-  }, [slides.length]);
+    /* =====================================================
+       SLIDES
+       UNE SEULE IMAGE PAR SLIDE
+    ===================================================== */
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
+    const slides = [
+        {
+            id: 1,
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+            subtitle:
+                "CENTRE D'APPELS BILINGUE · MONTRÉAL · CASABLANCA · PARIS",
 
-  return (
-    <div className="relative w-full overflow-hidden bg-alidade-navy">
-      {/* Slider viewport */}
-      <div className="relative lg:h-[650px] w-full flex items-center">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`w-full flex flex-col lg:flex-row transition-all duration-1000 ease-in-out ${
-              index === currentSlide
-                ? 'relative opacity-100 translate-x-0 scale-100 z-10 lg:h-full'
-                : 'absolute inset-0 h-full opacity-0 translate-x-full scale-95 z-0 pointer-events-none'
-            }`}
-          >
-            {/* Slide Left: Content Panel */}
-            <div className="w-full lg:w-[45%] bg-gradient-to-br from-alidade-dark to-alidade-navy text-white p-8 pb-10 sm:p-12 lg:p-16 flex flex-col justify-center relative overflow-hidden">
-              {/* Subtle gold decoration background */}
-              <div className="absolute top-0 left-0 w-40 h-40 bg-alidade-gold/5 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute bottom-0 right-0 w-60 h-60 bg-alidade-gold/5 rounded-full blur-3xl pointer-events-none" />
+            title:
+                'RÉPONDEZ À CHAQUE APPEL. NE PERDEZ PLUS UN SEUL CLIENT.',
 
-              <motion.div
-                className="relative space-y-6"
-                variants={slideContent}
-                initial="hidden"
-                animate={index === currentSlide ? 'visible' : 'hidden'}
-              >
-                <motion.div variants={slideItem} className="flex items-center gap-2">
-                  <span className="w-8 h-[2px] bg-alidade-gold" />
-                  <span className="sm:text-xl text-sm tracking-[0.2em] font-bold text-alidade-gold uppercase">
-                    {slide.subtitle}
-                  </span>
-                </motion.div>
+            description:
+                "Une équipe téléphonique et commerciale à distance, dédiée aux PME québécoises. Réception d'appels, service à la clientèle, télévente, gestion de leads et prise de rendez-vous — sans les coûts d'une équipe interne.",
 
-                <motion.h1
-                  variants={slideItem}
-                  className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-none text-white font-sans uppercase"
+            cta: 'OBTENIR UNE SOUMISSION GRATUITE',
+
+            secondaryCta: 'Parler à un conseiller',
+
+            href: '/contact',
+
+            secondaryHref: '/contact',
+
+            image: '/images/hero/allocall-call-center.webp',
+        },
+
+        {
+            id: 2,
+
+            subtitle:
+                'INTELLIGENCE ARTIFICIELLE + AGENTS HUMAINS',
+
+            title:
+                'VOS LEADS TRAITÉS EN QUELQUES MINUTES, 24 H SUR 24',
+
+            description:
+                "Chatbot, agent vocal IA, SMS automatisés et CRM intelligent travaillent avec nos agents pour qualifier, relancer et convertir vos prospects. L'IA gère le volume, nos agents gèrent les conversations qui comptent.",
+
+            cta: 'DÉCOUVRIR NOS SOLUTIONS IA',
+
+            secondaryCta: null,
+
+            href: '/solutions-ia',
+
+            secondaryHref: null,
+
+            image: '/images/hero/allocall-ai.webp',
+        },
+
+        {
+            id: 3,
+
+            subtitle:
+                'CHAQUE APPEL EST UNE OPPORTUNITÉ',
+
+            title:
+                "UN APPEL MANQUÉ, C'EST UNE VENTE CHEZ VOTRE CONCURRENT",
+
+            description:
+                "Un prospect qui n'est pas rappelé ne revient pas. AlloCall prend en charge vos appels entrants, vos relances et votre agenda pour transformer chaque demande en rendez-vous qualifié.",
+
+            cta: 'PLANIFIER UN APPEL',
+
+            secondaryCta: null,
+
+            href: '/contact',
+
+            secondaryHref: null,
+
+            image: '/images/hero/allocall-sales.webp',
+        },
+    ];
+
+    /* =====================================================
+       AUTO SLIDER — 7 SECONDES
+    ===================================================== */
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentSlide(
+                (prev) => (prev + 1) % slides.length,
+            );
+        }, 7000);
+
+        return () => clearInterval(timer);
+    }, [slides.length]);
+
+    /* =====================================================
+       NEXT / PREVIOUS
+    ===================================================== */
+
+    const nextSlide = () => {
+        setCurrentSlide(
+            (prev) => (prev + 1) % slides.length,
+        );
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide(
+            (prev) =>
+                (prev - 1 + slides.length) %
+                slides.length,
+        );
+    };
+
+    return (
+        <div className="relative w-full overflow-hidden bg-[#111827]">
+            {/* =================================================
+                HERO
+            ================================================= */}
+
+            <div className="relative flex w-full items-center lg:h-[650px]">
+                {slides.map((slide, index) => (
+                    <div
+                        key={slide.id}
+                        className={`flex w-full flex-col transition-all duration-1000 ease-in-out lg:flex-row ${
+                            index === currentSlide
+                                ? 'relative z-10 translate-x-0 scale-100 opacity-100 lg:h-full'
+                                : 'pointer-events-none absolute inset-0 z-0 h-full translate-x-full scale-95 opacity-0'
+                        }`}
+                    >
+                        {/* =====================================
+                            LEFT CONTENT
+                        ===================================== */}
+
+                        <div
+                            className="
+                                relative
+                                flex
+                                w-full
+                                flex-col
+                                justify-center
+                                overflow-hidden
+                                bg-gradient-to-br
+                                from-[#101826]
+                                to-[#1B2738]
+                                p-8
+                                pb-10
+                                text-white
+                                sm:p-12
+                                lg:w-[48%]
+                                lg:p-16
+                                xl:p-20
+                            "
+                        >
+                            {/* BACKGROUND DECORATION */}
+
+                            <div className="pointer-events-none absolute top-0 left-0 h-40 w-40 rounded-full bg-[#74B946]/10 blur-3xl" />
+
+                            <div className="pointer-events-none absolute right-0 bottom-0 h-64 w-64 rounded-full bg-[#74B946]/10 blur-3xl" />
+
+                            {/* GREEN LEFT LINE */}
+
+                            <div className="absolute top-0 left-0 h-full w-1 bg-[#74B946]" />
+
+                            <motion.div
+                                className="relative space-y-6"
+                                variants={slideContent}
+                                initial="hidden"
+                                animate={
+                                    index === currentSlide
+                                        ? 'visible'
+                                        : 'hidden'
+                                }
+                            >
+                                {/* SUBTITLE */}
+
+                                <motion.div
+                                    variants={slideItem}
+                                    className="flex items-center gap-3"
+                                >
+                                    <span className="h-[2px] w-8 shrink-0 bg-[#74B946]" />
+
+                                    <span
+                                        className="
+                                            text-xs
+                                            font-bold
+                                            tracking-[0.16em]
+                                            text-[#74B946]
+                                            uppercase
+                                            sm:text-sm
+                                            lg:text-[14px]
+                                        "
+                                    >
+                                        {slide.subtitle}
+                                    </span>
+                                </motion.div>
+
+                                {/* TITLE */}
+
+                                <motion.h1
+                                    variants={slideItem}
+                                    className="
+                                        max-w-2xl
+                                        text-3xl
+                                        leading-[1.08]
+                                        font-extrabold
+                                        tracking-tight
+                                        text-white
+                                        uppercase
+                                        sm:text-4xl
+                                        lg:text-[42px]
+                                        xl:text-[49px]
+                                    "
+                                >
+                                    {slide.title}
+                                </motion.h1>
+
+                                {/* DESCRIPTION */}
+
+                                <motion.p
+                                    variants={slideItem}
+                                    className="
+                                        max-w-xl
+                                        text-sm
+                                        leading-7
+                                        font-light
+                                        text-gray-300
+                                        sm:text-base
+                                        lg:text-[16px]
+                                        lg:leading-8
+                                    "
+                                >
+                                    {slide.description}
+                                </motion.p>
+
+                                {/* BUTTONS */}
+
+                                <motion.div
+                                    variants={slideItem}
+                                    className="
+                                        flex
+                                        flex-col
+                                        gap-3
+                                        pt-3
+                                        sm:flex-row
+                                        sm:items-center
+                                    "
+                                >
+                                    {/* PRIMARY */}
+
+                                    <motion.div
+                                        whileHover={{
+                                            scale: 1.03,
+                                        }}
+                                        whileTap={{
+                                            scale: 0.97,
+                                        }}
+                                        transition={{
+                                            type: 'spring',
+                                            stiffness: 400,
+                                            damping: 20,
+                                        }}
+                                    >
+                                        <Link
+                                            href={slide.href}
+                                            className="
+                                                group
+                                                inline-flex
+                                                items-center
+                                                justify-center
+                                                gap-2.5
+                                                rounded
+                                                bg-[#74B946]
+                                                px-7
+                                                py-4
+                                                text-xs
+                                                font-bold
+                                                tracking-wider
+                                                text-white
+                                                uppercase
+                                                shadow-xl
+                                                transition-all
+                                                duration-300
+                                                hover:bg-[#659F3B]
+                                                hover:shadow-[#74B946]/20
+                                                sm:text-sm
+                                            "
+                                        >
+                                            <span>
+                                                {slide.cta}
+                                            </span>
+
+                                            <ArrowRight
+                                                size={17}
+                                                className="
+                                                    transition-transform
+                                                    duration-300
+                                                    group-hover:translate-x-1
+                                                "
+                                            />
+                                        </Link>
+                                    </motion.div>
+
+                                    {/* SECONDARY */}
+
+                                    {slide.secondaryCta &&
+                                        slide.secondaryHref && (
+                                            <Link
+                                                href={
+                                                    slide.secondaryHref
+                                                }
+                                                className="
+                                                    group
+                                                    inline-flex
+                                                    items-center
+                                                    justify-center
+                                                    gap-2
+                                                    px-5
+                                                    py-4
+                                                    text-sm
+                                                    font-semibold
+                                                    text-white
+                                                    transition-colors
+                                                    duration-300
+                                                    hover:text-[#74B946]
+                                                "
+                                            >
+                                                {
+                                                    slide.secondaryCta
+                                                }
+
+                                                <ArrowRight
+                                                    size={16}
+                                                    className="
+                                                        transition-transform
+                                                        duration-300
+                                                        group-hover:translate-x-1
+                                                    "
+                                                />
+                                            </Link>
+                                        )}
+                                </motion.div>
+                            </motion.div>
+                        </div>
+
+                        {/* =====================================
+                            RIGHT — ONE IMAGE ONLY
+                        ===================================== */}
+
+                        <div
+                            className="
+                                relative
+                                h-[380px]
+                                w-full
+                                overflow-hidden
+                                bg-[#111827]
+                                lg:h-full
+                                lg:w-[52%]
+                            "
+                        >
+                            <img
+                                src={slide.image}
+                                alt={slide.title}
+                                loading={
+                                    index === currentSlide
+                                        ? 'eager'
+                                        : 'lazy'
+                                }
+                                decoding="async"
+                                fetchPriority={
+                                    index === currentSlide
+                                        ? 'high'
+                                        : 'low'
+                                }
+                                className="
+                                    h-full
+                                    w-full
+                                    object-cover
+                                    transition-transform
+                                    duration-[8000ms]
+                                    hover:scale-105
+                                "
+                                referrerPolicy="no-referrer"
+                            />
+
+                            {/* DARK GRADIENT LEFT */}
+
+                            <div
+                                className="
+                                    absolute
+                                    inset-0
+                                    bg-gradient-to-r
+                                    from-[#111827]/35
+                                    via-transparent
+                                    to-transparent
+                                    lg:from-[#111827]/25
+                                "
+                            />
+
+                            {/* DARK BOTTOM GRADIENT */}
+
+                            <div
+                                className="
+                                    absolute
+                                    inset-0
+                                    bg-gradient-to-t
+                                    from-[#111827]/35
+                                    via-transparent
+                                    to-transparent
+                                "
+                            />
+
+                           
+                        </div>
+                    </div>
+                ))}
+
+                {/* =================================================
+                    PREVIOUS BUTTON
+                ================================================= */}
+
+                <button
+                    onClick={prevSlide}
+                    className="
+                        absolute
+                        left-4
+                        z-20
+                        hidden
+                        rounded-full
+                        border
+                        border-[#74B946]/40
+                        bg-[#111827]/80
+                        p-3
+                        text-white
+                        backdrop-blur-md
+                        transition-all
+                        duration-300
+                        hover:scale-110
+                        hover:bg-[#74B946]
+                        sm:block
+                    "
+                    aria-label="Slide précédente"
                 >
-                  {slide.title.split('&')[0]}
-                  {slide.title.includes('&') && (
-                    <>
-                      <span className="block">{slide.title.split('&')[1]}</span>
-                    </>
-                  )}
-                </motion.h1>
+                    <ChevronLeft size={20} />
+                </button>
 
-                <motion.p variants={slideItem} className="text-sm sm:text-base text-gray-300 max-w-lg leading-relaxed font-light">
-                  {slide.description}
-                </motion.p>
+                {/* =================================================
+                    NEXT BUTTON
+                ================================================= */}
 
-                <motion.div variants={slideItem} className="pt-4">
-                  <motion.button
-                    onClick={onDiscoverClick}
-                    whileHover={{ scale: 1.04 }}
-                    whileTap={{ scale: 0.97 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-                    className="inline-flex items-center gap-2.5 bg-alidade-gold hover:bg-alidade-gold-light text-alidade-dark font-bold text-xs sm:text-sm uppercase tracking-wider py-4 px-8 rounded shadow-xl transition-colors duration-300 hover:shadow-alidade-gold/20"
-                    id={`hero-cta-btn-${index}`}
-                  >
-                    <span>{slide.cta}</span>
-                    <ArrowRight size={16} className="text-alidade-dark animate-pulse" />
-                  </motion.button>
-                </motion.div>
-              </motion.div>
+                <button
+                    onClick={nextSlide}
+                    className="
+                        absolute
+                        right-4
+                        z-20
+                        hidden
+                        rounded-full
+                        border
+                        border-[#74B946]/40
+                        bg-[#111827]/80
+                        p-3
+                        text-white
+                        backdrop-blur-md
+                        transition-all
+                        duration-300
+                        hover:scale-110
+                        hover:bg-[#74B946]
+                        sm:block
+                    "
+                    aria-label="Slide suivante"
+                >
+                    <ChevronRight size={20} />
+                </button>
+
+                {/* =================================================
+                    SLIDE INDICATORS
+                ================================================= */}
+
+                <div
+                    className="
+                        absolute
+                        bottom-6
+                        left-1/2
+                        z-20
+                        flex
+                        -translate-x-1/2
+                        gap-2
+                    "
+                >
+                    {slides.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() =>
+                                setCurrentSlide(index)
+                            }
+                            aria-label={`Afficher le slide ${index + 1}`}
+                            className={`h-1.5 rounded-full transition-all duration-500 ${
+                                index === currentSlide
+                                    ? 'w-14 bg-[#74B946]'
+                                    : 'w-9 bg-white/40 hover:bg-white/70'
+                            }`}
+                        />
+                    ))}
+                </div>
             </div>
 
-            {/* Slide Right: Visual Layout exactly matching Screenshot 1 */}
-            <div className="w-full lg:w-[55%] h-[350px] lg:h-full relative grid grid-cols-12 gap-1.5 p-1.5 bg-alidade-dark">
-              {/* Large central / left split image */}
-              <div className="col-span-7 h-full relative group overflow-hidden">
-                <img
-                  src={slide.imageLarge}
-                  alt={slide.title}
-                  className="w-full h-full object-cover transition-transform duration-10000 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-alidade-dark/60 via-transparent to-transparent opacity-60" />
-              </div>
+            {/* =================================================
+                VALUE PROPOSITION STRIP
+            ================================================= */}
 
-              {/* Grid panel right split exactly as shown in screenshot */}
-              <div className="col-span-5 h-full grid grid-rows-2 gap-1.5">
-                {/* Row 1 split into 2 horizontal parts */}
-                <div className="grid grid-cols-2 gap-1.5">
-                  <div className="relative group overflow-hidden">
-                    <img
-                      src={slide.imageGrid1}
-                      alt="Artisan Craftsmanship"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
-                  </div>
-                  <div className="relative group overflow-hidden">
-                    <img
-                      src={slide.imageGrid2}
-                      alt="Wood Finish"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
-                  </div>
-                </div>
+            <div className="relative z-20 border-b border-gray-100 bg-white py-8 shadow-sm">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <Stagger
+                        className="
+                            grid
+                            grid-cols-1
+                            gap-6
+                            divide-y
+                            divide-gray-100
+                            sm:grid-cols-2
+                            sm:gap-8
+                            sm:divide-y-0
+                            lg:grid-cols-4
+                            lg:divide-x
+                        "
+                    >
+                        {/* 1 */}
 
-                {/* Row 2 split into 2 horizontal parts */}
-                <div className="grid grid-cols-2 gap-1.5">
-                  <div className="relative group overflow-hidden">
-                    <img
-                      src={slide.imageGrid3}
-                      alt="Premium Design"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
-                  </div>
-                  <div className="relative group overflow-hidden">
-                    <img
-                      src={slide.imageGrid4}
-                      alt="Finished Interior"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
-                  </div>
+                        <StaggerItem className="flex items-center gap-4 pt-4 first:pt-0 sm:pt-0 lg:pl-4 first:pl-0">
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#111827] shadow-md lg:h-16 lg:w-16">
+                                <PhoneCall className="h-5 w-5 text-[#74B946] lg:h-7 lg:w-7" />
+                            </div>
+
+                            <div>
+                                <h3 className="text-xs font-bold tracking-wider text-[#111827] uppercase sm:text-sm lg:text-lg">
+                                    Appels entrants
+                                </h3>
+
+                                <p className="mt-0.5 text-xs font-light text-gray-400 lg:text-base">
+                                    Aucun appel
+                                    <br />
+                                    laissé sans réponse
+                                </p>
+                            </div>
+                        </StaggerItem>
+
+                        {/* 2 */}
+
+                        <StaggerItem className="flex items-center gap-4 pt-4 sm:pt-0 lg:pl-6">
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#111827] shadow-md lg:h-16 lg:w-16">
+                                <Bot className="h-5 w-5 text-[#74B946] lg:h-7 lg:w-7" />
+                            </div>
+
+                            <div>
+                                <h3 className="text-xs font-bold tracking-wider text-[#111827] uppercase sm:text-sm lg:text-lg">
+                                    IA+Humain
+                                </h3>
+
+                                <p className="mt-0.5 text-xs font-light text-gray-400 lg:text-base">
+                                    Automatisation
+                                    <br />
+                                    et agents dédiés
+                                </p>
+                            </div>
+                        </StaggerItem>
+
+                        {/* 3 */}
+
+                        <StaggerItem className="flex items-center gap-4 pt-4 lg:pt-0 lg:pl-6">
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#111827] shadow-md lg:h-16 lg:w-16">
+                                <Clock3 className="h-5 w-5 text-[#74B946] lg:h-7 lg:w-7" />
+                            </div>
+
+                            <div>
+                                <h3 className="text-xs font-bold tracking-wider text-[#111827] uppercase sm:text-sm lg:text-lg">
+                                    24H/24
+                                </h3>
+
+                                <p className="mt-0.5 text-xs font-light text-gray-400 lg:text-base">
+                                    Vos leads traités
+                                    <br />
+                                    rapidement
+                                </p>
+                            </div>
+                        </StaggerItem>
+
+                        {/* 4 */}
+
+                        <StaggerItem className="flex items-center gap-4 pt-4 lg:pt-0 lg:pl-6">
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#111827] shadow-md lg:h-16 lg:w-16">
+                                <CalendarCheck className="h-5 w-5 text-[#74B946] lg:h-7 lg:w-7" />
+                            </div>
+
+                            <div>
+                                <h3 className="text-xs font-bold tracking-wider text-[#111827] uppercase sm:text-sm lg:text-lg">
+                                    Rendez-vous
+                                </h3>
+
+                                <p className="mt-0.5 text-xs font-light text-gray-400 lg:text-base">
+                                    Plus de prospects
+                                    <br />
+                                    convertis en clients
+                                </p>
+                            </div>
+                        </StaggerItem>
+                    </Stagger>
                 </div>
-              </div>
             </div>
-          </div>
-        ))}
-
-        {/* Navigation Arrows */}
-        <button
-          onClick={prevSlide}
-          className="hidden sm:block absolute left-4 z-20 bg-alidade-navy/80 hover:bg-alidade-gold text-white hover:text-alidade-navy p-3 rounded-full transition-all duration-300 border border-alidade-gold/30 hover:scale-110"
-          aria-label="Previous Slide"
-          id="hero-prev-btn"
-        >
-          <ChevronLeft size={20} />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="hidden sm:block absolute right-4 z-20 bg-alidade-navy/80 hover:bg-alidade-gold text-white hover:text-alidade-navy p-3 rounded-full transition-all duration-300 border border-alidade-gold/30 hover:scale-110"
-          aria-label="Next Slide"
-          id="hero-next-btn"
-        >
-          <ChevronRight size={20} />
-        </button>
-
-        {/* Slide Indicators */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-10 h-1.5 rounded-full transition-all duration-500 ${
-                index === currentSlide ? 'bg-alidade-gold w-14' : 'bg-white/40 hover:bg-white/70'
-              }`}
-              id={`slide-indicator-${index}`}
-            />
-          ))}
         </div>
-      </div>
-
-      {/* Value Proposition Strip below Hero exactly matching Screenshot 1 */}
-      <div className="bg-white py-8 border-b border-gray-100 relative z-20 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 divide-y sm:divide-y-0 lg:divide-x divide-gray-100">
-            {/* Value 1 */}
-            <StaggerItem className="flex items-center gap-4 lg:pl-4 first:pl-0 pt-4 sm:pt-0 first:pt-0">
-              <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-alidade-navy flex items-center justify-center shadow-md shrink-0">
-                <Hammer className="text-alidade-gold h-5 w-5 lg:h-7 lg:w-7" />
-              </div>
-              <div>
-                <h3 className="text-xs sm:text-sm lg:text-lg font-bold tracking-wider text-alidade-navy uppercase">
-                  Menuiserie Sur Mesure
-                </h3>
-                <p className="text-xs lg:text-base text-gray-400 font-light mt-0.5">
-                  Bois de qualité <br/>& finitions soignées
-                </p>
-              </div>
-            </StaggerItem>
-
-            {/* Value 2 */}
-            <StaggerItem className="flex items-center gap-4 lg:pl-6 pt-4 sm:pt-0">
-              <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-alidade-navy flex items-center justify-center shadow-md shrink-0">
-                <DraftingCompass className="text-alidade-gold h-5 w-5 lg:h-7 lg:w-7" />
-              </div>
-              <div>
-                <h3 className="text-xs sm:text-sm lg:text-lg font-bold tracking-wider text-alidade-navy uppercase">
-                  Cuisines Modernes
-                </h3>
-                <p className="text-xs lg:text-base text-gray-400 font-light mt-0.5">
-                  Design fonctionnel <br/> & élégant
-                </p>
-              </div>
-            </StaggerItem>
-
-            {/* Value 3 */}
-            <StaggerItem className="flex items-center gap-4 lg:pl-6 pt-4 lg:pt-0">
-              <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-alidade-navy flex items-center justify-center shadow-md shrink-0">
-                <CheckCircle2 className="text-alidade-gold h-5 w-5 lg:h-7 lg:w-7" />
-              </div>
-              <div>
-                <h3 className="text-xs sm:text-sm lg:text-lg font-bold tracking-wider text-alidade-navy uppercase">
-                  Savoir-Faire Artisanal
-                </h3>
-                <p className="text-xs lg:text-base text-gray-400 font-light mt-0.5">
-                  Expertise <br/> & précision d'orfèvre
-                </p>
-              </div>
-            </StaggerItem>
-
-            {/* Value 4 */}
-            <StaggerItem className="flex items-center gap-4 lg:pl-6 pt-4 lg:pt-0">
-              <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-alidade-navy flex items-center justify-center shadow-md shrink-0">
-                <ShieldCheck className="text-alidade-gold h-5 w-5 lg:h-7 lg:w-7" />
-              </div>
-              <div>
-                <h3 className="text-xs sm:text-sm lg:text-lg font-bold tracking-wider text-alidade-navy uppercase">
-                  Durabilité & Fiabilité
-                </h3>
-                <p className="text-xs lg:text-base text-gray-400 font-light mt-0.5">
-                  Des réalisations <br/> faites pour durer
-                </p>
-              </div>
-            </StaggerItem>
-          </Stagger>
-        </div>
-      </div>
-    </div>
-  );
+    );
 }

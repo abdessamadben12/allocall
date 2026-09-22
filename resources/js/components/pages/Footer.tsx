@@ -1,125 +1,477 @@
-import { Reveal, Stagger, StaggerItem } from '@/components/motion';
+import {
+    Reveal,
+    Stagger,
+    StaggerItem,
+} from '@/components/motion';
+
 import { site } from '@/data/site';
 import { footerHeroImage, logoImage } from '@/image';
+
 import { motion } from 'framer-motion';
-import { Award, Facebook, Handshake, Instagram, Linkedin, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
+
+import {
+    Bot,
+    Facebook,
+    Headphones,
+    Instagram,
+    Linkedin,
+    Mail,
+    Phone,
+    Target,
+} from 'lucide-react';
+
 import React from 'react';
 
+/* =========================================================
+   CONTACT ALLOCAL
+========================================================= */
+
+const contactInfo = {
+    maroc: {
+        label: 'Maroc',
+        phone: '+212 5 22 48 44 25',
+        href: 'tel:+212522484425',
+    },
+
+    montreal: {
+        label: 'Montréal',
+        phone: '+1 514-660-2337',
+        href: 'tel:+15146602337',
+    },
+
+    email: 'contact@allocall.ma',
+};
+
+/* =========================================================
+   SOCIAL LINKS
+========================================================= */
+
 const socialLinks = [
-    { href: site.socials.facebook, icon: <Facebook size={18} />, label: 'Facebook' },
-    { href: site.socials.instagram, icon: <Instagram size={18} />, label: 'Instagram' },
-    { href: site.socials.linkedin, icon: <Linkedin size={18} />, label: 'LinkedIn' },
+    {
+        href: site.socials.facebook,
+        icon: <Facebook size={18} />,
+        label: 'Facebook',
+    },
+    {
+        href: site.socials.instagram,
+        icon: <Instagram size={18} />,
+        label: 'Instagram',
+    },
+    {
+        href: site.socials.linkedin,
+        icon: <Linkedin size={18} />,
+        label: 'LinkedIn',
+    },
 ].filter((s) => s.href);
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-alidade-dark overflow-hidden text-white">
-            {/* SECTION PRINCIPALE */}
-            <div className="flex flex-col items-stretch lg:flex-row">
-                {/* 1. Image avec découpe oblique (Clip-path) */}
-                <div className="relative hidden overflow-hidden lg:block lg:w-1/4">
-                    <img
-                        src={footerHeroImage}
-                        alt=""
-                        className="absolute inset-0 h-full w-full object-cover"
-                        style={{ clipPath: 'polygon(0 0, 100% 0, 75% 100%, 0 100%)' }}
-                        loading="lazy"
-                        decoding="async"
-                    />
-                </div>
+        <footer className="overflow-hidden bg-[#111827] text-white">
 
-                {/* 2. Bloc Logo et Description */}
-                <Reveal className="flex w-full flex-col justify-center p-8 lg:w-1/3 lg:p-12" amount={0.15}>
+            {/* =====================================================
+                SECTION PRINCIPALE
+            ===================================================== */}
+
+            <div className="flex flex-col items-stretch lg:flex-row">
+
+
+
+                {/* =================================================
+                    2. LOGO + DESCRIPTION + CONTACT
+                ================================================= */}
+
+                <Reveal
+                    className="
+                        flex
+                        w-full
+                        flex-col
+                        justify-center
+                        p-8
+                        lg:w-1/3
+                        lg:p-12
+                    "
+                    amount={0.15}
+                >
+
+                    {/* LOGO */}
+
                     <div className="mb-6">
-                        <img src={logoImage} alt="Logo Alidade" className="mb-4 h-12 w-auto" loading="lazy" decoding="async" />
+                        <img
+                            src={logoImage}
+                            alt="Logo AlloCall"
+                            className="mb-4 h-14 w-auto"
+                            loading="lazy"
+                            decoding="async"
+                        />
                     </div>
 
-                    <p className="mb-8 max-w-xs text-sm leading-relaxed text-gray-400">
-                        Expert en travaux de finition, construction et rénovation.<br/> Nous transformons vos idées en espaces uniques.
+                    {/* DESCRIPTION */}
+
+                    <p
+                        className="
+                            mb-8
+                            max-w-sm
+                            text-sm
+                            leading-7
+                            text-gray-400
+                        "
+                    >
+                        Une équipe à distance pour gérer vos
+                        appels, vos prospects et votre relation
+                        client.
+                        <br />
+                        AlloCall combine expertise humaine et
+                        technologie pour vous aider à ne laisser
+                        passer aucune opportunité.
                     </p>
 
-                    {/* Contact Info */}
+                    {/* =================================================
+                        CONTACT INFO
+                    ================================================= */}
+
                     <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3">
-                        <Phone className="w-5 h-5 text-alidade-gold flex-shrink-0" />
-                        <a href={site.phoneHref} className="text-sm text-gray-300">
-                          {site.phone}
-                        </a>
-                      </div>
 
-                      <div className="flex items-center gap-3">
-                        <MapPin className="w-5 h-5 text-alidade-gold flex-shrink-0" />
-                        <span className="text-sm text-gray-300">{site.address}</span>
-                      </div>
+                        {/* MAROC */}
 
-                      <div className="flex items-center gap-3">
-                        <Mail className="w-5 h-5 text-alidade-gold flex-shrink-0" />
-                        <a href={`mailto:${site.email}`} className="text-sm text-gray-300">{site.email}</a>
-                      </div>
+                        <div className="flex items-center gap-3">
+                            <Phone
+                                className="
+                                    h-5
+                                    w-5
+                                    shrink-0
+                                    text-[#74B946]
+                                "
+                            />
+
+                            <div className="flex flex-wrap items-center gap-1">
+                                <span className="text-xs font-semibold text-gray-500">
+                                    Maroc :
+                                </span>
+
+                                <a
+                                    href={contactInfo.maroc.href}
+                                    className="
+                                        text-sm
+                                        text-gray-300
+                                        transition-colors
+                                        duration-300
+                                        hover:text-[#74B946]
+                                    "
+                                >
+                                    {contactInfo.maroc.phone}
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* MONTRÉAL */}
+
+                        <div className="flex items-center gap-3">
+                            <Phone
+                                className="
+                                    h-5
+                                    w-5
+                                    shrink-0
+                                    text-[#74B946]
+                                "
+                            />
+
+                            <div className="flex flex-wrap items-center gap-1">
+                                <span className="text-xs font-semibold text-gray-500">
+                                    Montréal :
+                                </span>
+
+                                <a
+                                    href={contactInfo.montreal.href}
+                                    className="
+                                        text-sm
+                                        text-gray-300
+                                        transition-colors
+                                        duration-300
+                                        hover:text-[#74B946]
+                                    "
+                                >
+                                    {contactInfo.montreal.phone}
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* EMAIL */}
+
+                        <div className="flex items-center gap-3">
+                            <Mail
+                                className="
+                                    h-5
+                                    w-5
+                                    shrink-0
+                                    text-[#74B946]
+                                "
+                            />
+
+                            <a
+                                href={`mailto:${contactInfo.email}`}
+                                className="
+                                    text-sm
+                                    text-gray-300
+                                    transition-colors
+                                    duration-300
+                                    hover:text-[#74B946]
+                                "
+                            >
+                                {contactInfo.email}
+                            </a>
+                        </div>
                     </div>
+
+                    {/* =================================================
+                        SOCIAL NETWORKS
+                    ================================================= */}
 
                     {socialLinks.length > 0 && (
                         <div className="mt-8 flex gap-3">
-                            {socialLinks.map((s) => (
-                                <SocialCircle key={s.label} href={s.href} label={s.label} icon={s.icon} />
+                            {socialLinks.map((social) => (
+                                <SocialCircle
+                                    key={social.label}
+                                    href={social.href}
+                                    label={social.label}
+                                    icon={social.icon}
+                                />
                             ))}
                         </div>
                     )}
                 </Reveal>
 
-                {/* 3. Section Atouts (Qualité, Engagement, Confiance) */}
-                <Stagger stagger={0.15} className="grid flex-1 grid-cols-1 border-t border-gray-800 items-center md:grid-cols-3 lg:border-t-0">
+                {/* =================================================
+                    3. ATOUTS ALLOCAL
+                ================================================= */}
+
+                <Stagger
+                    stagger={0.15}
+                    className="
+                        grid
+                        flex-1
+                        grid-cols-1
+                        items-center
+                        border-t
+                        border-gray-800
+                        md:grid-cols-3
+                        lg:border-t-0
+                    "
+                >
+
+                    {/* RELATION CLIENT */}
+
                     <FeatureItem
-                        icon={<Award className="text-alidade-gold h-10 w-10 lg:h-16 lg:w-14" strokeWidth={1} />}
-                        title="QUALITÉ"
-                        description="Des matériaux de qualité et des finitions soignées."
+                        icon={
+                            <Headphones
+                                className="
+                                    h-10
+                                    w-10
+                                    text-[#74B946]
+                                    lg:h-16
+                                    lg:w-14
+                                "
+                                strokeWidth={1}
+                            />
+                        }
+                        title="RELATION CLIENT"
+                        description="Des agents dédiés pour répondre à vos clients avec professionnalisme."
                     />
+
+                    {/* PERFORMANCE */}
+
                     <FeatureItem
-                        icon={<Handshake className="text-alidade-gold h-10 w-10 lg:h-16 lg:w-16" strokeWidth={1} />}
-                        title="ENGAGEMENT"
-                        description="Respect des délais&nbsp;et accompagnement personnalisé."
+                        icon={
+                            <Target
+                                className="
+                                    h-10
+                                    w-10
+                                    text-[#74B946]
+                                    lg:h-16
+                                    lg:w-16
+                                "
+                                strokeWidth={1}
+                            />
+                        }
+                        title="PERFORMANCE"
+                        description="Qualification, suivi et relance pour transformer plus de prospects."
                         hasBorder
                     />
+
+                    {/* IA + HUMAIN */}
+
                     <FeatureItem
-                        icon={<ShieldCheck className="text-alidade-gold h-10 w-10 lg:h-16 lg:w-16" strokeWidth={1} />}
-                        title="CONFIANCE"
-                        description="Une équipe d'experts à votre service."
+                        icon={
+                            <Bot
+                                className="
+                                    h-10
+                                    w-10
+                                    text-[#74B946]
+                                    lg:h-16
+                                    lg:w-16
+                                "
+                                strokeWidth={1}
+                            />
+                        }
+                        title="IA + HUMAIN"
+                        description="La technologie pour gagner du temps, l'humain pour créer la relation."
                     />
                 </Stagger>
             </div>
 
-            {/* BAS DE PAGE (Copyright) */}
-            <div className="bg-alidade-navy border-t border-gray-800 py-6">
-                <div className="container mx-auto flex flex-col items-center justify-center gap-2 px-6 md:flex-row">
-                    <p className="text-center text-xs tracking-widest text-gray-500">© {new Date().getFullYear()} Alidade. Tous droits réservés.</p>
+            {/* =====================================================
+                COPYRIGHT
+            ===================================================== */}
+
+            <div
+                className="
+                    border-t
+                    border-gray-800
+                    bg-[#0C1421]
+                    py-6
+                "
+            >
+                <div
+                    className="
+                        container
+                        mx-auto
+                        flex
+                        flex-col
+                        items-center
+                        justify-center
+                        gap-2
+                        px-6
+                        md:flex-row
+                    "
+                >
+                    <p
+                        className="
+                            text-center
+                            text-xs
+                            tracking-widest
+                            text-gray-500
+                        "
+                    >
+                        © {new Date().getFullYear()} AlloCall.
+                        Tous droits réservés.
+                    </p>
                 </div>
             </div>
         </footer>
     );
 };
 
-// --- Sous-composants utilitaires ---
+/* =========================================================
+   FEATURE ITEM
+========================================================= */
 
-const FeatureItem = ({ icon, title, description, hasBorder }: { icon: React.ReactNode; title: string; description: string; hasBorder?: boolean }) => (
-    <StaggerItem className={`flex flex-col items-center p-10 text-center ${hasBorder ? 'border-gray-800 md:border-x' : ''}`}>
-        <div className="mb-6">{icon}</div>
-        <h3 className="mb-4 text-xs font-bold tracking-widest uppercase lg:text-sm">{title}</h3>
-        <p className="px-4 text-xs  text-gray-400 lg:text-base">{description}</p>
+const FeatureItem = ({
+    icon,
+    title,
+    description,
+    hasBorder,
+}: {
+    icon: React.ReactNode;
+    title: string;
+    description: string;
+    hasBorder?: boolean;
+}) => (
+    <StaggerItem
+        className={`
+            flex
+            flex-col
+            items-center
+            p-10
+            text-center
+            ${
+                hasBorder
+                    ? 'border-gray-800 md:border-x'
+                    : ''
+            }
+        `}
+    >
+        <div className="mb-6">
+            {icon}
+        </div>
+
+        <h3
+            className="
+                mb-4
+                text-xs
+                font-bold
+                tracking-widest
+                uppercase
+                lg:text-sm
+            "
+        >
+            {title}
+        </h3>
+
+        <p
+            className="
+                px-4
+                text-xs
+                leading-6
+                text-gray-400
+                lg:text-base
+            "
+        >
+            {description}
+        </p>
     </StaggerItem>
 );
 
-const SocialCircle = ({ icon, href, label }: { icon: React.ReactNode; href: string; label: string }) => (
+/* =========================================================
+   SOCIAL CIRCLE
+========================================================= */
+
+const SocialCircle = ({
+    icon,
+    href,
+    label,
+}: {
+    icon: React.ReactNode;
+    href: string;
+    label: string;
+}) => (
     <motion.a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={label}
-        whileHover={{ scale: 1.15, y: -2 }}
-        whileTap={{ scale: 0.95 }}
-        transition={{ type: 'spring', stiffness: 400, damping: 18 }}
-        className="hover:text-alidade-gold hover:border-alidade-gold flex h-10 w-10 items-center justify-center rounded-full border border-gray-700 text-gray-400 transition-colors"
+        whileHover={{
+            scale: 1.15,
+            y: -2,
+        }}
+        whileTap={{
+            scale: 0.95,
+        }}
+        transition={{
+            type: 'spring',
+            stiffness: 400,
+            damping: 18,
+        }}
+        className="
+            flex
+            h-10
+            w-10
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-gray-700
+            text-gray-400
+            transition-colors
+            duration-300
+            hover:border-[#74B946]
+            hover:bg-[#74B946]
+            hover:text-white
+        "
     >
-     {icon}
+        {icon}
     </motion.a>
 );
 

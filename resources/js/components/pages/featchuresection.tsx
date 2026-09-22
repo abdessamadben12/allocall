@@ -1,180 +1,500 @@
 import React from 'react';
-import { User, Home, Award, ChevronRight, ShieldCheck, Users, Clock, Headset } from 'lucide-react';
+import {
+    ArrowRight,
+    BadgeDollarSign,
+    CheckCircle2,
+    Headphones,
+    HeartHandshake,
+    PhoneCall,
+    Target,
+    Users,
+} from 'lucide-react';
 import { Link } from '@inertiajs/react';
 import { motion } from 'framer-motion';
-import { Reveal, Stagger, StaggerItem } from '@/components/motion';
+import {
+    Reveal,
+    Stagger,
+    StaggerItem,
+} from '@/components/motion';
 
+/* =========================================================
+   TYPES
+========================================================= */
 
-// --- Types ---
 interface ServiceCardProps {
-  number: string;
-  title: string;
-  icon: React.ReactNode;
-  description: string;
-  subDescription: string;
-  color: 'amber' | 'teal' | 'purple';
-  bgImage?: string;
-  path:string;
+    number: string;
+    title: string;
+    icon: React.ReactNode;
+    description: string;
+    items: string[];
+    path: string;
 }
 
 interface FeatureProps {
-  icon: React.ReactNode;
-  title: string;
-  subtitle: string;
+    icon: React.ReactNode;
+    title: string;
+    subtitle: string;
 }
 
-// --- Composants Internes ---
+/* =========================================================
+   SERVICE CARD
+========================================================= */
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ number, title, icon, description, subDescription, color, bgImage,path }) => {
-  const colorVariants = {
-    amber: "border-alidade-gold text-[#5d5f5e] bg-[#0d1a2d]",
-    teal: "border-alidade-gold text-[#5d5f5e] bg-[#0d1a2d]",
-    purple: "border-alidade-gold text-[#5d5f5e] bg-[#0d1a2d]",
-  };
+const ServiceCard: React.FC<ServiceCardProps> = ({
+    number,
+    title,
+    icon,
+    description,
+    items,
+    path,
+}) => {
+    return (
+        <motion.div
+            whileHover={{
+                y: -8,
+            }}
+            transition={{
+                type: 'spring',
+                stiffness: 300,
+                damping: 22,
+            }}
+            className="
+                group
+                relative
+                flex
+                h-full
+                flex-col
+                overflow-hidden
+                rounded-[28px]
+                border
+                border-slate-100
+                bg-white
+                shadow-[0_10px_40px_rgba(15,23,42,0.06)]
+                transition-shadow
+                duration-300
+                hover:shadow-[0_20px_60px_rgba(15,23,42,0.12)]
+            "
+        >
+            {/* GREEN TOP LINE */}
+            <div className="absolute top-0 right-0 left-0 h-[5px] bg-[#74B946]" />
 
-  
-  return (
-    <motion.div
-      whileHover={{ y: -8 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-      className={`relative flex flex-col h-full bg-white rounded-[2.5rem] shadow-xl overflow-hidden border-b-[12px] ${colorVariants[color].split(' ')[0]}`}
-    >
-      {/* Header de la carte */}
-      <div className="p-8 flex justify-between items-start z-10">
-        <div className={`w-14 h-14 rounded-full flex items-center justify-center text-alidade-gold shadow-lg ${colorVariants[color].split(' ')[2]}`}>
-          {icon}
-        </div>
-        <span className={`text-4xl font-serif opacity-30 font-bold ${colorVariants[color].split(' ')[1]}`}>
-          {number}
-        </span>
-      </div>
+            {/* DECORATION */}
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    -top-16
+                    -right-16
+                    h-48
+                    w-48
+                    rounded-full
+                    bg-[#74B946]/5
+                    transition-transform
+                    duration-500
+                    group-hover:scale-125
+                "
+            />
 
-      {/* Zone Image/Illustration (Simulée avec un overlay) */}
-      <div className="absolute top-0 right-0 w-full h-48 opacity-10 pointer-events-none">
-         {bgImage ? (
-           <img src={bgImage} alt="" className="w-full h-full object-cover" />
-         ) : (
-           <div className="w-full h-full bg-gradient-to-br from-transparent to-current opacity-20"></div>
-         )}
-      </div>
+            {/* HEADER */}
+            <div className="relative flex items-start justify-between p-7 pb-5 lg:p-8 lg:pb-5">
+                {/* ICON */}
 
-      {/* Contenu */}
-      <div className="px-8 pb-20 flex-grow">
-        <h3 className="text-2xl font-serif text-slate-800 mb-2 leading-tight">
-          {title}
-        </h3>
-        <div className={`w-12 h-[3px] mb-6 ${colorVariants[color].split(' ')[2]}`}></div>
-        
-        <p className="text-slate-800 font-semibold text-sm leading-relaxed mb-4">
-          {description}
-        </p>
-        <p className="text-slate-500 text-xs leading-relaxed italic">
-          {subDescription}
-        </p>
-      </div>
+                <div
+                    className="
+                        flex
+                        h-14
+                        w-14
+                        items-center
+                        justify-center
+                        rounded-2xl
+                        bg-[#F1F8EC]
+                        text-[#74B946]
+                        transition-all
+                        duration-300
+                        group-hover:bg-[#74B946]
+                        group-hover:text-white
+                    "
+                >
+                    {icon}
+                </div>
 
-      {/* Bouton Flèche */}
-      <div className="absolute bottom-6 right-8">
-        <Link  href={path} className={`w-12 h-12 bg-white border border-slate-100 rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform ${colorVariants[color].split(' ')[1]}`}>
-          <ChevronRight size={24} />
-        </Link>
-      </div>
-    </motion.div>
-  );
+                {/* NUMBER */}
+
+                <span
+                    className="
+                        text-4xl
+                        font-black
+                        tracking-tight
+                        text-slate-100
+                        transition-colors
+                        duration-300
+                        group-hover:text-[#74B946]/15
+                    "
+                >
+                    {number}
+                </span>
+            </div>
+
+            {/* CONTENT */}
+
+            <div className="relative flex flex-1 flex-col px-7 pb-8 lg:px-8">
+                <h3
+                    className="
+                        mb-4
+                        text-xl
+                        font-bold
+                        text-[#111827]
+                        lg:text-2xl
+                    "
+                >
+                    {title}
+                </h3>
+
+                <p
+                    className="
+                        mb-6
+                        text-sm
+                        leading-7
+                        text-slate-500
+                        lg:text-[15px]
+                    "
+                >
+                    {description}
+                </p>
+
+                {/* LIST */}
+
+                <div className="mb-8 space-y-3">
+                    {items.map((item, index) => (
+                        <div
+                            key={index}
+                            className="flex items-start gap-3"
+                        >
+                            <CheckCircle2
+                                size={17}
+                                className="mt-0.5 shrink-0 text-[#74B946]"
+                            />
+
+                            <span className="text-sm text-slate-600">
+                                {item}
+                            </span>
+                        </div>
+                    ))}
+                </div>
+
+                {/* BUTTON */}
+
+                <div className="mt-auto">
+                    <Link
+                        href={path}
+                        className="
+                            group/link
+                            inline-flex
+                            items-center
+                            gap-2
+                            text-sm
+                            font-bold
+                            text-[#111827]
+                            transition-colors
+                            duration-300
+                            hover:text-[#74B946]
+                        "
+                    >
+                        Découvrir le service
+
+                        <span
+                            className="
+                                flex
+                                h-9
+                                w-9
+                                items-center
+                                justify-center
+                                rounded-full
+                                bg-[#F1F8EC]
+                                text-[#74B946]
+                                transition-all
+                                duration-300
+                                group-hover/link:bg-[#74B946]
+                                group-hover/link:text-white
+                            "
+                        >
+                            <ArrowRight
+                                size={16}
+                                className="
+                                    transition-transform
+                                    duration-300
+                                    group-hover/link:translate-x-0.5
+                                "
+                            />
+                        </span>
+                    </Link>
+                </div>
+            </div>
+        </motion.div>
+    );
 };
 
-const FeatureItem: React.FC<FeatureProps> = ({ icon, title, subtitle }) => (
-  <div className="flex items-center gap-4 min-w-0 flex-1 basis-[200px]">
-    <div className="w-14 h-14 lg:w-16 lg:h-16 shrink-0 rounded-full flex items-center justify-center bg-alidade-navy text-alidade-gold shadow-md">
-      {icon}
-    </div>
-    <div className="min-w-0">
-      <h4 className="font-bold text-alidade-navy text-sm lg:text-base uppercase tracking-wider">{title}</h4>
-      <p className="text-xs lg:text-sm text-gray-400 font-light mt-0.5 text-nowrap">{subtitle}</p>
-    </div>
-  </div>
-);
+/* =========================================================
+   FEATURE ITEM
+========================================================= */
 
-// --- Composant Principal ---
+const FeatureItem: React.FC<FeatureProps> = ({
+    icon,
+    title,
+    subtitle,
+}) => {
+    return (
+        <div className="flex min-w-0 flex-1 basis-[210px] items-center gap-4">
+            <div
+                className="
+                    flex
+                    h-14
+                    w-14
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-[#111827]
+                    text-[#74B946]
+                    shadow-md
+                    lg:h-16
+                    lg:w-16
+                "
+            >
+                {icon}
+            </div>
+
+            <div className="min-w-0">
+                <h4
+                    className="
+                        text-sm
+                        font-bold
+                        tracking-wide
+                        text-[#111827]
+                        uppercase
+                        lg:text-base
+                    "
+                >
+                    {title}
+                </h4>
+
+                <p className="mt-1 text-xs text-slate-400 lg:text-sm">
+                    {subtitle}
+                </p>
+            </div>
+        </div>
+    );
+};
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
 
 export const EngagementSection: React.FC = () => {
-  return (
-    <section className="bg-slate-50 py-20 px-4 sm:px-6 lg:px-8 ">
-      <div className="max-w-7xl mx-auto">
-        
-        {/* Header Section */}
-        <Reveal className="text-center mb-16">
-          <h2 className="text-alidade-navy serif-display text-3xl font-bold uppercase sm:text-4xl">
-            Un partenaire de confiance à chaque étape
-          </h2>
-        </Reveal>
+    return (
+        <section
+            className="
+                relative
+                overflow-hidden
+                bg-[#F8FAFC]
+                px-4
+                py-5
+                sm:px-6
+                lg:px-8
+                lg:py-10
+            "
+        >
+            {/* BACKGROUND DECORATION */}
 
-        {/* Grille de Cartes */}
-        <Stagger stagger={0.15} className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <StaggerItem className="h-full">
-          <ServiceCard
-            number="01"
-            title="Qui Sommes Nous"
-            icon={<User size={28} />}
-            color="amber"
-            description="Besoin d'une solution clé en main avec un interlocuteur unique pour réaliser vos travaux de rénovation, de construction..."
-            subDescription="Alidade, contractant général au Maroc, prend en charge vos travaux second œuvre, la rénovation, la réhabilitation et l'agencement d'appartements."
-            path='/apropos'
-          />
-          </StaggerItem>
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    top-0
+                    right-0
+                    h-[450px]
+                    w-[450px]
+                    translate-x-1/3
+                    -translate-y-1/3
+                    rounded-full
+                    bg-[#74B946]/5
+                    blur-3xl
+                "
+            />
 
-          <StaggerItem className="h-full">
-          <ServiceCard
-            number="02"
-            title="Atelier Finition"
-            icon={<Home size={28} />}
-            color="teal"
-            description="Nous accordons une attention toute particulière au choix et à la qualité des finitions. Notre parc machine et nos artisans qualifiés."
-            subDescription="Des équipements tels que l'atelier de thermoformage, les cabines de vernissage et les chambres de séchage autorisent tout type de finition haute qualité."
-            path='/apropos'
-          />
-          </StaggerItem>
+            <div className="relative mx-auto max-w-7xl">
+                {/* =================================================
+                    SECTION HEADER
+                ================================================= */}
 
-          <StaggerItem className="h-full">
-          <ServiceCard
-            number="03"
-            title="Le Second Oeuvre Chez ALIDADE"
-            icon={<Award size={28} />}
-            color="purple"
-            description="Votre projet d'agencement ou d'aménagement de votre structure de point de vente, devient le nôtre et Alidade y apporte tout le sérieux."
-            subDescription="Toutes nos équipes sont choisies avec soin et nous les encadrons avec exigence pour respecter vos délais. Alidade est votre interlocuteur unique."
-            path="/savoir-faire"
-          />
-          </StaggerItem>
-        </Stagger>
+                <Reveal className="mx-auto mb-14 max-w-3xl text-center">
+                    {/* EYEBROW */}
 
-        {/* Barre de réassurance (Footer bar) */}
-        <Reveal className="bg-white rounded-[2rem] shadow-xl p-8 flex flex-wrap justify-between items-center gap-8 border border-slate-50">
-          <FeatureItem
-            icon={<ShieldCheck className="h-6 w-6 lg:h-7 lg:w-7" />}
-            title="Qualité Garantie"
-            subtitle="Matériaux haut de gamme"
-          />
-          <FeatureItem
-            icon={<Users className="h-6 w-6 lg:h-7 lg:w-7" />}
-            title="Équipe Expérimentée"
-            subtitle="Experts qualifiés & passionnés"
-          />
-          <FeatureItem
-            icon={<Clock className="h-6 w-6 lg:h-7 lg:w-7" />}
-            title="Respect des Délais"
-            subtitle="Engagement et suivi rigoureux"
-          />
-          <FeatureItem
-            icon={<Headset className="h-6 w-6 lg:h-7 lg:w-7" />}
-            title="Accompagnement"
-            subtitle="Conseil et support à chaque étape"
-          />
-        </Reveal>
+                    <div className="mb-4 flex items-center justify-center gap-3">
+                        <span className="h-[2px] w-8 bg-[#74B946]" />
 
-      </div>
-    </section>
-  );
+                        <span
+                            className="
+                                text-xs
+                                font-bold
+                                tracking-[0.2em]
+                                text-[#74B946]
+                                uppercase
+                                sm:text-sm
+                            "
+                        >
+                            NOS EXPERTISES
+                        </span>
+
+                        <span className="h-[2px] w-8 bg-[#74B946]" />
+                    </div>
+
+                    {/* TITLE */}
+
+                    <h2
+                        className="
+                            text-3xl
+                            leading-tight
+                            font-extrabold
+                            tracking-tight
+                            text-[#111827]
+                            sm:text-4xl
+                            lg:text-5xl
+                        "
+                    >
+                        VOTRE RELATION CLIENT,
+                        <span className="text-[#74B946]">
+                          <br/>
+                            {' '}
+                            NOTRE EXPERTISE
+                        </span>
+                    </h2>
+
+                    {/* DESCRIPTION */}
+
+                    <p
+                        className="
+                            mx-auto
+                            mt-5
+                            max-w-2xl
+                            text-sm
+                            leading-7
+                            text-slate-500
+                            sm:text-base
+                            lg:text-lg
+                        "
+                    >
+                        De la réception d'appels à la
+                        prospection commerciale, AlloCall
+                        accompagne votre entreprise à chaque
+                        étape de la relation client.
+                    </p>
+                </Reveal>
+
+                {/* =================================================
+                    SERVICES GRID
+                ================================================= */}
+
+                <Stagger
+                    stagger={0.12}
+                    className="
+                        mb-16
+                        grid
+                        grid-cols-1
+                        gap-6
+                        md:grid-cols-2
+                        xl:grid-cols-4
+                    "
+                >
+                    {/* SERVICE 1 */}
+
+                    <StaggerItem className="h-full">
+                        <ServiceCard
+                            number="01"
+                            title="Service Client"
+                            icon={
+                                <Headphones size={27} />
+                            }
+                            description="Confiez la gestion de vos demandes clients à une équipe dédiée, professionnelle et orientée satisfaction."
+                            items={[
+                                "Réception d'appels",
+                                'Assistance client',
+                                'Service Desk',
+                            ]}
+                            path="/services"
+                        />
+                    </StaggerItem>
+
+                    {/* SERVICE 2 */}
+
+                    <StaggerItem className="h-full">
+                        <ServiceCard
+                            number="02"
+                            title="Téléprospection"
+                            icon={<Target size={27} />}
+                            description="Développez votre activité grâce à une prospection téléphonique structurée et adaptée à vos objectifs commerciaux."
+                            items={[
+                                'Prise de rendez-vous',
+                                'Qualification de prospects',
+                                'Relance commerciale',
+                            ]}
+                            path="/services"
+                        />
+                    </StaggerItem>
+
+                    {/* SERVICE 3 */}
+
+                    <StaggerItem className="h-full">
+                        <ServiceCard
+                            number="03"
+                            title="Fidélisation Client"
+                            icon={
+                                <HeartHandshake
+                                    size={27}
+                                />
+                            }
+                            description="Renforcez la relation avec vos clients grâce à des échanges personnalisés et un suivi régulier."
+                            items={[
+                                'Suivi client',
+                                'Enquêtes de satisfaction',
+                                'Reconquête client',
+                            ]}
+                            path="/services"
+                        />
+                    </StaggerItem>
+
+                    {/* SERVICE 4 */}
+
+                    <StaggerItem className="h-full">
+                        <ServiceCard
+                            number="04"
+                            title="Télévente"
+                            icon={
+                                <BadgeDollarSign
+                                    size={27}
+                                />
+                            }
+                            description="Transformez vos contacts en opportunités commerciales grâce à des équipes orientées performance et conversion."
+                            items={[
+                                'Vente B2B & B2C',
+                                'Upselling & cross-selling',
+                                'Externalisation commerciale',
+                            ]}
+                            path="/services"
+                        />
+                    </StaggerItem>
+                </Stagger>
+
+                {/* =================================================
+                    CTA BLOCK
+                ================================================= */}
+
+            
+              
+
+            </div>
+        </section>
+    );
 };
 
 export default EngagementSection;

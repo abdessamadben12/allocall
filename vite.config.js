@@ -56,15 +56,15 @@ export default defineConfig({
             credentials: true,
         },
 
-        hmr: {
-            host: 'https://overpay-sagging-robust.ngrok-free.devv/',
-            protocol: 'wss',
-            clientPort: 443,
-        },
         // hmr: {
-        //     host: 'localhost',
-        //     protocol: 'http',
-        //     clientPort: 5173,
+        //     host: 'https://overpay-sagging-robust.ngrok-free.devv/',
+        //     protocol: 'wss',
+        //     clientPort: 443,
         // },
+        hmr: {
+            host: 'localhost',
+            protocol: 'http',
+            clientPort: 5173,
+        },
     },
 });

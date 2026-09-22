@@ -1,104 +1,533 @@
 import { EASE, Reveal } from '@/components/motion';
-import { services, type ServiceDetail } from '@/data/services';
 import { Link } from '@inertiajs/react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import {
+    ArrowRight,
+    CalendarCheck,
+    PhoneCall,
+    Target,
+    Users,
+} from 'lucide-react';
+import React from 'react';
 
-// Métiers mis en avant sur l'accueil — les autres sont sur /savoir-faire.
-const FEATURED_SLUGS = ['menuiserie-bois', 'renovation', 'aluminium', 'peinture'];
+/* =========================================================
+   TYPES
+========================================================= */
 
-const featured = FEATURED_SLUGS.map((slug) => services.find((s) => s.slug === slug)).filter((s): s is ServiceDetail => s !== undefined);
+interface ServiceItem {
+    slug: string;
+    title: string;
+    description: string;
+    imageUrl: string;
+    icon: React.ReactNode;
+}
 
-// Carte métier : la description est masquée et se révèle quand la carte entre à l'écran.
-function MetierCard({ service, index }: { service: ServiceDetail; index: number }) {
+const callCenterImage = '/images/hero/allocall-call-center.webp';
+const aiImage = '/images/hero/allocall-ai.webp';
+const salesImage = '/images/hero/allocall-sales.webp';
+
+/* =========================================================
+   4 SERVICES MIS EN AVANT
+========================================================= */
+
+const featuredServices: ServiceItem[] = [
+    {
+        slug: 'assistants-virtuels',
+        title: 'Assistants virtuels',
+        description:
+            'Une équipe à distance pour gérer vos appels, courriels, tâches administratives et suivis.',
+        imageUrl: aiImage,
+        icon: <Users size={23} />,
+    },
+
+    {
+        slug: 'televente-appels-sortants',
+        title: 'Télévente et appels sortants',
+        description:
+            'Des agents commerciaux pour contacter vos prospects, présenter vos services et générer des opportunités.',
+        imageUrl: salesImage,
+        icon: <PhoneCall size={23} />,
+    },
+
+    {
+        slug: 'gestion-leads',
+        title: 'Gestion de leads',
+        description:
+            'Qualification, suivi et relance de vos prospects afin de réduire les occasions perdues.',
+        imageUrl: aiImage,
+        icon: <Target size={23} />,
+    },
+
+    {
+        slug: 'prise-rendez-vous',
+        title: 'Prise de rendez-vous',
+        description:
+            'Nos agents contactent vos prospects et clients et planifient directement les rendez-vous dans votre calendrier.',
+        imageUrl: callCenterImage,
+        icon: <CalendarCheck size={23} />,
+    },
+];
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+function ServiceCard({
+    service,
+    index,
+}: {
+    service: ServiceItem;
+    index: number;
+}) {
     return (
         <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.35 }}
+            viewport={{
+                once: true,
+                amount: 0.3,
+            }}
             variants={{
-                hidden: { opacity: 0, y: 48 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
+                hidden: {
+                    opacity: 0,
+                    y: 45,
+                },
+
+                visible: {
+                    opacity: 1,
+                    y: 0,
+
+                    transition: {
+                        duration: 0.65,
+                        ease: EASE,
+                    },
+                },
             }}
         >
             <Link
                 href={`/services/${service.slug}`}
-                className="group flex min-h-[7.5rem] items-stretch overflow-hidden rounded-2xl bg-gray-50 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:min-h-[8.5rem]"
+                className="
+                    group
+                    relative
+                    flex
+                    min-h-[8rem]
+                    items-stretch
+                    overflow-hidden
+                    rounded-2xl
+                    border
+                    border-gray-100
+                    bg-[#F8FAFC]
+                    shadow-sm
+                    transition-all
+                    duration-300
+                    hover:-translate-y-1
+                    hover:border-[#74B946]/20
+                    hover:shadow-xl
+                    sm:min-h-[9rem]
+                "
             >
-                {/* Numéro */}
-                <span className="serif-display group-hover:text-alidade-gold flex w-20 shrink-0 items-center justify-center text-4xl font-bold text-gray-300 transition-colors duration-300 sm:w-28 sm:text-5xl">
-                    {String(index + 1).padStart(2, '0')}
-                </span>
+                {/* NUMBER */}
 
-                {/* Titre + description révélée au scroll */}
-                <div className="flex min-w-0 flex-grow flex-col justify-center py-5 pr-4">
-                    <h4 className="text-alidade-navy text-lg font-bold tracking-wide uppercase sm:text-2xl">{service.title}</h4>
-                    <motion.div
-                        className="overflow-hidden"
-                        variants={{
-                            hidden: { height: 0, opacity: 0, marginTop: 0 },
-                            visible: { height: 'auto', opacity: 1, marginTop: 4, transition: { duration: 0.7, delay: 0.3, ease: EASE } },
-                        }}
-                    >
-                        <p className="line-clamp-2 text-xs font-light text-gray-500 sm:line-clamp-1 sm:text-sm lg:text-base">
-                            {service.description}
-                        </p>
-                    </motion.div>
-                </div>
+                <div
+                    className="
+                        relative
+                        flex
+                        w-20
+                        shrink-0
+                        items-center
+                        justify-center
+                        border-r
+                        border-gray-100
+                        sm:w-28
+                    "
+                >
+                    {/* LEFT GREEN LINE */}
 
-                {/* Image à droite, pleine hauteur de la carte */}
-                <div className="relative hidden w-2/5 max-w-xs shrink-0 overflow-hidden sm:block">
-                    <img
-                        src={service.imageUrl}
-                        alt={service.title}
-                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        loading="lazy"
-                        decoding="async"
+                    <div
+                        className="
+                            absolute
+                            top-0
+                            bottom-0
+                            left-0
+                            w-[4px]
+                            bg-[#74B946]
+                            opacity-0
+                            transition-opacity
+                            duration-300
+                            group-hover:opacity-100
+                        "
                     />
-                    <div className="to-gray-50/40 absolute inset-0 bg-gradient-to-l from-transparent via-transparent" />
 
-                    {/* Flèche */}
-                    <span className="group-hover:bg-alidade-gold group-hover:text-alidade-navy text-alidade-navy absolute top-1/2 right-4 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-300 group-hover:scale-110">
-                        <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+                    <span
+                        className="
+                            text-3xl
+                            font-black
+                            text-gray-200
+                            transition-colors
+                            duration-300
+                            group-hover:text-[#74B946]
+                            sm:text-5xl
+                        "
+                    >
+                        {String(index + 1).padStart(2, '0')}
                     </span>
                 </div>
 
-                {/* Flèche mobile (sans image) */}
-                <span className="text-alidade-navy mr-4 flex items-center self-center sm:hidden">
-                    <ArrowRight size={18} />
+                {/* CONTENT */}
+
+                <div
+                    className="
+                        flex
+                        min-w-0
+                        flex-grow
+                        items-center
+                        gap-4
+                        px-5
+                        py-6
+                        sm:px-7
+                        lg:px-8
+                    "
+                >
+                    {/* ICON */}
+
+                    <div
+                        className="
+                            hidden
+                            h-12
+                            w-12
+                            shrink-0
+                            items-center
+                            justify-center
+                            rounded-xl
+                            bg-[#EFF8E9]
+                            text-[#74B946]
+                            transition-all
+                            duration-300
+                            group-hover:bg-[#74B946]
+                            group-hover:text-white
+                            md:flex
+                        "
+                    >
+                        {service.icon}
+                    </div>
+
+                    {/* TEXT */}
+
+                    <div className="min-w-0 flex-1">
+                        <h4
+                            className="
+                                text-base
+                                font-bold
+                                tracking-wide
+                                text-[#111827]
+                                uppercase
+                                transition-colors
+                                duration-300
+                                group-hover:text-[#74B946]
+                                sm:text-xl
+                                lg:text-2xl
+                            "
+                        >
+                            {service.title}
+                        </h4>
+
+                        {/* DESCRIPTION */}
+
+                        <motion.div
+                            className="overflow-hidden"
+                            variants={{
+                                hidden: {
+                                    height: 0,
+                                    opacity: 0,
+                                    marginTop: 0,
+                                },
+
+                                visible: {
+                                    height: 'auto',
+                                    opacity: 1,
+                                    marginTop: 6,
+
+                                    transition: {
+                                        duration: 0.7,
+                                        delay: 0.2,
+                                        ease: EASE,
+                                    },
+                                },
+                            }}
+                        >
+                            <p
+                                className="
+                                    max-w-3xl
+                                    text-xs
+                                    leading-6
+                                    font-light
+                                    text-gray-500
+                                    sm:text-sm
+                                    lg:text-base
+                                "
+                            >
+                                {service.description}
+                            </p>
+                        </motion.div>
+                    </div>
+                </div>
+
+                {/* IMAGE */}
+
+                <div
+                    className="
+                        relative
+                        hidden
+                        w-[32%]
+                        max-w-[330px]
+                        shrink-0
+                        overflow-hidden
+                        sm:block
+                    "
+                >
+                    <img
+                        src={service.imageUrl}
+                        alt={service.title}
+                        className="
+                            h-full
+                            w-full
+                            object-cover
+                            transition-transform
+                            duration-700
+                            group-hover:scale-110
+                        "
+                        loading="lazy"
+                        decoding="async"
+                    />
+
+                    {/* IMAGE GRADIENT */}
+
+                    <div
+                        className="
+                            absolute
+                            inset-0
+                            bg-gradient-to-r
+                            from-[#F8FAFC]/70
+                            via-transparent
+                            to-transparent
+                        "
+                    />
+
+                    {/* ARROW */}
+
+                    <span
+                        className="
+                            absolute
+                            top-1/2
+                            right-5
+                            flex
+                            h-11
+                            w-11
+                            -translate-y-1/2
+                            items-center
+                            justify-center
+                            rounded-full
+                            bg-white
+                            text-[#111827]
+                            shadow-lg
+                            transition-all
+                            duration-300
+                            group-hover:scale-110
+                            group-hover:bg-[#74B946]
+                            group-hover:text-white
+                        "
+                    >
+                        <ArrowRight
+                            size={18}
+                            className="
+                                transition-transform
+                                duration-300
+                                group-hover:translate-x-0.5
+                            "
+                        />
+                    </span>
+                </div>
+
+                {/* MOBILE ARROW */}
+
+                <span
+                    className="
+                        mr-4
+                        flex
+                        items-center
+                        self-center
+                        text-[#74B946]
+                        sm:hidden
+                    "
+                >
+                    <ArrowRight size={19} />
                 </span>
             </Link>
         </motion.div>
     );
 }
 
-// Section « Nos métiers » : cartes numérotées, description dévoilée carte par carte au scroll.
+/* =========================================================
+   SERVICES SECTION
+========================================================= */
+
 export default function MetiersSection() {
     return (
-        <section className="border-t border-gray-100 bg-white py-20">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                {/* En-tête */}
-                <Reveal className="space-y-3 text-center">
-                    <h3 className="text-alidade-navy serif-display text-3xl font-bold uppercase sm:text-4xl">
-                        Un savoir-faire complet du second œuvre
+        <section
+            className="
+                relative
+                overflow-hidden
+                border-t
+                border-gray-100
+                bg-white
+                py-20
+                lg:py-24
+            "
+        >
+            {/* BACKGROUND DECORATION */}
+
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    top-0
+                    right-0
+                    h-[400px]
+                    w-[400px]
+                    translate-x-1/2
+                    -translate-y-1/2
+                    rounded-full
+                    bg-[#74B946]/5
+                    blur-3xl
+                "
+            />
+
+            <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                {/* =================================================
+                    HEADER
+                ================================================= */}
+
+                <Reveal className="mx-auto max-w-3xl text-center">
+                    <div className="mb-4 flex items-center justify-center gap-3">
+                        <span className="h-[2px] w-8 bg-[#74B946]" />
+
+                        <span
+                            className="
+                                text-xs
+                                font-bold
+                                tracking-[0.2em]
+                                text-[#74B946]
+                                uppercase
+                                sm:text-sm
+                            "
+                        >
+                            Nos services
+                        </span>
+
+                        <span className="h-[2px] w-8 bg-[#74B946]" />
+                    </div>
+
+                    <h3
+                        className="
+                            text-3xl
+                            leading-tight
+                            font-extrabold
+                            tracking-tight
+                            text-[#111827]
+                            uppercase
+                            sm:text-4xl
+                            lg:text-5xl
+                        "
+                    >
+                        Des solutions pour
+                        <span className="text-[#74B946]">
+                            <br/>
+                            {' '}
+                            votre relation client
+                        </span>
                     </h3>
+
+                    <p
+                        className="
+                            mx-auto
+                            mt-5
+                            max-w-2xl
+                            text-sm
+                            leading-7
+                            text-gray-500
+                            sm:text-base
+                            lg:text-lg
+                        "
+                    >
+                        AlloCall accompagne votre entreprise
+                        avec des équipes dédiées pour gérer
+                        vos appels, développer vos ventes et
+                        transformer davantage de prospects en
+                        clients.
+                    </p>
                 </Reveal>
 
-                {/* Cartes */}
-                <div className="mt-12 space-y-6">
-                    {featured.map((service, index) => (
-                        <MetierCard key={service.slug} service={service} index={index} />
-                    ))}
+                {/* =================================================
+                    ONLY 4 SERVICES
+                ================================================= */}
+
+                <div className="mt-14 space-y-5">
+                    {featuredServices.map(
+                        (service, index) => (
+                            <ServiceCard
+                                key={service.slug}
+                                service={service}
+                                index={index}
+                            />
+                        ),
+                    )}
                 </div>
 
-                {/* CTA vers tous les métiers */}
-                <Reveal className="mt-12 text-center" delay={0.15}>
+                {/* =================================================
+                    DISCOVER BUTTON
+                ================================================= */}
+
+                <Reveal
+                    className="mt-12 text-center"
+                    delay={0.15}
+                >
                     <Link
-                        href="/savoir-faire"
-                        className="bg-alidade-gold hover:bg-alidade-gold-light text-alidade-navy inline-flex items-center gap-2.5 rounded px-8 py-4 text-xs font-bold tracking-widest uppercase shadow-lg transition-all duration-300 hover:shadow-xl"
+                        href="/services"
+                        className="
+                            group
+                            inline-flex
+                            items-center
+                            gap-3
+                            rounded-md
+                            bg-[#74B946]
+                            px-8
+                            py-4
+                            text-xs
+                            font-bold
+                            tracking-widest
+                            text-white
+                            uppercase
+                            shadow-lg
+                            transition-all
+                            duration-300
+                            hover:-translate-y-0.5
+                            hover:bg-[#659F3B]
+                            hover:shadow-xl
+                            sm:text-sm
+                        "
                     >
-                        <span>Voir tous nos métiers</span>
-                        <ArrowRight size={15} />
+                        <span>
+                            Découvrir tous nos services
+                        </span>
+
+                        <ArrowRight
+                            size={17}
+                            className="
+                                transition-transform
+                                duration-300
+                                group-hover:translate-x-1
+                            "
+                        />
                     </Link>
                 </Reveal>
             </div>
