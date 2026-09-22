@@ -23,7 +23,7 @@ export default function MarketingContentPage({
             />
             <Navbar />
 
-            <main className="flex-grow">
+            <main className="public-content flex-grow">
                 <section className="relative overflow-hidden bg-[#111827] py-16 text-white lg:py-24">
                     <div className="absolute inset-0 bg-gradient-to-b from-[#111827]/35 via-[#111827]/75 to-[#111827]" />
                     <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">

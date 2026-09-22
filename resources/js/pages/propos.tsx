@@ -13,7 +13,7 @@ export default function AproposPage() {
                 image="/images/qui-sommes-nous/atelier-finition.webp"
             />
             <Navbar />
-            <main className="flex-grow">
+            <main className="public-content flex-grow">
                 <About />
             </main>
             <Footer />

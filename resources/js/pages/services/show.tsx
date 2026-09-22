@@ -41,7 +41,7 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
             />
             <Navbar />
 
-            <main className="flex-grow">
+            <main className="public-content flex-grow">
                 {!service ? (
                     <section className="mx-auto max-w-3xl px-4 py-28 text-center sm:px-6">
                         <span className="text-xs font-bold tracking-[0.3em] text-[#74B946] uppercase">Page introuvable</span>
@@ -125,7 +125,7 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
                                                     {section.items.map((item) => (
                                                         <StaggerItem key={item} className="flex gap-3" y={10}>
                                                             <CheckCircle2 size={19} className="mt-1 shrink-0 text-[#74B946]" />
-                                                            <span className="text-base leading-7 text-gray-700">{item}</span>
+                                                            <span data-public-body className="text-base leading-7 text-gray-700">{item}</span>
                                                         </StaggerItem>
                                                     ))}
                                                 </Stagger>

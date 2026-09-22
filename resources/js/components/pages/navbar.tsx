@@ -27,13 +27,10 @@ const navItems = [
         label: 'Solutions IA',
     },
     {
-        href: '/pourquoi-allocall',
+        href: '/apropos',
         label: 'Pourquoi AlloCall',
     },
-    {
-        href: '/apropos',
-        label: 'À propos',
-    },
+    
     {
         href: '/contact',
         label: 'Contact',

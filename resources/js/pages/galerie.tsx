@@ -12,7 +12,7 @@ export default function GaleriePage() {
                 keywords={['réalisations menuiserie Casablanca', 'galerie agencement Maroc', 'cuisine moderne sur mesure', 'Alidade réalisations']}
             />
             <Navbar />
-            <main className="flex-grow">
+            <main className="public-content flex-grow">
                 <Gallery />
             </main>
             <Footer />

@@ -36,7 +36,7 @@ export default function App() {
         <div className="text-alidade-navy flex min-h-screen flex-col bg-[#fafafa]">
             <Navbar />
 
-            <main className="animate-in fade-in flex-grow duration-500">
+            <main className="public-content animate-in fade-in flex-grow duration-500">
                 {/* 1. Hero */}
                 <HeroSlider onDiscoverClick={() => router.visit('/savoir-faire')} />
 

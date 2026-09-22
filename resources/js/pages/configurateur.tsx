@@ -19,7 +19,7 @@ export default function ConfigurateurPage() {
                 keywords={['estimation menuiserie Casablanca', 'configurateur cuisine sur mesure', 'prix dressing Maroc']}
             />
             <Navbar />
-            <main className="flex-grow">
+            <main className="public-content flex-grow">
                 <Configurator onSendToQuote={handleSendToQuote} />
             </main>
             <Footer />

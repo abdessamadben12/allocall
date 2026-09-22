@@ -1,0 +1,99 @@
+.public-content {
+    --public-title: 56px;
+    --public-heading: 40px;
+    --public-subheading: 28px;
+    --public-body: 18px;
+    --public-label: 14px;
+    font-size: var(--public-body);
+    line-height: 1.75;
+    letter-spacing: 0;
+}
+
+/* Keep page-specific styles and lazy-loaded stylesheets on the same type scale. */
+#app .public-content h1 {
+    font-size: var(--public-title);
+    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+}
+#app .public-content h2 {
+    font-size: var(--public-heading);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+}
+#app .public-content h3 {
+    font-size: var(--public-subheading);
+    line-height: 1.3;
+    font-weight: 600;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+}
+#app .public-content :is(p:not([class*='eyebrow']), ul li, ul li > span, [data-public-body]) {
+    font-size: var(--public-body);
+    line-height: 1.75;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+#app .public-content p[class*='eyebrow'] {
+    font-size: var(--public-label);
+    line-height: 1.5;
+    letter-spacing: 0;
+}
+#app
+    .public-content
+    :is(
+        .industry-navigation a,
+        .ai-workflow-tabs button,
+        .ai-text-link,
+        .industry-text-link,
+        .ai-button,
+        .industry-button,
+        .detail-text-link,
+        .detail-button
+    ) {
+    font-size: 16px;
+    line-height: 1.5;
+}
+#app .public-content :is(.ai-check-list, .industry-services) {
+    column-gap: 24px;
+}
+#app .public-content :is(.ai-check-list, .industry-services) svg {
+    margin-top: 7px;
+}
+#app .public-content :is(.ai-workflow-panel, .ai-industry-row) h3 {
+    font-size: var(--public-subheading);
+}
+#app .public-content aside h2 {
+    font-size: var(--public-subheading);
+}
+
+#app .public-content .ai-workflow-panel:not([hidden]) {
+    min-height: 260px;
+}
+@media (max-width: 1023px) {
+    #app .public-content .ai-workflow-tabs {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+@media (max-width: 639px) {
+    .public-content {
+        --public-title: 38px;
+        --public-heading: 32px;
+        --public-subheading: 26px;
+    }
+    #app .public-content :is(.ai-check-list, .industry-services) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    #app .public-content :is(.industry-navigation a, .ai-workflow-tabs button) {
+        font-size: 14px;
+    }
+    #app .public-content .ai-workflow-tabs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    #app .public-content .ai-workflow-panel:not([hidden]) {
+        min-height: 380px;
+    }
+}

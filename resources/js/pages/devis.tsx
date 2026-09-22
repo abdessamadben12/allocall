@@ -42,7 +42,7 @@ export default function DevisPage() {
                 keywords={['devis rénovation Casablanca', 'devis menuiserie Maroc', 'devis gratuit travaux', 'Alidade devis']}
             />
             <Navbar />
-            <main className="flex-grow">
+            <main className="public-content flex-grow">
                 {showMyQuotes ? (
                     <MyQuotes onNavigateToRequest={() => setShowMyQuotes(false)} />
                 ) : (

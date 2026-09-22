@@ -247,7 +247,7 @@ export default function Services({
                                 stiffness: 400,
                                 damping: 20,
                             }}
-                            className="inline-flex w-full max-w-[290px] items-center justify-center gap-2 rounded-md bg-[#FFE83D] px-6 py-3.5 text-xs font-extrabold tracking-wide text-[#111827] uppercase transition-colors hover:bg-[#F6D92D] sm:max-w-none sm:px-8 sm:py-4 sm:text-sm"
+                            className="inline-flex w-full max-w-[290px] items-center justify-center gap-2 rounded-md bg-alidade-gold px-6 py-3.5 text-xs font-extrabold tracking-wide text-white uppercase transition-colors hover:bg-alidade-gold/90 sm:max-w-none sm:px-8 sm:py-4 sm:text-sm"
                         >
                             <span>Demander une soumission</span>
                             <ArrowRight size={16} />

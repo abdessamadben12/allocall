@@ -13,7 +13,7 @@ export default function ServicesPage() {
                 keywords={['services rénovation Casablanca', 'menuiserie bois Maroc', 'travaux aluminium', 'agencement intérieur', 'Alidade services']}
             />
             <Navbar />
-            <main className="flex-grow">
+            <main className="public-content flex-grow">
                 <Services onQuoteWithService={(serviceName) => router.visit(`/devis?service=${encodeURIComponent(serviceName)}`)} />
             </main>
             <Footer />

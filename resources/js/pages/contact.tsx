@@ -14,7 +14,7 @@ export default function ContactPage() {
                 image={contactHeroImage}
             />
             <Navbar />
-            <main className="flex-grow">
+            <main className="public-content flex-grow">
                 <Contact />
             </main>
             <Footer />
