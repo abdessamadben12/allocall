@@ -9,7 +9,7 @@ const locations = [
         people: 'Equipe commerciale et support client',
         position: 'left-[24%] top-[31%]',
         cardPosition:
-            'left-[27%] top-[35%] -translate-y-1/2',
+            'left-[28%] top-[36%] -translate-y-1/2',
     },
     {
         id: 'maroc',
@@ -18,7 +18,7 @@ const locations = [
         people: 'Agents francophones et bilingues',
         position: 'left-[47%] top-[48%]',
         cardPosition:
-            'left-[50%] top-[52%] -translate-y-1/2',
+            'left-[50%] top-[56%] -translate-y-1/2',
     },
     {
         id: 'france',
@@ -27,7 +27,7 @@ const locations = [
         people: 'Operations et accompagnement client',
         position: 'left-[49%] top-[31%]',
         cardPosition:
-            'left-[52%] top-[34%] -translate-y-1/2',
+            'left-[52%] top-[37%] -translate-y-1/2',
     },
 ];
 
@@ -89,7 +89,7 @@ export default function GlobalPresenceSection() {
                                 onMouseEnter={() =>
                                     setActiveLocation(location)
                                 }
-                                className={`absolute hidden h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#74B946] shadow-lg shadow-[#74B946]/30 transition-all duration-300 hover:scale-125 focus:ring-4 focus:ring-[#74B946]/30 focus:outline-none md:block ${
+                                className={`absolute h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-[#74B946] shadow-lg shadow-[#74B946]/30 transition-all duration-300 hover:scale-125 focus:ring-4 focus:ring-[#74B946]/30 focus:outline-none sm:h-5 sm:w-5 sm:border-4 ${
                                     activeLocation?.id ===
                                     location.id
                                         ? 'scale-125'
@@ -106,37 +106,19 @@ export default function GlobalPresenceSection() {
                                 onClick={(event) =>
                                     event.stopPropagation()
                                 }
-                                className={`absolute hidden w-[220px] bg-gradient-to-br from-[#111827] to-[#74B946] p-5 text-white shadow-xl transition-all duration-300 md:block lg:w-[270px] ${activeLocation.cardPosition}`}
+                                className={`absolute w-[150px] bg-gradient-to-br from-[#111827] to-[#74B946] p-3 text-white shadow-xl transition-all duration-300 sm:w-[220px] sm:p-5 lg:w-[270px] ${activeLocation.cardPosition}`}
                             >
-                                <h3 className="text-xl font-extrabold uppercase lg:text-2xl">
+                                <h3 className="text-sm font-extrabold uppercase sm:text-xl lg:text-2xl">
                                     {activeLocation.label}
                                 </h3>
 
-                                <p className="mt-4 text-xs leading-5 font-medium lg:text-sm lg:leading-6">
+                                <p className="mt-2 text-[10px] leading-4 font-medium sm:mt-4 sm:text-xs sm:leading-5 lg:text-sm lg:leading-6">
                                     Sites: {activeLocation.sites}
                                     <br />
                                     {activeLocation.people}
                                 </p>
                             </div>
                         )}
-                    </div>
-
-                    <div className="mt-8 grid gap-4 md:hidden">
-                        {locations.map((location) => (
-                            <div
-                                key={location.label}
-                                className="border-l-4 border-[#74B946] bg-[#111827] p-5 text-white"
-                            >
-                                <h3 className="text-lg font-extrabold uppercase">
-                                    {location.label}
-                                </h3>
-
-                                <p className="mt-2 text-sm text-white/80">
-                                    {location.sites} -{' '}
-                                    {location.people}
-                                </p>
-                            </div>
-                        ))}
                     </div>
                 </Reveal>
             </div>
