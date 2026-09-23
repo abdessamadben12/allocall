@@ -24,6 +24,6 @@ export const site = {
     },
 };
 
-export function whatsappUrl(): string {
-    return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.whatsappMessage)}`;
+export function whatsappUrl(message = site.whatsappMessage): string {
+    return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
 }

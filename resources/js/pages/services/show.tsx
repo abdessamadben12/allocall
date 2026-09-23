@@ -1,9 +1,10 @@
+import { Link } from '@/components/localized-link';
 import { EASE, Reveal, Stagger, StaggerItem } from '@/components/motion';
 import Footer from '@/components/pages/Footer';
 import Navbar from '@/components/pages/navbar';
 import SeoHead from '@/components/seo-head';
 import { getServiceBySlug, services } from '@/data/services';
-import { Link } from '@/components/localized-link';
+import { useLocale } from '@/lib/i18n';
 
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
@@ -13,6 +14,8 @@ interface ServiceShowProps {
 }
 
 export default function ServiceShowPage({ slug }: ServiceShowProps) {
+    const { t } = useLocale();
+
     const service = getServiceBySlug(slug);
 
     return (
@@ -23,17 +26,17 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
             <main className="public-content flex-grow">
                 {!service ? (
                     <section className="mx-auto max-w-3xl px-4 py-28 text-center sm:px-6">
-                        <span className="text-xs font-bold tracking-[0.3em] text-[#74B946] uppercase">Page introuvable</span>
-                        <h1 className="text-alidade-navy mt-4 text-4xl font-bold">Ce service n'existe pas.</h1>
+                        <span className="text-xs font-bold tracking-[0.3em] text-[#74B946] uppercase">{t('Page introuvable')}</span>
+                        <h1 className="text-alidade-navy mt-4 text-4xl font-bold">{t("Ce service n'existe pas.")}</h1>
                         <p className="mt-4 text-sm font-light text-gray-500">
-                            Le lien est peut-etre ancien ou mal orthographie. Retrouvez l'ensemble de nos services.
+                            {t("Le lien est peut-etre ancien ou mal orthographie. Retrouvez l'ensemble de nos services.")}
                         </p>
                         <Link
                             href="/services"
                             className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#74B946] px-8 py-4 text-sm font-bold tracking-wider text-white uppercase transition-colors hover:bg-[#659F3B]"
                         >
                             <ArrowLeft size={16} />
-                            <span>Voir tous nos services</span>
+                            <span>{t('Voir tous nos services')}</span>
                         </Link>
                     </section>
                 ) : (
@@ -43,14 +46,14 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
                             <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
                                 <Stagger className="space-y-6" amount={0.3}>
                                     <StaggerItem>
-                                        <span className="text-xs font-bold tracking-[0.28em] text-[#74B946] uppercase">Service ALLO CALL</span>
+                                        <span className="text-xs font-bold tracking-[0.28em] text-[#74B946] uppercase">{t('Service ALLO CALL')}</span>
                                     </StaggerItem>
                                     <StaggerItem>
-                                        <h1 className="text-4xl leading-[1.1] font-extrabold sm:text-5xl lg:text-6xl">{service.title}</h1>
+                                        <h1 className="text-4xl leading-[1.1] font-extrabold sm:text-5xl lg:text-6xl">{t(service.title)}</h1>
                                     </StaggerItem>
                                     <StaggerItem>
                                         <p className="max-w-xl text-base leading-relaxed font-light text-white/82 lg:text-lg">
-                                            {service.description}
+                                            {t(service.description)}
                                         </p>
                                     </StaggerItem>
                                     <StaggerItem className="flex flex-wrap gap-3 pt-2">
@@ -58,14 +61,14 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
                                             href={`/devis?service=${encodeURIComponent(service.title)}`}
                                             className="inline-flex items-center gap-2 rounded-lg bg-[#74B946] px-7 py-4 text-sm font-bold tracking-wider text-white uppercase transition-colors hover:bg-[#659F3B]"
                                         >
-                                            <span>Demander une soumission gratuite</span>
+                                            <span>{t('Demander une soumission gratuite')}</span>
                                             <ArrowRight size={16} />
                                         </Link>
                                         <Link
                                             href="/contact"
                                             className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-7 py-4 text-sm font-bold tracking-wider text-white uppercase transition-colors hover:border-[#74B946] hover:text-[#74B946]"
                                         >
-                                            Nous contacter
+                                            {t('Nous contacter')}
                                         </Link>
                                     </StaggerItem>
                                 </Stagger>
@@ -78,7 +81,7 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
                                 >
                                     <img
                                         src={service.imageUrl}
-                                        alt={service.title}
+                                        alt={t(service.title)}
                                         className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                                         loading="eager"
                                         fetchPriority="high"
@@ -91,7 +94,7 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
 
                         <section className="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:py-20">
                             <Reveal>
-                                <p className="text-lg leading-8 text-[#1F2937] sm:text-xl">{service.intro}</p>
+                                <p className="text-lg leading-8 text-[#1F2937] sm:text-xl">{t(service.intro)}</p>
                             </Reveal>
                         </section>
 
@@ -100,15 +103,15 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
                                 <div className="space-y-8">
                                     {service.sections.map((section) => (
                                         <Reveal key={section.title} className="rounded-xl bg-white p-7 shadow-sm ring-1 ring-gray-100 sm:p-9">
-                                            <h2 className="text-2xl font-extrabold text-[#111827]">{section.title}</h2>
-                                            {section.body && <p className="mt-4 text-base leading-8 text-gray-700">{section.body}</p>}
+                                            <h2 className="text-2xl font-extrabold text-[#111827]">{t(section.title)}</h2>
+                                            {section.body && <p className="mt-4 text-base leading-8 text-gray-700">{t(section.body)}</p>}
                                             {section.items && (
                                                 <Stagger stagger={0.05} className="mt-6 space-y-4">
                                                     {section.items.map((item) => (
                                                         <StaggerItem key={item} className="flex gap-3" y={10}>
                                                             <CheckCircle2 size={19} className="mt-1 shrink-0 text-[#74B946]" />
                                                             <span data-public-body className="text-base leading-7 text-gray-700">
-                                                                {item}
+                                                                {t(item)}
                                                             </span>
                                                         </StaggerItem>
                                                     ))}
@@ -119,20 +122,20 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
                                 </div>
 
                                 <aside className="h-fit rounded-xl bg-[#111827] p-7 text-white shadow-xl lg:sticky lg:top-8">
-                                    <h2 className="text-2xl font-extrabold">{service.ctaTitle}</h2>
-                                    <p className="mt-4 text-sm leading-7 text-white/75">{service.ctaBody}</p>
+                                    <h2 className="text-2xl font-extrabold">{t(service.ctaTitle)}</h2>
+                                    <p className="mt-4 text-sm leading-7 text-white/75">{t(service.ctaBody)}</p>
                                     <div className="mt-7 space-y-3">
                                         <Link
                                             href={`/devis?service=${encodeURIComponent(service.title)}`}
                                             className="flex w-full items-center justify-center gap-2 rounded-md bg-[#74B946] px-5 py-3 text-sm font-bold text-white uppercase transition-colors hover:bg-[#659F3B]"
                                         >
-                                            Demander une soumission gratuite
+                                            {t('Demander une soumission gratuite')}
                                         </Link>
                                         <Link
                                             href="/contact"
                                             className="flex w-full items-center justify-center rounded-md border border-white/15 px-5 py-3 text-sm font-bold text-white uppercase transition-colors hover:border-[#74B946] hover:text-[#74B946]"
                                         >
-                                            Nous contacter
+                                            {t('Nous contacter')}
                                         </Link>
                                     </div>
                                 </aside>
@@ -142,7 +145,7 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
                         <section className="bg-[#F9F7F3]">
                             <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
                                 <Reveal className="mb-8">
-                                    <h2 className="text-3xl font-extrabold text-[#111827]">Autres services</h2>
+                                    <h2 className="text-3xl font-extrabold text-[#111827]">{t('Autres services')}</h2>
                                 </Reveal>
                                 <div className="flex flex-wrap gap-3">
                                     {services
@@ -153,7 +156,7 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
                                                 href={`/services/${s.slug}`}
                                                 className="rounded-md border border-gray-200 bg-white px-5 py-2.5 text-sm font-bold text-[#111827] uppercase transition-colors hover:border-[#74B946] hover:text-[#74B946]"
                                             >
-                                                {s.title}
+                                                {t(s.title)}
                                             </Link>
                                         ))}
                                 </div>

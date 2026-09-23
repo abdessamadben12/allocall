@@ -24,6 +24,9 @@ export interface NavItem {
 export interface SharedData {
     locale: 'fr' | 'en';
     seo: {
+        language: string;
+        ogLocale: string;
+        alternates: Record<string, string>;
         title: string;
         description: string;
         keywords: string[];

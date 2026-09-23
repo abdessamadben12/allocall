@@ -47,7 +47,9 @@ it('publishes only canonical public URLs in the sitemap and robots file', functi
     $response = $this->get('/sitemap.xml')->assertOk();
     $xml = simplexml_load_string($response->getContent());
     $urls = array_map(fn ($url) => (string) $url->loc, iterator_to_array($xml->url, false));
-    expect($urls)->toBe(array_map(fn ($path) => 'https://allocall.example'.$path, array_keys(config('seo.pages'))));
+    $paths = array_keys(config('seo.pages'));
+    $paths = array_merge($paths, array_map(fn ($path) => '/en'.($path === '/' ? '' : $path), $paths));
+    expect($urls)->toBe(array_map(fn ($path) => 'https://allocall.example'.$path, $paths));
     expect($response->getContent())->not->toContain('lastmod', '/login', '/dashboard', '/savoir-faire', 'alidade');
     $this->get('/robots.txt')->assertOk()->assertSee('Sitemap: https://allocall.example/sitemap.xml', false);
     expect(file_exists(public_path('robots.txt')))->toBeFalse();

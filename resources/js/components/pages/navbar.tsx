@@ -1,15 +1,9 @@
-import { useLocale } from '@/lib/i18n';
 import LanguageSwitcher from '@/components/language-switcher';
-import WhatsAppButton from '@/components/pages/whatsapp-button';
 import { Link } from '@/components/localized-link';
+import WhatsAppButton from '@/components/pages/whatsapp-button';
+import { useLocale } from '@/lib/i18n';
 
-import {
-    FileText,
-    Mail,
-    Menu,
-    Phone,
-    X,
-} from 'lucide-react';
+import { FileText, Mail, Menu, Phone, X } from 'lucide-react';
 import { useState } from 'react';
 
 const navItems = [
@@ -33,7 +27,7 @@ const navItems = [
         href: '/apropos',
         label: 'Pourquoi AlloCall',
     },
-    
+
     {
         href: '/contact',
         label: 'Contact',
@@ -67,20 +61,14 @@ function isActive(href: string, currentPath: string) {
     }
 
     if (href === '/services') {
-        return (
-            currentPath === '/services' ||
-            currentPath.startsWith('/services/')
-        );
+        return currentPath === '/services' || currentPath.startsWith('/services/');
     }
 
-    return (
-        currentPath === href ||
-        currentPath.startsWith(`${href}/`)
-    );
+    return currentPath === href || currentPath.startsWith(`${href}/`);
 }
 
 export default function Navbar() {
-const { t, url } = useLocale();
+    const { t, url } = useLocale();
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -95,61 +83,43 @@ const { t, url } = useLocale();
             <div className="border-b border-white/10 bg-[#111827] px-4 py-2 text-xs text-white sm:text-sm">
                 <div className="mx-auto flex max-w-7xl items-center justify-center">
                     <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
-
                         {/* PHONE */}
                         <a
                             href={topContacts[0].href}
                             className="flex items-center gap-2 font-medium transition-colors duration-300 hover:text-[#74B946]"
                         >
-                            <Phone
-                                size={14}
-                                className="text-[#74B946]"
-                            />
+                            <Phone size={14} className="text-[#74B946]" />
 
                             <span>
-                                <strong>{t("Maroc :")}</strong>{' '}
-                                {topContacts[0].value}
+                                <strong>{t('Maroc :')}</strong> {topContacts[0].value}
                             </span>
                         </a>
 
-                        <span className="hidden text-white/20 sm:inline">
-                            {t("|")}</span>
+                        <span className="hidden text-white/20 sm:inline">{t('|')}</span>
 
                         <a
                             href={topContacts[1].href}
                             className="flex items-center gap-2 font-medium transition-colors duration-300 hover:text-[#74B946]"
                         >
-                            <Phone
-                                size={14}
-                                className="text-[#74B946]"
-                            />
+                            <Phone size={14} className="text-[#74B946]" />
 
                             <span>
-                                <strong>{t("Canada :")}</strong>{' '}
-                                {topContacts[1].value}
+                                <strong>{t('Canada :')}</strong> {topContacts[1].value}
                             </span>
                         </a>
 
-                        <span className="hidden text-white/20 sm:inline">
-                            {t("|")}</span>
+                        <span className="hidden text-white/20 sm:inline">{t('|')}</span>
 
                         {/* EMAIL */}
-                        <a
-                            href={topContacts[2].href}
-                            className="flex items-center gap-2 transition-colors duration-300 hover:text-[#74B946]"
-                        >
-                            <Mail
-                                size={14}
-                                className="text-[#74B946]"
-                            />
+                        <a href={topContacts[2].href} className="flex items-center gap-2 transition-colors duration-300 hover:text-[#74B946]">
+                            <Mail size={14} className="text-[#74B946]" />
 
                             <span>{topContacts[2].value}</span>
                         </a>
                     </div>
 
                     {/* LOCATIONS */}
-                    <div className="hidden">
-                        {t("MONTRÉAL · CASABLANCA · PARIS")}</div>
+                    <div className="hidden">{t('MONTRÉAL · CASABLANCA · PARIS')}</div>
                 </div>
             </div>
 
@@ -159,18 +129,9 @@ const { t, url } = useLocale();
 
             <div className="border-b border-gray-100 bg-white shadow-sm">
                 <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-
                     {/* LOGO */}
-                    <Link
-                        href="/"
-                        className="flex shrink-0 items-center"
-                        aria-label={t("AlloCall — Accueil")}
-                    >
-                        <img
-                            src="/images/logo-allocall.png"
-                            alt={t("AlloCall")}
-                            className="h-12 w-auto object-contain sm:h-14"
-                        />
+                    <Link href="/" className="flex shrink-0 items-center" aria-label={t('AlloCall — Accueil')}>
+                        <img src="/images/logo-allocall.png" alt={t('AlloCall')} className="h-12 w-auto object-contain sm:h-14" />
                     </Link>
 
                     {/* ============================= */}
@@ -179,27 +140,20 @@ const { t, url } = useLocale();
 
                     <nav className="hidden items-center gap-5 xl:flex">
                         {navItems.map((item) => {
-                            const active = isActive(
-                                item.href,
-                                currentPath,
-                            );
+                            const active = isActive(item.href, currentPath);
 
                             return (
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className={`relative py-2 text-md font-semibold whitespace-nowrap transition-all duration-300 ${
-                                        active
-                                            ? 'text-[#74B946]'
-                                            : 'text-[#1F2937] hover:text-[#74B946]'
+                                    className={`text-md relative py-2 font-semibold whitespace-nowrap transition-all duration-300 ${
+                                        active ? 'text-[#74B946]' : 'text-[#1F2937] hover:text-[#74B946]'
                                     }`}
                                 >
                                     {t(item.label)}
 
                                     {/* ACTIVE LINE */}
-                                    {active && (
-                                        <span className="absolute right-0 bottom-0 left-0 h-[2px] rounded-full bg-[#74B946]" />
-                                    )}
+                                    {active && <span className="absolute right-0 bottom-0 left-0 h-[2px] rounded-full bg-[#74B946]" />}
                                 </Link>
                             );
                         })}
@@ -212,58 +166,27 @@ const { t, url } = useLocale();
                     <div className="hidden items-center xl:flex">
                         <Link
                             href="/contact"
-                            className="
-                                flex items-center gap-2
-                                rounded-md
-                                bg-[#74B946]
-                                px-5 py-3
-                                text-xs
-                                font-bold
-                                tracking-wide
-                                text-white
-                                uppercase
-                                shadow-sm
-                                transition-all
-                                duration-300
-                                hover:-translate-y-0.5
-                                hover:bg-[#659F3B]
-                                hover:shadow-lg
-                            "
+                            className="flex items-center gap-2 rounded-md bg-[#74B946] px-5 py-3 text-xs font-bold tracking-wide text-white uppercase shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#659F3B] hover:shadow-lg"
                         >
                             <FileText size={16} />
 
-                            {t("Demander une soumission")}</Link>
+                            {t('Demander une soumission')}
+                        </Link>
                     </div>
 
                     {/* ============================= */}
                     {/* MOBILE MENU BUTTON */}
                     {/* ============================= */}
 
+                    <LanguageSwitcher />
                     <button
                         type="button"
                         onClick={() => setIsOpen(!isOpen)}
-                        className="
-                            rounded-md
-                            p-2
-                            text-[#1F2937]
-                            transition-all
-                            duration-300
-                            hover:bg-[#F1F8EC]
-                            hover:text-[#74B946]
-                            xl:hidden
-                        "
-                        aria-label={
-                            isOpen
-                                ? t("Fermer le menu")
-                                : t("Ouvrir le menu")
-                        }
+                        className="rounded-md p-2 text-[#1F2937] transition-all duration-300 hover:bg-[#F1F8EC] hover:text-[#74B946] xl:hidden"
+                        aria-label={isOpen ? t('Fermer le menu') : t('Ouvrir le menu')}
                         aria-expanded={isOpen}
                     >
-                        {isOpen ? (
-                            <X size={28} />
-                        ) : (
-                            <Menu size={28} />
-                        )}
+                        {isOpen ? <X size={28} /> : <Menu size={28} />}
                     </button>
                 </div>
             </div>
@@ -273,39 +196,18 @@ const { t, url } = useLocale();
             {/* ============================= */}
 
             {isOpen && (
-                <div
-                    className="
-                        absolute
-                        top-full
-                        right-0
-                        left-0
-                        z-50
-                        border-t
-                        border-gray-100
-                        bg-white
-                        shadow-xl
-                        xl:hidden
-                    "
-                >
+                <div className="absolute top-full right-0 left-0 z-50 border-t border-gray-100 bg-white shadow-xl xl:hidden">
                     <div className="space-y-1 px-4 py-5">
-
                         {navItems.map((item) => {
-                            const active = isActive(
-                                item.href,
-                                currentPath,
-                            );
+                            const active = isActive(item.href, currentPath);
 
                             return (
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    onClick={() =>
-                                        setIsOpen(false)
-                                    }
+                                    onClick={() => setIsOpen(false)}
                                     className={`block rounded-md px-4 py-3 text-sm font-semibold transition-all duration-300 ${
-                                        active
-                                            ? 'bg-[#74B946] text-white'
-                                            : 'text-[#1F2937] hover:bg-[#F1F8EC] hover:text-[#74B946]'
+                                        active ? 'bg-[#74B946] text-white' : 'text-[#1F2937] hover:bg-[#F1F8EC] hover:text-[#74B946]'
                                     }`}
                                 >
                                     {t(item.label)}
@@ -317,31 +219,13 @@ const { t, url } = useLocale();
                         <div className="mt-4 border-t border-gray-100 pt-4">
                             <Link
                                 href="/contact"
-                                onClick={() =>
-                                    setIsOpen(false)
-                                }
-                                className="
-                                    flex
-                                    w-full
-                                    items-center
-                                    justify-center
-                                    gap-2
-                                    rounded-md
-                                    bg-[#74B946]
-                                    px-5
-                                    py-3.5
-                                    text-sm
-                                    font-bold
-                                    text-white
-                                    uppercase
-                                    transition-all
-                                    duration-300
-                                    hover:bg-[#659F3B]
-                                "
+                                onClick={() => setIsOpen(false)}
+                                className="flex w-full items-center justify-center gap-2 rounded-md bg-[#74B946] px-5 py-3.5 text-sm font-bold text-white uppercase transition-all duration-300 hover:bg-[#659F3B]"
                             >
                                 <FileText size={17} />
 
-                                {t("Soumission gratuite")}</Link>
+                                {t('Soumission gratuite')}
+                            </Link>
                         </div>
                     </div>
                 </div>

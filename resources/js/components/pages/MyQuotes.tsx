@@ -13,7 +13,7 @@ interface MyQuotesProps {
 }
 
 export default function MyQuotes({ onNavigateToRequest }: MyQuotesProps) {
-const { t } = useLocale();
+    const { t } = useLocale();
 
     const [quotes, setQuotes] = useState<QuoteRequest[]>([]);
 
@@ -69,16 +69,16 @@ const { t } = useLocale();
                         <div>
                             <div className="flex items-center gap-2">
                                 <span className="bg-alidade-gold h-[1.5px] w-6" />
-                                <span className="text-alidade-gold text-xs font-bold tracking-[0.2em] uppercase">{t("Suivi de dossier")}</span>
+                                <span className="text-alidade-gold text-xs font-bold tracking-[0.2em] uppercase">{t('Suivi de dossier')}</span>
                             </div>
-                            <h2 className="text-alidade-navy  text-2xl font-bold sm:text-3xl">{t("Mes Demandes de Devis")}</h2>
+                            <h2 className="text-alidade-navy text-2xl font-bold sm:text-3xl">{t('Mes Demandes de Devis')}</h2>
                         </div>
 
                         <div className="flex gap-2">
                             <button
                                 onClick={handleRefresh}
                                 className="hover:text-alidade-gold flex items-center justify-center rounded-lg border border-gray-200 bg-white p-2.5 text-gray-400 transition-colors"
-                                title={t("Actualiser les données")}
+                                title={t('Actualiser les données')}
                                 id="refresh-quotes-btn"
                             >
                                 <RefreshCw size={15} />
@@ -88,7 +88,8 @@ const { t } = useLocale();
                                 className="bg-alidade-gold hover:bg-alidade-gold-light text-alidade-navy flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-xs font-bold tracking-wider uppercase shadow transition-colors"
                                 id="request-new-quote-btn"
                             >
-                                {t("Nouvelle demande")}</button>
+                                {t('Nouvelle demande')}
+                            </button>
                         </div>
                     </div>
 
@@ -98,9 +99,9 @@ const { t } = useLocale();
                                 <FileText size={24} />
                             </div>
                             <div className="space-y-1">
-                                <h3 className="text-alidade-navy text-sm font-bold uppercase">Aucun devis enregistré</h3>
+                                <h3 className="text-alidade-navy text-sm font-bold uppercase">{t('Aucun devis enregistré')}</h3>
                                 <p className="text-xs font-light text-gray-400">
-                                    Vous n'avez pas encore soumis de demande de devis ou de projet via nos formulaires.
+                                    {t("Vous n'avez pas encore soumis de demande de devis ou de projet via nos formulaires.")}
                                 </p>
                             </div>
                             <button
@@ -108,7 +109,7 @@ const { t } = useLocale();
                                 className="bg-alidade-navy hover:bg-alidade-gold rounded-xl px-5 py-3 text-xs font-bold tracking-wider text-white uppercase transition-colors"
                                 id="empty-state-quote-btn"
                             >
-                                Demander un devis maintenant
+                                {t('Demander un devis maintenant')}
                             </button>
                         </div>
                     ) : (
@@ -136,7 +137,10 @@ const { t } = useLocale();
                                                 </span>
                                                 <div className="flex items-center gap-1 text-[11px] text-gray-400">
                                                     <Calendar size={12} />
-                                                    <span>Soumis le {quote.date}</span>
+                                                    <span>
+                                                        {t('Soumis le ')}
+                                                        {quote.date}
+                                                    </span>
                                                 </div>
                                             </div>
 
@@ -149,7 +153,7 @@ const { t } = useLocale();
                                                 <button
                                                     onClick={() => handleDelete(quote.id)}
                                                     className="rounded p-1.5 text-gray-300 transition-colors hover:text-red-500"
-                                                    title="Supprimer cette demande"
+                                                    title={t('Supprimer cette demande')}
                                                     id={`delete-quote-${quote.id}`}
                                                 >
                                                     <Trash2 size={14} />
@@ -161,7 +165,7 @@ const { t } = useLocale();
                                         <div className="space-y-5 p-6">
                                             <div className="space-y-2">
                                                 <span className="block text-[10px] font-bold tracking-widest text-gray-400 uppercase">
-                                                    Détails du projet
+                                                    {t('Détails du projet')}
                                                 </span>
                                                 <h4 className="text-alidade-navy font-sans text-base font-bold tracking-wide uppercase">
                                                     {quote.projectType}
@@ -174,18 +178,20 @@ const { t } = useLocale();
                                             {/* Client Coordinates Summary */}
                                             <div className="grid grid-cols-2 gap-4 border-t border-gray-100 pt-4 text-xs sm:grid-cols-3">
                                                 <div>
-                                                    <span className="block text-[10px] font-bold tracking-wider text-gray-400 uppercase">Client</span>
+                                                    <span className="block text-[10px] font-bold tracking-wider text-gray-400 uppercase">
+                                                        {t('Client')}
+                                                    </span>
                                                     <span className="text-alidade-navy mt-0.5 block font-medium">{quote.fullName}</span>
                                                 </div>
                                                 <div>
                                                     <span className="block text-[10px] font-bold tracking-wider text-gray-400 uppercase">
-                                                        Téléphone
+                                                        {t('Téléphone')}
                                                     </span>
                                                     <span className="text-alidade-navy mt-0.5 block font-mono font-medium">{quote.phone}</span>
                                                 </div>
                                                 <div className="col-span-2 sm:col-span-1">
                                                     <span className="block text-[10px] font-bold tracking-wider text-gray-400 uppercase">
-                                                        Budget estimatif
+                                                        {t('Budget estimatif')}
                                                     </span>
                                                     <span className="text-alidade-navy mt-0.5 block font-medium">{quote.budget || 'Non défini'}</span>
                                                 </div>
@@ -196,7 +202,11 @@ const { t } = useLocale();
                                                 <div className="bg-alidade-navy/5 flex w-fit items-center gap-2 rounded-lg px-3 py-2 text-xs">
                                                     <FileText size={14} className="text-alidade-gold" />
                                                     <span className="text-alidade-navy font-medium">{quote.fileName}</span>
-                                                    <span className="text-[10px] text-gray-400">({quote.fileSize})</span>
+                                                    <span className="text-[10px] text-gray-400">
+                                                        {t('(')}
+                                                        {quote.fileSize}
+                                                        {t(')')}
+                                                    </span>
                                                 </div>
                                             )}
                                         </div>
@@ -208,13 +218,20 @@ const { t } = useLocale();
                                             </div>
                                             <div className="space-y-1">
                                                 <div className="text-alidade-navy flex items-center gap-1.5 text-[10px] font-bold tracking-wider uppercase">
-                                                    <span>Étude Technique par : Youssef El Alami</span>
-                                                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" title="Chargé d'affaire en ligne" />
+                                                    <span>{t('Étude Technique par : Youssef El Alami')}</span>
+                                                    <span
+                                                        className="h-1.5 w-1.5 rounded-full bg-emerald-500"
+                                                        title={t("Chargé d'affaire en ligne")}
+                                                    />
                                                 </div>
                                                 <p className="text-[11px] leading-relaxed font-light text-gray-500">
                                                     {isPending
-                                                        ? "Votre dossier est en cours de répartition au bureau d'étude technique. Un de nos menuisiers/conducteurs d'agencement sera désigné d'ici 12 heures."
-                                                        : "Dossier pris en charge. Nous étudions l'épaisseur de bois et la quincaillerie Blum à préconiser. Une visite sur site à Casablanca est recommandée pour finaliser les cotes."}
+                                                        ? t(
+                                                              "Votre dossier est en cours de répartition au bureau d'étude technique. Un de nos menuisiers/conducteurs d'agencement sera désigné d'ici 12 heures.",
+                                                          )
+                                                        : t(
+                                                              "Dossier pris en charge. Nous étudions l'épaisseur de bois et la quincaillerie Blum à préconiser. Une visite sur site à Casablanca est recommandée pour finaliser les cotes.",
+                                                          )}
                                                 </p>
                                             </div>
                                         </div>

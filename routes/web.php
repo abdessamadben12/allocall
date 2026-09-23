@@ -72,6 +72,7 @@ Route::get('savoir-faire/{service}', function (string $service) {
 
 Route::get('sitemap.xml', function () {
     $paths = array_keys(config('seo.pages'));
+    $paths = array_merge($paths, array_map(fn (string $path) => '/en'.($path === '/' ? '' : $path), $paths));
     $urls = collect($paths)
         ->map(fn (string $path) => sprintf(
             '<url><loc>%s</loc></url>',

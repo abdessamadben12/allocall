@@ -1,22 +1,10 @@
-import { useLocale } from '@/lib/i18n';
-import { useEffect, useState } from 'react';
-import {
-    ArrowRight,
-    Bot,
-    CalendarCheck,
-    ChevronLeft,
-    ChevronRight,
-    Clock3,
-    PhoneCall,
-} from 'lucide-react';
-import { motion, type Variants } from 'framer-motion';
 import { Link } from '@/components/localized-link';
+import { useLocale } from '@/lib/i18n';
+import { motion, type Variants } from 'framer-motion';
+import { ArrowRight, Bot, CalendarCheck, ChevronLeft, ChevronRight, Clock3, PhoneCall } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
-import {
-    EASE,
-    Stagger,
-    StaggerItem,
-} from '@/components/motion';
+import { EASE, Stagger, StaggerItem } from '@/components/motion';
 
 /* =========================================================
    ANIMATIONS
@@ -59,10 +47,8 @@ interface HeroSliderProps {
    HERO
 ========================================================= */
 
-export default function Hero({
-    onDiscoverClick: _onDiscoverClick,
-}: HeroSliderProps) {
-const { t } = useLocale();
+export default function Hero({ onDiscoverClick: _onDiscoverClick }: HeroSliderProps) {
+    const { t } = useLocale();
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -75,11 +61,9 @@ const { t } = useLocale();
         {
             id: 1,
 
-            subtitle:
-                "CENTRE D'APPELS BILINGUE · MONTRÉAL · CASABLANCA · PARIS",
+            subtitle: "CENTRE D'APPELS BILINGUE · MONTRÉAL · CASABLANCA · PARIS",
 
-            title:
-                'RÉPONDEZ À CHAQUE APPEL. NE PERDEZ PLUS UN SEUL CLIENT.',
+            title: 'RÉPONDEZ À CHAQUE APPEL. NE PERDEZ PLUS UN SEUL CLIENT.',
 
             description:
                 "Une équipe téléphonique et commerciale à distance, dédiée aux PME québécoises. Réception d'appels, service à la clientèle, télévente, gestion de leads et prise de rendez-vous — sans les coûts d'une équipe interne.",
@@ -98,11 +82,9 @@ const { t } = useLocale();
         {
             id: 2,
 
-            subtitle:
-                'INTELLIGENCE ARTIFICIELLE + AGENTS HUMAINS',
+            subtitle: 'INTELLIGENCE ARTIFICIELLE + AGENTS HUMAINS',
 
-            title:
-                'VOS LEADS TRAITÉS EN QUELQUES MINUTES, 24 H SUR 24',
+            title: 'VOS LEADS TRAITÉS EN QUELQUES MINUTES, 24 H SUR 24',
 
             description:
                 "Chatbot, agent vocal IA, SMS automatisés et CRM intelligent travaillent avec nos agents pour qualifier, relancer et convertir vos prospects. L'IA gère le volume, nos agents gèrent les conversations qui comptent.",
@@ -121,11 +103,9 @@ const { t } = useLocale();
         {
             id: 3,
 
-            subtitle:
-                'CHAQUE APPEL EST UNE OPPORTUNITÉ',
+            subtitle: 'CHAQUE APPEL EST UNE OPPORTUNITÉ',
 
-            title:
-                "UN APPEL MANQUÉ, C'EST UNE VENTE CHEZ VOTRE CONCURRENT",
+            title: "UN APPEL MANQUÉ, C'EST UNE VENTE CHEZ VOTRE CONCURRENT",
 
             description:
                 "Un prospect qui n'est pas rappelé ne revient pas. AlloCall prend en charge vos appels entrants, vos relances et votre agenda pour transformer chaque demande en rendez-vous qualifié.",
@@ -148,9 +128,7 @@ const { t } = useLocale();
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentSlide(
-                (prev) => (prev + 1) % slides.length,
-            );
+            setCurrentSlide((prev) => (prev + 1) % slides.length);
         }, 7000);
 
         return () => clearInterval(timer);
@@ -161,17 +139,11 @@ const { t } = useLocale();
     ===================================================== */
 
     const nextSlide = () => {
-        setCurrentSlide(
-            (prev) => (prev + 1) % slides.length,
-        );
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
     };
 
     const prevSlide = () => {
-        setCurrentSlide(
-            (prev) =>
-                (prev - 1 + slides.length) %
-                slides.length,
-        );
+        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
     };
 
     return (
@@ -195,26 +167,7 @@ const { t } = useLocale();
                             LEFT CONTENT
                         ===================================== */}
 
-                        <div
-                            className="
-                                relative
-                                flex
-                                w-full
-                                flex-col
-                                justify-center
-                                overflow-hidden
-                                bg-gradient-to-br
-                                from-[#101826]
-                                to-[#1B2738]
-                                p-8
-                                pb-10
-                                text-white
-                                sm:p-12
-                                lg:w-[48%]
-                                lg:p-16
-                                xl:p-20
-                            "
-                        >
+                        <div className="relative flex w-full flex-col justify-center overflow-hidden bg-gradient-to-br from-[#101826] to-[#1B2738] p-8 pb-10 text-white sm:p-12 lg:w-[48%] lg:p-16 xl:p-20">
                             {/* BACKGROUND DECORATION */}
 
                             <div className="pointer-events-none absolute top-0 left-0 h-40 w-40 rounded-full bg-[#74B946]/10 blur-3xl" />
@@ -229,31 +182,14 @@ const { t } = useLocale();
                                 className="relative space-y-6"
                                 variants={slideContent}
                                 initial="hidden"
-                                animate={
-                                    index === currentSlide
-                                        ? 'visible'
-                                        : 'hidden'
-                                }
+                                animate={index === currentSlide ? 'visible' : 'hidden'}
                             >
                                 {/* SUBTITLE */}
 
-                                <motion.div
-                                    variants={slideItem}
-                                    className="flex items-center gap-3"
-                                >
+                                <motion.div variants={slideItem} className="flex items-center gap-3">
                                     <span className="h-[2px] w-8 shrink-0 bg-[#74B946]" />
 
-                                    <span
-                                        className="
-                                            text-xs
-                                            font-bold
-                                            tracking-[0.16em]
-                                            text-[#74B946]
-                                            uppercase
-                                            sm:text-sm
-                                            lg:text-[14px]
-                                        "
-                                    >
+                                    <span className="text-xs font-bold tracking-[0.16em] text-[#74B946] uppercase sm:text-sm lg:text-[14px]">
                                         {t(slide.subtitle)}
                                     </span>
                                 </motion.div>
@@ -262,18 +198,7 @@ const { t } = useLocale();
 
                                 <motion.h1
                                     variants={slideItem}
-                                    className="
-                                        max-w-2xl
-                                        text-3xl
-                                        leading-[1.08]
-                                        font-extrabold
-                                        tracking-tight
-                                        text-white
-                                        uppercase
-                                        sm:text-4xl
-                                        lg:text-[42px]
-                                        xl:text-[49px]
-                                    "
+                                    className="max-w-2xl text-3xl leading-[1.08] font-extrabold tracking-tight text-white uppercase sm:text-4xl lg:text-[42px] xl:text-[49px]"
                                 >
                                     {t(slide.title)}
                                 </motion.h1>
@@ -282,33 +207,14 @@ const { t } = useLocale();
 
                                 <motion.p
                                     variants={slideItem}
-                                    className="
-                                        max-w-xl
-                                        text-sm
-                                        leading-7
-                                        font-light
-                                        text-gray-300
-                                        sm:text-base
-                                        lg:text-[16px]
-                                        lg:leading-8
-                                    "
+                                    className="max-w-xl text-sm leading-7 font-light text-gray-300 sm:text-base lg:text-[16px] lg:leading-8"
                                 >
                                     {t(slide.description)}
                                 </motion.p>
 
                                 {/* BUTTONS */}
 
-                                <motion.div
-                                    variants={slideItem}
-                                    className="
-                                        flex
-                                        flex-col
-                                        gap-3
-                                        pt-3
-                                        sm:flex-row
-                                        sm:items-center
-                                    "
-                                >
+                                <motion.div variants={slideItem} className="flex flex-col gap-3 pt-3 sm:flex-row sm:items-center">
                                     {/* PRIMARY */}
 
                                     <motion.div
@@ -326,82 +232,26 @@ const { t } = useLocale();
                                     >
                                         <Link
                                             href={slide.href}
-                                            className="
-                                                group
-                                                inline-flex
-                                                items-center
-                                                justify-center
-                                                gap-2.5
-                                                rounded
-                                                bg-[#74B946]
-                                                px-7
-                                                py-4
-                                                text-xs
-                                                font-bold
-                                                tracking-wider
-                                                text-white
-                                                uppercase
-                                                shadow-xl
-                                                transition-all
-                                                duration-300
-                                                hover:bg-[#659F3B]
-                                                hover:shadow-[#74B946]/20
-                                                sm:text-sm
-                                            "
+                                            className="group inline-flex items-center justify-center gap-2.5 rounded bg-[#74B946] px-7 py-4 text-xs font-bold tracking-wider text-white uppercase shadow-xl transition-all duration-300 hover:bg-[#659F3B] hover:shadow-[#74B946]/20 sm:text-sm"
                                         >
-                                            <span>
-                                                {t(slide.cta)}
-                                            </span>
+                                            <span>{t(slide.cta)}</span>
 
-                                            <ArrowRight
-                                                size={17}
-                                                className="
-                                                    transition-transform
-                                                    duration-300
-                                                    group-hover:translate-x-1
-                                                "
-                                            />
+                                            <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" />
                                         </Link>
                                     </motion.div>
 
                                     {/* SECONDARY */}
 
-                                    {slide.secondaryCta &&
-                                        slide.secondaryHref && (
-                                            <Link
-                                                href={
-                                                    slide.secondaryHref
-                                                }
-                                                className="
-                                                    group
-                                                    inline-flex
-                                                    items-center
-                                                    justify-center
-                                                    gap-2
-                                                    px-5
-                                                    py-4
-                                                    text-sm
-                                                    font-semibold
-                                                    text-white
-                                                    transition-colors
-                                                    duration-300
-                                                    hover:text-[#74B946]
-                                                "
-                                            >
-                                                {
-                                                    t(slide.secondaryCta)
-                                                }
+                                    {slide.secondaryCta && slide.secondaryHref && (
+                                        <Link
+                                            href={slide.secondaryHref}
+                                            className="group inline-flex items-center justify-center gap-2 px-5 py-4 text-sm font-semibold text-white transition-colors duration-300 hover:text-[#74B946]"
+                                        >
+                                            {t(slide.secondaryCta)}
 
-                                                <ArrowRight
-                                                    size={16}
-                                                    className="
-                                                        transition-transform
-                                                        duration-300
-                                                        group-hover:translate-x-1
-                                                    "
-                                                />
-                                            </Link>
-                                        )}
+                                            <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                                        </Link>
+                                    )}
                                 </motion.div>
                             </motion.div>
                         </div>
@@ -410,72 +260,24 @@ const { t } = useLocale();
                             RIGHT — ONE IMAGE ONLY
                         ===================================== */}
 
-                        <div
-                            className="
-                                relative
-                                h-[380px]
-                                w-full
-                                overflow-hidden
-                                bg-[#111827]
-                                lg:h-auto
-                                lg:w-[52%]
-                            "
-                        >
+                        <div className="relative h-[380px] w-full overflow-hidden bg-[#111827] lg:h-auto lg:w-[52%]">
                             <img
                                 src={slide.image}
                                 alt={t(slide.title)}
-                                loading={
-                                    index === currentSlide
-                                        ? 'eager'
-                                        : 'lazy'
-                                }
+                                loading={index === currentSlide ? 'eager' : 'lazy'}
                                 decoding="async"
-                                fetchPriority={
-                                    index === currentSlide
-                                        ? 'high'
-                                        : 'low'
-                                }
-                                className="
-                                    h-full
-                                    w-full
-                                    object-cover
-                                    lg:absolute
-                                    lg:inset-0
-                                    transition-transform
-                                    duration-[8000ms]
-                                    hover:scale-105
-                                "
+                                fetchPriority={index === currentSlide ? 'high' : 'low'}
+                                className="h-full w-full object-cover transition-transform duration-[8000ms] hover:scale-105 lg:absolute lg:inset-0"
                                 referrerPolicy="no-referrer"
                             />
 
                             {/* DARK GRADIENT LEFT */}
 
-                            <div
-                                className="
-                                    absolute
-                                    inset-0
-                                    bg-gradient-to-r
-                                    from-[#111827]/35
-                                    via-transparent
-                                    to-transparent
-                                    lg:from-[#111827]/25
-                                "
-                            />
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#111827]/35 via-transparent to-transparent lg:from-[#111827]/25" />
 
                             {/* DARK BOTTOM GRADIENT */}
 
-                            <div
-                                className="
-                                    absolute
-                                    inset-0
-                                    bg-gradient-to-t
-                                    from-[#111827]/35
-                                    via-transparent
-                                    to-transparent
-                                "
-                            />
-
-                           
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/35 via-transparent to-transparent" />
                         </div>
                     </div>
                 ))}
@@ -486,27 +288,8 @@ const { t } = useLocale();
 
                 <button
                     onClick={prevSlide}
-                    className="
-                        absolute
-                        left-4
-                        top-1/2
-                        -translate-y-1/2
-                        z-20
-                        hidden
-                        rounded-full
-                        border
-                        border-[#74B946]/40
-                        bg-[#111827]/80
-                        p-3
-                        text-white
-                        backdrop-blur-md
-                        transition-all
-                        duration-300
-                        hover:scale-110
-                        hover:bg-[#74B946]
-                        sm:block
-                    "
-                    aria-label={t("Slide précédente")}
+                    className="absolute top-1/2 left-4 z-20 hidden -translate-y-1/2 rounded-full border border-[#74B946]/40 bg-[#111827]/80 p-3 text-white backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-[#74B946] sm:block"
+                    aria-label={t('Slide précédente')}
                 >
                     <ChevronLeft size={20} />
                 </button>
@@ -517,27 +300,8 @@ const { t } = useLocale();
 
                 <button
                     onClick={nextSlide}
-                    className="
-                        absolute
-                        right-4
-                        top-1/2
-                        -translate-y-1/2
-                        z-20
-                        hidden
-                        rounded-full
-                        border
-                        border-[#74B946]/40
-                        bg-[#111827]/80
-                        p-3
-                        text-white
-                        backdrop-blur-md
-                        transition-all
-                        duration-300
-                        hover:scale-110
-                        hover:bg-[#74B946]
-                        sm:block
-                    "
-                    aria-label={t("Slide suivante")}
+                    className="absolute top-1/2 right-4 z-20 hidden -translate-y-1/2 rounded-full border border-[#74B946]/40 bg-[#111827]/80 p-3 text-white backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-[#74B946] sm:block"
+                    aria-label={t('Slide suivante')}
                 >
                     <ChevronRight size={20} />
                 </button>
@@ -546,28 +310,14 @@ const { t } = useLocale();
                     SLIDE INDICATORS
                 ================================================= */}
 
-                <div
-                    className="
-                        absolute
-                        bottom-6
-                        left-1/2
-                        z-20
-                        flex
-                        -translate-x-1/2
-                        gap-2
-                    "
-                >
+                <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2">
                     {slides.map((_, index) => (
                         <button
                             key={index}
-                            onClick={() =>
-                                setCurrentSlide(index)
-                            }
-                            aria-label={t("Afficher le slide {0}", [index + 1])}
+                            onClick={() => setCurrentSlide(index)}
+                            aria-label={t('Afficher le slide {0}', [index + 1])}
                             className={`h-1.5 rounded-full transition-all duration-500 ${
-                                index === currentSlide
-                                    ? 'w-14 bg-[#74B946]'
-                                    : 'w-9 bg-white/40 hover:bg-white/70'
+                                index === currentSlide ? 'w-14 bg-[#74B946]' : 'w-9 bg-white/40 hover:bg-white/70'
                             }`}
                         />
                     ))}
@@ -580,34 +330,24 @@ const { t } = useLocale();
 
             <div className="relative z-20 border-b border-gray-100 bg-white py-8 shadow-sm">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <Stagger
-                        className="
-                            grid
-                            grid-cols-1
-                            gap-6
-                            divide-y
-                            divide-gray-100
-                            sm:grid-cols-2
-                            sm:gap-8
-                            sm:divide-y-0
-                            lg:grid-cols-4
-                            lg:divide-x
-                        "
-                    >
+                    <Stagger className="grid grid-cols-1 gap-6 divide-y divide-gray-100 sm:grid-cols-2 sm:gap-8 sm:divide-y-0 lg:grid-cols-4 lg:divide-x">
                         {/* 1 */}
 
-                        <StaggerItem className="flex items-center gap-4 pt-4 first:pt-0 sm:pt-0 lg:pl-4 first:pl-0">
+                        <StaggerItem className="flex items-center gap-4 pt-4 first:pt-0 first:pl-0 sm:pt-0 lg:pl-4">
                             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#111827] shadow-md lg:h-16 lg:w-16">
                                 <PhoneCall className="h-5 w-5 text-[#74B946] lg:h-7 lg:w-7" />
                             </div>
 
                             <div>
                                 <h3 className="text-xs font-bold tracking-wider text-[#111827] uppercase sm:text-sm lg:text-lg">
-                                    {t("Appels entrants")}</h3>
+                                    {t('Appels entrants')}
+                                </h3>
 
                                 <p className="mt-0.5 text-xs font-light text-gray-400 lg:text-base">
-                                    {t("Aucun appel")}<br />
-                                    {t("laissé sans réponse")}</p>
+                                    {t('Aucun appel')}
+                                    <br />
+                                    {t('laissé sans réponse')}
+                                </p>
                             </div>
                         </StaggerItem>
 
@@ -619,12 +359,13 @@ const { t } = useLocale();
                             </div>
 
                             <div>
-                                <h3 className="text-xs font-bold tracking-wider text-[#111827] uppercase sm:text-sm lg:text-lg">
-                                    {t("IA+Humain")}</h3>
+                                <h3 className="text-xs font-bold tracking-wider text-[#111827] uppercase sm:text-sm lg:text-lg">{t('IA+Humain')}</h3>
 
                                 <p className="mt-0.5 text-xs font-light text-gray-400 lg:text-base">
-                                    {t("Automatisation")}<br />
-                                    {t("et agents dédiés")}</p>
+                                    {t('Automatisation')}
+                                    <br />
+                                    {t('et agents dédiés')}
+                                </p>
                             </div>
                         </StaggerItem>
 
@@ -636,12 +377,13 @@ const { t } = useLocale();
                             </div>
 
                             <div>
-                                <h3 className="text-xs font-bold tracking-wider text-[#111827] uppercase sm:text-sm lg:text-lg">
-                                    {t("24H/24")}</h3>
+                                <h3 className="text-xs font-bold tracking-wider text-[#111827] uppercase sm:text-sm lg:text-lg">{t('24H/24')}</h3>
 
                                 <p className="mt-0.5 text-xs font-light text-gray-400 lg:text-base">
-                                    {t("Vos leads traités")}<br />
-                                    {t("rapidement")}</p>
+                                    {t('Vos leads traités')}
+                                    <br />
+                                    {t('rapidement')}
+                                </p>
                             </div>
                         </StaggerItem>
 
@@ -654,11 +396,14 @@ const { t } = useLocale();
 
                             <div>
                                 <h3 className="text-xs font-bold tracking-wider text-[#111827] uppercase sm:text-sm lg:text-lg">
-                                    {t("Rendez-vous")}</h3>
+                                    {t('Rendez-vous')}
+                                </h3>
 
                                 <p className="mt-0.5 text-xs font-light text-gray-400 lg:text-base">
-                                    {t("Plus de prospects")}<br />
-                                    {t("convertis en clients")}</p>
+                                    {t('Plus de prospects')}
+                                    <br />
+                                    {t('convertis en clients')}
+                                </p>
                             </div>
                         </StaggerItem>
                     </Stagger>

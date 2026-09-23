@@ -7,10 +7,10 @@ import Footer from '@/components/pages/Footer';
 import GlobalPresenceSection from '@/components/pages/global-presence';
 import HeroSlider from '@/components/pages/Hero';
 import IndustriesSection from '@/components/pages/industries';
-import Navbar from '@/components/pages/navbar';
 import MetiersSection from '@/components/pages/metiers';
-import { router } from '@inertiajs/react';
+import Navbar from '@/components/pages/navbar';
 import { useLocale } from '@/lib/i18n';
+import { router } from '@inertiajs/react';
 import { useEffect } from 'react';
 import { EngagementSection } from './featchuresection';
 
@@ -51,8 +51,6 @@ export default function App() {
                 <IndustriesSection />
 
                 <GlobalPresenceSection />
-
-              
             </main>
 
             <Footer />

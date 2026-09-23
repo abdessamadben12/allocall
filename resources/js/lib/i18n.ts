@@ -28,7 +28,8 @@ export function languagePath(href: string, locale: Locale, origin?: string): str
     const unprefixed = path.replace(/^\/en(?=\/|\?|#|$)/, '') || '/';
     const normalized = unprefixed.startsWith('/') ? unprefixed : '/' + unprefixed;
     const [pathname] = normalized.split(/[?#]/);
-    if (!/^\/(?:services(?:\/[^/]+)?|industries(?:\/[^/]+)?|solutions-ia|apropos|contact|devis|savoir-faire(?:\/[^/]+)?)?$/.test(pathname)) return href;
+    if (!/^\/(?:services(?:\/[^/]+)?|industries(?:\/[^/]+)?|solutions-ia|apropos|contact|devis|savoir-faire(?:\/[^/]+)?)?$/.test(pathname))
+        return href;
     return locale === 'en' ? '/en' + normalized.replace(/^\/(?=[?#]|$)/, '') : normalized;
 }
 

@@ -3,7 +3,7 @@
     $seo = $page['props']['seo'] ?? \App\Support\SeoMetadata::forRequest(request());
 @endphp
 
-<html lang="fr-CA">
+<html lang="{{ $seo['language'] }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,10 @@
             <meta inertia="robots" name="robots" content="{{ $seo['robots'] }}">
             <link inertia="canonical" rel="canonical" href="{{ $seo['canonical'] }}">
 
-            <meta inertia="og:locale" property="og:locale" content="fr_CA">
+            @foreach ($seo['alternates'] as $language => $url)
+                <link inertia="alternate:{{ $language }}" rel="alternate" hreflang="{{ $language }}" href="{{ $url }}">
+            @endforeach
+            <meta inertia="og:locale" property="og:locale" content="{{ $seo['ogLocale'] }}">
             <meta inertia="og:type" property="og:type" content="website">
             <meta inertia="og:site_name" property="og:site_name" content="ALLO CALL">
             <meta inertia="og:title" property="og:title" content="{{ $seo['title'] }}">

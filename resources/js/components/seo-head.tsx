@@ -1,5 +1,6 @@
 import { type SharedData } from '@/types';
 import { Head, usePage } from '@inertiajs/react';
+import { useEffect } from 'react';
 
 interface SeoHeadProps {
     noIndex?: boolean;
@@ -8,6 +9,9 @@ interface SeoHeadProps {
 export default function SeoHead({ noIndex = false }: SeoHeadProps) {
     // The server catalog also powers the initial HTML and sitemap.
     const { seo } = usePage<SharedData>().props;
+    useEffect(() => {
+        document.documentElement.lang = seo.language;
+    }, [seo.language]);
 
     return (
         <Head title={seo.title}>
@@ -15,7 +19,10 @@ export default function SeoHead({ noIndex = false }: SeoHeadProps) {
             <meta head-key="keywords" name="keywords" content={seo.keywords.join(', ')} />
             <meta head-key="robots" name="robots" content={noIndex ? 'noindex, nofollow' : seo.robots} />
             <link head-key="canonical" rel="canonical" href={seo.canonical} />
-            <meta head-key="og:locale" property="og:locale" content="fr_CA" />
+            {Object.entries(seo.alternates).map(([language, href]) => (
+                <link key={language} head-key={`alternate:${language}`} rel="alternate" hrefLang={language} href={href} />
+            ))}
+            <meta head-key="og:locale" property="og:locale" content={seo.ogLocale} />
             <meta head-key="og:type" property="og:type" content="website" />
             <meta head-key="og:site_name" property="og:site_name" content="ALLO CALL" />
             <meta head-key="og:title" property="og:title" content={seo.title} />

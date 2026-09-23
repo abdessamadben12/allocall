@@ -1,5 +1,5 @@
+import { site, whatsappUrl } from '@/data/site';
 import { useLocale } from '@/lib/i18n';
-import { whatsappUrl } from '@/data/site';
 import { motion } from 'framer-motion';
 
 const WhatsAppIcon = ({ size = 26 }: { size?: number }) => (
@@ -10,14 +10,14 @@ const WhatsAppIcon = ({ size = 26 }: { size?: number }) => (
 
 // Bouton WhatsApp flottant, affiché sur toutes les pages publiques (rendu dans la Navbar).
 export default function WhatsAppButton() {
-const { t } = useLocale();
+    const { t } = useLocale();
 
     return (
         <motion.a
-            href={whatsappUrl()}
+            href={whatsappUrl(t(site.whatsappMessage))}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={t("Contacter Alidade sur WhatsApp")}
+            aria-label={t('Contacter ALLO CALL sur WhatsApp')}
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             whileHover={{ scale: 1.12 }}

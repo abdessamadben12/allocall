@@ -40,7 +40,7 @@ export default function QuoteRequest({
     onNavigateToContact,
     onNavigateToMyQuotes,
 }: QuoteRequestProps) {
-const { t } = useLocale();
+    const { t } = useLocale();
 
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
@@ -151,14 +151,20 @@ const { t } = useLocale();
                         <Reveal className="space-y-6 lg:col-span-6" amount={0.15}>
                             <div className="flex items-center gap-2">
                                 <span className="bg-alidade-gold h-[1.5px] w-8" />
-                                <span className="text-alidade-gold text-sm sm:text-xl font-bold tracking-[0.25em] uppercase">{t("Étude Personnalisée")}</span>
+                                <span className="text-alidade-gold text-sm font-bold tracking-[0.25em] uppercase sm:text-xl">
+                                    {t('Étude Personnalisée')}
+                                </span>
                             </div>
-                            <h2 className=" text-3xl font-bold uppercase sm:text-4xl lg:text-5xl">
-                                {t("Demandez Votre ")}<br />
-                                <span className="text-alidade-gold font-serif ">{t("Devis Gratuit")}</span>
+                            <h2 className="text-3xl font-bold uppercase sm:text-4xl lg:text-5xl">
+                                {t('Demandez Votre ')}
+                                <br />
+                                <span className="text-alidade-gold font-serif">{t('Devis Gratuit')}</span>
                             </h2>
                             <p className="max-w-lg text-sm leading-relaxed font-light text-gray-300">
-                                {t("Décrivez votre projet d'agencement, de menuiserie fine ou de rénovation globale. Nos ingénieurs évaluent vos volumes et vous rédigent un estimatif détaillé sous 48 heures.")}</p>
+                                {t(
+                                    "Décrivez votre projet d'agencement, de menuiserie fine ou de rénovation globale. Nos ingénieurs évaluent vos volumes et vous rédigent un estimatif détaillé sous 48 heures.",
+                                )}
+                            </p>
 
                             {/* Grid indicators (Screenshot 5 Right) */}
                             <div className="grid grid-cols-1 gap-6 border-t border-white/10 pt-6 sm:grid-cols-3">
@@ -167,8 +173,8 @@ const { t } = useLocale();
                                         <CheckCircle size={16} />
                                     </div>
                                     <div>
-                                        <span className="block text-xs font-bold tracking-wider uppercase">{t("Réponse rapide")}</span>
-                                        <span className="block text-[10px] font-light text-gray-400">{t("Sous 48 heures")}</span>
+                                        <span className="block text-xs font-bold tracking-wider uppercase">{t('Réponse rapide')}</span>
+                                        <span className="block text-[10px] font-light text-gray-400">{t('Sous 48 heures')}</span>
                                     </div>
                                 </div>
 
@@ -177,8 +183,8 @@ const { t } = useLocale();
                                         <Sparkles size={16} />
                                     </div>
                                     <div>
-                                        <span className="block text-xs font-bold tracking-wider uppercase">{t("Devis gratuit")}</span>
-                                        <span className="block text-[10px] font-light text-gray-400">{t("Sans engagement")}</span>
+                                        <span className="block text-xs font-bold tracking-wider uppercase">{t('Devis gratuit')}</span>
+                                        <span className="block text-[10px] font-light text-gray-400">{t('Sans engagement')}</span>
                                     </div>
                                 </div>
 
@@ -187,8 +193,8 @@ const { t } = useLocale();
                                         <FolderArchive size={16} />
                                     </div>
                                     <div>
-                                        <span className="block text-xs font-bold tracking-wider uppercase">{t("Étude sur mesure")}</span>
-                                        <span className="block text-[10px] font-light text-gray-400">{t("Adaptée à vos besoins")}</span>
+                                        <span className="block text-xs font-bold tracking-wider uppercase">{t('Étude sur mesure')}</span>
+                                        <span className="block text-[10px] font-light text-gray-400">{t('Adaptée à vos besoins')}</span>
                                     </div>
                                 </div>
                             </div>
@@ -201,7 +207,7 @@ const { t } = useLocale();
                                 id="quote-request-card"
                             >
                                 <div className="mb-6 flex items-center justify-between">
-                                    <h3 className="text-alidade-navy text-lg font-bold tracking-wider uppercase">{t("Demande de Devis")}</h3>
+                                    <h3 className="text-alidade-navy text-lg font-bold tracking-wider uppercase">{t('Demande de Devis')}</h3>
                                 </div>
 
                                 {isSubmitted && submittedQuote && (
@@ -209,11 +215,15 @@ const { t } = useLocale();
                                         <div className="flex items-center gap-2">
                                             <CheckCircle size={18} className="shrink-0 text-emerald-500" />
                                             <span className="text-xs font-bold tracking-wider uppercase">
-                                                {t("Devis enregistré sous le numéro ")}{submittedQuote.id}
+                                                {t('Devis enregistré sous le numéro ')}
+                                                {submittedQuote.id}
                                             </span>
                                         </div>
                                         <p className="text-[11px] leading-relaxed font-light text-emerald-700">
-                                            {t("Votre dossier a bien été soumis à notre bureau d'études technique de Casablanca. Vous pouvez suivre l'avancement de cette demande dans votre tableau de bord.")}</p>
+                                            {t(
+                                                "Votre dossier a bien été soumis à notre bureau d'études technique de Casablanca. Vous pouvez suivre l'avancement de cette demande dans votre tableau de bord.",
+                                            )}
+                                        </p>
                                         <button
                                             onClick={() => {
                                                 setIsSubmitted(false);
@@ -222,18 +232,21 @@ const { t } = useLocale();
                                             className="w-full rounded bg-emerald-600 py-2 text-[10px] font-bold tracking-wider text-white uppercase transition-colors hover:bg-emerald-700"
                                             id="view-estimate-dashboard-btn"
                                         >
-                                            {t("Suivre mon dossier de devis")}</button>
+                                            {t('Suivre mon dossier de devis')}
+                                        </button>
                                     </div>
                                 )}
 
                                 <form onSubmit={handleSubmit} className="space-y-4">
                                     {/* Nom complet */}
                                     <div className="space-y-1">
-                                        <label className="block text-[10px] font-bold tracking-widest text-gray-400 uppercase">{t("Nom complet *")}</label>
+                                        <label className="block text-[10px] font-bold tracking-widest text-gray-400 uppercase">
+                                            {t('Nom complet *')}
+                                        </label>
                                         <div className="relative">
                                             <input
                                                 type="text"
-                                                placeholder={t("Ex: Youssef El Alami")}
+                                                placeholder={t('Ex: Youssef El Alami')}
                                                 required
                                                 value={fullName}
                                                 onChange={(e) => setFullName(e.target.value)}
@@ -248,11 +261,13 @@ const { t } = useLocale();
                                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                         {/* Email */}
                                         <div className="space-y-1">
-                                            <label className="block text-[10px] font-bold tracking-widest text-gray-400 uppercase">{t("Email *")}</label>
+                                            <label className="block text-[10px] font-bold tracking-widest text-gray-400 uppercase">
+                                                {t('Email *')}
+                                            </label>
                                             <div className="relative">
                                                 <input
                                                     type="email"
-                                                    placeholder={t("votre@email.com")}
+                                                    placeholder={t('votre@email.com')}
                                                     required
                                                     value={email}
                                                     onChange={(e) => setEmail(e.target.value)}
@@ -265,11 +280,13 @@ const { t } = useLocale();
 
                                         {/* Phone */}
                                         <div className="space-y-1">
-                                            <label className="block text-[10px] font-bold tracking-widest text-gray-400 uppercase">{t("Téléphone *")}</label>
+                                            <label className="block text-[10px] font-bold tracking-widest text-gray-400 uppercase">
+                                                {t('Téléphone *')}
+                                            </label>
                                             <div className="relative">
                                                 <input
                                                     type="tel"
-                                                    placeholder={t("05 22 48 44 25")}
+                                                    placeholder={t('05 22 48 44 25')}
                                                     required
                                                     value={phone}
                                                     onChange={(e) => setPhone(e.target.value)}
@@ -284,7 +301,8 @@ const { t } = useLocale();
                                     {/* Project Type */}
                                     <div className="space-y-1">
                                         <label className="block text-[10px] font-bold tracking-widest text-gray-400 uppercase">
-                                            {t("Type de projet *")}</label>
+                                            {t('Type de projet *')}
+                                        </label>
                                         <div className="relative">
                                             <select
                                                 value={projectType}
@@ -292,13 +310,19 @@ const { t } = useLocale();
                                                 className="focus:ring-alidade-gold focus:border-alidade-gold w-full appearance-none rounded-xl border border-gray-200 bg-gray-50 py-3.5 pr-10 pl-4 text-xs font-medium outline-none focus:ring-1"
                                                 id="quote-type-input"
                                             >
-                                                <option value="Menuiserie Bois & Cuisine Moderne">{t("Menuiserie Bois & Cuisine Moderne")}</option>
-                                                <option value="Travaux De Construction Et Rénovation">{t("Travaux De Construction Et Rénovation")}</option>
-                                                <option value="Travaux De Peinture Professionnelle">{t("Travaux De Peinture Professionnelle")}</option>
-                                                <option value="Revêtement De Sol / Parquet">{t("Revêtement De Sol / Parquet")}</option>
-                                                <option value="Faux Plafond & Eclairage LED">{t("Faux Plafond & Eclairage LED")}</option>
-                                                <option value="Aménagement Commerciale & Agencement">{t("Aménagement Commerciale & Agencement")}</option>
-                                                <option value="Projet Global Clé-En-Main">{t("Projet Global Clé-En-Main")}</option>
+                                                <option value="Menuiserie Bois & Cuisine Moderne">{t('Menuiserie Bois & Cuisine Moderne')}</option>
+                                                <option value="Travaux De Construction Et Rénovation">
+                                                    {t('Travaux De Construction Et Rénovation')}
+                                                </option>
+                                                <option value="Travaux De Peinture Professionnelle">
+                                                    {t('Travaux De Peinture Professionnelle')}
+                                                </option>
+                                                <option value="Revêtement De Sol / Parquet">{t('Revêtement De Sol / Parquet')}</option>
+                                                <option value="Faux Plafond & Eclairage LED">{t('Faux Plafond & Eclairage LED')}</option>
+                                                <option value="Aménagement Commerciale & Agencement">
+                                                    {t('Aménagement Commerciale & Agencement')}
+                                                </option>
+                                                <option value="Projet Global Clé-En-Main">{t('Projet Global Clé-En-Main')}</option>
                                             </select>
                                             <ChevronDown
                                                 size={15}
@@ -311,15 +335,19 @@ const { t } = useLocale();
                                     <div className="space-y-1">
                                         <div className="flex justify-between">
                                             <label className="block text-[10px] font-bold tracking-widest text-gray-400 uppercase">
-                                                {t("Description de votre projet *")}</label>
+                                                {t('Description de votre projet *')}
+                                            </label>
                                             {preFilledSummary && (
                                                 <span className="text-alidade-gold bg-alidade-gold/5 animate-pulse rounded px-2 py-0.5 text-[9px] font-bold">
-                                                    {t("Données configurateur injectées")}</span>
+                                                    {t('Données configurateur injectées')}
+                                                </span>
                                             )}
                                         </div>
                                         <div className="relative">
                                             <textarea
-                                                placeholder={t("Nombre de pièces, dimensions estimées, essence de bois souhaitée (Chêne, Noyer, MDF, Mélaminé), ou spécifications de peinture...")}
+                                                placeholder={t(
+                                                    'Nombre de pièces, dimensions estimées, essence de bois souhaitée (Chêne, Noyer, MDF, Mélaminé), ou spécifications de peinture...',
+                                                )}
                                                 required
                                                 rows={4}
                                                 value={description}
@@ -334,11 +362,12 @@ const { t } = useLocale();
                                     {/* Budget selection */}
                                     <div className="space-y-1">
                                         <label className="block text-[10px] font-bold tracking-widest text-gray-400 uppercase">
-                                            {t("Budget estimatif (optionnel)")}</label>
+                                            {t('Budget estimatif (optionnel)')}
+                                        </label>
                                         <div className="relative">
                                             <input
                                                 type="text"
-                                                placeholder={t("Ex: 45 000 MAD")}
+                                                placeholder={t('Ex: 45 000 MAD')}
                                                 value={budget}
                                                 onChange={(e) => setBudget(e.target.value)}
                                                 className="focus:ring-alidade-gold focus:border-alidade-gold w-full rounded-xl border border-gray-200 bg-gray-50 py-3.5 pr-4 pl-11 text-xs outline-none focus:ring-1"
@@ -351,7 +380,8 @@ const { t } = useLocale();
                                     {/* File Uploader */}
                                     <div className="space-y-1">
                                         <label className="block text-[10px] font-bold tracking-widest text-gray-400 uppercase">
-                                            {t("Ajouter des fichiers (plans, photos...)")}</label>
+                                            {t('Ajouter des fichiers (plans, photos...)')}
+                                        </label>
                                         <div
                                             onDragOver={handleDragOver}
                                             onDrop={handleDrop}
@@ -369,16 +399,21 @@ const { t } = useLocale();
                                             <div className="text-xs font-light text-gray-500">
                                                 {fileName ? (
                                                     <span className="text-alidade-navy font-bold">
-                                                        {fileName} <span className="text-[10px] font-light text-gray-400">({fileSize})</span>
+                                                        {fileName}{' '}
+                                                        <span className="text-[10px] font-light text-gray-400">
+                                                            {t('(')}
+                                                            {fileSize}
+                                                            {t(')')}
+                                                        </span>
                                                     </span>
                                                 ) : (
                                                     <span>
-                                                        Glissez vos fichiers ou{' '}
-                                                        <span className="text-alidade-gold font-bold underline">choisissez un fichier</span>
+                                                        {t('Glissez vos fichiers ou')}{' '}
+                                                        <span className="text-alidade-gold font-bold underline">{t('choisissez un fichier')}</span>
                                                     </span>
                                                 )}
                                             </div>
-                                            <span className="text-[9px] text-gray-400">{t("Taille maximale : 15 Mo (PDF, PNG, JPG, CAD)")}</span>
+                                            <span className="text-[9px] text-gray-400">{t('Taille maximale : 15 Mo (PDF, PNG, JPG, CAD)')}</span>
                                         </div>
                                     </div>
 
@@ -389,7 +424,7 @@ const { t } = useLocale();
                                             className="bg-alidade-gold hover:bg-alidade-gold-light text-alidade-navy flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-4 text-xs font-bold tracking-widest uppercase shadow-lg transition-colors"
                                             id="quote-submit-btn"
                                         >
-                                            <span>{t("ENVOYER LA DEMANDE DE DEVIS")}</span>
+                                            <span>{t('ENVOYER LA DEMANDE DE DEVIS')}</span>
                                         </button>
                                     </div>
                                 </form>
@@ -403,8 +438,7 @@ const { t } = useLocale();
             <section className="bg-gray-50 py-20">
                 <div className="mx-auto max-w-7xl space-y-16 px-4 sm:px-6 lg:px-8">
                     <Reveal className="space-y-3 text-center">
-                        <h3 className="text-alidade-navy  text-2xl font-bold sm:text-3xl">
-                            {t("Pourquoi demander un devis chez Alidade ?")}</h3>
+                        <h3 className="text-alidade-navy text-2xl font-bold sm:text-3xl">{t('Pourquoi demander un devis chez Alidade ?')}</h3>
                         <div className="bg-alidade-gold mx-auto h-0.5 w-16 rounded-full" />
                     </Reveal>
 
@@ -414,9 +448,12 @@ const { t } = useLocale();
                             <div className="bg-alidade-navy text-alidade-gold flex h-10 w-10 items-center justify-center rounded-full">
                                 <SearchCode size={20} />
                             </div>
-                            <h4 className="text-alidade-navy text-xs font-bold tracking-wider uppercase">{t("Analyse détaillée")}</h4>
+                            <h4 className="text-alidade-navy text-xs font-bold tracking-wider uppercase">{t('Analyse détaillée')}</h4>
                             <p className="text-xs leading-relaxed font-light text-gray-500">
-                                {t("Nous étudions minutieusement chaque paramètre, plan d'exécution ou photo transmise pour émettre un estimatif d'une justesse rigoureuse.")}</p>
+                                {t(
+                                    "Nous étudions minutieusement chaque paramètre, plan d'exécution ou photo transmise pour émettre un estimatif d'une justesse rigoureuse.",
+                                )}
+                            </p>
                         </StaggerItem>
 
                         {/* Box 2 */}
@@ -424,9 +461,12 @@ const { t } = useLocale();
                             <div className="bg-alidade-navy text-alidade-gold flex h-10 w-10 items-center justify-center rounded-full">
                                 <Sparkles size={20} />
                             </div>
-                            <h4 className="text-alidade-navy text-xs font-bold tracking-wider uppercase">{t("Solutions adaptées")}</h4>
+                            <h4 className="text-alidade-navy text-xs font-bold tracking-wider uppercase">{t('Solutions adaptées')}</h4>
                             <p className="text-xs leading-relaxed font-light text-gray-500">
-                                {t("Chaque pièce de bois, type de laque ou profilé de cloison est dimensionné selon vos besoins ergonomiques et vos préférences esthétiques.")}</p>
+                                {t(
+                                    'Chaque pièce de bois, type de laque ou profilé de cloison est dimensionné selon vos besoins ergonomiques et vos préférences esthétiques.',
+                                )}
+                            </p>
                         </StaggerItem>
 
                         {/* Box 3 */}
@@ -434,9 +474,12 @@ const { t } = useLocale();
                             <div className="bg-alidade-navy text-alidade-gold flex h-10 w-10 items-center justify-center rounded-full">
                                 <Shield size={20} />
                             </div>
-                            <h4 className="text-alidade-navy text-xs font-bold tracking-wider uppercase">{t("Rapport Qualité/Prix")}</h4>
+                            <h4 className="text-alidade-navy text-xs font-bold tracking-wider uppercase">{t('Rapport Qualité/Prix')}</h4>
                             <p className="text-xs leading-relaxed font-light text-gray-500">
-                                {t("Aucun intermédiaire. Nous produisons directement dans notre atelier à Casablanca, vous offrant des tarifs d'usine directs sans compromettre la noblesse.")}</p>
+                                {t(
+                                    "Aucun intermédiaire. Nous produisons directement dans notre atelier à Casablanca, vous offrant des tarifs d'usine directs sans compromettre la noblesse.",
+                                )}
+                            </p>
                         </StaggerItem>
 
                         {/* Box 4 */}
@@ -444,9 +487,12 @@ const { t } = useLocale();
                             <div className="bg-alidade-navy text-alidade-gold flex h-10 w-10 items-center justify-center rounded-full">
                                 <Star size={20} />
                             </div>
-                            <h4 className="text-alidade-navy text-xs font-bold tracking-wider uppercase">{t("Accompagnement")}</h4>
+                            <h4 className="text-alidade-navy text-xs font-bold tracking-wider uppercase">{t('Accompagnement')}</h4>
                             <p className="text-xs leading-relaxed font-light text-gray-500">
-                                {t("Un conducteur de travaux dédié suit l'avancement de votre chantier, de la pose du premier tasseau jusqu'aux finitions de vernis finales.")}</p>
+                                {t(
+                                    "Un conducteur de travaux dédié suit l'avancement de votre chantier, de la pose du premier tasseau jusqu'aux finitions de vernis finales.",
+                                )}
+                            </p>
                         </StaggerItem>
                     </Stagger>
 
@@ -454,16 +500,20 @@ const { t } = useLocale();
                     <Reveal className="from-alidade-navy to-alidade-dark border-alidade-gold/15 flex flex-col items-center justify-between gap-6 rounded-2xl border bg-gradient-to-r p-6 text-white shadow-lg sm:p-8 md:flex-row">
                         <div className="space-y-1.5 text-center md:text-left">
                             <span className="text-alidade-gold block text-xs font-bold tracking-widest uppercase">
-                                {t("Besoin d'un conseil technique ?")}</span>
+                                {t("Besoin d'un conseil technique ?")}
+                            </span>
                             <p className="max-w-xl text-sm font-light text-gray-300">
-                                {t("Nos experts sont à votre entière disposition pour vous guider, étudier vos esquisses et clarifier vos questions réglementaires ou thermiques.")}</p>
+                                {t(
+                                    'Nos experts sont à votre entière disposition pour vous guider, étudier vos esquisses et clarifier vos questions réglementaires ou thermiques.',
+                                )}
+                            </p>
                         </div>
                         <button
                             onClick={onNavigateToContact}
                             className="hover:bg-alidade-gold text-alidade-dark flex shrink-0 cursor-pointer items-center gap-2 rounded-xl bg-white px-6 py-3.5 text-xs font-bold tracking-widest uppercase shadow-md transition-all duration-300 hover:text-white"
                             id="devis-contact-btn"
                         >
-                            <span>{t("NOUS CONTACTER")}</span>
+                            <span>{t('NOUS CONTACTER')}</span>
                             <ArrowRight size={13} />
                         </button>
                     </Reveal>

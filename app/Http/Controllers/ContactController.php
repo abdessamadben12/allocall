@@ -80,7 +80,7 @@ class ContactController extends Controller
                 'mailer' => config('mail.default'),
             ]);
 
-            return back()->with('success', 'Votre message a ete envoye avec succes !');
+            return back()->with('success', __('contact.sent'));
         } catch (Throwable $e) {
             $errorId = (string) str()->uuid();
 
@@ -101,7 +101,7 @@ class ContactController extends Controller
             ]);
 
             return back()
-                ->with('error', "Le message a ete enregistre, mais l'email n'a pas ete envoye. Reference erreur: {$errorId}")
+                ->with('error', __('contact.mail_error', ['reference' => $errorId]))
                 ->with('mail_error_id', $errorId);
         }
     }

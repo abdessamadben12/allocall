@@ -1,9 +1,9 @@
-import { useLocale } from '@/lib/i18n';
+import { Link } from '@/components/localized-link';
 import { Reveal } from '@/components/motion';
 import { industryOverview } from '@/data/industry-overview';
-import { Link } from '@/components/localized-link';
+import { useLocale } from '@/lib/i18n';
 
-import { ArrowRight, Pause, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const industries = industryOverview.map((industry) => ({
@@ -18,7 +18,7 @@ const industries = industryOverview.map((industry) => ({
 const visibleCount = 3;
 
 export default function IndustriesSection() {
-const { t } = useLocale();
+    const { t } = useLocale();
 
     const [startIndex, setStartIndex] = useState(0);
     const [paused, setPaused] = useState(false);
@@ -55,18 +55,11 @@ const { t } = useLocale();
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <Reveal className="mx-auto max-w-5xl text-center">
                     <h2 id="home-industries-title" className="text-4xl font-extrabold tracking-normal text-[#111827] uppercase sm:text-5xl">
-                        {t("Industries")}</h2>
-                    <p className="
-                                    mx-auto
-                                    text-center
-                                    text-xs
-                                    leading-6
-                                    font-light
-                                    text-gray-500
-                                    sm:text-sm
-                                    lg:text-base
-                                ">
-                        {t("Des solutions pour vos appels, vos prospects et vos rendez-vous, adaptées à votre secteur.")}</p>
+                        {t('Industries')}
+                    </h2>
+                    <p className="mx-auto text-center text-xs leading-6 font-light text-gray-500 sm:text-sm lg:text-base">
+                        {t('Des solutions pour vos appels, vos prospects et vos rendez-vous, adaptées à votre secteur.')}
+                    </p>
                 </Reveal>
 
                 <div
@@ -101,7 +94,8 @@ const { t } = useLocale();
                                     </h3>
                                     <p className="mt-3 max-w-sm text-sm leading-5 font-medium text-white/95">{t(industry.description)}</p>
                                     <span className="mt-5 inline-flex items-center gap-2 text-base font-semibold text-[#b6e58e]">
-                                        {t("Découvrir ")}<ArrowRight size={18} aria-hidden="true" />
+                                        {t('Découvrir ')}
+                                        <ArrowRight size={18} aria-hidden="true" />
                                     </span>
                                 </div>
                             </Link>
@@ -114,7 +108,7 @@ const { t } = useLocale();
                                 key={industry.slug}
                                 type="button"
                                 onClick={() => setStartIndex(index)}
-                                aria-label={t("Afficher {0}", [industry.title])}
+                                aria-label={t('Afficher {0}', [t(industry.title)])}
                                 aria-pressed={index === startIndex}
                                 title={t(industry.title)}
                                 className="flex h-11 w-11 items-center justify-center rounded-sm focus-visible:outline-2 focus-visible:outline-[#74B946]"
@@ -125,21 +119,15 @@ const { t } = useLocale();
                                 />
                             </button>
                         ))}
-                      
                     </div>
                 </div>
                 <div className="mt-4 text-center">
-                    <Link href="/industries" className="inline-flex items-center gap-2 py-3
-                                text-xs
-                                font-bold
-                                tracking-[0.2em]
-                                text-[#74B946]
-                                uppercase
-                                sm:text-sm
-                               
-                                
-  hover:underline">
-                        {t("Tous nos secteurs ")}<ArrowRight size={18} aria-hidden="true" />
+                    <Link
+                        href="/industries"
+                        className="inline-flex items-center gap-2 py-3 text-xs font-bold tracking-[0.2em] text-[#74B946] uppercase hover:underline sm:text-sm"
+                    >
+                        {t('Tous nos secteurs ')}
+                        <ArrowRight size={18} aria-hidden="true" />
                     </Link>
                 </div>
             </div>
