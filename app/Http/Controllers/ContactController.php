@@ -19,6 +19,10 @@ class ContactController extends Controller
     {
         return Inertia::render('contact', [
             'requestType' => 'contact',
+            'submissionStatus' => [
+                'success' => session('success'),
+                'error' => session('error'),
+            ],
         ]);
     }
 
@@ -33,16 +37,24 @@ class ContactController extends Controller
     {
         $validated = $request->validate([
             'request_type' => 'required|in:contact,quote',
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
+            'full_name' => 'exclude_unless:request_type,contact|required|string|max:255',
+            'first_name' => 'exclude_if:request_type,contact|required|string|max:255',
+            'last_name' => 'exclude_if:request_type,contact|required|string|max:255',
             'email' => 'required|email|max:255',
-            'phone' => 'nullable|string|max:40',
-            'project_type' => 'nullable|string|max:255',
+            'phone' => 'required_if:request_type,contact|nullable|string|max:40',
+            'project_type' => 'exclude_if:request_type,contact|nullable|string|max:255',
             'message' => 'required|string|min:10',
-            'attachment' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png,webp|max:10240',
+            'attachment' => 'exclude_if:request_type,contact|nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png,webp|max:10240',
         ]);
 
-        if ($request->hasFile('attachment')) {
+        if ($validated['request_type'] === 'contact') {
+            // Preserve the complete name in the existing storage and dashboard format.
+            $validated['first_name'] = $validated['full_name'];
+            $validated['last_name'] = '';
+            unset($validated['full_name']);
+        }
+
+        if (isset($validated['attachment'])) {
             $attachment = $request->file('attachment');
 
             $validated['attachment_path'] = $attachment->store('contact-attachments');
@@ -53,7 +65,9 @@ class ContactController extends Controller
         unset($validated['attachment']);
 
         $contactMessage = ContactMessage::create($validated);
-        $recipient = config('mail.contact_to', env('CONTACT_MAIL_TO', 'contact@alidade.ma'));
+        $recipient = config('mail.contact_to', env('CONTACT_MAIL_TO', 'contact@allocall.ma'));
+        $recipient2 = config('allocallmaroc@gmail.com', env('CONTACT_MAIL_TO', 'contact@allocall.ma'));
+        
 
         try {
             $this->logMailAttempt($contactMessage->id, $recipient);

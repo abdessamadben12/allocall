@@ -56,6 +56,7 @@ export const aiWorkflow = [
 export const aiSolutions = [
     {
         id: 'crm-intelligent',
+        summary: 'Vos contacts, vos appels et vos rendez-vous r\u00e9unis dans un seul outil.',
         label: 'CRM intelligent',
         title: 'Tous vos prospects au m\u00eame endroit.',
         description:
@@ -74,6 +75,7 @@ export const aiSolutions = [
     },
     {
         id: 'automatisation-leads',
+        summary: 'Chaque nouvelle demande d\u00e9clenche une qualification et un suivi adapt\u00e9s.',
         label: 'Automatisation des leads',
         title: 'Aucun prospect laiss\u00e9 sans r\u00e9ponse.',
         description:
@@ -84,6 +86,7 @@ export const aiSolutions = [
     },
     {
         id: 'chatbot-ia',
+        summary: 'Un assistant disponible 24h/24 pour r\u00e9pondre aux visiteurs et qualifier leurs besoins.',
         label: 'Chatbot IA',
         title: 'Votre assistant commercial, disponible 24h/24.',
         description:
@@ -103,6 +106,7 @@ export const aiSolutions = [
     },
     {
         id: 'voice-agent',
+        summary: 'Automatisez les appels courants et transf\u00e9rez les demandes complexes \u00e0 un agent.',
         label: 'AI Voice Agent',
         title: 'Des appels intelligents gr\u00e2ce \u00e0 l\u2019IA.',
         description:
@@ -121,6 +125,7 @@ export const aiSolutions = [
     },
     {
         id: 'sms-email',
+        summary: 'Des confirmations et des relances personnalis\u00e9es, au bon moment.',
         label: 'SMS & Email Automation',
         title: 'Un suivi qui garde le contact.',
         description:
@@ -141,6 +146,7 @@ export const aiSolutions = [
     },
     {
         id: 'rendez-vous-ia',
+        summary: 'Du choix du cr\u00e9neau au rappel, vos rendez-vous se g\u00e8rent dans vos outils.',
         label: 'Prise de rendez-vous automatis\u00e9e',
         title: 'De l\u2019int\u00e9r\u00eat au rendez-vous.',
         description:

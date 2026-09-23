@@ -1,3 +1,4 @@
+import { useLocale } from '@/lib/i18n';
 import {
     Reveal,
     Stagger,
@@ -69,6 +70,8 @@ const socialLinks = [
 ========================================================= */
 
 const Footer: React.FC = () => {
+const { t } = useLocale();
+
     return (
         <footer className="overflow-hidden bg-[#111827] text-white">
 
@@ -102,7 +105,7 @@ const Footer: React.FC = () => {
                     <div className="mb-6">
                         <img
                             src={logoImage}
-                            alt="Logo AlloCall"
+                            alt={t("Logo AlloCall")}
                             className="mb-4 h-14 w-auto"
                             loading="lazy"
                             decoding="async"
@@ -120,14 +123,8 @@ const Footer: React.FC = () => {
                             text-gray-400
                         "
                     >
-                        Une équipe à distance pour gérer vos
-                        appels, vos prospects et votre relation
-                        client.
-                        <br />
-                        AlloCall combine expertise humaine et
-                        technologie pour vous aider à ne laisser
-                        passer aucune opportunité.
-                    </p>
+                        {t("Une équipe à distance pour gérer vos appels, vos prospects et votre relation client.")}<br />
+                        {t("AlloCall combine expertise humaine et technologie pour vous aider à ne laisser passer aucune opportunité.")}</p>
 
                     {/* =================================================
                         CONTACT INFO
@@ -148,9 +145,8 @@ const Footer: React.FC = () => {
                             />
 
                             <div className="flex flex-wrap items-center gap-1">
-                                <span className="text-xs font-semibold text-gray-500">
-                                    Maroc :
-                                </span>
+                                <span className="text-sm font-semibold text-gray-500">
+                                    {t("Maroc :")}</span>
 
                                 <a
                                     href={contactInfo.maroc.href}
@@ -180,9 +176,8 @@ const Footer: React.FC = () => {
                             />
 
                             <div className="flex flex-wrap items-center gap-1">
-                                <span className="text-xs font-semibold text-gray-500">
-                                    Montréal :
-                                </span>
+                                <span className="text-sm font-semibold text-gray-500">
+                                    {t("Montréal :")}</span>
 
                                 <a
                                     href={contactInfo.montreal.href}
@@ -277,8 +272,8 @@ const Footer: React.FC = () => {
                                 strokeWidth={1}
                             />
                         }
-                        title="RELATION CLIENT"
-                        description="Des agents dédiés pour répondre à vos clients avec professionnalisme."
+                        title={t("RELATION CLIENT")}
+                        description={t("Des agents dédiés pour répondre à vos clients avec professionnalisme.")}
                     />
 
                     {/* PERFORMANCE */}
@@ -296,8 +291,8 @@ const Footer: React.FC = () => {
                                 strokeWidth={1}
                             />
                         }
-                        title="PERFORMANCE"
-                        description="Qualification, suivi et relance pour transformer plus de prospects."
+                        title={t("PERFORMANCE")}
+                        description={t("Qualification, suivi et relance pour transformer plus de prospects.")}
                         hasBorder
                     />
 
@@ -316,8 +311,8 @@ const Footer: React.FC = () => {
                                 strokeWidth={1}
                             />
                         }
-                        title="IA + HUMAIN"
-                        description="La technologie pour gagner du temps, l'humain pour créer la relation."
+                        title={t("IA + HUMAIN")}
+                        description={t("La technologie pour gagner du temps, l'humain pour créer la relation.")}
                     />
                 </Stagger>
             </div>
@@ -355,9 +350,7 @@ const Footer: React.FC = () => {
                             text-gray-500
                         "
                     >
-                        © {new Date().getFullYear()} AlloCall.
-                        Tous droits réservés.
-                    </p>
+                        {t("© ")}{new Date().getFullYear()} {t("AlloCall. Tous droits réservés.")}</p>
                 </div>
             </div>
         </footer>
@@ -378,7 +371,7 @@ const FeatureItem = ({
     title: string;
     description: string;
     hasBorder?: boolean;
-}) => (
+}) => { const { t } = useLocale(); return (
     <StaggerItem
         className={`
             flex
@@ -407,7 +400,7 @@ const FeatureItem = ({
                 lg:text-sm
             "
         >
-            {title}
+            {t(title)}
         </h3>
 
         <p
@@ -419,10 +412,10 @@ const FeatureItem = ({
                 lg:text-base
             "
         >
-            {description}
+            {t(description)}
         </p>
     </StaggerItem>
-);
+); };
 
 /* =========================================================
    SOCIAL CIRCLE
@@ -436,12 +429,12 @@ const SocialCircle = ({
     icon: React.ReactNode;
     href: string;
     label: string;
-}) => (
+}) => { const { t } = useLocale(); return (
     <motion.a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={label}
+        aria-label={t(label)}
         whileHover={{
             scale: 1.15,
             y: -2,
@@ -473,6 +466,6 @@ const SocialCircle = ({
     >
         {icon}
     </motion.a>
-);
+); };
 
 export default Footer;

@@ -1,3 +1,4 @@
+import { useLocale } from '@/lib/i18n';
 import { useEffect, useState } from 'react';
 import {
     ArrowRight,
@@ -9,7 +10,8 @@ import {
     PhoneCall,
 } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
-import { Link } from '@inertiajs/react';
+import { Link } from '@/components/localized-link';
+
 import {
     EASE,
     Stagger,
@@ -60,6 +62,8 @@ interface HeroSliderProps {
 export default function Hero({
     onDiscoverClick: _onDiscoverClick,
 }: HeroSliderProps) {
+const { t } = useLocale();
+
     const [currentSlide, setCurrentSlide] = useState(0);
 
     /* =====================================================
@@ -88,7 +92,7 @@ export default function Hero({
 
             secondaryHref: '/contact',
 
-            image: '/images/hero/allocall-call-center.webp',
+            image: '/images/hero/gestion-leads.webp',
         },
 
         {
@@ -176,14 +180,15 @@ export default function Hero({
                 HERO
             ================================================= */}
 
-            <div className="relative flex w-full items-center lg:h-[650px]">
+            <div className="relative grid w-full">
                 {slides.map((slide, index) => (
                     <div
                         key={slide.id}
-                        className={`flex w-full flex-col transition-all duration-1000 ease-in-out lg:flex-row ${
+                        inert={index !== currentSlide}
+                        className={`col-start-1 row-start-1 flex w-full flex-col transition-all duration-1000 ease-in-out lg:min-h-[650px] lg:flex-row ${
                             index === currentSlide
-                                ? 'relative z-10 translate-x-0 scale-100 opacity-100 lg:h-full'
-                                : 'pointer-events-none absolute inset-0 z-0 h-full translate-x-full scale-95 opacity-0'
+                                ? 'relative z-10 translate-x-0 scale-100 opacity-100'
+                                : 'pointer-events-none relative z-0 translate-x-full scale-95 opacity-0'
                         }`}
                     >
                         {/* =====================================
@@ -249,7 +254,7 @@ export default function Hero({
                                             lg:text-[14px]
                                         "
                                     >
-                                        {slide.subtitle}
+                                        {t(slide.subtitle)}
                                     </span>
                                 </motion.div>
 
@@ -270,7 +275,7 @@ export default function Hero({
                                         xl:text-[49px]
                                     "
                                 >
-                                    {slide.title}
+                                    {t(slide.title)}
                                 </motion.h1>
 
                                 {/* DESCRIPTION */}
@@ -288,7 +293,7 @@ export default function Hero({
                                         lg:leading-8
                                     "
                                 >
-                                    {slide.description}
+                                    {t(slide.description)}
                                 </motion.p>
 
                                 {/* BUTTONS */}
@@ -345,7 +350,7 @@ export default function Hero({
                                             "
                                         >
                                             <span>
-                                                {slide.cta}
+                                                {t(slide.cta)}
                                             </span>
 
                                             <ArrowRight
@@ -384,7 +389,7 @@ export default function Hero({
                                                 "
                                             >
                                                 {
-                                                    slide.secondaryCta
+                                                    t(slide.secondaryCta)
                                                 }
 
                                                 <ArrowRight
@@ -412,13 +417,13 @@ export default function Hero({
                                 w-full
                                 overflow-hidden
                                 bg-[#111827]
-                                lg:h-full
+                                lg:h-auto
                                 lg:w-[52%]
                             "
                         >
                             <img
                                 src={slide.image}
-                                alt={slide.title}
+                                alt={t(slide.title)}
                                 loading={
                                     index === currentSlide
                                         ? 'eager'
@@ -434,6 +439,8 @@ export default function Hero({
                                     h-full
                                     w-full
                                     object-cover
+                                    lg:absolute
+                                    lg:inset-0
                                     transition-transform
                                     duration-[8000ms]
                                     hover:scale-105
@@ -482,6 +489,8 @@ export default function Hero({
                     className="
                         absolute
                         left-4
+                        top-1/2
+                        -translate-y-1/2
                         z-20
                         hidden
                         rounded-full
@@ -497,7 +506,7 @@ export default function Hero({
                         hover:bg-[#74B946]
                         sm:block
                     "
-                    aria-label="Slide précédente"
+                    aria-label={t("Slide précédente")}
                 >
                     <ChevronLeft size={20} />
                 </button>
@@ -511,6 +520,8 @@ export default function Hero({
                     className="
                         absolute
                         right-4
+                        top-1/2
+                        -translate-y-1/2
                         z-20
                         hidden
                         rounded-full
@@ -526,7 +537,7 @@ export default function Hero({
                         hover:bg-[#74B946]
                         sm:block
                     "
-                    aria-label="Slide suivante"
+                    aria-label={t("Slide suivante")}
                 >
                     <ChevronRight size={20} />
                 </button>
@@ -552,7 +563,7 @@ export default function Hero({
                             onClick={() =>
                                 setCurrentSlide(index)
                             }
-                            aria-label={`Afficher le slide ${index + 1}`}
+                            aria-label={t("Afficher le slide {0}", [index + 1])}
                             className={`h-1.5 rounded-full transition-all duration-500 ${
                                 index === currentSlide
                                     ? 'w-14 bg-[#74B946]'
@@ -592,14 +603,11 @@ export default function Hero({
 
                             <div>
                                 <h3 className="text-xs font-bold tracking-wider text-[#111827] uppercase sm:text-sm lg:text-lg">
-                                    Appels entrants
-                                </h3>
+                                    {t("Appels entrants")}</h3>
 
                                 <p className="mt-0.5 text-xs font-light text-gray-400 lg:text-base">
-                                    Aucun appel
-                                    <br />
-                                    laissé sans réponse
-                                </p>
+                                    {t("Aucun appel")}<br />
+                                    {t("laissé sans réponse")}</p>
                             </div>
                         </StaggerItem>
 
@@ -612,14 +620,11 @@ export default function Hero({
 
                             <div>
                                 <h3 className="text-xs font-bold tracking-wider text-[#111827] uppercase sm:text-sm lg:text-lg">
-                                    IA+Humain
-                                </h3>
+                                    {t("IA+Humain")}</h3>
 
                                 <p className="mt-0.5 text-xs font-light text-gray-400 lg:text-base">
-                                    Automatisation
-                                    <br />
-                                    et agents dédiés
-                                </p>
+                                    {t("Automatisation")}<br />
+                                    {t("et agents dédiés")}</p>
                             </div>
                         </StaggerItem>
 
@@ -632,14 +637,11 @@ export default function Hero({
 
                             <div>
                                 <h3 className="text-xs font-bold tracking-wider text-[#111827] uppercase sm:text-sm lg:text-lg">
-                                    24H/24
-                                </h3>
+                                    {t("24H/24")}</h3>
 
                                 <p className="mt-0.5 text-xs font-light text-gray-400 lg:text-base">
-                                    Vos leads traités
-                                    <br />
-                                    rapidement
-                                </p>
+                                    {t("Vos leads traités")}<br />
+                                    {t("rapidement")}</p>
                             </div>
                         </StaggerItem>
 
@@ -652,14 +654,11 @@ export default function Hero({
 
                             <div>
                                 <h3 className="text-xs font-bold tracking-wider text-[#111827] uppercase sm:text-sm lg:text-lg">
-                                    Rendez-vous
-                                </h3>
+                                    {t("Rendez-vous")}</h3>
 
                                 <p className="mt-0.5 text-xs font-light text-gray-400 lg:text-base">
-                                    Plus de prospects
-                                    <br />
-                                    convertis en clients
-                                </p>
+                                    {t("Plus de prospects")}<br />
+                                    {t("convertis en clients")}</p>
                             </div>
                         </StaggerItem>
                     </Stagger>

@@ -13,11 +13,7 @@ export default function ConfigurateurPage() {
 
     return (
         <div className="text-alidade-navy flex min-h-screen flex-col bg-[#fafafa]">
-            <SeoHead
-                title="Configurateur Alidade | Estimez votre projet de menuiserie"
-                description="Configurez votre cuisine, dressing ou habillage mural sur mesure et obtenez une estimation immédiate avant votre demande de devis."
-                keywords={['estimation menuiserie Casablanca', 'configurateur cuisine sur mesure', 'prix dressing Maroc']}
-            />
+            <SeoHead />
             <Navbar />
             <main className="public-content flex-grow">
                 <Configurator onSendToQuote={handleSendToQuote} />

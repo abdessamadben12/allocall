@@ -1,3 +1,4 @@
+import { useLocale } from '@/lib/i18n';
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -12,6 +13,8 @@ interface MyQuotesProps {
 }
 
 export default function MyQuotes({ onNavigateToRequest }: MyQuotesProps) {
+const { t } = useLocale();
+
     const [quotes, setQuotes] = useState<QuoteRequest[]>([]);
 
     // Load quotes from local storage
@@ -66,16 +69,16 @@ export default function MyQuotes({ onNavigateToRequest }: MyQuotesProps) {
                         <div>
                             <div className="flex items-center gap-2">
                                 <span className="bg-alidade-gold h-[1.5px] w-6" />
-                                <span className="text-alidade-gold text-xs font-bold tracking-[0.2em] uppercase">Suivi de dossier</span>
+                                <span className="text-alidade-gold text-xs font-bold tracking-[0.2em] uppercase">{t("Suivi de dossier")}</span>
                             </div>
-                            <h2 className="text-alidade-navy  text-2xl font-bold sm:text-3xl">Mes Demandes de Devis</h2>
+                            <h2 className="text-alidade-navy  text-2xl font-bold sm:text-3xl">{t("Mes Demandes de Devis")}</h2>
                         </div>
 
                         <div className="flex gap-2">
                             <button
                                 onClick={handleRefresh}
                                 className="hover:text-alidade-gold flex items-center justify-center rounded-lg border border-gray-200 bg-white p-2.5 text-gray-400 transition-colors"
-                                title="Actualiser les données"
+                                title={t("Actualiser les données")}
                                 id="refresh-quotes-btn"
                             >
                                 <RefreshCw size={15} />
@@ -85,8 +88,7 @@ export default function MyQuotes({ onNavigateToRequest }: MyQuotesProps) {
                                 className="bg-alidade-gold hover:bg-alidade-gold-light text-alidade-navy flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-xs font-bold tracking-wider uppercase shadow transition-colors"
                                 id="request-new-quote-btn"
                             >
-                                Nouvelle demande
-                            </button>
+                                {t("Nouvelle demande")}</button>
                         </div>
                     </div>
 

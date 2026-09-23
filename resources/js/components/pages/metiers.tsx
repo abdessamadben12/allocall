@@ -1,5 +1,7 @@
+import { useLocale } from '@/lib/i18n';
 import { EASE, Reveal } from '@/components/motion';
-import { Link } from '@inertiajs/react';
+import { Link } from '@/components/localized-link';
+
 import { motion } from 'framer-motion';
 import {
     ArrowRight,
@@ -25,6 +27,14 @@ interface ServiceItem {
 const callCenterImage = '/images/hero/allocall-call-center.webp';
 const aiImage = '/images/hero/allocall-ai.webp';
 const salesImage = '/images/hero/allocall-sales.webp';
+const imageConfiramtion = '/images/services/confirmation-rendez-vous.webp';
+const imageGestionLeads = '/images/services/gestion-leads.webp';
+const imageTelevente = '/images/services/televente-appels-sortants.webp';
+const imageAssistance = '/images/services/assistante-virtuelle.webp';
+const imagePriseRendezVous = '/images/services/prise-rendez-vous.webp';
+const imageServiceClientele = '/images/services/service-clientele.webp';
+const imageReceptionnTele = '/images/services/reception-telephonique.webp';
+const imageSupportClient = '/images/services/support-technique-niveau-1.webp';
 
 /* =========================================================
    4 SERVICES MIS EN AVANT
@@ -36,7 +46,7 @@ const featuredServices: ServiceItem[] = [
         title: 'Assistants virtuels',
         description:
             'Une équipe à distance pour gérer vos appels, courriels, tâches administratives et suivis.',
-        imageUrl: aiImage,
+        imageUrl: imageAssistance,
         icon: <Users size={23} />,
     },
 
@@ -45,7 +55,7 @@ const featuredServices: ServiceItem[] = [
         title: 'Télévente et appels sortants',
         description:
             'Des agents commerciaux pour contacter vos prospects, présenter vos services et générer des opportunités.',
-        imageUrl: salesImage,
+        imageUrl: imageTelevente,
         icon: <PhoneCall size={23} />,
     },
 
@@ -54,7 +64,7 @@ const featuredServices: ServiceItem[] = [
         title: 'Gestion de leads',
         description:
             'Qualification, suivi et relance de vos prospects afin de réduire les occasions perdues.',
-        imageUrl: aiImage,
+        imageUrl: imageGestionLeads,
         icon: <Target size={23} />,
     },
 
@@ -63,7 +73,7 @@ const featuredServices: ServiceItem[] = [
         title: 'Prise de rendez-vous',
         description:
             'Nos agents contactent vos prospects et clients et planifient directement les rendez-vous dans votre calendrier.',
-        imageUrl: callCenterImage,
+        imageUrl: imagePriseRendezVous,
         icon: <CalendarCheck size={23} />,
     },
 ];
@@ -79,6 +89,8 @@ function ServiceCard({
     service: ServiceItem;
     index: number;
 }) {
+const { t } = useLocale();
+
     return (
         <motion.div
             initial="hidden"
@@ -107,23 +119,24 @@ function ServiceCard({
             <Link
                 href={`/services/${service.slug}`}
                 className="
-                    group
-                    relative
-                    flex
-                    min-h-[8rem]
-                    items-stretch
-                    overflow-hidden
-                    rounded-2xl
-                    border
-                    border-gray-100
-                    bg-[#F8FAFC]
-                    shadow-sm
-                    transition-all
-                    duration-300
-                    hover:-translate-y-1
-                    hover:border-[#74B946]/20
-                    hover:shadow-xl
-                    sm:min-h-[9rem]
+                  group
+        relative
+        flex
+        h-auto
+        items-stretch
+        overflow-hidden
+        rounded-2xl
+        border
+        border-gray-100
+        bg-[#F8FAFC]
+        shadow-sm
+        transition-all
+        duration-300
+        hover:-translate-y-1
+        hover:border-[#74B946]/20
+        hover:shadow-xl
+        sm:h-[150px]
+        lg:h-[150px]
                 "
             >
                 {/* NUMBER */}
@@ -228,7 +241,7 @@ function ServiceCard({
                                 lg:text-2xl
                             "
                         >
-                            {service.title}
+                            {t(service.title)}
                         </h4>
 
                         {/* DESCRIPTION */}
@@ -266,7 +279,7 @@ function ServiceCard({
                                     lg:text-base
                                 "
                             >
-                                {service.description}
+                                {t(service.description)}
                             </p>
                         </motion.div>
                     </div>
@@ -274,79 +287,31 @@ function ServiceCard({
 
                 {/* IMAGE */}
 
-                <div
-                    className="
-                        relative
-                        hidden
-                        w-[32%]
-                        max-w-[330px]
-                        shrink-0
-                        overflow-hidden
-                        sm:block
-                    "
-                >
-                    <img
-                        src={service.imageUrl}
-                        alt={service.title}
-                        className="
-                            h-full
-                            w-full
-                            object-cover
-                            transition-transform
-                            duration-700
-                            group-hover:scale-110
-                        "
-                        loading="lazy"
-                        decoding="async"
-                    />
-
-                    {/* IMAGE GRADIENT */}
-
-                    <div
-                        className="
-                            absolute
-                            inset-0
-                            bg-gradient-to-r
-                            from-[#F8FAFC]/70
-                            via-transparent
-                            to-transparent
-                        "
-                    />
-
-                    {/* ARROW */}
-
-                    <span
-                        className="
-                            absolute
-                            top-1/2
-                            right-5
-                            flex
-                            h-11
-                            w-11
-                            -translate-y-1/2
-                            items-center
-                            justify-center
-                            rounded-full
-                            bg-white
-                            text-[#111827]
-                            shadow-lg
-                            transition-all
-                            duration-300
-                            group-hover:scale-110
-                            group-hover:bg-[#74B946]
-                            group-hover:text-white
-                        "
-                    >
-                        <ArrowRight
-                            size={18}
-                            className="
-                                transition-transform
-                                duration-300
-                                group-hover:translate-x-0.5
-                            "
-                        />
-                    </span>
-                </div>
+              <div
+    className="
+        relative
+        hidden
+        h-full
+        w-[32%]
+        max-w-[330px]
+        shrink-0
+        overflow-hidden
+        sm:block
+    "
+>
+    <img
+        src={service.imageUrl}
+        alt={t(service.title)}
+        className="
+            h-full
+            w-full
+            object-cover
+            transition-transform
+            duration-700
+            group-hover:scale-110
+        "
+    />
+</div>
 
                 {/* MOBILE ARROW */}
 
@@ -372,6 +337,8 @@ function ServiceCard({
 ========================================================= */
 
 export default function MetiersSection() {
+const { t } = useLocale();
+
     return (
         <section
             className="
@@ -380,8 +347,8 @@ export default function MetiersSection() {
                 border-t
                 border-gray-100
                 bg-white
-                py-20
-                lg:py-24
+                py-5
+                lg:py-10
             "
         >
             {/* BACKGROUND DECORATION */}
@@ -421,8 +388,7 @@ export default function MetiersSection() {
                                 sm:text-sm
                             "
                         >
-                            Nos services
-                        </span>
+                            {t("Nos services")}</span>
 
                         <span className="h-[2px] w-8 bg-[#74B946]" />
                     </div>
@@ -439,49 +405,42 @@ export default function MetiersSection() {
                             lg:text-5xl
                         "
                     >
-                        Des solutions pour
-                        <span className="text-[#74B946]">
+                        {t("Des solutions pour")}<span className="text-[#74B946]">
                             <br/>
                             {' '}
-                            votre relation client
-                        </span>
+                            {t("votre relation client")}</span>
                     </h3>
 
                     <p
                         className="
-                            mx-auto
-                            mt-5
-                            max-w-2xl
-                            text-sm
-                            leading-7
-                            text-gray-500
-                            sm:text-base
-                            lg:text-lg
+                           
+                                    max-w-3xl
+                                    text-xs
+                                    leading-6
+                                    font-light
+                                    text-gray-500
+                                    sm:text-sm
+                                    lg:text-base
+                                
+                            
                         "
                     >
-                        AlloCall accompagne votre entreprise
-                        avec des équipes dédiées pour gérer
-                        vos appels, développer vos ventes et
-                        transformer davantage de prospects en
-                        clients.
-                    </p>
+                        {t("AlloCall accompagne votre entreprise avec des équipes dédiées pour gérer vos appels, développer vos ventes et transformer davantage de prospects en clients.")}</p>
                 </Reveal>
 
                 {/* =================================================
                     ONLY 4 SERVICES
                 ================================================= */}
 
-                <div className="mt-14 space-y-5">
-                    {featuredServices.map(
-                        (service, index) => (
-                            <ServiceCard
-                                key={service.slug}
-                                service={service}
-                                index={index}
-                            />
-                        ),
-                    )}
-                </div>
+               <div className="mt-14 space-y-5">
+    {featuredServices.map((service, index) => (
+        <ServiceCard
+            key={service.slug}
+            service={service}
+            index={index}
+        />
+    ))}
+</div>
 
                 {/* =================================================
                     DISCOVER BUTTON
@@ -517,8 +476,7 @@ export default function MetiersSection() {
                         "
                     >
                         <span>
-                            Découvrir tous nos services
-                        </span>
+                            {t("Découvrir tous nos services")}</span>
 
                         <ArrowRight
                             size={17}

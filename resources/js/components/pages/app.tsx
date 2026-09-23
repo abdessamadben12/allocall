@@ -10,6 +10,7 @@ import IndustriesSection from '@/components/pages/industries';
 import Navbar from '@/components/pages/navbar';
 import MetiersSection from '@/components/pages/metiers';
 import { router } from '@inertiajs/react';
+import { useLocale } from '@/lib/i18n';
 import { useEffect } from 'react';
 import { EngagementSection } from './featchuresection';
 
@@ -24,13 +25,14 @@ const legacyTabRoutes: Record<string, string> = {
 };
 
 export default function App() {
+    const { href } = useLocale();
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
         const tabParam = params.get('tab');
         if (tabParam && legacyTabRoutes[tabParam]) {
-            router.visit(legacyTabRoutes[tabParam], { replace: true });
+            router.visit(href(legacyTabRoutes[tabParam]), { replace: true });
         }
-    }, []);
+    }, [href]);
 
     return (
         <div className="text-alidade-navy flex min-h-screen flex-col bg-[#fafafa]">
@@ -38,7 +40,7 @@ export default function App() {
 
             <main className="public-content animate-in fade-in flex-grow duration-500">
                 {/* 1. Hero */}
-                <HeroSlider onDiscoverClick={() => router.visit('/savoir-faire')} />
+                <HeroSlider onDiscoverClick={() => router.visit(href('/services'))} />
 
                 {/* 2. Engagements */}
                 <EngagementSection />

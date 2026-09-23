@@ -1,6 +1,7 @@
 export const industryOverview = [
     {
         slug: 'automobile',
+        summary: 'Vos appels et vos leads suivis, du premier contact au rendez-vous en concession.',
         name: 'Automobile',
         title: 'Centre d\u2019appels pour concessionnaires automobiles',
         description:
@@ -25,6 +26,7 @@ export const industryOverview = [
     },
     {
         slug: 'sante',
+        summary: 'Un accueil professionnel pour vos patients et un agenda mieux suivi.',
         name: 'Sant\u00e9',
         title: 'Centre d\u2019appels pour les professionnels de sant\u00e9',
         description:
@@ -46,6 +48,7 @@ export const industryOverview = [
     },
     {
         slug: 'hvac',
+        summary: 'Des demandes qualifi\u00e9es pour remplir les agendas de vos \u00e9quipes techniques.',
         name: 'HVAC & Thermopompes',
         title: 'Un centre d\u2019appels sp\u00e9cialis\u00e9 dans les entreprises HVAC',
         description:
@@ -70,6 +73,7 @@ export const industryOverview = [
     },
     {
         slug: 'construction',
+        summary: 'Transformez vos demandes de devis en projets qualifi\u00e9s.',
         name: 'Construction',
         title: 'Centre d\u2019appels pour les entreprises de construction',
         description:
@@ -92,6 +96,7 @@ export const industryOverview = [
     },
     {
         slug: 'assurance',
+        summary: 'Des prospects qualifi\u00e9s et des rendez-vous pour vos conseillers.',
         name: 'Assurance',
         title: 'Centre d\u2019appels pour les assurances',
         description:
@@ -115,6 +120,7 @@ export const industryOverview = [
     },
     {
         slug: 'immobilier',
+        summary: 'Contactez rapidement vos prospects et organisez leurs visites.',
         name: 'Immobilier',
         title: 'Centre d\u2019appels pour les professionnels de l\u2019immobilier',
         description:

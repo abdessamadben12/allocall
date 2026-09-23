@@ -1,4 +1,5 @@
 import '../css/app.css';
+import { site } from './data/site';
 
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
@@ -10,7 +11,7 @@ declare global {
     const route: typeof routeFn;
 }
 
-const appName = import.meta.env.VITE_APP_NAME || 'Alidade';
+const appName = site.name;
 
 createInertiaApp({
     title: (title) => (title.includes(appName) ? title : `${title} | ${appName}`),

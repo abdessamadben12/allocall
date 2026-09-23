@@ -1,3 +1,4 @@
+import { useLocale } from '@/lib/i18n';
 import React from 'react';
 import {
     ArrowRight,
@@ -9,7 +10,8 @@ import {
     Target,
     Users,
 } from 'lucide-react';
-import { Link } from '@inertiajs/react';
+import { Link } from '@/components/localized-link';
+
 import { motion } from 'framer-motion';
 import {
     Reveal,
@@ -48,6 +50,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     items,
     path,
 }) => {
+const { t } = useLocale();
+
     return (
         <motion.div
             whileHover={{
@@ -92,6 +96,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                     transition-transform
                     duration-500
                     group-hover:scale-125
+                    group-hover:bg-alidade-gold
+                    group-hover:text-white
                 "
             />
 
@@ -125,10 +131,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                         text-4xl
                         font-black
                         tracking-tight
-                        text-slate-100
+                        text-slate-400
                         transition-colors
                         duration-300
-                        group-hover:text-[#74B946]/15
+                        group-hover:text-white
                     "
                 >
                     {number}
@@ -147,7 +153,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                         lg:text-2xl
                     "
                 >
-                    {title}
+                    {t(title)}
                 </h3>
 
                 <p
@@ -159,7 +165,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                         lg:text-[15px]
                     "
                 >
-                    {description}
+                    {t(description)}
                 </p>
 
                 {/* LIST */}
@@ -176,7 +182,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                             />
 
                             <span className="text-sm text-slate-600">
-                                {item}
+                                {t(item)}
                             </span>
                         </div>
                     ))}
@@ -200,9 +206,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                             hover:text-[#74B946]
                         "
                     >
-                        Découvrir le service
-
-                        <span
+                        {t("Découvrir le service")}<span
                             className="
                                 flex
                                 h-9
@@ -243,6 +247,8 @@ const FeatureItem: React.FC<FeatureProps> = ({
     title,
     subtitle,
 }) => {
+const { t } = useLocale();
+
     return (
         <div className="flex min-w-0 flex-1 basis-[210px] items-center gap-4">
             <div
@@ -275,7 +281,7 @@ const FeatureItem: React.FC<FeatureProps> = ({
                         lg:text-base
                     "
                 >
-                    {title}
+                    {t(title)}
                 </h4>
 
                 <p className="mt-1 text-xs text-slate-400 lg:text-sm">
@@ -291,6 +297,8 @@ const FeatureItem: React.FC<FeatureProps> = ({
 ========================================================= */
 
 export const EngagementSection: React.FC = () => {
+const { t } = useLocale();
+
     return (
         <section
             className="
@@ -343,8 +351,7 @@ export const EngagementSection: React.FC = () => {
                                 sm:text-sm
                             "
                         >
-                            NOS EXPERTISES
-                        </span>
+                            {t("NOS EXPERTISES")}</span>
 
                         <span className="h-[2px] w-8 bg-[#74B946]" />
                     </div>
@@ -362,12 +369,10 @@ export const EngagementSection: React.FC = () => {
                             lg:text-5xl
                         "
                     >
-                        VOTRE RELATION CLIENT,
-                        <span className="text-[#74B946]">
+                        {t("VOTRE RELATION CLIENT,")}<span className="text-[#74B946]">
                           <br/>
                             {' '}
-                            NOTRE EXPERTISE
-                        </span>
+                            {t("NOTRE EXPERTISE")}</span>
                     </h2>
 
                     {/* DESCRIPTION */}
@@ -384,11 +389,7 @@ export const EngagementSection: React.FC = () => {
                             lg:text-lg
                         "
                     >
-                        De la réception d'appels à la
-                        prospection commerciale, AlloCall
-                        accompagne votre entreprise à chaque
-                        étape de la relation client.
-                    </p>
+                        {t("De la réception d'appels à la prospection commerciale, AlloCall accompagne votre entreprise à chaque étape de la relation client.")}</p>
                 </Reveal>
 
                 {/* =================================================
@@ -411,11 +412,11 @@ export const EngagementSection: React.FC = () => {
                     <StaggerItem className="h-full">
                         <ServiceCard
                             number="01"
-                            title="Service Client"
+                            title={t("Service Client")}
                             icon={
                                 <Headphones size={27} />
                             }
-                            description="Confiez la gestion de vos demandes clients à une équipe dédiée, professionnelle et orientée satisfaction."
+                            description={t("Confiez la gestion de vos demandes clients à une équipe dédiée, professionnelle et orientée satisfaction.")}
                             items={[
                                 "Réception d'appels",
                                 'Assistance client',
@@ -430,9 +431,9 @@ export const EngagementSection: React.FC = () => {
                     <StaggerItem className="h-full">
                         <ServiceCard
                             number="02"
-                            title="Téléprospection"
+                            title={t("Téléprospection")}
                             icon={<Target size={27} />}
-                            description="Développez votre activité grâce à une prospection téléphonique structurée et adaptée à vos objectifs commerciaux."
+                            description={t("Développez votre activité grâce à une prospection téléphonique structurée et adaptée à vos objectifs commerciaux.")}
                             items={[
                                 'Prise de rendez-vous',
                                 'Qualification de prospects',
@@ -447,13 +448,13 @@ export const EngagementSection: React.FC = () => {
                     <StaggerItem className="h-full">
                         <ServiceCard
                             number="03"
-                            title="Fidélisation Client"
+                            title={t("Fidélisation Client")}
                             icon={
                                 <HeartHandshake
                                     size={27}
                                 />
                             }
-                            description="Renforcez la relation avec vos clients grâce à des échanges personnalisés et un suivi régulier."
+                            description={t("Renforcez la relation avec vos clients grâce à des échanges personnalisés et un suivi régulier.")}
                             items={[
                                 'Suivi client',
                                 'Enquêtes de satisfaction',
@@ -468,13 +469,13 @@ export const EngagementSection: React.FC = () => {
                     <StaggerItem className="h-full">
                         <ServiceCard
                             number="04"
-                            title="Télévente"
+                            title={t("Télévente")}
                             icon={
                                 <BadgeDollarSign
                                     size={27}
                                 />
                             }
-                            description="Transformez vos contacts en opportunités commerciales grâce à des équipes orientées performance et conversion."
+                            description={t("Transformez vos contacts en opportunités commerciales grâce à des équipes orientées performance et conversion.")}
                             items={[
                                 'Vente B2B & B2C',
                                 'Upselling & cross-selling',

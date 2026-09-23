@@ -3,17 +3,15 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HeroImageController;
 use App\Http\Controllers\MaquetteController;
-use App\Models\HeroImage;
+use App\Support\SeoMetadata;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('welcome', [
-        'heroImages' => HeroImage::resolvedSlots(),
-    ]);
+    return Inertia::render('welcome');
 })->name('home');
 
-Route::get("etude-de-projet", function () {
+Route::get('etude-de-projet', function () {
     return Inertia::render('etude-de-projet');
 })->name('etude-de-projet');
 
@@ -51,60 +49,80 @@ Route::get('industries', function () {
 })->name('industries');
 
 Route::get('industries/{industry}', function (string $industry) {
+    abort_unless(isset(config('seo.pages')['/industries/'.$industry]), 404);
+
     return Inertia::render('industries/show', ['slug' => $industry]);
 })->name('industries.show');
 
 Route::get('services/{service}', function (string $service) {
+    abort_unless(isset(config('seo.pages')['/services/'.$service]), 404);
+
     return Inertia::render('services/show', ['slug' => $service]);
 })->name('services.show');
 
 Route::get('savoir-faire', function () {
-    return Inertia::render('services/index');
+    return redirect('/services', 301);
 })->name('savoir-faire');
 
 Route::get('savoir-faire/{service}', function (string $service) {
-    return Inertia::render('services/show', ['slug' => $service]);
+    abort_unless(isset(config('seo.pages')['/services/'.$service]), 404);
+
+    return redirect('/services/'.$service, 301);
 })->name('savoir-faire.show');
 
 Route::get('sitemap.xml', function () {
-    $paths = [
-        '/',
-        '/apropos',
-        '/services',
-        '/services/assistants-virtuels',
-        '/services/televente-appels-sortants',
-        '/services/gestion-leads',
-        '/services/prise-rendez-vous',
-        '/services/service-clientele',
-        '/services/reception-telephonique',
-        '/services/support-technique-niveau-1',
-        '/services/confirmation-rappel-rendez-vous',
-        '/solutions-ia',
-        '/industries',
-        '/industries/automobile',
-        '/industries/sante',
-        '/devis',
-        '/contact',
-    ];
-    $lastModified = now()->toAtomString();
+    $paths = array_keys(config('seo.pages'));
     $urls = collect($paths)
         ->map(fn (string $path) => sprintf(
-            '<url><loc>%s</loc><lastmod>%s</lastmod></url>',
-            e(url($path)),
-            $lastModified
+            '<url><loc>%s</loc></url>',
+            htmlspecialchars(SeoMetadata::baseUrl().$path, ENT_XML1 | ENT_QUOTES, 'UTF-8')
         ))
         ->implode('');
 
     return response(
         '<?xml version="1.0" encoding="UTF-8"?>'
-        . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-        . $urls
-        . '</urlset>',
+        .'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        .$urls
+        .'</urlset>',
         200,
         ['Content-Type' => 'application/xml; charset=UTF-8']
     );
 })->name('sitemap');
 
+Route::get('robots.txt', function () {
+    return response(
+        "User-agent: *\nAllow: /\n\nSitemap: ".SeoMetadata::baseUrl()."/sitemap.xml\n",
+        200,
+        ['Content-Type' => 'text/plain; charset=UTF-8']
+    );
+})->name('robots');
+
+Route::prefix('en')->name('en.')->group(function () {
+    Route::get('/', fn () => Inertia::render('welcome'))->name('home');
+    Route::get('apropos', fn () => Inertia::render('propos'))->name('apropos');
+    Route::get('contact', [ContactController::class, 'show'])->name('contact');
+    Route::post('contact', [ContactController::class, 'submit'])->name('contact.submit');
+    Route::get('devis', fn () => Inertia::render('devis'))->name('quote');
+    Route::get('services', fn () => Inertia::render('services/index'))->name('services');
+    Route::get('solutions-ia', fn () => Inertia::render('solutions-ia'))->name('solutions-ia');
+    Route::get('industries', fn () => Inertia::render('industries/index'))->name('industries');
+    Route::get('services/{service}', function (string $service) {
+        abort_unless(isset(config('seo.pages')['/services/'.$service]), 404);
+
+        return Inertia::render('services/show', ['slug' => $service]);
+    })->name('services.show');
+    Route::get('industries/{industry}', function (string $industry) {
+        abort_unless(isset(config('seo.pages')['/industries/'.$industry]), 404);
+
+        return Inertia::render('industries/show', ['slug' => $industry]);
+    })->name('industries.show');
+    Route::get('savoir-faire', fn () => redirect('/en/services', 301))->name('savoir-faire');
+    Route::get('savoir-faire/{service}', function (string $service) {
+        abort_unless(isset(config('seo.pages')['/services/'.$service]), 404);
+
+        return redirect('/en/services/'.$service, 301);
+    })->name('savoir-faire.show');
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('dashboard', [ContactController::class, 'dashboard'])->name('dashboard');
@@ -127,5 +145,5 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('hero-images/{heroImage}', [HeroImageController::class, 'destroy'])->name('hero-images.destroy');
 });
 
-require __DIR__ . '/settings.php';
-require __DIR__ . '/auth.php';
+require __DIR__.'/settings.php';
+require __DIR__.'/auth.php';

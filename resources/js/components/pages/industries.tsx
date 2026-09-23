@@ -1,160 +1,146 @@
+import { useLocale } from '@/lib/i18n';
 import { Reveal } from '@/components/motion';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { industryOverview } from '@/data/industry-overview';
+import { Link } from '@/components/localized-link';
+
+import { ArrowRight, Pause, Play } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-const industries = [
-    {
-        title: 'Telecoms',
-        description:
-            'Connectivite sans faille, appels traites rapidement et experience client superieure.',
-        image: '/images/hero/allocall-call-center.webp',
-    },
-    {
-        title: 'Energie',
-        description:
-            'Efficacite operationnelle, support client et suivis pour un service durable.',
-        image: '/images/hero/allocall-ai.webp',
-    },
-    {
-        title: 'Banque',
-        description:
-            'Transformer les relations clients pour une croissance durable.',
-        image: '/images/hero/allocall-sales.webp',
-    },
-    {
-        title: 'Sante',
-        description:
-            'Accueil, confirmation et rappels de rendez-vous avec professionnalisme.',
-        image: '/images/hero/allocall-call-center.webp',
-    },
-    {
-        title: 'Immobilier',
-        description:
-            'Qualification rapide des prospects et relances commerciales structurees.',
-        image: '/images/hero/allocall-sales.webp',
-    },
-];
+const industries = industryOverview.map((industry) => ({
+    slug: industry.slug,
+    title: industry.name,
+    description: industry.summary,
+    image: industry.image,
+    imageAlt: industry.imageAlt,
+    href: industry.href.startsWith('/industries/') ? industry.href : `/industries#${industry.slug}`,
+}));
 
 const visibleCount = 3;
 
 export default function IndustriesSection() {
+const { t } = useLocale();
+
     const [startIndex, setStartIndex] = useState(0);
+    const [paused, setPaused] = useState(false);
+    const [hovered, setHovered] = useState(false);
+    const [focused, setFocused] = useState(false);
 
-    const visibleIndustries = Array.from(
-        { length: visibleCount },
-        (_, index) => industries[(startIndex + index) % industries.length],
-    );
-
-    const previous = () => {
-        setStartIndex(
-            (current) =>
-                (current - 1 + industries.length) %
-                industries.length,
-        );
-    };
-
-    const next = () => {
-        setStartIndex(
-            (current) => (current + 1) % industries.length,
-        );
-    };
+    const visibleIndustries = Array.from({ length: visibleCount }, (_, index) => industries[(startIndex + index) % industries.length]);
 
     useEffect(() => {
+        const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const respectMotionPreference = () => {
+            if (motionPreference.matches) setPaused(true);
+        };
+        respectMotionPreference();
+        motionPreference.addEventListener('change', respectMotionPreference);
+
+        return () => motionPreference.removeEventListener('change', respectMotionPreference);
+    }, []);
+
+    useEffect(() => {
+        if (paused || hovered || focused) return;
+
         const timer = window.setInterval(() => {
-            setStartIndex(
-                (current) =>
-                    (current + 1) % industries.length,
-            );
+            if (!document.hidden) {
+                setStartIndex((current) => (current + 1) % industries.length);
+            }
         }, 5000);
 
         return () => window.clearInterval(timer);
-    }, []);
+    }, [paused, hovered, focused]);
 
     return (
-        <section className="bg-white py-20 lg:py-24">
+        <section className="bg-white" aria-labelledby="home-industries-title">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <Reveal className="mx-auto max-w-5xl text-center">
-                    <h2 className="text-4xl font-extrabold tracking-normal text-[#111827] uppercase sm:text-5xl">
-                        Industries
-                    </h2>
-
+                    <h2 id="home-industries-title" className="text-4xl font-extrabold tracking-normal text-[#111827] uppercase sm:text-5xl">
+                        {t("Industries")}</h2>
                     <p className="
-                            mx-auto
-                            mt-5
-                            max-w-2xl
-                            text-sm
-                            leading-7
-                            text-gray-500
-                            sm:text-base
-                            lg:text-lg
-                        ">
-                       Dans un environnement en constante évolution, nous mettons notre expertise au service de votre transformation pour assurer la croissance et le succès durable de votre entreprise.
-
-                    </p>
+                                    mx-auto
+                                    text-center
+                                    text-xs
+                                    leading-6
+                                    font-light
+                                    text-gray-500
+                                    sm:text-sm
+                                    lg:text-base
+                                ">
+                        {t("Des solutions pour vos appels, vos prospects et vos rendez-vous, adaptées à votre secteur.")}</p>
                 </Reveal>
 
-                <div className="mt-10 flex justify-center gap-4 md:justify-end">
-                    <button
-                        type="button"
-                        onClick={previous}
-                        className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#74B946] text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#659F3B] hover:shadow-lg"
-                        aria-label="Industrie precedente"
-                    >
-                        <ArrowLeft size={22} />
-                    </button>
-
-                    <button
-                        type="button"
-                        onClick={next}
-                        className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#74B946] text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#659F3B] hover:shadow-lg"
-                        aria-label="Industrie suivante"
-                    >
-                        <ArrowRight size={22} />
-                    </button>
-                </div>
-
-                <div className="mt-4 grid gap-7 md:grid-cols-3">
-                    {visibleIndustries.map((industry) => (
-                        <div key={industry.title}>
-                            <article className="group relative h-64 overflow-hidden bg-[#111827] shadow-sm">
+                <div
+                    onMouseEnter={() => setHovered(true)}
+                    onMouseLeave={() => setHovered(false)}
+                    onFocusCapture={() => setFocused(true)}
+                    onBlurCapture={(event) => {
+                        if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
+                    }}
+                >
+                    <div className="mt-6 grid auto-rows-fr gap-7 lg:grid-cols-3">
+                        {visibleIndustries.map((industry) => (
+                            <Link
+                                key={industry.slug}
+                                href={industry.href}
+                                aria-labelledby={`home-industry-${industry.slug}`}
+                                className="group relative grid min-h-96 overflow-hidden bg-[#111827] shadow-sm focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#74B946]"
+                            >
                                 <img
                                     src={industry.image}
-                                    alt={industry.title}
-                                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    alt={t(industry.imageAlt)}
+                                    width="960"
+                                    height="1080"
+                                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none"
                                     loading="lazy"
                                     decoding="async"
                                 />
-
-                                <div className="absolute inset-0 bg-[#111827]/20" />
-
-                                <div className="absolute inset-x-5 bottom-5 bg-[#111827]/82 p-7 text-white backdrop-blur-sm transition-colors duration-300 group-hover:bg-[#74B946]/90">
-                                    <h3 className="text-xl font-extrabold tracking-wide uppercase sm:text-2xl">
-                                        {industry.title}
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/50 to-transparent" />
+                                <div className="relative self-end p-6 text-white">
+                                    <h3 id={`home-industry-${industry.slug}`} className="text-xl font-extrabold tracking-normal sm:text-2xl">
+                                        {t(industry.title)}
                                     </h3>
-
-                                    <p className="mt-4 max-w-sm text-sm leading-5 font-medium text-white/95">
-                                        {industry.description}
-                                    </p>
+                                    <p className="mt-3 max-w-sm text-sm leading-5 font-medium text-white/95">{t(industry.description)}</p>
+                                    <span className="mt-5 inline-flex items-center gap-2 text-base font-semibold text-[#b6e58e]">
+                                        {t("Découvrir ")}<ArrowRight size={18} aria-hidden="true" />
+                                    </span>
                                 </div>
-                            </article>
-                        </div>
-                    ))}
-                </div>
+                            </Link>
+                        ))}
+                    </div>
 
-                <div className="mt-8 flex justify-center gap-2">
-                    {industries.map((industry, index) => (
-                        <button
-                            key={industry.title}
-                            type="button"
-                            onClick={() => setStartIndex(index)}
-                            aria-label={`Afficher ${industry.title}`}
-                            className={`h-2 rounded-full transition-all duration-300 ${
-                                index === startIndex
-                                    ? 'w-6 bg-[#74B946]'
-                                    : 'w-2 bg-gray-300 hover:bg-[#74B946]/60'
-                            }`}
-                        />
-                    ))}
+                    <div className="mt-6 flex flex-wrap items-center justify-center gap-1">
+                        {industries.map((industry, index) => (
+                            <button
+                                key={industry.slug}
+                                type="button"
+                                onClick={() => setStartIndex(index)}
+                                aria-label={t("Afficher {0}", [industry.title])}
+                                aria-pressed={index === startIndex}
+                                title={t(industry.title)}
+                                className="flex h-11 w-11 items-center justify-center rounded-sm focus-visible:outline-2 focus-visible:outline-[#74B946]"
+                            >
+                                <span
+                                    className={`h-2 rounded-full ${index === startIndex ? 'w-6 bg-[#74B946]' : 'w-2 bg-gray-300'}`}
+                                    aria-hidden="true"
+                                />
+                            </button>
+                        ))}
+                      
+                    </div>
+                </div>
+                <div className="mt-4 text-center">
+                    <Link href="/industries" className="inline-flex items-center gap-2 py-3
+                                text-xs
+                                font-bold
+                                tracking-[0.2em]
+                                text-[#74B946]
+                                uppercase
+                                sm:text-sm
+                               
+                                
+  hover:underline">
+                        {t("Tous nos secteurs ")}<ArrowRight size={18} aria-hidden="true" />
+                    </Link>
                 </div>
             </div>
         </section>

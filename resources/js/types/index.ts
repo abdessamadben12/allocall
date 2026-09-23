@@ -22,6 +22,16 @@ export interface NavItem {
 }
 
 export interface SharedData {
+    locale: 'fr' | 'en';
+    seo: {
+        title: string;
+        description: string;
+        keywords: string[];
+        canonical: string;
+        image: string;
+        robots: string;
+        schema: Record<string, unknown>;
+    };
     name: string;
     appUrl: string;
     quote: { message: string; author: string };

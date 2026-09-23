@@ -40,6 +40,17 @@ export interface ServiceDetail {
 const callCenterImage = '/images/hero/allocall-call-center.webp';
 const aiImage = '/images/hero/allocall-ai.webp';
 const salesImage = '/images/hero/allocall-sales.webp';
+const imageTelevente = '/images/services/televente-appels-sortants.webp';
+const imageAssistance = '/images/services/assistante-virtuelle.webp';
+const imageGestionLeads = '/images/services/gestion-leads.webp';
+const imagePriseRendezVous = '/images/services/prise-rendez-vous.webp';
+const imageServiceClientele = '/images/services/service-clientele.webp';
+const imageReceptionnTele = '/images/services/reception-telephonique.webp';
+const imageSupportClient = '/images/services/support-technique-niveau-1.webp';
+const imageConfiramtion = '/images/services/confirmation-rendez-vous.webp';
+
+
+
 
 export const services: ServiceDetail[] = [
     {
@@ -47,7 +58,7 @@ export const services: ServiceDetail[] = [
         title: 'Assistante virtuelle',
         description:
             'Confiez vos appels, vos taches administratives, vos courriels et vos suivis a une assistante virtuelle professionnelle.',
-        imageUrl: aiImage,
+        imageUrl: imageAssistance,
         icon: Users,
         seoTitle: 'Assistante virtuelle au Quebec | ALLO CALL',
         seoDescription:
@@ -98,7 +109,7 @@ export const services: ServiceDetail[] = [
         title: 'Televendeur / Televente',
         description:
             'Nos televendeurs contactent vos prospects, presentent votre offre, identifient leurs besoins et transmettent les opportunites qualifiees.',
-        imageUrl: salesImage,
+        imageUrl: imageTelevente,
         icon: PhoneOutgoing,
         seoTitle: 'Televente au Quebec | Televendeurs externalises ALLO CALL',
         seoDescription:
@@ -149,7 +160,7 @@ export const services: ServiceDetail[] = [
         title: 'Gestion des leads',
         description:
             'Qualification, suivi et relance de vos prospects afin de reduire les occasions perdues.',
-        imageUrl: aiImage,
+        imageUrl: imageGestionLeads,
         icon: Target,
         seoTitle: 'Gestion de leads et qualification prospects | ALLO CALL',
         seoDescription:
@@ -190,7 +201,7 @@ export const services: ServiceDetail[] = [
         title: 'Prise de rendez-vous',
         description:
             'Nos agents contactent vos prospects et clients et prennent directement les rendez-vous dans votre calendrier.',
-        imageUrl: callCenterImage,
+        imageUrl: imagePriseRendezVous,
         icon: CalendarCheck,
         seoTitle: 'Prise de rendez-vous et appointment setting | ALLO CALL',
         seoDescription:
@@ -241,7 +252,7 @@ export const services: ServiceDetail[] = [
         title: 'Service a la clientele',
         description:
             'Reponse aux questions, gestion des demandes, suivi des dossiers et soutien a vos clients.',
-        imageUrl: callCenterImage,
+        imageUrl: imageServiceClientele,
         icon: Headphones,
         seoTitle: 'Service a la clientele externalise | ALLO CALL',
         seoDescription:
@@ -272,8 +283,8 @@ export const services: ServiceDetail[] = [
         details: ['Reponse aux demandes.', 'Suivi de dossiers.', 'Support multicanal.', 'Transfert vers la bonne equipe.'],
         materials: ['Telephone', 'Courriel', 'CRM', 'Messagerie', 'Base de connaissances'],
         gallery: [
-            { src: callCenterImage, caption: 'Equipe disponible pour vos clients' },
-            { src: aiImage, caption: 'Gestion professionnelle de la relation client' },
+            { src: imageServiceClientele, caption: 'Equipe disponible pour vos clients' },
+            { src: imageAssistance, caption: 'Gestion professionnelle de la relation client' },
         ],
     },
     {
@@ -281,7 +292,7 @@ export const services: ServiceDetail[] = [
         title: 'Support technique niveau 1',
         description:
             'Offrez a vos utilisateurs un soutien technique rapide et fiable, sans devoir batir et gerer votre propre equipe.',
-        imageUrl: aiImage,
+        imageUrl: imageSupportClient,
         icon: LifeBuoy,
         seoTitle: 'Support technique niveau 1 externalise | ALLO CALL',
         seoDescription:
@@ -327,7 +338,7 @@ export const services: ServiceDetail[] = [
         title: 'Reception telephonique',
         description:
             'Ne manquez plus jamais un appel important. Notre service assure la prise en charge de tous vos appels entrants avec professionnalisme.',
-        imageUrl: callCenterImage,
+        imageUrl: imageReceptionnTele,
         icon: PhoneCall,
         seoTitle: 'Reception telephonique et answering service | ALLO CALL',
         seoDescription:
@@ -373,7 +384,7 @@ export const services: ServiceDetail[] = [
         title: 'Confirmation de rendez-vous',
         description:
             'Notre service contacte vos clients avant leur rencontre pour confirmer leur presence, reduire les absences et optimiser votre agenda.',
-        imageUrl: salesImage,
+        imageUrl: imageConfiramtion,
         icon: BellRing,
         seoTitle: 'Confirmation de rendez-vous et rappels | ALLO CALL',
         seoDescription:

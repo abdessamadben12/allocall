@@ -7,11 +7,7 @@ import { router } from '@inertiajs/react';
 export default function ServicesPage() {
     return (
         <div className="text-alidade-navy flex min-h-screen flex-col bg-[#fafafa]">
-            <SeoHead
-                title="Savoir-faire Alidade | Rénovation, menuiserie, aluminium et finition"
-                description="Six corps de métier, un seul interlocuteur : rénovation, agencement, menuiserie bois, aluminium, peinture et revêtements à Casablanca et au Maroc."
-                keywords={['services rénovation Casablanca', 'menuiserie bois Maroc', 'travaux aluminium', 'agencement intérieur', 'Alidade services']}
-            />
+            <SeoHead />
             <Navbar />
             <main className="public-content flex-grow">
                 <Services onQuoteWithService={(serviceName) => router.visit(`/devis?service=${encodeURIComponent(serviceName)}`)} />

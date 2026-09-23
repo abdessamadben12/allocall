@@ -1,7 +1,7 @@
 <x-mail::message>
 # Nouvelle {{ $contactMessage->request_type === 'quote' ? 'demande de devis' : 'message de contact' }} recue
 
-Un visiteur a soumis le formulaire {{ $contactMessage->request_type === 'quote' ? 'de devis' : 'de contact' }} sur le site Alidad :
+Un visiteur a soumis le formulaire {{ $contactMessage->request_type === 'quote' ? 'de devis' : 'de contact' }} sur le site ALLO CALL :
 
 **Nom complet :** {{ $contactMessage->first_name }} {{ $contactMessage->last_name }}  
 **Adresse email :** {{ $contactMessage->email }}  
@@ -25,5 +25,5 @@ Acceder au Tableau de Bord
 </x-mail::button>
 
 Cordialement,<br>
-L'equipe {{ config('app.name') }}
+L'equipe ALLO CALL
 </x-mail::message>

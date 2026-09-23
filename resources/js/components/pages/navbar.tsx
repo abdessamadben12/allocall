@@ -1,5 +1,8 @@
+import { useLocale } from '@/lib/i18n';
+import LanguageSwitcher from '@/components/language-switcher';
 import WhatsAppButton from '@/components/pages/whatsapp-button';
-import { Link } from '@inertiajs/react';
+import { Link } from '@/components/localized-link';
+
 import {
     FileText,
     Mail,
@@ -77,12 +80,11 @@ function isActive(href: string, currentPath: string) {
 }
 
 export default function Navbar() {
+const { t, url } = useLocale();
+
     const [isOpen, setIsOpen] = useState(false);
 
-    const currentPath =
-        typeof window !== 'undefined'
-            ? window.location.pathname
-            : '';
+    const currentPath = url.split(/[?#]/)[0].replace(/^\/en(?=\/|$)/, '') || '/';
 
     return (
         <header className="relative z-50 w-full">
@@ -105,14 +107,13 @@ export default function Navbar() {
                             />
 
                             <span>
-                                <strong>Maroc :</strong>{' '}
+                                <strong>{t("Maroc :")}</strong>{' '}
                                 {topContacts[0].value}
                             </span>
                         </a>
 
                         <span className="hidden text-white/20 sm:inline">
-                            |
-                        </span>
+                            {t("|")}</span>
 
                         <a
                             href={topContacts[1].href}
@@ -124,14 +125,13 @@ export default function Navbar() {
                             />
 
                             <span>
-                                <strong>Canada :</strong>{' '}
+                                <strong>{t("Canada :")}</strong>{' '}
                                 {topContacts[1].value}
                             </span>
                         </a>
 
                         <span className="hidden text-white/20 sm:inline">
-                            |
-                        </span>
+                            {t("|")}</span>
 
                         {/* EMAIL */}
                         <a
@@ -149,8 +149,7 @@ export default function Navbar() {
 
                     {/* LOCATIONS */}
                     <div className="hidden">
-                        MONTRÉAL · CASABLANCA · PARIS
-                    </div>
+                        {t("MONTRÉAL · CASABLANCA · PARIS")}</div>
                 </div>
             </div>
 
@@ -165,11 +164,11 @@ export default function Navbar() {
                     <Link
                         href="/"
                         className="flex shrink-0 items-center"
-                        aria-label="AlloCall — Accueil"
+                        aria-label={t("AlloCall — Accueil")}
                     >
                         <img
                             src="/images/logo-allocall.png"
-                            alt="AlloCall"
+                            alt={t("AlloCall")}
                             className="h-12 w-auto object-contain sm:h-14"
                         />
                     </Link>
@@ -189,13 +188,13 @@ export default function Navbar() {
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className={`relative py-2 text-sm font-semibold whitespace-nowrap transition-all duration-300 ${
+                                    className={`relative py-2 text-md font-semibold whitespace-nowrap transition-all duration-300 ${
                                         active
                                             ? 'text-[#74B946]'
                                             : 'text-[#1F2937] hover:text-[#74B946]'
                                     }`}
                                 >
-                                    {item.label}
+                                    {t(item.label)}
 
                                     {/* ACTIVE LINE */}
                                     {active && (
@@ -233,8 +232,7 @@ export default function Navbar() {
                         >
                             <FileText size={16} />
 
-                            Demander une soumission
-                        </Link>
+                            {t("Demander une soumission")}</Link>
                     </div>
 
                     {/* ============================= */}
@@ -256,8 +254,8 @@ export default function Navbar() {
                         "
                         aria-label={
                             isOpen
-                                ? 'Fermer le menu'
-                                : 'Ouvrir le menu'
+                                ? t("Fermer le menu")
+                                : t("Ouvrir le menu")
                         }
                         aria-expanded={isOpen}
                     >
@@ -310,7 +308,7 @@ export default function Navbar() {
                                             : 'text-[#1F2937] hover:bg-[#F1F8EC] hover:text-[#74B946]'
                                     }`}
                                 >
-                                    {item.label}
+                                    {t(item.label)}
                                 </Link>
                             );
                         })}
@@ -343,8 +341,7 @@ export default function Navbar() {
                             >
                                 <FileText size={17} />
 
-                                Soumission gratuite
-                            </Link>
+                                {t("Soumission gratuite")}</Link>
                         </div>
                     </div>
                 </div>

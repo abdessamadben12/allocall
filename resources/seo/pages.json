@@ -1,0 +1,123 @@
+{
+    "/": {
+        "title": "Centre d'appels au Québec et relation client | ALLO CALL",
+        "description": "Confiez vos appels, vos prospects et vos rendez-vous à ALLO CALL. Agents humains et solutions IA pour les PME du Québec, du Canada et d'ailleurs.",
+        "keywords": ["centre d'appels Québec", "externalisation relation client", "réception téléphonique", "télévente", "gestion de leads"],
+        "image": "/images/hero/gestion-leads.webp",
+        "preloadImage": true
+    },
+    "/services": {
+        "title": "Services de centre d'appels et télévente | ALLO CALL",
+        "description": "Découvrez nos services : assistante virtuelle, télévente, gestion de leads, prise de rendez-vous, réception téléphonique et support client externalisé.",
+        "keywords": ["services centre d'appels", "assistante virtuelle", "télévente Québec", "service à la clientèle"],
+        "image": "/images/hero/allocall-call-center.webp",
+        "pageType": "CollectionPage"
+    },
+    "/apropos": {
+        "title": "À propos de notre centre d'appels | ALLO CALL",
+        "description": "Découvrez ALLO CALL : des agents humains et des solutions IA qui s'intègrent à vos outils pour gérer vos appels, vos prospects et votre relation client.",
+        "keywords": ["ALLO CALL", "centre d'appels bilingue", "agents humains et IA", "externalisation relation client"],
+        "image": "/images/hero/allocall-about.webp",
+        "preloadImage": true,
+        "pageType": "AboutPage"
+    },
+    "/contact": {
+        "title": "Contactez notre équipe | ALLO CALL",
+        "description": "Un besoin en réception d'appels, télévente ou suivi de prospects ? Contactez ALLO CALL au Canada ou au Maroc pour discuter de votre projet.",
+        "keywords": ["contact ALLO CALL", "centre d'appels Canada", "centre d'appels Maroc", "relation client"],
+        "image": "/images/hero/allocall-contact.webp",
+        "preloadImage": true,
+        "pageType": "ContactPage"
+    },
+    "/devis": {
+        "title": "Soumission pour votre centre d'appels | ALLO CALL",
+        "description": "Demandez une soumission pour externaliser vos appels, votre service client ou vos rendez-vous. ALLO CALL adapte son accompagnement à votre entreprise.",
+        "keywords": ["soumission centre d'appels", "devis externalisation", "réception appels", "télévente"],
+        "image": "/images/hero/allocall-call-center.webp"
+    },
+    "/solutions-ia": {
+        "title": "Centre d'appels IA, CRM et automatisation | ALLO CALL",
+        "description": "Automatisez vos leads, appels et rendez-vous : chatbot IA, agent vocal, CRM intelligent, SMS et emails. L'expertise humaine complète votre solution IA.",
+        "keywords": ["centre d'appels IA", "chatbot IA", "agent vocal IA", "CRM intelligent", "automatisation leads"],
+        "image": "/images/hero/allocall-solutions-ai.webp",
+        "preloadImage": true
+    },
+    "/industries": {
+        "title": "Centre d'appels adapté à votre industrie | ALLO CALL",
+        "description": "Des solutions pour l'automobile, la santé, le HVAC, la construction, l'assurance et l'immobilier : appels, qualification des leads et rendez-vous.",
+        "keywords": ["centre d'appels par industrie", "centre d'appels automobile", "centre d'appels santé", "centre d'appels HVAC"],
+        "image": "/images/hero/allocall-industries.webp",
+        "preloadImage": true,
+        "pageType": "CollectionPage"
+    },
+    "/industries/automobile": {
+        "title": "Centre d'appels pour concessionnaires | ALLO CALL",
+        "description": "Gestion des appels et leads automobiles, rendez-vous service, relances et confirmations. ALLO CALL accompagne les concessionnaires et groupes automobiles.",
+        "keywords": ["centre d'appels automobile", "concessionnaire automobile", "leads automobiles", "rendez-vous service"],
+        "image": "/images/industries/automobile.webp",
+        "preloadImage": true
+    },
+    "/industries/sante": {
+        "title": "Centre d'appels pour cliniques et santé | ALLO CALL",
+        "description": "Un accueil téléphonique professionnel pour vos patients : appels entrants, prise de rendez-vous, confirmations et rappels selon vos procédures.",
+        "keywords": ["centre d'appels santé", "accueil téléphonique médical", "rendez-vous patients", "centre d'appels clinique"],
+        "image": "/images/industries/sante.webp",
+        "preloadImage": true
+    },
+    "/services/assistants-virtuels": {
+        "title": "Assistante virtuelle au Québec | ALLO CALL",
+        "description": "Déléguez vos appels, courriels, tâches administratives et suivis à une assistante virtuelle. ALLO CALL s'intègre à vos outils et à votre organisation.",
+        "keywords": ["assistante virtuelle Québec", "secrétaire virtuelle", "télésecrétariat", "externalisation administrative"],
+        "image": "/images/services/assistante-virtuelle.webp",
+        "preloadImage": true
+    },
+    "/services/televente-appels-sortants": {
+        "title": "Télévente et prospection téléphonique | ALLO CALL",
+        "description": "Nos télévendeurs contactent vos prospects, présentent votre offre et qualifient les opportunités. Développez vos ventes avec une équipe externalisée.",
+        "keywords": ["télévente Québec", "prospection téléphonique", "télémarketing B2B", "équipe commerciale externalisée"],
+        "image": "/images/services/televente-appels-sortants.webp",
+        "preloadImage": true
+    },
+    "/services/gestion-leads": {
+        "title": "Gestion de leads et qualification | ALLO CALL",
+        "description": "Qualifiez, relancez et suivez vos prospects avec ALLO CALL. Nos agents prennent en charge vos leads pour alimenter votre équipe commerciale.",
+        "keywords": ["gestion de leads", "qualification prospects", "relance commerciale", "suivi prospects"],
+        "image": "/images/services/gestion-leads.webp",
+        "preloadImage": true
+    },
+    "/services/prise-rendez-vous": {
+        "title": "Prise de rendez-vous externalisée | ALLO CALL",
+        "description": "Nos agents contactent vos prospects et clients pour fixer des rendez-vous dans votre agenda. Téléprospection B2B et suivi adaptés à votre entreprise.",
+        "keywords": ["prise de rendez-vous", "appointment setting Québec", "téléprospection B2B", "rendez-vous qualifiés"],
+        "image": "/images/services/prise-rendez-vous.webp",
+        "preloadImage": true
+    },
+    "/services/service-clientele": {
+        "title": "Service à la clientèle externalisé | ALLO CALL",
+        "description": "Offrez un accueil rapide et professionnel à vos clients. ALLO CALL gère leurs demandes et leurs suivis en respectant vos procédures et votre image.",
+        "keywords": ["service à la clientèle", "support client externalisé", "centre d'appels entrant", "relation client"],
+        "image": "/images/services/service-clientele.webp",
+        "preloadImage": true
+    },
+    "/services/reception-telephonique": {
+        "title": "Réception téléphonique et accueil | ALLO CALL",
+        "description": "Confiez vos appels entrants à une réceptionniste virtuelle : accueil personnalisé, prise de messages, filtrage et transferts selon vos consignes.",
+        "keywords": ["réception téléphonique", "réceptionniste virtuelle", "permanence téléphonique", "answering service Québec"],
+        "image": "/images/services/reception-telephonique.webp",
+        "preloadImage": true
+    },
+    "/services/support-technique-niveau-1": {
+        "title": "Support technique niveau 1 externalisé | ALLO CALL",
+        "description": "Un support technique pour les demandes courantes de vos utilisateurs : diagnostic initial, suivi des tickets et transmission des cas complexes à vos experts.",
+        "keywords": ["support technique niveau 1", "help desk externalisé", "assistance technique", "suivi tickets"],
+        "image": "/images/services/support-technique-niveau-1.webp",
+        "preloadImage": true
+    },
+    "/services/confirmation-rappel-rendez-vous": {
+        "title": "Confirmation et rappels de rendez-vous | ALLO CALL",
+        "description": "Réduisez les rendez-vous manqués avec des confirmations et rappels. ALLO CALL contacte vos clients et gère les reports directement dans votre agenda.",
+        "keywords": ["confirmation rendez-vous", "rappel rendez-vous", "réduction absences", "gestion agenda"],
+        "image": "/images/services/confirmation-rendez-vous.webp",
+        "preloadImage": true
+    }
+}

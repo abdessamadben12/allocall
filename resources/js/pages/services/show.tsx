@@ -3,7 +3,8 @@ import Footer from '@/components/pages/Footer';
 import Navbar from '@/components/pages/navbar';
 import SeoHead from '@/components/seo-head';
 import { getServiceBySlug, services } from '@/data/services';
-import { Link } from '@inertiajs/react';
+import { Link } from '@/components/localized-link';
+
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 
@@ -15,37 +16,15 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
     const service = getServiceBySlug(slug);
 
     return (
-        <div className="flex min-h-screen flex-col bg-[#FDFCFA] text-alidade-navy">
-            <SeoHead
-                title={service ? service.seoTitle : 'Service introuvable | ALLO CALL'}
-                description={service?.seoDescription ?? "Ce service n'existe pas ou a ete deplace."}
-                keywords={service?.keywords ?? ['ALLO CALL']}
-                image={service?.imageUrl}
-                type="article"
-                structuredData={
-                    service
-                        ? {
-                              '@context': 'https://schema.org',
-                              '@type': 'Service',
-                              name: service.title,
-                              description: service.seoDescription,
-                              provider: {
-                                  '@type': 'Organization',
-                                  name: 'ALLO CALL',
-                              },
-                              areaServed: ['Quebec', 'Canada', 'Maroc'],
-                              serviceType: service.title,
-                          }
-                        : undefined
-                }
-            />
+        <div className="text-alidade-navy flex min-h-screen flex-col bg-[#FDFCFA]">
+            <SeoHead />
             <Navbar />
 
             <main className="public-content flex-grow">
                 {!service ? (
                     <section className="mx-auto max-w-3xl px-4 py-28 text-center sm:px-6">
                         <span className="text-xs font-bold tracking-[0.3em] text-[#74B946] uppercase">Page introuvable</span>
-                        <h1 className="mt-4 text-4xl font-bold text-alidade-navy">Ce service n'existe pas.</h1>
+                        <h1 className="text-alidade-navy mt-4 text-4xl font-bold">Ce service n'existe pas.</h1>
                         <p className="mt-4 text-sm font-light text-gray-500">
                             Le lien est peut-etre ancien ou mal orthographie. Retrouvez l'ensemble de nos services.
                         </p>
@@ -70,7 +49,9 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
                                         <h1 className="text-4xl leading-[1.1] font-extrabold sm:text-5xl lg:text-6xl">{service.title}</h1>
                                     </StaggerItem>
                                     <StaggerItem>
-                                        <p className="max-w-xl text-base leading-relaxed font-light text-white/82 lg:text-lg">{service.description}</p>
+                                        <p className="max-w-xl text-base leading-relaxed font-light text-white/82 lg:text-lg">
+                                            {service.description}
+                                        </p>
                                     </StaggerItem>
                                     <StaggerItem className="flex flex-wrap gap-3 pt-2">
                                         <Link
@@ -100,6 +81,7 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
                                         alt={service.title}
                                         className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                                         loading="eager"
+                                        fetchPriority="high"
                                         decoding="async"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/70 via-transparent to-transparent" />
@@ -125,7 +107,9 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
                                                     {section.items.map((item) => (
                                                         <StaggerItem key={item} className="flex gap-3" y={10}>
                                                             <CheckCircle2 size={19} className="mt-1 shrink-0 text-[#74B946]" />
-                                                            <span data-public-body className="text-base leading-7 text-gray-700">{item}</span>
+                                                            <span data-public-body className="text-base leading-7 text-gray-700">
+                                                                {item}
+                                                            </span>
                                                         </StaggerItem>
                                                     ))}
                                                 </Stagger>
@@ -167,7 +151,7 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
                                             <Link
                                                 key={s.slug}
                                                 href={`/services/${s.slug}`}
-                                                className="rounded-md border border-gray-200 bg-white px-5 py-2.5 text-sm font-bold uppercase text-[#111827] transition-colors hover:border-[#74B946] hover:text-[#74B946]"
+                                                className="rounded-md border border-gray-200 bg-white px-5 py-2.5 text-sm font-bold text-[#111827] uppercase transition-colors hover:border-[#74B946] hover:text-[#74B946]"
                                             >
                                                 {s.title}
                                             </Link>

@@ -154,7 +154,7 @@ export const industryDetails: Record<string, MarketingPage> = {
         title: 'Centre d appels pour les professionnels de sante',
         description:
             'Notre centre d appels pour la sante permet aux cliniques, cabinets et centres medicaux de deleguer la gestion des appels et rendez-vous.',
-        image: '/images/hero/allocall-call-center.webp',
+        image: '/images/hero/allocall-ll-center.webp',
         seoTitle: 'Centre d appels sante pour cliniques et cabinets | ALLO CALL',
         seoDescription:
             'Gestion des appels, rendez-vous, confirmations, rappels et demandes patients pour cliniques, cabinets medicaux et centres de soins.',

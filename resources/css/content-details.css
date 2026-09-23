@@ -1,0 +1,40 @@
+.content-details {
+    margin-top: 24px;
+    border-top: 1px solid #cdd7c5;
+}
+.content-details > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 52px;
+    padding-block: 14px;
+    color: #3f7028;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    list-style: none;
+    cursor: pointer;
+}
+.content-details > summary::-webkit-details-marker {
+    display: none;
+}
+.content-details > summary svg {
+    flex-shrink: 0;
+}
+.content-details[open] > summary svg {
+    transform: rotate(180deg);
+}
+.content-details > summary:hover {
+    color: #202722;
+}
+.content-details > summary:focus-visible {
+    outline: 3px solid #74b946;
+    outline-offset: 4px;
+}
+.content-details-body {
+    padding-block: 4px 12px;
+}
+.content-details-body > p:first-child {
+    margin-top: 0;
+}
