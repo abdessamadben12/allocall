@@ -81,7 +81,7 @@ export default function Configurator({ onSendToQuote }: ConfiguratorProps) {
         if (pushToOpen) optionsList.push('Mécanisme Push-to-Open sans poignées');
         if (premiumFittings) optionsList.push('Charnières amorties haut de gamme Blum');
 
-        const summary = `Configurateur Alidade :
+        const summary = `Configurateur ALLO CALL :
 • Projet : ${projectType === 'kitchen' ? 'Cuisine Moderne' : projectType === 'wardrobe' ? 'Dressing/Placard' : 'Habillage Mural'}
 • Matériau : ${material} (${materialObj.desc})
 • Finition : ${finish}
@@ -101,7 +101,7 @@ export default function Configurator({ onSendToQuote }: ConfiguratorProps) {
                 <Reveal className="mb-16 space-y-3 text-center">
                     <div className="flex items-center justify-center gap-2">
                         <span className="bg-alidade-gold h-[1.5px] w-6" />
-                        <span className="text-alidade-gold text-xs font-bold tracking-[0.2em] uppercase">Outil Intelligent Alidade</span>
+                        <span className="text-alidade-gold text-xs font-bold tracking-[0.2em] uppercase">Outil Intelligent ALLO CALL</span>
                         <span className="bg-alidade-gold h-[1.5px] w-6" />
                     </div>
                     <h2 className="text-alidade-navy font-serif text-3xl font-bold tracking-tight uppercase sm:text-4xl lg:text-5xl">
@@ -459,7 +459,7 @@ export default function Configurator({ onSendToQuote }: ConfiguratorProps) {
                                 <ul className="space-y-1.5 border-t border-gray-100 pt-2 text-xs text-gray-500">
                                     <li className="flex items-center gap-2">
                                         <span className="bg-alidade-gold h-1.5 w-1.5 shrink-0 rounded-full" />
-                                        <span>Conforme à la charte Alidade d'excellence artisanale</span>
+                                        <span>Conforme à la charte ALLO CALL</span>
                                     </li>
                                     <li className="flex items-center gap-2">
                                         <span className="bg-alidade-gold h-1.5 w-1.5 shrink-0 rounded-full" />

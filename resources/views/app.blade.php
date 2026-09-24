@@ -9,6 +9,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#0d1a2d">
         <meta name="color-scheme" content="light">
+        <meta name="application-name" content="ALLO CALL">
+        <meta name="apple-mobile-web-app-title" content="ALLO CALL">
+        <meta name="author" content="ALLO CALL">
 
         @inertiaHead
 
@@ -48,6 +51,7 @@
         @endif
 
         <link rel="icon" type="image/png" href="/images/logo-allocall.png">
+        <link rel="apple-touch-icon" href="/images/logo-allocall.png">
 
 
         <!-- Google tag (gtag.js) -->

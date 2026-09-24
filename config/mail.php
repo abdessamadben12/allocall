@@ -113,6 +113,17 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    'incoming' => [
+        'host' => env('MAIL_INCOMING_HOST', 'mail.allocall.ma'),
+        'username' => env('MAIL_INCOMING_USERNAME', env('MAIL_USERNAME', 'contact@allocall.ma')),
+        'imap_port' => env('MAIL_IMAP_PORT', 993),
+        'pop3_port' => env('MAIL_POP3_PORT', 995),
+        'requires_authentication' => env('MAIL_INCOMING_AUTH', true),
+    ],
+
+    'smtp_requires_authentication' => env('MAIL_SMTP_AUTH', true),
+
     'contact_to' => env('CONTACT_MAIL_TO', 'contact@allocall.ma'),
+    'contact_to_secondary' => env('CONTACT_MAIL_TO_SECONDARY', 'allocallmaroc@gmail.com'),
 
 ];

@@ -237,7 +237,7 @@ export default function SolutionsIaPage() {
                     <div className="ai-container ai-human-grid">
                         <div className="ai-human-image">
                             <img
-                                src="/images/hero/allocall-call-center.webp"
+                                src="/images/hero/allocall-call-cnter.webp"
                                 alt={t('Une agente ALLO CALL accompagne un client par téléphone')}
                                 loading="lazy"
                                 width="900"

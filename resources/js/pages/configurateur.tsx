@@ -6,8 +6,8 @@ import { router } from '@inertiajs/react';
 
 export default function ConfigurateurPage() {
     const handleSendToQuote = (configSummary: string, calculatedCost: number) => {
-        sessionStorage.setItem('alidade_prefill_summary', configSummary);
-        sessionStorage.setItem('alidade_prefill_cost', String(calculatedCost));
+        sessionStorage.setItem('allocall_prefill_summary', configSummary);
+        sessionStorage.setItem('allocall_prefill_cost', String(calculatedCost));
         router.visit('/devis');
     };
 

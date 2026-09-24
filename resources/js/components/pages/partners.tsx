@@ -9,7 +9,7 @@ const MarqueeRow = ({ logos, reverse = false }: { logos: string[]; reverse?: boo
                 <img
                     key={`${logo}-${index}`}
                     src={logo}
-                    alt="Logo client Alidade"
+                    alt="Logo client ALLO CALL"
                     className="h-12 w-auto max-w-[130px] shrink-0 object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 lg:h-14"
                     loading="lazy"
                     decoding="async"

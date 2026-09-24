@@ -2,86 +2,208 @@
     "/": {
         "title": "Call Centre in Quebec & Customer Support | ALLO CALL",
         "description": "Outsource your calls, leads and appointments to ALLO CALL. Human agents and AI solutions for businesses in Quebec, Canada and beyond.",
-        "keywords": ["call centre Quebec", "customer service outsourcing", "telephone answering", "telesales", "lead management"]
+        "keywords": [
+            "call centre Quebec",
+            "customer service outsourcing",
+            "telephone answering",
+            "telesales",
+            "lead management"
+        ]
     },
     "/services": {
         "title": "Call Centre & Telesales Services | ALLO CALL",
         "description": "Discover our virtual assistants, telesales, lead management, appointment setting, telephone answering and outsourced customer support services.",
-        "keywords": ["call centre services", "virtual assistant", "telesales Canada", "customer support"]
+        "keywords": [
+            "call centre services",
+            "virtual assistant",
+            "telesales Canada",
+            "customer support"
+        ]
     },
     "/apropos": {
         "title": "About Our Call Centre | ALLO CALL",
         "description": "Meet ALLO CALL: human agents and AI solutions that work with your tools to manage calls, qualify prospects and support your customers.",
-        "keywords": ["ALLO CALL", "bilingual call centre", "human agents and AI", "customer service outsourcing"]
+        "keywords": [
+            "ALLO CALL",
+            "bilingual call centre",
+            "human agents and AI",
+            "customer service outsourcing"
+        ]
     },
     "/contact": {
         "title": "Contact Our Team | ALLO CALL",
         "description": "Need help with incoming calls, telesales or lead follow-up? Contact ALLO CALL in Canada or Morocco to discuss your business needs.",
-        "keywords": ["contact ALLO CALL", "call centre Canada", "call centre Morocco", "customer service"]
+        "keywords": [
+            "contact ALLO CALL",
+            "call centre Canada",
+            "call centre Morocco",
+            "customer service"
+        ]
     },
     "/devis": {
         "title": "Request a Call Centre Quote | ALLO CALL",
         "description": "Request a quote for outsourced calls, customer service or appointment setting. ALLO CALL tailors its support to your business needs.",
-        "keywords": ["call centre quote", "outsourcing quote", "telephone answering", "telesales"]
+        "keywords": [
+            "call centre quote",
+            "outsourcing quote",
+            "telephone answering",
+            "telesales"
+        ]
     },
     "/solutions-ia": {
         "title": "AI Call Centre, CRM & Automation | ALLO CALL",
         "description": "Automate leads, calls and appointments with AI chatbots, voice agents, smart CRM, SMS and email. Human expertise complements your AI solution.",
-        "keywords": ["AI call centre", "AI chatbot", "AI voice agent", "smart CRM", "lead automation"]
+        "keywords": [
+            "AI call centre",
+            "AI chatbot",
+            "AI voice agent",
+            "smart CRM",
+            "lead automation"
+        ]
     },
     "/industries": {
         "title": "Call Centre Solutions for Your Industry | ALLO CALL",
         "description": "Solutions for automotive, healthcare, HVAC, construction, insurance and real estate: incoming calls, lead qualification and appointment setting.",
-        "keywords": ["industry call centre", "automotive call centre", "healthcare call centre", "HVAC call centre"]
+        "keywords": [
+            "industry call centre",
+            "automotive call centre",
+            "healthcare call centre",
+            "HVAC call centre"
+        ]
     },
     "/industries/automobile": {
         "title": "Call Centre for Car Dealerships | ALLO CALL",
         "description": "Manage automotive calls and leads, service appointments, follow-ups and confirmations. ALLO CALL supports car dealerships and automotive groups.",
-        "keywords": ["automotive call centre", "car dealership", "automotive leads", "service appointments"]
+        "keywords": [
+            "automotive call centre",
+            "car dealership",
+            "automotive leads",
+            "service appointments"
+        ]
     },
     "/industries/sante": {
         "title": "Call Centre for Clinics & Healthcare | ALLO CALL",
         "description": "Professional telephone reception for your patients: incoming calls, appointment setting, confirmations and reminders following your procedures.",
-        "keywords": ["healthcare call centre", "medical telephone answering", "patient appointments", "clinic call centre"]
+        "keywords": [
+            "healthcare call centre",
+            "medical telephone answering",
+            "patient appointments",
+            "clinic call centre"
+        ]
+    },
+    "/industries/hvac": {
+        "title": "HVAC & Heat Pump Call Centre | ALLO CALL",
+        "description": "HVAC lead qualification, incoming calls, service requests, appointment setting, quote follow-up and maintenance reminders.",
+        "keywords": [
+            "HVAC call centre",
+            "heat pumps",
+            "heating cooling leads",
+            "HVAC appointment setting"
+        ]
+    },
+    "/industries/construction": {
+        "title": "Call Centre for Construction Companies | ALLO CALL",
+        "description": "Turn calls, quote requests and enquiries into qualified projects with structured follow-up and sales reminders.",
+        "keywords": [
+            "construction call centre",
+            "construction project qualification",
+            "quote follow-up",
+            "construction inbound calls"
+        ]
+    },
+    "/industries/assurance": {
+        "title": "Call Centre for Insurance Agencies & Brokers | ALLO CALL",
+        "description": "Prospect qualification, appointment setting, outbound calls, sales follow-up and CRM updates for insurers and brokers.",
+        "keywords": [
+            "insurance call centre",
+            "insurance brokers",
+            "insurance prospect qualification",
+            "insurance appointment setting"
+        ]
+    },
+    "/industries/immobilier": {
+        "title": "Real Estate Call Centre & Lead Follow-Up | ALLO CALL",
+        "description": "Buyer and seller qualification, outbound calls, appointment setting, viewing coordination and real estate CRM follow-up.",
+        "keywords": [
+            "real estate call centre",
+            "real estate leads",
+            "buyer qualification",
+            "viewing appointment setting"
+        ]
     },
     "/services/assistants-virtuels": {
         "title": "Professional Virtual Assistant | ALLO CALL",
         "description": "Delegate your calls, emails, scheduling and administrative tasks to an ALLO CALL virtual assistant who works directly with your existing tools.",
-        "keywords": ["virtual assistant Quebec", "virtual secretary", "administrative outsourcing"]
+        "keywords": [
+            "virtual assistant Quebec",
+            "virtual secretary",
+            "administrative outsourcing"
+        ]
     },
     "/services/televente-appels-sortants": {
         "title": "Telesales & Outbound Calling | ALLO CALL",
         "description": "Grow your sales with targeted telephone prospecting. ALLO CALL presents your offer, qualifies prospects and passes opportunities to your sales team.",
-        "keywords": ["telesales", "outbound calls", "B2B telemarketing", "telephone prospecting"]
+        "keywords": [
+            "telesales",
+            "outbound calls",
+            "B2B telemarketing",
+            "telephone prospecting"
+        ]
     },
     "/services/gestion-leads": {
         "title": "Lead Management & Qualification | ALLO CALL",
         "description": "Give every lead timely attention. ALLO CALL qualifies, follows up and tracks your prospects to help your sales team turn interest into opportunities.",
-        "keywords": ["lead management", "lead qualification", "prospect follow-up", "sales outsourcing"]
+        "keywords": [
+            "lead management",
+            "lead qualification",
+            "prospect follow-up",
+            "sales outsourcing"
+        ]
     },
     "/services/prise-rendez-vous": {
         "title": "Appointment Setting Services | ALLO CALL",
         "description": "Fill your calendar with qualified meetings. Our agents contact prospects and customers and book appointments directly in your scheduling tools.",
-        "keywords": ["appointment setting", "B2B appointments", "telephone prospecting", "calendar management"]
+        "keywords": [
+            "appointment setting",
+            "B2B appointments",
+            "telephone prospecting",
+            "calendar management"
+        ]
     },
     "/services/service-clientele": {
         "title": "Outsourced Customer Service | ALLO CALL",
         "description": "Give your customers responsive, courteous and professional support. ALLO CALL handles enquiries with the same care as your own team.",
-        "keywords": ["outsourced customer service", "customer support", "call centre Canada"]
+        "keywords": [
+            "outsourced customer service",
+            "customer support",
+            "call centre Canada"
+        ]
     },
     "/services/reception-telephonique": {
         "title": "Telephone Answering Services | ALLO CALL",
         "description": "Never miss an important call. ALLO CALL answers in your company name, takes messages and transfers calls according to your instructions.",
-        "keywords": ["telephone answering", "virtual receptionist", "inbound call centre"]
+        "keywords": [
+            "telephone answering",
+            "virtual receptionist",
+            "inbound call centre"
+        ]
     },
     "/services/support-technique-niveau-1": {
         "title": "Level 1 Technical Support | ALLO CALL",
         "description": "Provide fast, reliable technical support. Our agents handle routine requests, track tickets and escalate complex cases to your internal experts.",
-        "keywords": ["level 1 technical support", "outsourced help desk", "technical support outsourcing"]
+        "keywords": [
+            "level 1 technical support",
+            "outsourced help desk",
+            "technical support outsourcing"
+        ]
     },
     "/services/confirmation-rappel-rendez-vous": {
         "title": "Appointment Confirmation & Reminders | ALLO CALL",
         "description": "Reduce missed appointments with confirmation calls and reminders. ALLO CALL manages cancellations, rescheduling and real-time calendar updates.",
-        "keywords": ["appointment confirmation", "appointment reminders", "reduce no-shows"]
+        "keywords": [
+            "appointment confirmation",
+            "appointment reminders",
+            "reduce no-shows"
+        ]
     }
 }

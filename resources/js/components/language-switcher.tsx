@@ -12,11 +12,18 @@ export default function LanguageSwitcher() {
                     hrefLang={language === 'fr' ? 'fr-CA' : 'en-CA'}
                     lang={language}
                     aria-label={language === 'fr' ? 'Français' : 'English'}
+                    title={language === 'fr' ? 'Français' : 'English'}
                     aria-current={language === locale ? 'page' : undefined}
-                    className={`flex h-10 w-10 items-center justify-center border-b-2 ${language === locale ? 'border-[#74B946] text-[#487e2e]' : 'border-transparent text-gray-500 hover:text-[#487e2e]'}`}
+                    className={`flex h-10 w-10 items-center justify-center border-b-2 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#487e2e] ${language === locale ? 'border-[#74B946] bg-[#f2f7ed]' : 'border-transparent hover:bg-gray-100'}`}
                     preserveScroll
                 >
-                    {language.toUpperCase()}
+                    <img
+                        src={language === 'fr' ? '/images/flags/fr.png' : '/images/flags/gb.png'}
+                        alt=""
+                        width={30}
+                        height={20}
+                        className="h-5 w-[30px] object-contain"
+                    />
                 </Link>
             ))}
         </nav>

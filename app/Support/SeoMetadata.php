@@ -27,18 +27,47 @@ class SeoMetadata
         $canonical = $localizedBase.($english && $path === '/' ? '' : $path);
         $title = $page['title'] ?? 'ALLO CALL';
         $description = $page['description'] ?? 'ALLO CALL accompagne votre entreprise dans la gestion des appels et de la relation client.';
-        $image = $base.($page['image'] ?? '/images/hero/allocall-call-center.webp');
+        $image = $base.($page['image'] ?? '/images/hero/allocall-call-cnter.webp');
         $name = explode(' | ', $title)[0];
         $organization = [
-            '@type' => 'Organization', '@id' => $base.'/#organization',
-            'name' => 'ALLO CALL', 'url' => $base.'/',
+            '@type' => ['Organization', 'LocalBusiness'],
+            '@id' => $base.'/#organization',
+            'name' => 'ALLO CALL',
+            'alternateName' => ['AlloCall', 'Allocall'],
+            'url' => $base.'/',
             'logo' => $base.'/images/logo-allocall.png',
-            'email' => 'contact@allocall.ma', 'telephone' => '+212522484425',
+            'image' => $base.'/images/logo-allocall.png',
+            'email' => 'contact@allocall.ma',
+            'telephone' => '+212522484425',
+            'address' => [
+                '@type' => 'PostalAddress',
+                'streetAddress' => '3, Avenue 2 Mars Residence Marwa 5eme etage',
+                'addressLocality' => 'Casablanca',
+                'addressCountry' => 'MA',
+            ],
             'areaServed' => ['Canada', 'Quebec', 'Maroc', 'France'],
+            'contactPoint' => [
+                [
+                    '@type' => 'ContactPoint',
+                    'telephone' => '+212522484425',
+                    'contactType' => 'customer service',
+                    'email' => 'contact@allocall.ma',
+                    'areaServed' => ['MA', 'CA', 'FR'],
+                    'availableLanguage' => ['French', 'English'],
+                ],
+            ],
         ];
         $graph = [
             $organization,
-            ['@type' => 'WebSite', '@id' => $base.'/#website', 'url' => $base.'/', 'name' => 'ALLO CALL', 'inLanguage' => ['fr-CA', 'en-CA'], 'publisher' => ['@id' => $organization['@id']]],
+            [
+                '@type' => 'WebSite',
+                '@id' => $base.'/#website',
+                'url' => $base.'/',
+                'name' => 'ALLO CALL',
+                'alternateName' => ['AlloCall', 'Allocall'],
+                'inLanguage' => ['fr-CA', 'en-CA'],
+                'publisher' => ['@id' => $organization['@id']],
+            ],
             ['@type' => $page['pageType'] ?? 'WebPage', '@id' => $canonical.'#webpage', 'url' => $canonical, 'name' => $title, 'description' => $description, 'inLanguage' => $language, 'isPartOf' => ['@id' => $base.'/#website'], 'primaryImageOfPage' => ['@type' => 'ImageObject', 'url' => $image]],
         ];
         if ($page && str_starts_with($path, '/services/')) {

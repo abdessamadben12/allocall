@@ -118,10 +118,10 @@ export default function QuoteRequest({
         };
 
         // Save to local storage for persistence
-        const existingQuotesJson = localStorage.getItem('alidade_quotes');
+        const existingQuotesJson = localStorage.getItem('allocall_quotes');
         const existingQuotes: QuoteType[] = existingQuotesJson ? JSON.parse(existingQuotesJson) : [];
         existingQuotes.unshift(newQuote);
-        localStorage.setItem('alidade_quotes', JSON.stringify(existingQuotes));
+        localStorage.setItem('allocall_quotes', JSON.stringify(existingQuotes));
 
         setSubmittedQuote(newQuote);
         setIsSubmitted(true);
@@ -434,11 +434,11 @@ export default function QuoteRequest({
                 </div>
             </section>
 
-            {/* Why ask a quote from Alidade section (Screenshot 5 Bottom Right) */}
+            {/* Why ask a quote from Allocall section (Screenshot 5 Bottom Right) */}
             <section className="bg-gray-50 py-20">
                 <div className="mx-auto max-w-7xl space-y-16 px-4 sm:px-6 lg:px-8">
                     <Reveal className="space-y-3 text-center">
-                        <h3 className="text-alidade-navy text-2xl font-bold sm:text-3xl">{t('Pourquoi demander un devis chez Alidade ?')}</h3>
+                        <h3 className="text-alidade-navy text-2xl font-bold sm:text-3xl">{t('Pourquoi demander un devis chez ALLO CALL ?')}</h3>
                         <div className="bg-alidade-gold mx-auto h-0.5 w-16 rounded-full" />
                     </Reveal>
 

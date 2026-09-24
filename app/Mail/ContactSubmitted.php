@@ -5,6 +5,7 @@ namespace App\Mail;
 use App\Models\ContactMessage;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -15,9 +16,7 @@ class ContactSubmitted extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public function __construct(public ContactMessage $contactMessage)
-    {
-    }
+    public function __construct(public ContactMessage $contactMessage) {}
 
     public function envelope(): Envelope
     {
@@ -25,6 +24,7 @@ class ContactSubmitted extends Mailable
 
         return new Envelope(
             subject: 'Nouvelle '.$type.' - '.$this->contactMessage->first_name.' '.$this->contactMessage->last_name,
+            replyTo: [new Address($this->contactMessage->email, trim($this->contactMessage->first_name.' '.$this->contactMessage->last_name))],
         );
     }
 
@@ -40,11 +40,11 @@ class ContactSubmitted extends Mailable
      */
     public function attachments(): array
     {
-        if (! $this->contactMessage->attachment_path || ! Storage::exists($this->contactMessage->attachment_path)) {
+        if (! $this->contactMessage->attachment_path || ! Storage::disk('local')->exists($this->contactMessage->attachment_path)) {
             return [];
         }
 
-        $attachment = Attachment::fromPath(Storage::path($this->contactMessage->attachment_path));
+        $attachment = Attachment::fromPath(Storage::disk('local')->path($this->contactMessage->attachment_path));
 
         if ($this->contactMessage->attachment_original_name) {
             $attachment->as($this->contactMessage->attachment_original_name);

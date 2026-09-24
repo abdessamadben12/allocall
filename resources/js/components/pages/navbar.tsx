@@ -43,8 +43,8 @@ const topContacts = [
     },
     {
         label: 'Canada',
-        value: '+1 (514) 850-9092',
-        href: 'tel:+15148509092',
+        value: '+1 (438) 699-1965',
+        href: 'tel:+14386991965',
         icon: Phone,
     },
     {
@@ -165,7 +165,7 @@ export default function Navbar() {
 
                     <div className="hidden items-center xl:flex">
                         <Link
-                            href="/contact"
+                            href="/devis"
                             className="flex items-center gap-2 rounded-md bg-[#74B946] px-5 py-3 text-xs font-bold tracking-wide text-white uppercase shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#659F3B] hover:shadow-lg"
                         >
                             <FileText size={16} />
@@ -218,7 +218,7 @@ export default function Navbar() {
                         {/* MOBILE CTA */}
                         <div className="mt-4 border-t border-gray-100 pt-4">
                             <Link
-                                href="/contact"
+                                href="/devis"
                                 onClick={() => setIsOpen(false)}
                                 className="flex w-full items-center justify-center gap-2 rounded-md bg-[#74B946] px-5 py-3.5 text-sm font-bold text-white uppercase transition-all duration-300 hover:bg-[#659F3B]"
                             >

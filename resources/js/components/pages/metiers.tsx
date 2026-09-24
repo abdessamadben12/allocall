@@ -214,10 +214,10 @@ export default function MetiersSection() {
                             <br /> {t('votre relation client')}
                         </span>
                     </h3>
-
-                    <p className="max-w-3xl text-xs leading-6 font-light text-gray-500 sm:text-sm lg:text-base">
+                    
+                    <p className="max-w-3xl text-xs mt-5 leading-6 font-light text-gray-500 sm:text-sm lg:text-base">
                         {t(
-                            'AlloCall accompagne votre entreprise avec des équipes dédiées pour gérer vos appels, développer vos ventes et transformer davantage de prospects en clients.',
+                            'AlloCall accompagne votre entreprise avec des équipes dédiées pour gérer vos appels, \n développer vos ventes et transformer davantage de prospects en clients.',
                         )}
                     </p>
                 </Reveal>

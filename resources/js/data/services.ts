@@ -37,7 +37,7 @@ export interface ServiceDetail {
     }[];
 }
 
-const callCenterImage = '/images/hero/allocall-call-center.webp';
+const callCenterImage = '/images/hero/allocall-call-cnter.webp';
 const aiImage = '/images/hero/allocall-ai.webp';
 const salesImage = '/images/hero/allocall-sales.webp';
 const imageTelevente = '/images/services/televente-appels-sortants.webp';

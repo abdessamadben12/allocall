@@ -68,7 +68,7 @@ export const industryOverview = [
         ],
         note: 'Une organisation qui permet \u00e0 vos \u00e9quipes commerciales et techniques de se concentrer sur leur c\u0153ur de m\u00e9tier.',
         flow: ['Prospect', 'Qualification', 'Rendez-vous', 'Soumission', 'Relance'],
-        href: '/contact',
+        href: '/industries/hvac',
         linkLabel: 'Parlons de vos besoins HVAC',
     },
     {
@@ -91,7 +91,7 @@ export const industryOverview = [
             'Mise \u00e0 jour du CRM',
         ],
         note: 'Nous recueillons les informations importantes concernant le projet afin de permettre \u00e0 vos \u00e9quipes de traiter les demandes plus efficacement.',
-        href: '/contact',
+        href: '/industries/construction',
         linkLabel: 'Parlons de vos projets de construction',
     },
     {
@@ -115,7 +115,7 @@ export const industryOverview = [
             'Mise \u00e0 jour du CRM',
         ],
         note: 'Gr\u00e2ce \u00e0 un processus structur\u00e9, chaque prospect peut \u00eatre suivi depuis son premier contact jusqu\u2019\u00e0 son rendez-vous avec votre conseiller.',
-        href: '/contact',
+        href: '/industries/assurance',
         linkLabel: 'Parlons de vos besoins en assurance',
     },
     {
@@ -140,7 +140,7 @@ export const industryOverview = [
             'Organisation des visites',
         ],
         flow: ['Lead', 'Qualification', 'Rendez-vous', 'Visite', 'Suivi'],
-        href: '/contact',
+        href: '/industries/immobilier',
         linkLabel: 'Parlons de votre activit\u00e9 immobili\u00e8re',
     },
 ];

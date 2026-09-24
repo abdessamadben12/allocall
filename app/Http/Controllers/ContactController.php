@@ -28,8 +28,11 @@ class ContactController extends Controller
 
     public function quote(): Response
     {
-        return Inertia::render('contact', [
-            'requestType' => 'quote',
+        return Inertia::render('devis', [
+            'submissionStatus' => [
+                'success' => session('success'),
+                'error' => session('error'),
+            ],
         ]);
     }
 
@@ -37,27 +40,33 @@ class ContactController extends Controller
     {
         $validated = $request->validate([
             'request_type' => 'required|in:contact,quote',
-            'full_name' => 'exclude_unless:request_type,contact|required|string|max:255',
-            'first_name' => 'exclude_if:request_type,contact|required|string|max:255',
-            'last_name' => 'exclude_if:request_type,contact|required|string|max:255',
+            'full_name' => 'bail|required_if:request_type,contact|required_without_all:first_name,last_name|nullable|string|max:255',
+            'first_name' => 'exclude_if:request_type,contact|required_without:full_name|nullable|string|max:255',
+            'last_name' => 'exclude_if:request_type,contact|required_without:full_name|nullable|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required_if:request_type,contact|nullable|string|max:40',
             'project_type' => 'exclude_if:request_type,contact|nullable|string|max:255',
+            'budget' => 'exclude_unless:request_type,quote|nullable|string|max:255',
             'message' => 'required|string|min:10',
             'attachment' => 'exclude_if:request_type,contact|nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png,webp|max:10240',
         ]);
 
-        if ($validated['request_type'] === 'contact') {
+        if (filled($validated['full_name'] ?? null)) {
             // Preserve the complete name in the existing storage and dashboard format.
             $validated['first_name'] = $validated['full_name'];
             $validated['last_name'] = '';
-            unset($validated['full_name']);
         }
+        unset($validated['full_name']);
+
+        if (filled($validated['budget'] ?? null)) {
+            $validated['message'] .= "\n\nBudget: ".$validated['budget'];
+        }
+        unset($validated['budget']);
 
         if (isset($validated['attachment'])) {
             $attachment = $request->file('attachment');
 
-            $validated['attachment_path'] = $attachment->store('contact-attachments');
+            $validated['attachment_path'] = $attachment->store('contact-attachments', 'local');
             $validated['attachment_original_name'] = $attachment->getClientOriginalName();
             $validated['attachment_size'] = $attachment->getSize();
         }
@@ -65,18 +74,22 @@ class ContactController extends Controller
         unset($validated['attachment']);
 
         $contactMessage = ContactMessage::create($validated);
-        $recipient = config('mail.contact_to', env('CONTACT_MAIL_TO', 'contact@allocall.ma'));
-        $recipient2 = config('allocallmaroc@gmail.com', env('CONTACT_MAIL_TO', 'contact@allocall.ma'));
-        
+        $recipients = array_values(array_unique(array_filter(array_map('trim', [
+            (string) config('mail.contact_to'),
+            (string) config('mail.contact_to_secondary'),
+        ]))));
 
         try {
-            $this->logMailAttempt($contactMessage->id, $recipient);
+            if (! $recipients || array_filter($recipients, fn ($email) => ! filter_var($email, FILTER_VALIDATE_EMAIL))) {
+                throw new \RuntimeException('Invalid contact email recipients configuration.');
+            }
+            $this->logMailAttempt($contactMessage->id, $recipients);
 
-            Mail::to($recipient)->send(new ContactSubmitted($contactMessage));
+            Mail::to($recipients)->send(new ContactSubmitted($contactMessage));
 
             Log::info('Contact email sent successfully.', [
                 'contact_message_id' => $contactMessage->id,
-                'recipient' => $recipient,
+                'recipients' => $recipients,
                 'mailer' => config('mail.default'),
             ]);
 
@@ -87,7 +100,7 @@ class ContactController extends Controller
             Log::error('Contact email failed.', [
                 'error_id' => $errorId,
                 'contact_message_id' => $contactMessage->id,
-                'recipient' => $recipient,
+                'recipients' => $recipients,
                 'mailer' => config('mail.default'),
                 'mail_host' => config('mail.mailers.smtp.host'),
                 'mail_port' => config('mail.mailers.smtp.port'),
@@ -106,11 +119,11 @@ class ContactController extends Controller
         }
     }
 
-    private function logMailAttempt(int $contactMessageId, string $recipient): void
+    private function logMailAttempt(int $contactMessageId, array $recipients): void
     {
         Log::info('Contact email sending attempt.', [
             'contact_message_id' => $contactMessageId,
-            'recipient' => $recipient,
+            'recipients' => $recipients,
             'mailer' => config('mail.default'),
             'mail_host' => config('mail.mailers.smtp.host'),
             'mail_port' => config('mail.mailers.smtp.port'),
@@ -143,7 +156,7 @@ class ContactController extends Controller
         return Inertia::render('messages/show', [
             'message' => array_merge($contactMessage->toArray(), [
                 'attachment_exists' => $contactMessage->attachment_path
-                    ? Storage::exists($contactMessage->attachment_path)
+                    ? Storage::disk('local')->exists($contactMessage->attachment_path)
                     : false,
             ]),
         ]);
@@ -158,9 +171,9 @@ class ContactController extends Controller
 
     public function attachment(ContactMessage $contactMessage)
     {
-        abort_unless($contactMessage->attachment_path && Storage::exists($contactMessage->attachment_path), 404);
+        abort_unless($contactMessage->attachment_path && Storage::disk('local')->exists($contactMessage->attachment_path), 404);
 
-        return Storage::download(
+        return Storage::disk('local')->download(
             $contactMessage->attachment_path,
             $contactMessage->attachment_original_name ?: basename($contactMessage->attachment_path)
         );

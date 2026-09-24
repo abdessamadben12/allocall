@@ -3,6 +3,8 @@
 return [
     'required' => 'Le champ :attribute est obligatoire.',
     'required_if' => 'Le champ :attribute est obligatoire.',
+    'required_without' => 'Le champ :attribute est obligatoire.',
+    'required_without_all' => 'Le champ :attribute est obligatoire.',
     'email' => 'Le champ :attribute doit contenir une adresse courriel valide.',
     'string' => 'Le champ :attribute doit contenir du texte.',
     'min' => ['string' => 'Le champ :attribute doit contenir au moins :min caracteres.'],

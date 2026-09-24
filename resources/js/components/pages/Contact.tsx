@@ -188,7 +188,7 @@ export default function Contact() {
 
                         {/* Canada */}
                         <a
-                            href="tel:+15148509092"
+                            href="tel:+15146602337"
                             className="group flex items-center gap-4 rounded-xl px-3 py-4 transition-all duration-300 hover:bg-[#f4f8f1]"
                         >
                             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#eff7e9] text-[#598435] transition-all duration-300 group-hover:bg-[#74b946] group-hover:text-white">
@@ -199,7 +199,7 @@ export default function Contact() {
                                 <span className="mb-1 block text-[11px] font-semibold tracking-[0.08em] text-[#8a938b] uppercase">{t('Canada')}</span>
 
                                 <span className="block text-[17px] font-semibold text-[#202722] transition-colors group-hover:text-[#598435]">
-                                    {t('+1 (514) 850-9092')}
+                                    +1 (438) 699-1965
                                 </span>
                             </div>
                         </a>

@@ -23,8 +23,8 @@ const contactInfo = {
 
     montreal: {
         label: 'Montréal',
-        phone: '+1 514-660-2337',
-        href: 'tel:+15146602337',
+        phone: '+1 (438) 699-1965',
+        href: 'tel:+14386991965',
     },
 
     email: 'contact@allocall.ma',

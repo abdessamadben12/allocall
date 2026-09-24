@@ -18,9 +18,8 @@ Route::get('etude-de-projet', function () {
 Route::get('contact', [ContactController::class, 'show'])->name('contact');
 Route::post('contact', [ContactController::class, 'submit'])->name('contact.submit');
 
-Route::get('devis', function () {
-    return Inertia::render('devis');
-})->name('quote');
+Route::get('devis', [ContactController::class, 'quote'])->name('quote');
+Route::post('devis', [ContactController::class, 'submit'])->name('quote.submit');
 
 // Page galerie masquée temporairement — redirige vers l'accueil.
 // Pour la réactiver : rétablir Inertia::render('galerie'), le lien navbar et l'entrée sitemap.
@@ -103,7 +102,8 @@ Route::prefix('en')->name('en.')->group(function () {
     Route::get('apropos', fn () => Inertia::render('propos'))->name('apropos');
     Route::get('contact', [ContactController::class, 'show'])->name('contact');
     Route::post('contact', [ContactController::class, 'submit'])->name('contact.submit');
-    Route::get('devis', fn () => Inertia::render('devis'))->name('quote');
+    Route::get('devis', [ContactController::class, 'quote'])->name('quote');
+    Route::post('devis', [ContactController::class, 'submit'])->name('quote.submit');
     Route::get('services', fn () => Inertia::render('services/index'))->name('services');
     Route::get('solutions-ia', fn () => Inertia::render('solutions-ia'))->name('solutions-ia');
     Route::get('industries', fn () => Inertia::render('industries/index'))->name('industries');

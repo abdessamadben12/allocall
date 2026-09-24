@@ -78,7 +78,7 @@ export const industriesPage: MarketingPage = {
     title: 'Des solutions de centre d appels adaptees a votre industrie',
     description:
         'Chaque industrie a ses propres clients, processus et besoins. Nous adaptons nos equipes, scripts, outils CRM et solutions IA a votre activite.',
-    image: '/images/hero/allocall-call-center.webp',
+    image: '/images/hero/allocall-call-cnter.webp',
     seoTitle: 'Centre d appels par industrie | ALLO CALL',
     seoDescription:
         'Solutions de centre d appels pour automobile, sante, HVAC, construction, assurance, immobilier et services professionnels.',

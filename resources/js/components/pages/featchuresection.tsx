@@ -60,7 +60,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ number, title, icon, descript
 
                 {/* NUMBER */}
 
-                <span className="text-4xl font-black tracking-tight text-slate-400 transition-colors duration-300 group-hover:text-white">
+                <span className="text-4xl font-black tracking-tight text-gray-200 transition-colors duration-300 group-hover:text-white">
                     {number}
                 </span>
             </div>
@@ -164,9 +164,9 @@ export const EngagementSection: React.FC = () => {
 
                     {/* DESCRIPTION */}
 
-                    <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base lg:text-lg">
+                    <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 whitespace-pre-line text-slate-500 sm:text-base lg:text-lg">
                         {t(
-                            "De la réception d'appels à la prospection commerciale, AlloCall accompagne votre entreprise à chaque étape de la relation client.",
+                            "De la réception d'appels à la prospection commerciale, \nAlloCall accompagne votre entreprise à chaque étape de la relation client.",
                         )}
                     </p>
                 </Reveal>

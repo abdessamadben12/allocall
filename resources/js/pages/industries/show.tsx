@@ -114,7 +114,7 @@ export default function IndustryShowPage({ slug }: IndustryShowProps) {
                 <section className="detail-container detail-expertise" aria-labelledby="detail-expertise-title">
                     <div className="detail-expertise-photo">
                         <img
-                            src="/images/hero/allocall-call-center.webp"
+                            src="/images/hero/allocall-call-cnter.webp"
                             alt={t('Une agente ALLO CALL assure le suivi téléphonique des clients')}
                             width="900"
                             height="900"

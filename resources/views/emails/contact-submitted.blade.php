@@ -18,12 +18,6 @@ Un visiteur a soumis le formulaire {{ $contactMessage->request_type === 'quote' 
 **Message :**  
 {{ $contactMessage->message }}  
 
-Pour voir tous les messages recus, veuillez vous connecter au tableau de bord.
-
-<x-mail::button :url="route('dashboard')">
-Acceder au Tableau de Bord
-</x-mail::button>
-
 Cordialement,<br>
 L'equipe ALLO CALL
 </x-mail::message>

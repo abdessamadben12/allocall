@@ -15,6 +15,9 @@ export default function SeoHead({ noIndex = false }: SeoHeadProps) {
 
     return (
         <Head title={seo.title}>
+            <meta head-key="application-name" name="application-name" content="ALLO CALL" />
+            <meta head-key="apple-mobile-web-app-title" name="apple-mobile-web-app-title" content="ALLO CALL" />
+            <meta head-key="author" name="author" content="ALLO CALL" />
             <meta head-key="description" name="description" content={seo.description} />
             <meta head-key="keywords" name="keywords" content={seo.keywords.join(', ')} />
             <meta head-key="robots" name="robots" content={noIndex ? 'noindex, nofollow' : seo.robots} />

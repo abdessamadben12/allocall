@@ -12,6 +12,22 @@ This React starter kit utilizes React 19, TypeScript, Tailwind, and the [shadcn/
 
 Documentation for all Laravel starter kits can be found on the [Laravel website](https://laravel.com/docs/starter-kits).
 
+## Configuration mail Allocall
+
+Utilisez le mot de passe du compte de messagerie pour `MAIL_PASSWORD`.
+
+| Parametre | Valeur |
+| --- | --- |
+| Nom d'utilisateur | contact@allocall.ma |
+| Serveur entrant | mail.allocall.ma |
+| Port IMAP | 993 |
+| Port POP3 | 995 |
+| Serveur sortant | mail.allocall.ma |
+| Port SMTP | 465 |
+| Authentification | Requise pour IMAP, POP3 et SMTP |
+
+Pour l'envoi des emails depuis Laravel, la configuration `.env` utilise `MAIL_MAILER=smtp`, `MAIL_HOST=mail.allocall.ma`, `MAIL_PORT=465` et `MAIL_ENCRYPTION=ssl`.
+
 ## Contributing
 
 Thank you for considering contributing to our starter kit! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).

@@ -19,7 +19,7 @@ export default function MyQuotes({ onNavigateToRequest }: MyQuotesProps) {
 
     // Load quotes from local storage
     const loadQuotes = () => {
-        const existingQuotesJson = localStorage.getItem('alidade_quotes');
+        const existingQuotesJson = localStorage.getItem('allocall_quotes');
         let existingQuotes: QuoteRequest[] = existingQuotesJson ? JSON.parse(existingQuotesJson) : [];
 
         // Seed with a default historical quote if empty, so the page is never blank and showcases beautiful styling!
@@ -39,7 +39,7 @@ export default function MyQuotes({ onNavigateToRequest }: MyQuotesProps) {
                 estimatedCostMax: 89000,
             };
             existingQuotes = [defaultQuote];
-            localStorage.setItem('alidade_quotes', JSON.stringify(existingQuotes));
+            localStorage.setItem('allocall_quotes', JSON.stringify(existingQuotes));
         }
 
         setQuotes(existingQuotes);
@@ -53,7 +53,7 @@ export default function MyQuotes({ onNavigateToRequest }: MyQuotesProps) {
         if (confirm('Voulez-vous vraiment supprimer cette demande de devis ?')) {
             const updated = quotes.filter((q) => q.id !== id);
             setQuotes(updated);
-            localStorage.setItem('alidade_quotes', JSON.stringify(updated));
+            localStorage.setItem('allocall_quotes', JSON.stringify(updated));
         }
     };
 
@@ -211,7 +211,7 @@ export default function MyQuotes({ onNavigateToRequest }: MyQuotesProps) {
                                             )}
                                         </div>
 
-                                        {/* Dynamic Simulated Response Banner from Alidade Engineers */}
+                                        {/* Dynamic simulated response banner from the ALLO CALL team */}
                                         <div className="from-alidade-navy/5 flex items-start gap-3 border-t border-gray-100 bg-gradient-to-r to-transparent px-6 py-4">
                                             <div className="bg-alidade-gold/10 text-alidade-gold mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full">
                                                 <UserCheck size={14} />
