@@ -46,11 +46,14 @@
             <article class="company-container py-14">
                 <nav aria-label="{{ $english ? 'In this guide' : 'Dans ce guide' }}" class="mb-10 rounded-xl border border-gray-200 bg-white p-6">
                     <ol class="list-decimal space-y-3 pl-5">
-                        @foreach ($article['sections'] as $section)
-                            <li><a href="#section-{{ $loop->iteration }}">{{ $section['heading'] }}</a></li>
+                        @foreach ($article['headings'] ?? $article['sections'] as $section)
+                            <li><a href="#{{ $section['id'] ?? 'section-'.$loop->iteration }}">{{ $section['heading'] }}</a></li>
                         @endforeach
                     </ol>
                 </nav>
+                @if (!empty($article['bodyHtml']))
+                    <div class="article-prose mb-12 max-w-4xl">{!! $article['bodyHtml'] !!}</div>
+                @else
                 @foreach ($article['sections'] as $section)
                     <section id="section-{{ $loop->iteration }}" class="mb-12 max-w-4xl">
                         <h2 class="text-2xl font-bold">{{ $section['heading'] }}</h2>
@@ -66,6 +69,7 @@
                         @endif
                     </section>
                 @endforeach
+                @endif
                 <div class="flex flex-wrap gap-6 rounded-xl bg-[#111827] p-7 text-white">
                     <a href="{{ $article['relatedService'] }}">{{ $english ? 'Explore the service' : 'Découvrir le service' }}</a>
                     <a href="{{ $publicPath('/devis') }}">{{ $english ? 'Request a quote' : 'Demander une soumission' }}</a>

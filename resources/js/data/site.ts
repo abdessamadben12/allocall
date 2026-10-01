@@ -7,11 +7,11 @@ export const site = {
 
     // Numéro WhatsApp au format international, sans « + » ni espaces.
     // TODO: remplacer par le numéro WhatsApp mobile réel (ex: '2126XXXXXXXX').
-    whatsapp: '212668746386',
+    whatsapp: '+15148509092',
     whatsappMessage: 'Bonjour ALLO CALL, je souhaite obtenir des informations sur vos services.',
 
     email: 'contact@allocall.ma',
-    address: '3, Avenue 2 Mars Résidence Marwa 5 ème étage Casablanca, Maroc',
+    address: 'Québec, Canada',
 
     // TODO: remplacer par l'embed de l'adresse exacte (Google Maps → Partager → Intégrer une carte).
     mapEmbedUrl: 'https://maps.google.com/maps?q=Casablanca%2C%20Maroc&z=12&output=embed',

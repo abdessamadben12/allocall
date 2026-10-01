@@ -19,8 +19,8 @@ import React from 'react';
 const contactInfo = {
     maroc: {
         label: 'Maroc',
-        phone: '+212 5 22 48 44 25',
-        href: 'tel:+212522484425',
+        phone: '+1 (438) 699-1965',
+        href: 'tel:+14386991965',
     },
 
     montreal: {

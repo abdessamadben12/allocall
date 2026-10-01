@@ -17,6 +17,8 @@ interface Article {
     updated: string;
     relatedService: string;
     sections: { heading: string; paragraphs: string[]; items?: string[] }[];
+    bodyHtml?: string | null;
+    headings?: { id: string; heading: string; level: number }[] | null;
 }
 
 interface Editorial {
@@ -31,6 +33,8 @@ export default function ArticlesPage({ editorial }: { editorial: Editorial }) {
     const { locale } = useLocale();
     const english = locale === 'en';
     const article = editorial.article;
+    const headings =
+        article?.headings ?? article?.sections.map((section, index) => ({ id: `section-${index + 1}`, heading: section.heading, level: 2 })) ?? [];
     const updated = article
         ? new Intl.DateTimeFormat(english ? 'en-CA' : 'fr-CA', { dateStyle: 'long', timeZone: 'UTC' }).format(
               new Date(`${article.updated}T12:00:00Z`),
@@ -79,7 +83,7 @@ export default function ArticlesPage({ editorial }: { editorial: Editorial }) {
                                     </Link>
                                     <div className="p-7">
                                         <p className="text-xs font-bold tracking-widest text-[#487e2e] uppercase">{item.category}</p>
-                                        <h2 className="mt-3 text-lg leading-snug font-semibold ">
+                                        <h2 className="mt-3 text-lg leading-snug font-semibold">
                                             <Link href={item.path}>{item.title}</Link>
                                         </h2>
                                         <p className="mt-4 leading-7 text-gray-600">{item.description}</p>
@@ -97,23 +101,27 @@ export default function ArticlesPage({ editorial }: { editorial: Editorial }) {
                 {article && (
                     <article className="company-container grid gap-12 py-14 lg:grid-cols-[minmax(0,1fr)_280px]">
                         <div className="min-w-0">
-                            {article.sections.map((section, index) => (
-                                <section key={section.heading} id={`section-${index + 1}`} className="mb-12 scroll-mt-8">
-                                    <h2 className="text-2xl leading-snug font-bold sm:text-3xl">{section.heading}</h2>
-                                    {section.paragraphs.map((paragraph) => (
-                                        <p key={paragraph} className="mt-5 text-base leading-8 text-gray-700">
-                                            {paragraph}
-                                        </p>
-                                    ))}
-                                    {section.items && (
-                                        <ul className="mt-5 list-disc space-y-3 pl-6 text-base leading-7 text-gray-700 marker:text-[#487e2e]">
-                                            {section.items.map((item) => (
-                                                <li key={item}>{item}</li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                </section>
-                            ))}
+                            {article.bodyHtml ? (
+                                <div className="article-prose mb-12" dangerouslySetInnerHTML={{ __html: article.bodyHtml }} />
+                            ) : (
+                                article.sections.map((section, index) => (
+                                    <section key={section.heading} id={`section-${index + 1}`} className="mb-12 scroll-mt-8">
+                                        <h2 className="text-2xl leading-snug font-bold sm:text-3xl">{section.heading}</h2>
+                                        {section.paragraphs.map((paragraph) => (
+                                            <p key={paragraph} className="mt-5 text-base leading-8 text-gray-700">
+                                                {paragraph}
+                                            </p>
+                                        ))}
+                                        {section.items && (
+                                            <ul className="mt-5 list-disc space-y-3 pl-6 text-base leading-7 text-gray-700 marker:text-[#487e2e]">
+                                                {section.items.map((item) => (
+                                                    <li key={item}>{item}</li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </section>
+                                ))
+                            )}
                             <div className="rounded-xl bg-[#111827] p-7 text-white">
                                 <h2 className="text-2xl font-bold">{english ? 'Apply this to your business' : 'Passons à votre réalité'}</h2>
                                 <p className="mt-4 leading-7 text-white/80">
@@ -134,9 +142,9 @@ export default function ArticlesPage({ editorial }: { editorial: Editorial }) {
                         <aside className="order-first h-fit rounded-xl border border-gray-200 bg-white p-6 lg:sticky lg:top-8 lg:order-last">
                             <h2 className="font-bold">{english ? 'In this guide' : 'Dans ce guide'}</h2>
                             <ol className="mt-4 list-decimal space-y-4 pl-5 text-sm leading-6">
-                                {article.sections.map((section, index) => (
-                                    <li key={section.heading}>
-                                        <a className="hover:text-[#487e2e] hover:underline" href={`#section-${index + 1}`}>
+                                {headings.map((section) => (
+                                    <li key={section.id}>
+                                        <a className="hover:text-[#487e2e] hover:underline" href={`#${section.id}`}>
                                             {section.heading}
                                         </a>
                                     </li>

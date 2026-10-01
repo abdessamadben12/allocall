@@ -44,8 +44,11 @@ class EditorialContent
         }
 
         return collect($articles)->map(function ($article, $key) use ($locale) {
+            $rich = isset($article[$locale]['body']) ? RichArticleContent::render($article[$locale]['body']) : null;
             return [
                 ...$article[$locale],
+                'bodyHtml' => $rich['html'] ?? null,
+                'headings' => $rich['headings'] ?? null,
                 'key' => $key,
                 'path' => PublicRoutes::path('/articles/'.$key, $locale),
                 'image' => $article['image'],

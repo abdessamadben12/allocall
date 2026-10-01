@@ -1,0 +1,130 @@
+.article-prose {
+    overflow-wrap: anywhere;
+    line-height: 1.85;
+}
+.article-prose > :first-child {
+    margin-top: 0;
+}
+.article-prose p {
+    margin: 1em 0;
+}
+.article-prose h1,
+.article-prose h2,
+.article-prose h3,
+.article-prose h4,
+.article-prose h5,
+.article-prose h6 {
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 1.5em 0 0.6em;
+    scroll-margin-top: 2rem;
+}
+.article-prose h1 {
+    font-size: 2.4em;
+}
+.article-prose h2 {
+    font-size: 1.9em;
+}
+.article-prose h3 {
+    font-size: 1.5em;
+}
+.article-prose h4 {
+    font-size: 1.25em;
+}
+.article-prose h5 {
+    font-size: 1.1em;
+}
+.article-prose h6 {
+    font-size: 1em;
+}
+.article-prose ul {
+    list-style: disc;
+    padding-left: 1.7em;
+    margin: 1em 0;
+}
+.article-prose ol {
+    list-style: decimal;
+    padding-left: 1.7em;
+    margin: 1em 0;
+}
+.article-prose li p {
+    margin: 0.3em 0;
+}
+.article-prose a {
+    color: #487e2e;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.article-prose blockquote {
+    border-left: 4px solid #74b946;
+    padding: 0.2em 1.4em;
+    margin: 1.5em 0;
+    background: #74b9460d;
+    font-style: italic;
+}
+.article-prose pre {
+    padding: 1.2em;
+    background: #111827;
+    color: #f3f4f6;
+    border-radius: 0.6rem;
+    overflow-x: auto;
+    white-space: pre;
+}
+.article-prose code {
+    font-family: monospace;
+    font-size: 0.9em;
+}
+.article-prose hr {
+    border: 0;
+    border-top: 1px solid #d1d5db;
+    margin: 2em 0;
+}
+.article-prose img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.6rem;
+    margin: 1.5em auto;
+    display: block;
+}
+.article-prose video,
+.article-prose iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 0.6rem;
+    margin: 1.5em 0;
+    background: #111827;
+}
+.article-prose table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 1.5em 0;
+}
+.article-prose td,
+.article-prose th {
+    position: relative;
+    min-width: 60px;
+    border: 1px solid #9ca3af;
+    padding: 0.65em;
+    vertical-align: top;
+}
+.article-prose th {
+    font-weight: 700;
+    background: #74b94615;
+}
+.article-prose .article-table,
+.article-prose .tableWrapper {
+    overflow-x: auto;
+}
+.article-prose .selectedCell {
+    background: #74b94625;
+}
+.article-prose .ProseMirror-selectednode {
+    outline: 3px solid #74b946;
+}
+.article-prose:focus-visible {
+    box-shadow: inset 0 0 0 2px #74b94650;
+}

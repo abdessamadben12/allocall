@@ -2,13 +2,17 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ArticleMediaController;
 use App\Http\Controllers\HeroImageController;
 use App\Http\Controllers\MaquetteController;
 use Illuminate\Support\Facades\Route;
 
 require __DIR__.'/public.php';
+Route::get('article-media/{filename}', [ArticleMediaController::class, 'show'])->name('article-media.show');
 
 Route::middleware(['auth'])->group(function () {
+    Route::post('admin/article-media', [ArticleMediaController::class, 'store'])->middleware('throttle:30,1')->name('admin.article-media.store');
+    Route::post('admin/articles/preview', [ArticleController::class, 'preview'])->name('admin.articles.preview');
     Route::resource('admin/articles', ArticleController::class)->except(['show', 'destroy'])->names('admin.articles');
     Route::get('dashboard', [ContactController::class, 'dashboard'])->name('dashboard');
 

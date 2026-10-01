@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import './public-typography.css';
 @import './company.css';
+@import './article-editor.css';
 
 @font-face {
     font-family: 'Outfit';
