@@ -12,6 +12,12 @@ interface ServicesGridProps {
 
 const serviceOverview = [
     {
+        slug: 'commerce-electronique',
+        title: 'Centre d’appels e-commerce et soutien à la clientèle',
+        description: 'Clavardage Shopify et Web, courriels, suivis de colis et paniers abandonnés : une équipe bilingue pour votre boutique en ligne.',
+        icon: '/Icons/Icon5.svg',
+    },
+    {
         slug: 'assistants-virtuels',
         title: 'Assistante virtuelle',
         description:
@@ -95,7 +101,7 @@ export default function Services({ onQuoteWithService }: ServicesGridProps) {
                     className="relative mx-auto mt-16 grid max-w-4xl grid-cols-3 divide-x divide-white/10 border-t border-white/10 px-4 pt-8 sm:px-6 lg:px-8"
                 >
                     <StaggerItem className="px-2 text-center">
-                        <div className="serif-display text-alidade-gold text-3xl font-bold sm:text-4xl">{t('8')}</div>
+                        <div className="serif-display text-alidade-gold text-3xl font-bold sm:text-4xl">{serviceOverview.length}</div>
                         <div className="mt-1 text-[10px] tracking-[0.2em] text-white/60 uppercase sm:text-xs">{t('Services')}</div>
                     </StaggerItem>
                     <StaggerItem className="px-2 text-center">
@@ -116,8 +122,8 @@ export default function Services({ onQuoteWithService }: ServicesGridProps) {
 
                 <Stagger stagger={0.1} amount={0.05} className="grid grid-cols-1 gap-x-10 gap-y-16 sm:grid-cols-2 lg:grid-cols-6">
                     {serviceOverview.map((service, index) => {
-                        const isBeforeLast = index === serviceOverview.length - 2;
-                        const isLast = index === serviceOverview.length - 1;
+                        const isBeforeLast = serviceOverview.length % 3 === 2 && index === serviceOverview.length - 2;
+                        const isLast = serviceOverview.length % 3 === 2 && index === serviceOverview.length - 1;
 
                         return (
                             <StaggerItem
@@ -125,7 +131,7 @@ export default function Services({ onQuoteWithService }: ServicesGridProps) {
                                 className={`lg:col-span-2 ${isBeforeLast ? 'lg:col-start-2' : ''} ${isLast ? 'lg:col-start-4' : ''} `}
                             >
                                 <Link
-                                    href={route('services.show', service.slug)}
+                                    href={`/services/${service.slug}`}
                                     className="group relative mx-auto flex max-w-[350px] flex-col items-center text-center"
                                 >
                                     {/* ICON / CERCLES */}

@@ -2,8 +2,8 @@
 // Modifier ici met à jour la navbar, le footer, la page contact et le bouton WhatsApp.
 export const site = {
     name: 'ALLO CALL',
-    phone: '05 22 48 44 25',
-    phoneHref: 'tel:0522484425',
+    phone: '+1 514-850-9092',
+    phoneHref: 'tel:+15148509092',
 
     // Numéro WhatsApp au format international, sans « + » ni espaces.
     // TODO: remplacer par le numéro WhatsApp mobile réel (ex: '2126XXXXXXXX').

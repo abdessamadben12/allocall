@@ -42,12 +42,12 @@ it('stores and sends both public forms to the two configured recipients', functi
         && $mail->hasTo('contact@allocall.ma') && $mail->hasTo('allocallmaroc@gmail.com')
         && $mail->contactMessage->is($message)
         && $mail->envelope()->replyTo[0]->address === 'marie@example.com');
-})->with([['/devis', 'quote'], ['/en/devis', 'quote'], ['/contact', 'contact'], ['/en/contact', 'contact']]);
+})->with([['/soumission', 'quote'], ['/en/quote', 'quote'], ['/contact', 'contact'], ['/en/contact', 'contact']]);
 
 it('stores a quote attachment privately and includes it in the notification', function () {
     $payload = quotePayload();
     $payload['attachment'] = UploadedFile::fake()->create('brief.pdf', 25, 'application/pdf');
-    $this->from('/devis')->post('/devis', $payload)->assertSessionHasNoErrors();
+    $this->from('/soumission')->post('/soumission', $payload)->assertSessionHasNoErrors();
     $message = ContactMessage::sole();
     Storage::assertExists($message->attachment_path);
     expect($message->attachment_original_name)->toBe('brief.pdf');
@@ -56,12 +56,12 @@ it('stores a quote attachment privately and includes it in the notification', fu
 });
 
 it('rejects invalid quotes and files without sending mail', function () {
-    $this->post('/devis', ['request_type' => 'quote'])->assertSessionHasErrors(['full_name', 'email', 'message']);
+    $this->post('/soumission', ['request_type' => 'quote'])->assertSessionHasErrors(['full_name', 'email', 'message']);
     $payload = quotePayload();
     $payload['attachment'] = UploadedFile::fake()->create('large.pdf', 10241, 'application/pdf');
-    $this->post('/devis', $payload)->assertSessionHasErrors('attachment');
+    $this->post('/soumission', $payload)->assertSessionHasErrors('attachment');
     $payload['attachment'] = UploadedFile::fake()->create('script.exe', 1, 'application/x-msdownload');
-    $this->post('/devis', $payload)->assertSessionHasErrors('attachment');
+    $this->post('/soumission', $payload)->assertSessionHasErrors('attachment');
     $this->assertDatabaseCount('contact_messages', 0);
     Mail::assertNothingSent();
 });
@@ -70,23 +70,23 @@ it('does not send duplicates or allow visitors to choose recipients', function (
     config(['mail.contact_to_secondary' => ' contact@allocall.ma ']);
     $payload = quotePayload();
     $payload['recipient'] = 'untrusted@example.com';
-    $this->post('/devis', $payload)->assertSessionHasNoErrors();
+    $this->post('/soumission', $payload)->assertSessionHasNoErrors();
     Mail::assertSent(ContactSubmitted::class, fn ($mail) => count($mail->to) === 1 && $mail->hasTo('contact@allocall.ma') && ! $mail->hasTo('untrusted@example.com'));
 });
 
 it('keeps the quote and displays an error when SMTP fails', function () {
     Mail::shouldReceive('to')->once()->with(['contact@allocall.ma', 'allocallmaroc@gmail.com'])->andReturnSelf();
     Mail::shouldReceive('send')->once()->andThrow(new RuntimeException('Test SMTP failure'));
-    $this->from('/en/devis')->post('/en/devis', quotePayload())->assertRedirect('/en/devis')
+    $this->from('/en/quote')->post('/en/quote', quotePayload())->assertRedirect('/en/quote')
         ->assertSessionHas('error', fn ($error) => str_starts_with($error, 'Your message was saved'))
         ->assertSessionMissing('success');
     $this->assertDatabaseCount('contact_messages', 1);
-    $this->get('/en/devis')->assertInertia(fn ($page) => $page->component('devis')->has('submissionStatus.error'));
+    $this->get('/en/quote')->assertInertia(fn ($page) => $page->component('devis')->has('submissionStatus.error'));
 });
 
 it('does not claim success when recipients are misconfigured', function () {
     config(['mail.contact_to_secondary' => 'not-an-email']);
-    $this->from('/devis')->post('/devis', quotePayload())->assertSessionHas('error')->assertSessionMissing('success');
+    $this->from('/soumission')->post('/soumission', quotePayload())->assertSessionHas('error')->assertSessionMissing('success');
     $this->assertDatabaseCount('contact_messages', 1);
     Mail::assertNothingSent();
 });

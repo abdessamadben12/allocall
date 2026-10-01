@@ -9,6 +9,7 @@ import {
     Users,
     type LucideIcon,
 } from 'lucide-react';
+import ecommerce from '../../content/ecommerce.json';
 
 export interface ServiceSection {
     title: string;
@@ -53,6 +54,13 @@ const imageConfiramtion = '/images/services/confirmation-rendez-vous.webp';
 
 
 export const services: ServiceDetail[] = [
+    {
+        ...ecommerce.fr,
+        slug: 'commerce-electronique',
+        imageUrl: imageServiceClientele,
+        icon: Headphones,
+        gallery: [],
+    },
     {
         slug: 'assistants-virtuels',
         title: 'Assistante virtuelle',

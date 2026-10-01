@@ -11,8 +11,8 @@ const locations = [
         label: 'Canada',
         sites: '1 site',
         address: '8815 Av. du Parc, Montréal, QC H2N 1X9, Canada',
-        phone: '+1 (438) 699-1965',
-        phoneHref: 'tel:+14386991965',
+        phone: '+1 514-850-9092',
+        phoneHref: 'tel:+15148509092',
 
         // Montréal
         position: 'left-[29.6%] top-[16.7%]',

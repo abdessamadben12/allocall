@@ -1,0 +1,378 @@
+{
+    "choisir-reception-appels": {
+        "image": "/images/services/reception-telephonique.webp",
+        "updated": "2026-10-01",
+        "service": "/services/commerce-electronique",
+        "fr": {
+            "title": "Comment choisir un centre d’appels e-commerce pour votre boutique au Québec?",
+            "seoTitle": "Choisir un centre d’appels e-commerce au Québec",
+            "description": "Clavardage Shopify, courriels, suivis de colis, horaires et tarifs en CAD : les critères pour choisir le soutien de votre boutique en ligne.",
+            "summary": "Pour choisir un centre de contact e-commerce, comparez les tâches prises en charge, les langues, les horaires et les accès à vos outils. Une soumission en CAD doit préciser la couverture réelle et les conditions du service.",
+            "category": "Commerce électronique",
+            "sections": [
+                {
+                    "heading": "Dressez le portrait des demandes de votre boutique",
+                    "paragraphs": [
+                        "Une boutique en ligne reçoit des questions avant l’achat, des demandes de suivi de colis, des échanges sur les retours et des messages après une commande. Répartissez ces demandes entre le téléphone, les courriels et le clavardage. Repérez les heures chargées, notamment les soirs et les fins de semaine.",
+                        "Pour une PME québécoise qui vend ailleurs au Canada, notez aussi les langues et les fuseaux horaires de la clientèle. Ce portrait aide à définir le travail à confier à un service d’impartition plutôt qu’à choisir uniquement selon un prix annoncé."
+                    ],
+                    "items": [
+                        "Le volume par canal : appels, courriels et clavardages",
+                        "Les plateformes utilisées, notamment Shopify et votre CRM",
+                        "Les plages de soir, de nuit ou de fin de semaine souhaitées",
+                        "Les questions que les agents peuvent régler sans votre approbation"
+                    ]
+                },
+                {
+                    "heading": "Vérifiez les accès Shopify, Web et CRM",
+                    "paragraphs": [
+                        "Demandez comment les agents consulteront les informations nécessaires à un suivi de commande. Les outils, les permissions et les intégrations doivent être validés avant le démarrage. Une gestion du clavardage ne suppose pas automatiquement une intégration technique à toutes les applications de votre boutique.",
+                        "Préparez des consignes pour les retours, les remboursements, les offres commerciales et les suivis de paniers abandonnés. Indiquez ce qui est autorisé et ce qui doit vous être transmis. Pour un colis en retard, l’agent doit distinguer le statut affiché d’un délai de livraison confirmé."
+                    ]
+                },
+                {
+                    "heading": "Comparez la couverture et les tarifs en CAD",
+                    "paragraphs": [
+                        "Obtenez votre estimation tarifaire en CAD. Précisez les volumes, les canaux et les heures à couvrir afin de comparer des offres équivalentes. Demandez ce qui se passe lors d’une pointe de demandes et comment les frais supplémentaires sont calculés.",
+                        "Si vous cherchez un centre d’appels e-commerce 24/7, faites confirmer la couverture humaine, les délais de réponse et le mode de reprise des demandes. Une promesse de rapidité ou d’économies doit correspondre à des modalités vérifiables, pas simplement au titre d’une offre."
+                    ],
+                    "items": [
+                        "Ce qui est inclus et ce qui entraîne des frais supplémentaires",
+                        "Les outils utilisés pour remettre les messages",
+                        "Le délai de mise en place à convenir",
+                        "Les modalités de suivi, de modification et de fin de service"
+                    ]
+                },
+                {
+                    "heading": "Évaluez la qualité du soutien après le démarrage",
+                    "paragraphs": [
+                        "Vérifiez des conversations représentatives dans les deux langues. Les réponses respectent-elles vos conditions? Les messages sont-ils complets? Les demandes non résolues sont-elles attribuées à la bonne personne? Comparez ces observations à votre fonctionnement précédent, en tenant compte de votre volume réel.",
+                        "Avec Allo Call, préparez une discussion sur le clavardage, les courriels, les suivis de colis et les heures de couverture. L’objectif est d’offrir un soutien client e-commerce flexible et de mieux organiser les ressources de votre boutique en ligne."
+                    ]
+                }
+            ]
+        },
+        "en": {
+            "title": "How to choose an e-commerce contact centre for your Canadian online store",
+            "seoTitle": "Choosing an e-commerce contact centre in Canada",
+            "description": "Compare Shopify chat, email, parcel tracking, coverage hours and pricing in CAD before choosing support for your Canadian online store.",
+            "summary": "When choosing an e-commerce contact centre, compare tasks, languages, hours and access to your tools. A quote in CAD should spell out actual coverage and service terms.",
+            "category": "E-commerce",
+            "sections": [
+                {
+                    "heading": "Map your online store’s customer enquiries",
+                    "paragraphs": [
+                        "An online store receives pre-purchase questions, parcel tracking requests, return enquiries and messages after checkout. Break down these requests by phone, email and live chat. Identify busy periods, including evenings and weekends.",
+                        "For a Quebec business selling across Canada, note customer languages and time zones as well. This picture helps define what to outsource instead of choosing a provider based only on an advertised price."
+                    ],
+                    "items": [
+                        "Volume by channel: calls, email and live chat",
+                        "Platforms in use, including Shopify and your CRM",
+                        "Required evening, overnight and weekend hours",
+                        "Questions agents can resolve without your approval"
+                    ]
+                },
+                {
+                    "heading": "Check Shopify, web and CRM access",
+                    "paragraphs": [
+                        "Ask how agents will access the information needed to follow up on an order. Tools, permissions and integrations must be confirmed before launch. Live chat management does not automatically include technical integration with every app in your store.",
+                        "Prepare instructions for returns, refunds, sales offers and abandoned cart follow-up. Specify what is authorized and what must come back to you. For a late parcel, the agent needs to distinguish the displayed status from a confirmed delivery date."
+                    ]
+                },
+                {
+                    "heading": "Compare coverage and pricing in CAD",
+                    "paragraphs": [
+                        "Request your pricing estimate in CAD. Define volumes, channels and coverage hours so the quotes cover comparable work. Ask what happens during peaks in demand and how additional charges are calculated.",
+                        "If you are looking for a 24/7 e-commerce call centre, confirm human coverage, response times and how open requests are handled. Claims about speed or savings should correspond to verifiable terms rather than just an offer headline."
+                    ],
+                    "items": [
+                        "Included work and additional charges",
+                        "Tools used to deliver messages",
+                        "An agreed implementation timeline",
+                        "Review, change and cancellation arrangements"
+                    ]
+                },
+                {
+                    "heading": "Review support quality after launch",
+                    "paragraphs": [
+                        "Check representative conversations in both languages. Do answers follow your policies? Are messages complete? Are unresolved enquiries assigned to the right person? Compare these observations with your previous workflow while considering actual enquiry volume.",
+                        "With Allo Call, prepare a discussion about live chat, email, parcel follow-up and coverage hours. The aim is flexible e-commerce customer support and a clearer way to organize resources for your online store."
+                    ]
+                }
+            ]
+        }
+    },
+    "accueil-bilingue": {
+        "image": "/images/services/service-clientele.webp",
+        "updated": "2026-10-01",
+        "service": "/services/service-clientele",
+        "fr": {
+            "title": "Service à la clientèle bilingue : organiser un accueil cohérent au Québec et au Canada",
+            "seoTitle": "Organiser un service à la clientèle bilingue au Canada",
+            "description": "Scripts, vocabulaire québécois, choix de langue et suivis : une méthode pratique pour offrir un accueil cohérent en français et en anglais.",
+            "summary": "Un service bilingue ne se limite pas à traduire un message d’accueil. Les agents ont besoin des mêmes renseignements, des mêmes limites de réponse et d’un processus de suivi clair dans les deux langues.",
+            "category": "Service bilingue",
+            "sections": [
+                {
+                    "heading": "Prévoyez le choix de langue dès l’accueil",
+                    "paragraphs": [
+                        "Définissez une formule d’accueil courte et la façon de poursuivre dans la langue choisie par la personne. Si un transfert est nécessaire, transmettez aussi cette préférence à votre collègue. Le client ne devrait pas avoir à recommencer son explication simplement parce qu’il change d’interlocuteur.",
+                        "Évitez de supposer la langue d’une personne à partir de son nom, de son indicatif régional ou de sa province. La préférence exprimée pendant l’échange est le meilleur point de départ pour organiser le suivi."
+                    ]
+                },
+                {
+                    "heading": "Adaptez le vocabulaire à la clientèle québécoise",
+                    "paragraphs": [
+                        "Dans vos scripts en français, privilégiez des mots courants comme « soumission », « courriel », « service à la clientèle » et « suivi ». Expliquez les termes propres à votre secteur. Il n’est pas nécessaire de forcer un ton familier pour paraître proche de votre clientèle.",
+                        "La version anglaise doit conserver le même sens et la même portée. Une information sur une disponibilité, un prix ou une condition ne doit pas devenir une promesse différente après traduction."
+                    ],
+                    "items": [
+                        "Un glossaire commun pour les services et les produits",
+                        "Des réponses validées aux questions courantes",
+                        "Les formulations à éviter ou à faire approuver",
+                        "Une procédure lorsque la réponse n’est pas connue"
+                    ]
+                },
+                {
+                    "heading": "Conservez les mêmes repères dans les deux langues",
+                    "paragraphs": [
+                        "Préparez une fiche de référence unique avec vos services, vos zones desservies, vos coordonnées et vos consignes. Les scripts français et anglais doivent être mis à jour ensemble lorsqu’une information change.",
+                        "Pour les rendez-vous, indiquez clairement la date, l’heure et le fuseau horaire. Une entreprise qui reçoit des appels du Québec et de l’Ouest canadien doit vérifier le fuseau de la personne avant de confirmer une plage horaire."
+                    ]
+                },
+                {
+                    "heading": "Évaluez la qualité du suivi, pas seulement la formulation",
+                    "paragraphs": [
+                        "Relisez des exemples de messages et vérifiez que les renseignements nécessaires sont présents dans les deux langues. Le besoin est-il clair? Le numéro de rappel est-il exact? L’équipe sait-elle ce qui a été annoncé au client? Ces éléments rendent le suivi plus simple.",
+                        "Avec AlloCall, les langues de service, les scripts et les règles de transfert font partie des besoins à définir au départ. Indiquez la répartition approximative de vos demandes en français et en anglais pour préparer une organisation adaptée à votre entreprise."
+                    ]
+                }
+            ]
+        },
+        "en": {
+            "title": "Bilingual customer service: a consistent welcome across Quebec and Canada",
+            "seoTitle": "Organizing bilingual customer service in Canada",
+            "description": "Build consistent English and French customer service with shared scripts, clear language choices, Canadian terminology and reliable follow-ups.",
+            "summary": "Bilingual service takes more than translating a greeting. Agents need the same information, clear limits on what they can answer and a consistent follow-up process in both languages.",
+            "category": "Bilingual service",
+            "sections": [
+                {
+                    "heading": "Offer a language choice at the start",
+                    "paragraphs": [
+                        "Agree on a short greeting and how to continue in the caller’s preferred language. When a transfer is needed, pass that preference to the next person. Customers should not have to repeat their situation simply because another colleague takes over.",
+                        "Avoid assuming a caller’s language from their name, area code or province. The preference they express during the conversation is a better starting point for arranging follow-up."
+                    ]
+                },
+                {
+                    "heading": "Use language your customers understand",
+                    "paragraphs": [
+                        "For Quebec customers, use familiar French terms such as “soumission” for a quote, “courriel” for email and “service à la clientèle” for customer service. Explain specialized terms instead of relying on jargon. Professional service does not require an artificially casual tone.",
+                        "Keep the meaning and scope consistent in English. Information about availability, pricing or conditions should not become a different promise when translated."
+                    ],
+                    "items": [
+                        "A shared glossary of services and products",
+                        "Approved answers to common questions",
+                        "Wording that needs approval or should be avoided",
+                        "Instructions for questions an agent cannot answer"
+                    ]
+                },
+                {
+                    "heading": "Keep the same reference information in both languages",
+                    "paragraphs": [
+                        "Maintain a common reference sheet with your services, service areas, contact details and call handling instructions. Update the English and French scripts together when something changes.",
+                        "For appointments, state the date, time and time zone clearly. A business receiving calls from Quebec and Western Canada should check the customer’s time zone before confirming an appointment."
+                    ]
+                },
+                {
+                    "heading": "Review the follow-up as well as the wording",
+                    "paragraphs": [
+                        "Review sample messages to make sure both languages capture the information your team needs. Is the enquiry clear? Is the callback number correct? Does the team know what the customer was told? These details make the next conversation easier.",
+                        "When discussing service with AlloCall, include languages, scripts and transfer rules in your initial requirements. An estimate of your English and French enquiries helps plan a workflow suited to your customers."
+                    ]
+                }
+            ]
+        }
+    },
+    "gestion-rendez-vous": {
+        "image": "/images/services/prise-rendez-vous.webp",
+        "updated": "2026-10-01",
+        "service": "/services/prise-rendez-vous",
+        "fr": {
+            "title": "Prise de rendez-vous et rappels : une méthode simple pour les PME québécoises",
+            "seoTitle": "Prise de rendez-vous et rappels pour PME au Québec",
+            "description": "Définissez vos disponibilités, vos questions de qualification et vos rappels pour simplifier les rendez-vous de votre PME au Québec et au Canada.",
+            "summary": "Une prise de rendez-vous utile confirme le besoin, le bon interlocuteur, la plage horaire et la prochaine étape. Les rappels complètent ce processus; ils ne remplacent pas des consignes de réservation claires.",
+            "category": "Rendez-vous et suivis",
+            "sections": [
+                {
+                    "heading": "Définissez ce qui peut être réservé",
+                    "paragraphs": [
+                        "Avant de déléguer votre agenda, précisez les types de rendez-vous, leur durée, les personnes disponibles et les zones desservies. Ajoutez les délais nécessaires entre deux rencontres et les situations qui exigent une validation de votre équipe.",
+                        "Un entrepreneur peut vouloir qualifier le type de travaux avant une visite. Un cabinet peut proposer un premier appel avant une rencontre plus longue. La prise de rendez-vous doit respecter cette logique, sans promettre une prestation qui n’a pas encore été confirmée."
+                    ],
+                    "items": [
+                        "Le motif et la durée de chaque rendez-vous",
+                        "Les disponibilités et le délai minimal de réservation",
+                        "Les renseignements à obtenir avant de confirmer",
+                        "Les règles de report et d’annulation"
+                    ]
+                },
+                {
+                    "heading": "Posez quelques questions utiles, pas un questionnaire interminable",
+                    "paragraphs": [
+                        "Demandez seulement ce dont votre équipe a besoin pour préparer le rendez-vous : coordonnées, motif de la demande et contraintes pratiques. Indiquez les questions qui peuvent attendre la rencontre et celles qui doivent être traitées directement par un professionnel.",
+                        "Dans les secteurs où les échanges sont sensibles, définissez avec votre équipe les limites de la prise de renseignements. Un service de rendez-vous ne doit pas être présenté comme un service de diagnostic ou de conseil spécialisé."
+                    ]
+                },
+                {
+                    "heading": "Confirmez les détails sans ambiguïté",
+                    "paragraphs": [
+                        "Répétez la date, l’heure, le fuseau horaire et le lieu ou le mode de rencontre. Si le rendez-vous se déroule à distance, précisez comment le lien sera transmis. Pour un appel entre provinces, vérifiez l’heure locale des deux personnes.",
+                        "Le message de confirmation devrait aussi expliquer comment signaler un empêchement. Choisissez le canal de rappel selon les préférences de votre clientèle et les modalités que vous avez établies; ne multipliez pas les messages sans raison."
+                    ]
+                },
+                {
+                    "heading": "Traitez les changements comme une partie du service",
+                    "paragraphs": [
+                        "Lorsqu’un client annule ou demande un report, mettez l’agenda à jour et transmettez l’information à la personne concernée. Distinguez les rendez-vous confirmés, à rappeler et en attente de validation. Un statut clair évite de reprendre la même demande plusieurs fois.",
+                        "Pour discuter d’un service AlloCall, préparez vos règles de réservation et le nom de votre outil d’agenda. La compatibilité, les accès et les tâches confiées aux agents sont à valider avant la mise en place. Les résultats dépendent aussi de vos disponibilités et de votre propre processus de suivi."
+                    ]
+                }
+            ]
+        },
+        "en": {
+            "title": "Appointment scheduling and reminders: a practical approach for Canadian small businesses",
+            "seoTitle": "Appointment scheduling and reminders for small businesses",
+            "description": "Set booking rules, qualification questions and reminders that make appointments easier to manage for your business in Quebec and across Canada.",
+            "summary": "A useful booking confirms the customer’s needs, the right person, the appointment time and the next step. Reminders support that process; they do not replace clear scheduling instructions.",
+            "category": "Appointments and follow-ups",
+            "sections": [
+                {
+                    "heading": "Define what can be booked",
+                    "paragraphs": [
+                        "Before delegating your calendar, specify appointment types, duration, available team members and service areas. Include time between appointments and situations that require your team’s approval.",
+                        "A contractor may want to qualify the work before a site visit. A professional services firm may offer an introductory call before a longer meeting. Scheduling should follow that workflow without promising a service that has not been confirmed."
+                    ],
+                    "items": [
+                        "The purpose and length of each appointment",
+                        "Availability and minimum booking notice",
+                        "Information needed before confirmation",
+                        "Rescheduling and cancellation instructions"
+                    ]
+                },
+                {
+                    "heading": "Ask useful questions rather than creating a long questionnaire",
+                    "paragraphs": [
+                        "Collect what your team needs to prepare: contact details, the reason for the enquiry and practical constraints. Identify what can wait until the meeting and which questions should go directly to a qualified professional.",
+                        "Where conversations involve sensitive information, agree on the limits of intake with your team. An appointment service should not be presented as a diagnostic or specialist advisory service."
+                    ]
+                },
+                {
+                    "heading": "Confirm the details clearly",
+                    "paragraphs": [
+                        "Repeat the date, time, time zone and location or meeting format. For a remote appointment, explain how the meeting link will be sent. When people are in different provinces, check the local time for both participants.",
+                        "The confirmation should explain how to report a scheduling conflict. Choose a reminder channel based on customer preferences and your agreed arrangements; avoid sending unnecessary repeat messages."
+                    ]
+                },
+                {
+                    "heading": "Make changes part of the workflow",
+                    "paragraphs": [
+                        "When a customer cancels or reschedules, update the calendar and notify the right colleague. Distinguish confirmed appointments, callbacks and bookings awaiting approval. Clear status information prevents the same enquiry from being handled repeatedly.",
+                        "To discuss scheduling support with AlloCall, prepare your booking rules and the name of your calendar tool. Compatibility, access and the tasks assigned to agents need to be agreed before implementation. Outcomes also depend on your availability and your own follow-up process."
+                    ]
+                }
+            ]
+        }
+    },
+    "ia-et-humain": {
+        "image": "/images/hero/allocall-ai.webp",
+        "updated": "2026-10-01",
+        "service": "/solutions-ia",
+        "fr": {
+            "title": "IA et agents humains : comment les combiner en service à la clientèle?",
+            "seoTitle": "IA et agents humains en service à la clientèle",
+            "description": "Choisir les tâches à automatiser, préparer les réponses et prévoir le transfert à un agent : un guide pratique pour les entreprises canadiennes.",
+            "summary": "L’IA peut soutenir l’accueil et les tâches répétitives lorsque ses réponses reposent sur des renseignements validés. Un agent humain doit pouvoir reprendre l’échange quand la demande dépasse le scénario prévu ou nécessite du jugement.",
+            "category": "IA et relation client",
+            "sections": [
+                {
+                    "heading": "Commencez par un usage bien délimité",
+                    "paragraphs": [
+                        "Choisissez une tâche simple : orienter une demande, expliquer les étapes d’un service ou recueillir les renseignements nécessaires à un rappel. Précisez les réponses autorisées et celles qui doivent être validées par votre équipe. Une automatisation utile a un périmètre clair.",
+                        "Pour une entreprise canadienne bilingue, vérifiez les scénarios en français et en anglais. Le système doit comprendre les formulations utilisées par vos clients et garder le même sens dans les deux langues."
+                    ],
+                    "items": [
+                        "Les questions courantes avec des réponses approuvées",
+                        "Les renseignements nécessaires à la qualification",
+                        "Les situations qui imposent un transfert",
+                        "La façon de corriger une réponse ou un renseignement périmé"
+                    ]
+                },
+                {
+                    "heading": "Prévoyez le passage à un agent dès le départ",
+                    "paragraphs": [
+                        "Une demande inhabituelle, une plainte, une réponse incertaine ou une demande explicite de parler à une personne peut déclencher une reprise par un agent. Définissez ce qui est transmis : le motif, les renseignements déjà recueillis et la prochaine action attendue.",
+                        "Si aucun agent n’est disponible au moment de l’échange, le système doit expliquer la suite prévue, par exemple une prise de message. La disponibilité d’un outil automatisé ne signifie pas que votre équipe humaine répond à toute heure."
+                    ]
+                },
+                {
+                    "heading": "Gardez la maîtrise des renseignements utilisés",
+                    "paragraphs": [
+                        "Identifiez les documents qui alimentent les réponses, la personne responsable de leur mise à jour et les accès nécessaires. Évitez de fournir à un outil plus de renseignements que ce dont il a besoin pour accomplir la tâche choisie.",
+                        "Les lieux de traitement, la conservation des échanges et les modalités d’accès sont des points à examiner avec le fournisseur avant le déploiement. L’utilisation de l’IA ne constitue pas, à elle seule, une garantie de conformité ou de confidentialité."
+                    ]
+                },
+                {
+                    "heading": "Évaluez la qualité sur des conversations concrètes",
+                    "paragraphs": [
+                        "Testez des demandes normales, ambiguës et hors sujet. Vérifiez la justesse des réponses, les transferts et la qualité des résumés transmis aux agents. Une réponse rapide mais incorrecte peut créer davantage de travail pour votre équipe.",
+                        "AlloCall propose de discuter de l’articulation entre les agents et les outils d’automatisation selon vos besoins. Définissez d’abord le scénario, les langues et le mode de reprise humaine; les intégrations et la couverture sont ensuite à confirmer dans le périmètre du service."
+                    ]
+                }
+            ]
+        },
+        "en": {
+            "title": "AI and human agents: how to combine them in customer service",
+            "seoTitle": "Combining AI and human agents in customer service",
+            "description": "Choose tasks to automate, prepare approved answers and plan handoffs to people with this practical guide for Canadian businesses.",
+            "summary": "AI can support intake and repetitive tasks when its answers draw on approved information. A human agent needs a way to take over when a request falls outside the planned workflow or calls for judgement.",
+            "category": "AI and customer care",
+            "sections": [
+                {
+                    "heading": "Start with a clearly defined use case",
+                    "paragraphs": [
+                        "Choose a simple task: route an enquiry, explain service steps or collect the details needed for a callback. Specify approved answers and questions your team must review. Useful automation has a clear scope.",
+                        "For a bilingual Canadian business, test the workflow in English and French. The system should handle the wording your customers use and retain the same meaning in both languages."
+                    ],
+                    "items": [
+                        "Common questions with approved answers",
+                        "Information required to qualify an enquiry",
+                        "Situations that require a handoff",
+                        "A process for correcting outdated or inaccurate information"
+                    ]
+                },
+                {
+                    "heading": "Plan the human handoff from the beginning",
+                    "paragraphs": [
+                        "An unusual request, complaint, uncertain answer or explicit request for a person can trigger a handoff. Define what the agent receives: the reason for the enquiry, information already collected and the expected next action.",
+                        "If an agent is unavailable, the system should explain the agreed next step, such as taking a message. An automated tool’s availability does not mean a human team is available around the clock."
+                    ]
+                },
+                {
+                    "heading": "Stay in control of the information used",
+                    "paragraphs": [
+                        "Identify the documents behind the answers, who maintains them and the access required. Avoid giving a tool more information than it needs for the defined task.",
+                        "Processing locations, conversation retention and access arrangements should be reviewed with the provider before implementation. Using AI does not by itself guarantee compliance or confidentiality."
+                    ]
+                },
+                {
+                    "heading": "Evaluate quality using real conversation scenarios",
+                    "paragraphs": [
+                        "Test routine, ambiguous and unrelated requests. Check answer accuracy, handoffs and the quality of summaries sent to agents. A quick but incorrect answer can create extra work for your team.",
+                        "With AlloCall, you can discuss how agents and automation tools could work together for your business. Define the scenario, languages and human handoff first, then confirm integrations and coverage in the agreed service scope."
+                    ]
+                }
+            ]
+        }
+    }
+}

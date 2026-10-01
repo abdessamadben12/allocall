@@ -1,0 +1,860 @@
+{
+    "CENTRE D'APPELS BILINGUE · MONTRÉAL · CASABLANCA · PARIS": {
+        "fr": "ALLO CALL | CENTRE DE CONTACT BILINGUE",
+        "en": "ALLO CALL | BILINGUAL CONTACT CENTRE"
+    },
+    "RÉPONDEZ À CHAQUE APPEL. NE PERDEZ PLUS UN SEUL CLIENT.": {
+        "fr": "VOTRE SERVICE CLIENT\nE-COMMERCE,\nEN FRANÇAIS\nET EN ANGLAIS.",
+        "en": "E-COMMERCE\nCUSTOMER SUPPORT,\nIN ENGLISH\nAND FRENCH."
+    },
+    "Une équipe téléphonique et commerciale à distance, dédiée aux PME québécoises. Réception d'appels, service à la clientèle, télévente, gestion de leads et prise de rendez-vous — sans les coûts d'une équipe interne.": {
+        "fr": "Palliez la pénurie de main-d’œuvre au Québec.\nNos agents bilingues gèrent vos clavardages, courriels et suivis de colis selon vos consignes. Un soutien client e-commerce flexible pour votre boutique en ligne.",
+        "en": "Address staffing challenges in Quebec.\nOur bilingual agents handle live chat, email and parcel follow-ups under your instructions. Flexible e-commerce customer support for your online store."
+    },
+    "OBTENIR UNE SOUMISSION GRATUITE": {
+        "fr": "OBTENIR UNE ESTIMATION EN CAD",
+        "en": "GET AN ESTIMATE IN CAD"
+    },
+    "Parler à un conseiller": {
+        "fr": "Parler à notre équipe",
+        "en": "Talk to our team"
+    },
+    "VOS LEADS TRAITÉS EN QUELQUES MINUTES, 24 H SUR 24": {
+        "fr": "VOS DEMANDES CLIENTS,\nUN SUIVI BILINGUE,\nPARTOUT AU CANADA",
+        "en": "YOUR CUSTOMER ENQUIRIES,\nBILINGUAL FOLLOW-UP,\nACROSS CANADA"
+    },
+    "Chatbot, agent vocal IA, SMS automatisés et CRM intelligent travaillent avec nos agents pour qualifier, relancer et convertir vos prospects. L'IA gère le volume, nos agents gèrent les conversations qui comptent.": {
+        "fr": "Assistant conversationnel, agent vocal et rappels automatisés soutiennent vos suivis en français et en anglais.\nNos agents prennent le relais lorsque votre clientèle a besoin d’un échange personnalisé.",
+        "en": "Chat assistants, voice tools and automated reminders support follow-ups in English and French.\nOur agents take over when your customers need a personal conversation."
+    },
+    "UN APPEL MANQUÉ, C'EST UNE VENTE CHEZ VOTRE CONCURRENT": {
+        "fr": "VOTRE ACCUEIL\nTÉLÉPHONIQUE,\nLE SOIR ET LA\nFIN DE SEMAINE.",
+        "en": "YOUR CALL\nANSWERING SERVICE,\nEVENINGS\nAND WEEKENDS."
+    },
+    "Un prospect qui n'est pas rappelé ne revient pas. AlloCall prend en charge vos appels entrants, vos relances et votre agenda pour transformer chaque demande en rendez-vous qualifié.": {
+        "fr": "Optimisez l’expérience client de votre boutique en ligne.\nDéfinissez une couverture de soir, de nuit ou de fin de semaine, selon le forfait et les disponibilités. Des agents bilingues pour vos appels et vos suivis.",
+        "en": "Improve your online store’s customer experience.\nPlan evening, overnight or weekend coverage based on the service plan and availability. Bilingual agents for your calls and follow-ups."
+    },
+    "VOTRE RELATION CLIENT,": {
+        "fr": "VOTRE CLIENTÈLE D’ICI,",
+        "en": "YOUR CANADIAN CUSTOMERS,"
+    },
+    "NOTRE EXPERTISE": {
+        "fr": "NOTRE EXPERTISE BILINGUE",
+        "en": "OUR BILINGUAL EXPERTISE"
+    },
+    "De la réception d'appels à la prospection commerciale, AlloCall accompagne votre entreprise à chaque étape de la relation client.": {
+        "fr": "De l’accueil téléphonique au suivi commercial,\nAlloCall accompagne les entreprises québécoises et canadiennes dans leurs échanges avec leur clientèle.",
+        "en": "From call answering to sales follow-ups,\nAlloCall helps businesses in Quebec and across Canada stay connected with their customers."
+    },
+    "Service Client": {
+        "fr": "Impartition du service client",
+        "en": "Customer service outsourcing"
+    },
+    "Confiez la gestion de vos demandes clients à une équipe dédiée, professionnelle et orientée satisfaction.": {
+        "fr": "Un soutien client e-commerce flexible : clavardages, courriels et suivis de colis en français et en anglais.",
+        "en": "Flexible e-commerce customer support: live chat, email and parcel tracking in English and French."
+    },
+    "Développez votre activité grâce à une prospection téléphonique structurée et adaptée à vos objectifs commerciaux.": {
+        "fr": "Développez vos occasions d’affaires avec une prospection adaptée à votre marché au Québec et au Canada.",
+        "en": "Build business opportunities with telephone outreach tailored to your market in Quebec and across Canada."
+    },
+    "Fidélisation Client": {
+        "fr": "Fidélisation de la clientèle",
+        "en": "Customer retention"
+    },
+    "Renforcez la relation avec vos clients grâce à des échanges personnalisés et un suivi régulier.": {
+        "fr": "Gardez le contact avec votre clientèle grâce à des échanges personnalisés et à des suivis dans sa langue de préférence.",
+        "en": "Stay connected with your customers through personal conversations and follow-ups in their preferred language."
+    },
+    "Transformez vos contacts en opportunités commerciales grâce à des équipes orientées performance et conversion.": {
+        "fr": "Soutenez vos ventes avec une équipe qui présente votre offre et assure le suivi de vos clients potentiels au Canada.",
+        "en": "Support your sales with a team that introduces your services and follows up with prospective customers in Canada."
+    },
+    "Assistance client": {
+        "fr": "Soutien à la clientèle",
+        "en": "Customer support"
+    },
+    "Service Desk": {
+        "fr": "Soutien client de fin de semaine",
+        "en": "Weekend customer support"
+    },
+    "Relance commerciale": {
+        "fr": "Suivi commercial",
+        "en": "Sales follow-up"
+    },
+    "Upselling & cross-selling": {
+        "fr": "Vente complémentaire",
+        "en": "Upselling and cross-selling"
+    },
+    "Gestion de leads": {
+        "fr": "Suivi des clients potentiels",
+        "en": "Lead management"
+    },
+    "Des solutions pour": {
+        "fr": "Des solutions pour",
+        "en": "Solutions for"
+    },
+    "votre relation client": {
+        "fr": "votre clientèle au Canada",
+        "en": "your customers in Canada"
+    },
+    "AlloCall accompagne votre entreprise avec des équipes dédiées pour gérer vos appels, développer vos ventes et transformer davantage de prospects en clients.": {
+        "fr": "AlloCall accompagne votre PME au Québec et au Canada pour gérer vos appels,\ndévelopper vos ventes et assurer le suivi de vos clients potentiels.",
+        "en": "AlloCall supports your business in Quebec and across Canada with call handling,\nsales support and follow-ups with prospective customers."
+    },
+    "Une équipe à distance pour gérer vos appels, courriels, tâches administratives et suivis.": {
+        "fr": "Une équipe à distance pour vos appels, courriels et suivis, en français et en anglais.",
+        "en": "A remote team for your calls, emails and follow-ups, in English and French."
+    },
+    "Des agents commerciaux pour contacter vos prospects, présenter vos services et générer des opportunités.": {
+        "fr": "Des agents pour présenter vos services et soutenir vos occasions d’affaires au Canada.",
+        "en": "Agents who introduce your services and support business opportunities across Canada."
+    },
+    "Qualification, suivi et relance de vos prospects afin de réduire les occasions perdues.": {
+        "fr": "Qualification et suivi de vos clients potentiels, dans leur langue de préférence.",
+        "en": "Lead qualification and follow-up in your prospective customers’ preferred language."
+    },
+    "Nos agents contactent vos prospects et clients et planifient directement les rendez-vous dans votre calendrier.": {
+        "fr": "Nos agents planifient vos rendez-vous en tenant compte des disponibilités et des fuseaux horaires au Canada.",
+        "en": "Our agents schedule appointments around availability and Canadian time zones."
+    },
+    "Présence internationale": {
+        "fr": "Un réseau au service du Canada",
+        "en": "A network serving Canada"
+    },
+    "Une organisation connectée entre l'Amérique du Nord, l'Europe et l'Afrique pour offrir un service client fluide, rapide et adapté à vos marchés.": {
+        "fr": "Un réseau entre l’Amérique du Nord, l’Europe et l’Afrique pour accompagner les entreprises du Québec et du Canada dans leur service à la clientèle.",
+        "en": "A network connecting North America, Europe and Africa to support customer service for businesses in Quebec and across Canada."
+    },
+    "Votre secteur a ses exigences.": {
+        "fr": "Votre marché canadien a ses exigences.",
+        "en": "Your Canadian market has its own needs."
+    },
+    "Notre équipe parle votre métier.": {
+        "fr": "Notre équipe s’adapte à votre réalité.",
+        "en": "Our team adapts to your business."
+    },
+    "Parlons de votre projet.": {
+        "fr": "Parlons de votre projet au Canada.",
+        "en": "Let’s talk about your Canadian business."
+    },
+    "Vos appels, vos prospects, votre relation client.": {
+        "fr": "Vos appels, vos suivis, votre clientèle au Canada.",
+        "en": "Your calls, your follow-ups, your customers in Canada."
+    },
+    "Notre équipe est à votre écoute.": {
+        "fr": "Notre équipe vous répond en français et en anglais.",
+        "en": "Our team is here to help in English and French."
+    },
+    "Une équipe à vos côtés.": {
+        "fr": "Une équipe pour votre PME au Canada.",
+        "en": "A team for your Canadian business."
+    },
+    "Une relation client à votre image.": {
+        "fr": "Un service bilingue à votre image.",
+        "en": "Bilingual service that reflects your business."
+    },
+    "ALLO CALL accompagne les entreprises dans la gestion de leurs appels, de leur relation client et de leur suivi commercial. Nous mettons à votre disposition des agents qui s'intègrent à vos processus et à vos outils.": {
+        "fr": "ALLO CALL accompagne les entreprises du Québec et du Canada dans la gestion de leurs appels et de leurs suivis. Nos agents travaillent en français et en anglais et s’intègrent à vos outils et à vos façons de faire.",
+        "en": "ALLO CALL helps businesses in Quebec and across Canada manage calls and follow-ups. Our agents work in English and French and fit into your existing tools and workflows."
+    },
+    "PME, travailleurs autonomes ou grandes entreprises : nos services s'adaptent à votre activité pour vous permettre de vous concentrer sur vos clients et votre croissance.": {
+        "fr": "PME, travailleurs autonomes ou grandes entreprises : nous adaptons le service à votre secteur, à vos horaires et aux besoins de votre clientèle canadienne.",
+        "en": "Small businesses, self-employed professionals and larger organizations: we adapt our service to your industry, coverage hours and Canadian customers’ needs."
+    },
+    "Une equipe telephonique et commerciale a distance pour vos appels, vos ventes, vos rendez-vous et votre relation client.": {
+        "fr": "Solutions d’impartition sur mesure pour PME et commerces électroniques : réceptionniste virtuelle, clavardage, courriels et soutien technique de niveau 1.",
+        "en": "Tailored outsourcing for small businesses and online retailers: virtual receptionists, live chat, email and level 1 technical support."
+    },
+    "Automatisez vos appels, qualifiez vos prospects": {
+        "fr": "Simplifiez vos appels et vos suivis au Canada",
+        "en": "Simplify your calls and follow-ups in Canada"
+    },
+    "et prenez vos rendez-vous.": {
+        "fr": "en français et en anglais.",
+        "en": "in English and French."
+    },
+    "Une équipe à distance pour gérer vos appels, vos prospects et votre relation client.": {
+        "fr": "Allo Call, centre de contact pour les PME et commerces électroniques du Québec et du Canada.",
+        "en": "Allo Call, a contact centre for small businesses and online retailers in Quebec and across Canada."
+    },
+    "Email": {
+        "fr": "Courriel",
+        "en": "Email"
+    },
+    "Articles": {
+        "fr": "Articles",
+        "en": "Articles"
+    },
+    "Ressources": {
+        "fr": "Ressources",
+        "en": "Resources"
+    },
+    "Questions fréquentes": {
+        "fr": "Questions fréquentes",
+        "en": "Frequently asked questions"
+    },
+    "Pourquoi AlloCall": {
+        "fr": "Pourquoi AlloCall",
+        "en": "Why AlloCall"
+    },
+    "Assistante virtuelle": {
+        "fr": "Réceptionniste virtuelle pour PME",
+        "en": "Virtual receptionist for small businesses"
+    },
+    "Assistants virtuels": {
+        "fr": "Télésecrétariat pour PME",
+        "en": "Virtual receptionist services"
+    },
+    "Televendeur / Televente": {
+        "fr": "Télévente et prospection",
+        "en": "Outbound sales and outreach"
+    },
+    "Support technique de niveau 1": {
+        "fr": "Soutien technique de niveau 1",
+        "en": "Level 1 technical support"
+    },
+    "Support technique niveau 1": {
+        "fr": "Soutien technique de niveau 1",
+        "en": "Level 1 technical support"
+    },
+    "Gestion des leads": {
+        "fr": "Suivi des clients potentiels",
+        "en": "Lead follow-up"
+    },
+    "Prise de rendez-vous": {
+        "fr": "Prise de rendez-vous externe",
+        "en": "Outsourced appointment scheduling"
+    },
+    "Demander une soumission": {
+        "fr": "Soumission en CAD",
+        "en": "Quote in CAD"
+    },
+    "Demander une soumission gratuite": {
+        "fr": "Demander une soumission en CAD",
+        "en": "Request a quote in CAD"
+    },
+    "soumission gratuite": {
+        "fr": "estimation en CAD",
+        "en": "estimate in CAD"
+    },
+    "AlloCall combine expertise humaine et technologie pour vous aider à ne laisser passer aucune opportunité.": {
+        "fr": "Impartition du service à la clientèle, clavardages, courriels et suivis : des agents bilingues et des tarifs en CAD.",
+        "en": "Outsourced customer service, live chat, email and follow-ups with bilingual agents and pricing in CAD."
+    },
+    "Clavardage Shopify et Web, courriels, suivis de colis et paniers abandonnés : une équipe bilingue pour votre boutique en ligne.": {
+        "fr": "Clavardage Shopify et Web, courriels, suivis de colis et paniers abandonnés : une équipe bilingue pour votre boutique en ligne.",
+        "en": "Shopify and web chat, email, parcel tracking and abandoned cart follow-up: a bilingual team for your online store."
+    },
+    "NOS EXPERTISES": {
+        "fr": "ALLO CALL | CENTRE DE CONTACT",
+        "en": "ALLO CALL | CONTACT CENTRE"
+    },
+    "Parlez-nous de vos besoins en service à la clientèle, appels, ventes ou prise de rendez-vous. Notre équipe vous proposera une solution adaptée à votre volume d'appels, vos objectifs et votre organisation.": {
+        "fr": "Obtenez votre estimation tarifaire en CAD. Précisez vos besoins en service à la clientèle, clavardage, courriels, soutien technique et prise de rendez-vous, ainsi que les heures à couvrir.",
+        "en": "Request your pricing estimate in CAD. Share your customer service, live chat, email, technical support and appointment scheduling needs, along with the coverage hours required."
+    },
+    "Un assistant disponible 24h/24 pour répondre aux visiteurs et qualifier leurs besoins.": {
+        "fr": "Un assistant pour répondre aux visiteurs et qualifier leurs besoins selon les scénarios configurés.",
+        "en": "An assistant to answer visitors and qualify their needs within configured workflows."
+    },
+    "Votre assistant commercial, disponible 24h/24.": {
+        "fr": "Votre assistant commercial en ligne.",
+        "en": "Your online sales assistant."
+    },
+    "Votre entreprise reste ainsi disponible 24h/24 et 7j/7.": {
+        "fr": "La disponibilité de l’outil et les règles de reprise humaine sont à définir dans votre service.",
+        "en": "Tool availability and human handoff rules are defined as part of your service."
+    },
+    "Un appel manque est souvent une occasion d affaires manquee. Avec un service d answering service au Quebec, vous garantissez une presence constante sans embaucher de personnel supplementaire.": {
+        "fr": "Un appel manqué peut être une occasion d’affaires perdue. Définissez une couverture de réception d’appels au Québec qui complète la disponibilité de votre équipe.",
+        "en": "A missed call can be a missed business opportunity. Plan call answering coverage that complements your team’s availability."
+    },
+    "Qualification de prospects": {
+        "fr": "Qualification de clients potentiels",
+        "en": "Prospect qualification"
+    },
+    "Aucun devis enregistré": {
+        "fr": "Aucun soumission enregistré",
+        "en": "No saved quotes"
+    },
+    "Vous n'avez pas encore soumis de demande de devis ou de projet via nos formulaires.": {
+        "fr": "Vous n'avez pas encore soumis de demande de soumission ou de projet via nos formulaires.",
+        "en": "You have not saved a quote or project request yet."
+    },
+    "Demander un devis maintenant": {
+        "fr": "Demander un soumission maintenant",
+        "en": "Request a quote now"
+    },
+    "Chaque prospect compte.": {
+        "fr": "Chaque client potentiel compte.",
+        "en": "Every prospect matters."
+    },
+    "Notre expérience nous permet de comprendre les enjeux spécifiques des concessionnaires : rapidité de réponse, qualification des prospects, gestion des rendez-vous, suivi commercial et fidélisation des clients.": {
+        "fr": "Notre expérience nous permet de comprendre les enjeux spécifiques des concessionnaires : rapidité de réponse, qualification des clients potentiels, gestion des rendez-vous, suivi commercial et fidélisation des clients.",
+        "en": "Our experience helps us understand dealership priorities: fast responses, qualified prospects, appointment management, sales follow-up and customer retention."
+    },
+    "Nos solutions peuvent également intégrer un chatbot IA, la qualification des leads, les appels, les relances, les rendez-vous et le CRM.": {
+        "fr": "Nos solutions peuvent également intégrer un assistant de clavardage IA, la qualification des clients potentiels, les appels, les relances, les rendez-vous et le CRM.",
+        "en": "Our solutions can also integrate an AI chatbot, lead qualification, calls, follow-ups, appointments and CRM."
+    },
+    "Réactivation des prospects": {
+        "fr": "Réactivation des clients potentiels",
+        "en": "Prospect reactivation"
+    },
+    "Suivi des leads": {
+        "fr": "Suivi des clients potentiels",
+        "en": "Lead follow-up"
+    },
+    "Réactivation des anciens prospects": {
+        "fr": "Réactivation des anciens clients potentiels",
+        "en": "Past prospect reactivation"
+    },
+    "Réception téléphonique, service à la clientèle, assistante virtuelle et support technique niveau 1.": {
+        "fr": "Réception téléphonique, service à la clientèle, assistante virtuelle et soutien technique niveau 1.",
+        "en": "Phone reception, customer service, virtual assistance and level 1 technical support."
+    },
+    "Télévente, qualification des prospects, gestion des leads et relances commerciales.": {
+        "fr": "Télévente, qualification des clients potentiels, gestion des clients potentiels et relances commerciales.",
+        "en": "Telesales, prospect qualification, lead management and sales follow-ups."
+    },
+    "Chatbot IA, agent vocal, CRM intelligent et automatisations accompagnent le traitement de vos leads, les relances et la prise de rendez-vous.": {
+        "fr": "Assistant de clavardage IA, agent vocal, CRM intelligent et automatisations accompagnent le traitement de vos clients potentiels, les relances et la prise de rendez-vous.",
+        "en": "AI chatbots, voice agents, smart CRM and automation support lead handling, follow-ups and appointment booking."
+    },
+    "Confiez-nous vos appels, vos prospects et vos rendez-vous. Définissons ensemble le soutien dont votre entreprise a besoin.": {
+        "fr": "Confiez-nous vos appels, vos clients potentiels et vos rendez-vous. Définissons ensemble le soutien dont votre entreprise a besoin.",
+        "en": "Leave your calls, prospects and appointments to us. Together, we'll define the support your business needs."
+    },
+    "Qualification, suivi et relance pour transformer plus de prospects.": {
+        "fr": "Qualification, suivi et relance pour transformer plus de clients potentiels.",
+        "en": "Qualification, tracking and follow-ups to convert more prospects."
+    },
+    "Vos leads traités": {
+        "fr": "Vos clients potentiels traités",
+        "en": "Your leads handled"
+    },
+    "Plus de prospects": {
+        "fr": "Plus de clients potentiels",
+        "en": "More prospects"
+    },
+    "Des solutions pour vos appels, vos prospects et vos rendez-vous, adaptées à votre secteur.": {
+        "fr": "Des solutions pour vos appels, vos clients potentiels et vos rendez-vous, adaptées à votre secteur.",
+        "en": "Solutions for your calls, prospects and appointments, tailored to your industry."
+    },
+    "Parlez-nous de vos appels, vos leads et vos rendez-vous. Nous vous aidons a definir ce qui peut etre gere par nos agents, par l IA, ou par les deux.": {
+        "fr": "Parlez-nous de vos appels, vos clients potentiels et vos rendez-vous. Nous vous aidons a definir ce qui peut etre gere par nos agents, par l IA, ou par les deux.",
+        "en": "Tell us about your calls, leads and appointments. We will help you decide what our agents, AI or both can handle."
+    },
+    "Mes Demandes de Devis": {
+        "fr": "Mes Demandes de Soumission",
+        "en": "My Quote Requests"
+    },
+    "Devis Gratuit": {
+        "fr": "Soumission Gratuit",
+        "en": "Free Quote"
+    },
+    "Devis gratuit": {
+        "fr": "Soumission gratuit",
+        "en": "Free quote"
+    },
+    "Demande de Devis": {
+        "fr": "Demande de Soumission",
+        "en": "Quote Request"
+    },
+    "Devis enregistré sous le numéro": {
+        "fr": "Soumission enregistré sous le numéro",
+        "en": "Quote saved under reference"
+    },
+    "Suivre mon dossier de devis": {
+        "fr": "Suivre mon dossier de soumission",
+        "en": "Track my quote request"
+    },
+    "votre@email.com": {
+        "fr": "votre@courriel.com",
+        "en": "you@email.com"
+    },
+    "Pourquoi demander un devis chez ALLO CALL ?": {
+        "fr": "Pourquoi demander un soumission chez ALLO CALL ?",
+        "en": "Why request a quote from ALLO CALL?"
+    },
+    "Boostez vos ventes sans agrandir votre equipe. Nos televendeurs contactent vos prospects, presentent votre offre et vous transmettent uniquement les opportunites qualifiees. Une force de vente externalisee, prete a performer des le depart.": {
+        "fr": "Boostez vos ventes sans agrandir votre equipe. Nos televendeurs contactent vos clients potentiels, presentent votre offre et vous transmettent uniquement les opportunites qualifiees. Une force de vente externalisee, prete a performer des le depart.",
+        "en": "Grow sales without expanding your team. Our telesales agents contact your prospects, present your offer and pass on qualified opportunities. An outsourced sales force ready to deliver from day one."
+    },
+    "Ne laissez plus vos prospects sans reponse. AlloCall prend en charge la qualification, la relance et le suivi de vos leads afin d'augmenter votre taux de conversion.": {
+        "fr": "Ne laissez plus vos clients potentiels sans reponse. AlloCall prend en charge la qualification, la relance et le suivi de vos clients potentiels afin d'augmenter votre taux de conversion.",
+        "en": "Never leave a prospect without a response. AlloCall qualifies, follows up with and tracks your leads to help improve your conversion rate."
+    },
+    "Nos agents contactent vos prospects et clients et prennent directement les rendez-vous dans votre calendrier. Un moyen simple et efficace de remplir l'agenda de votre equipe commerciale.": {
+        "fr": "Nos agents contactent vos clients potentiels et clients et prennent directement les rendez-vous dans votre calendrier. Un moyen simple et efficace de remplir l'agenda de votre equipe commerciale.",
+        "en": "Our agents contact your prospects and customers and book appointments directly in your calendar. A simple, effective way to fill your sales team's schedule."
+    },
+    "Discutez avec notre équipe de vos besoins en service client, télévente, gestion des leads, réception d'appels ou prise de rendez-vous.": {
+        "fr": "Discutez avec notre équipe de vos besoins en service client, télévente, gestion des clients potentiels, réception d'appels ou prise de rendez-vous.",
+        "en": "Talk to our team about customer service, telesales, lead management, call reception or appointment booking."
+    },
+    "Vos outils connectés pour accompagner chaque prospect, du premier message au rendez-vous.": {
+        "fr": "Vos outils connectés pour accompagner chaque client potentiel, du premier message au rendez-vous.",
+        "en": "Your tools connected to guide every prospect from their first message to an appointment."
+    },
+    "Vous avez des leads ?": {
+        "fr": "Vous avez des clients potentiels ?",
+        "en": "Have leads?"
+    },
+    "Identifions ensemble les tâches à automatiser pour mieux suivre vos prospects.": {
+        "fr": "Identifions ensemble les tâches à automatiser pour mieux suivre vos clients potentiels.",
+        "en": "Let's identify the tasks to automate for better prospect follow-up."
+    },
+    "Suivis clients et relances pour ne jamais perdre le fil avec vos prospects et clients.": {
+        "fr": "Suivis clients et relances pour ne jamais perdre le fil avec vos clients potentiels et clients.",
+        "en": "Customer follow-ups and reminders to keep in touch with prospects and customers."
+    },
+    "Nos televendeurs contactent vos prospects, presentent votre offre, identifient leurs besoins et transmettent les opportunites qualifiees.": {
+        "fr": "Nos televendeurs contactent vos clients potentiels, presentent votre offre, identifient leurs besoins et transmettent les opportunites qualifiees.",
+        "en": "Our telesales agents contact your prospects, present your offer, identify their needs and pass on qualified opportunities."
+    },
+    "Suivi et relance des prospects pour maximiser la conversion.": {
+        "fr": "Suivi et relance des clients potentiels pour maximiser la conversion.",
+        "en": "Prospect follow-ups to maximize conversions."
+    },
+    "Qualification des prospects.": {
+        "fr": "Qualification des clients potentiels.",
+        "en": "Prospect qualification."
+    },
+    "Qualification, suivi et relance de vos prospects afin de reduire les occasions perdues.": {
+        "fr": "Qualification, suivi et relance de vos clients potentiels afin de reduire les occasions perdues.",
+        "en": "Prospect qualification, tracking and follow-ups to reduce missed opportunities."
+    },
+    "Gestion de leads et qualification prospects | ALLO CALL": {
+        "fr": "Gestion de clients potentiels et qualification clients potentiels | ALLO CALL",
+        "en": "Lead management and prospect qualification | ALLO CALL"
+    },
+    "Centralisez, qualifiez et relancez vos leads avec une equipe dediee et des processus commerciaux structures.": {
+        "fr": "Centralisez, qualifiez et relancez vos clients potentiels avec une equipe dediee et des processus commerciaux structures.",
+        "en": "Centralize, qualify and follow up with leads through a dedicated team and structured sales processes."
+    },
+    "Ne laissez plus vos prospects sans reponse. ALLO CALL prend en charge la qualification, la relance et le suivi de vos leads afin d augmenter votre taux de conversion.": {
+        "fr": "Ne laissez plus vos clients potentiels sans reponse. ALLO CALL prend en charge la qualification, la relance et le suivi de vos clients potentiels afin d augmenter votre taux de conversion.",
+        "en": "Never leave your prospects without a response. ALLO CALL qualifies, follows up with and tracks your leads to help increase conversions."
+    },
+    "Nos services de gestion de leads comprennent": {
+        "fr": "Nos services de gestion de clients potentiels comprennent",
+        "en": "Our lead management services include"
+    },
+    "Qualification des nouveaux prospects.": {
+        "fr": "Qualification des nouveaux clients potentiels.",
+        "en": "Qualifying new prospects."
+    },
+    "Transmission des prospects qualifies a votre equipe.": {
+        "fr": "Transmission des clients potentiels qualifies a votre equipe.",
+        "en": "Passing qualified prospects to your team."
+    },
+    "Pret a convertir plus de prospects ?": {
+        "fr": "Pret a convertir plus de clients potentiels ?",
+        "en": "Ready to convert more prospects?"
+    },
+    "Confiez-nous le traitement de vos leads pour ne plus perdre d opportunites commerciales.": {
+        "fr": "Confiez-nous le traitement de vos clients potentiels pour ne plus perdre d opportunites commerciales.",
+        "en": "Let us handle your leads so you don't miss sales opportunities."
+    },
+    "Qualification et suivi des leads": {
+        "fr": "Qualification et suivi des clients potentiels",
+        "en": "Lead qualification and follow-up"
+    },
+    "Nos agents contactent vos prospects et clients et prennent directement les rendez-vous dans votre calendrier.": {
+        "fr": "Nos agents contactent vos clients potentiels et clients et prennent directement les rendez-vous dans votre calendrier.",
+        "en": "Our agents contact your prospects and customers and book appointments directly in your calendar."
+    },
+    "Prise de rendez-vous telephonique avec vos prospects et clients.": {
+        "fr": "Prise de rendez-vous telephonique avec vos clients potentiels et clients.",
+        "en": "Booking appointments by phone with your prospects and customers."
+    },
+    "Notre support technique externalise prend en charge les demandes courantes de vos clients ou de vos employes, et achemine les cas plus complexes a vos experts internes lorsque necessaire.": {
+        "fr": "Notre soutien technique externalise prend en charge les demandes courantes de vos clients ou de vos employes, et achemine les cas plus complexes a vos experts internes lorsque necessaire.",
+        "en": "Our outsourced technical support handles routine requests from your customers or employees and sends more complex cases to your internal experts when needed."
+    },
+    "Pourquoi externaliser votre support technique niveau 1 ?": {
+        "fr": "Pourquoi externaliser votre soutien technique niveau 1 ?",
+        "en": "Why outsource your level 1 technical support?"
+    },
+    "Pret a ameliorer votre support technique ?": {
+        "fr": "Pret a ameliorer votre soutien technique ?",
+        "en": "Ready to improve your technical support?"
+    },
+    "Grace a notre receptionniste virtuelle, chaque client ou prospect qui vous appelle obtient une reponse rapide et courtoise, en tout temps.": {
+        "fr": "Grace a notre receptionniste virtuelle, chaque client ou client potentiel qui vous appelle obtient une reponse rapide et courtoise, en tout temps.",
+        "en": "With our virtual receptionist, every customer or prospect who calls receives a prompt, courteous response."
+    },
+    "Rappels SMS et email.": {
+        "fr": "Rappels SMS et courriel.",
+        "en": "SMS and email reminders."
+    },
+    "Des appels aux rendez-vous, un suivi rapide et structuré pour vos clients et vos prospects.": {
+        "fr": "Des appels aux rendez-vous, un suivi rapide et structuré pour vos clients et vos clients potentiels.",
+        "en": "From calls to appointments, prompt and structured follow-up for your customers and prospects."
+    },
+    "Dans le secteur automobile, chaque prospect compte. Une demande de véhicule, un appel pour un entretien ou une demande d’information doit être traité rapidement pour maximiser les opportunités commerciales.": {
+        "fr": "Dans le secteur automobile, chaque client potentiel compte. Une demande de véhicule, un appel pour un entretien ou une demande d’information doit être traité rapidement pour maximiser les opportunités commerciales.",
+        "en": "In the automotive industry, every prospect counts. Vehicle enquiries, maintenance calls and information requests need prompt handling to maximize sales opportunities."
+    },
+    "Notre centre d’appels spécialisé dans l’automobile accompagne les concessionnaires et groupes automobiles dans la gestion de leurs appels, de leurs prospects et de leurs rendez-vous.": {
+        "fr": "Notre centre d’appels spécialisé dans l’automobile accompagne les concessionnaires et groupes automobiles dans la gestion de leurs appels, de leurs clients potentiels et de leurs rendez-vous.",
+        "en": "Our automotive call centre helps dealerships and automotive groups manage their calls, prospects and appointments."
+    },
+    "Nous prenons en charge les appels de vos clients et prospects afin de répondre à leurs demandes, recueillir les informations nécessaires et les orienter vers le bon service.": {
+        "fr": "Nous prenons en charge les appels de vos clients et clients potentiels afin de répondre à leurs demandes, recueillir les informations nécessaires et les orienter vers le bon service.",
+        "en": "We answer customer and prospect calls, handle their enquiries, gather the necessary details and direct them to the right department."
+    },
+    "Suivi des leads automobiles": {
+        "fr": "Suivi des clients potentiels automobiles",
+        "en": "Automotive lead follow-up"
+    },
+    "Chaque nouveau prospect peut être qualifié et enregistré dans votre CRM afin d’assurer un suivi commercial efficace. Nous pouvons traiter les demandes concernant :": {
+        "fr": "Chaque nouveau client potentiel peut être qualifié et enregistré dans votre CRM afin d’assurer un suivi commercial efficace. Nous pouvons traiter les demandes concernant :",
+        "en": "Every new prospect can be qualified and recorded in your CRM for effective sales follow-up. We can handle enquiries about:"
+    },
+    "Relance des prospects": {
+        "fr": "Relance des clients potentiels",
+        "en": "Prospect follow-ups"
+    },
+    "Un prospect qui n’a pas encore acheté ne doit pas être oublié. Nos équipes peuvent effectuer des campagnes de relance téléphonique pour reprendre contact avec les prospects et identifier les opportunités encore actives.": {
+        "fr": "Un client potentiel qui n’a pas encore acheté ne doit pas être oublié. Nos équipes peuvent effectuer des campagnes de relance téléphonique pour reprendre contact avec les clients potentiels et identifier les opportunités encore actives.",
+        "en": "A prospect who hasn't bought yet should not be forgotten. Our teams can run telephone follow-up campaigns to reconnect and identify active opportunities."
+    },
+    "Vous disposez d’une ancienne base de clients ou de prospects ? Nous pouvons lancer des campagnes de réactivation et de fidélisation afin d’identifier les clients susceptibles de revenir en concession.": {
+        "fr": "Vous disposez d’une ancienne base de clients ou de clients potentiels ? Nous pouvons lancer des campagnes de réactivation et de fidélisation afin d’identifier les clients susceptibles de revenir en concession.",
+        "en": "Have an older customer or prospect list? We can run reactivation and retention campaigns to identify customers who may return to your dealership."
+    },
+    "Chatbot IA": {
+        "fr": "Assistant de clavardage IA",
+        "en": "AI Chatbot"
+    },
+    "Qualification des leads": {
+        "fr": "Qualification des clients potentiels",
+        "en": "Lead qualification"
+    },
+    "Confiez-nous la gestion de vos appels, prospects et rendez-vous et concentrez vos équipes sur la vente et la satisfaction de vos clients. Parlez-nous de vos besoins en centre d’appels automobile.": {
+        "fr": "Confiez-nous la gestion de vos appels, clients potentiels et rendez-vous et concentrez vos équipes sur la vente et la satisfaction de vos clients. Parlez-nous de vos besoins en centre d’appels automobile.",
+        "en": "Entrust us with your calls, prospects and appointments so your team can focus on sales and customer satisfaction. Tell us about your automotive call centre needs."
+    },
+    "Vos appels et vos leads suivis, du premier contact au rendez-vous en concession.": {
+        "fr": "Vos appels et vos clients potentiels suivis, du premier contact au rendez-vous en concession.",
+        "en": "Your calls and leads followed up from first contact to the dealership appointment."
+    },
+    "Nous accompagnons les concessionnaires automobiles et groupes automobiles dans la gestion de leurs appels, prospects et rendez-vous.": {
+        "fr": "Nous accompagnons les concessionnaires automobiles et groupes automobiles dans la gestion de leurs appels, clients potentiels et rendez-vous.",
+        "en": "We help automotive dealerships and groups manage calls, prospects and appointments."
+    },
+    "Transformez vos demandes de devis en projets qualifiés.": {
+        "fr": "Transformez vos demandes de soumission en projets qualifiés.",
+        "en": "Turn quote requests into qualified projects."
+    },
+    "Vos demandes de devis, appels et demandes de renseignements deviennent des opportunités commerciales qualifiées. Notre équipe prend le relais dès le premier contact.": {
+        "fr": "Vos demandes de soumission, appels et demandes de renseignements deviennent des opportunités commerciales qualifiées. Notre équipe prend le relais dès le premier contact.",
+        "en": "Your quote requests, calls and enquiries become qualified sales opportunities. Our team takes over from the very first contact."
+    },
+    "Des prospects qualifiés et des rendez-vous pour vos conseillers.": {
+        "fr": "Des clients potentiels qualifiés et des rendez-vous pour vos conseillers.",
+        "en": "Qualified prospects and appointments for your advisors."
+    },
+    "Nous accompagnons les compagnies d’assurance, agences et courtiers dans la gestion de leurs prospects et de leurs campagnes commerciales.": {
+        "fr": "Nous accompagnons les compagnies d’assurance, agences et courtiers dans la gestion de leurs clients potentiels et de leurs campagnes commerciales.",
+        "en": "We help insurance companies, agencies and brokers manage their prospects and sales campaigns."
+    },
+    "Grâce à un processus structuré, chaque prospect peut être suivi depuis son premier contact jusqu’à son rendez-vous avec votre conseiller.": {
+        "fr": "Grâce à un processus structuré, chaque client potentiel peut être suivi depuis son premier contact jusqu’à son rendez-vous avec votre conseiller.",
+        "en": "A structured process tracks every prospect from first contact through to their appointment with your advisor."
+    },
+    "Contactez rapidement vos prospects et organisez leurs visites.": {
+        "fr": "Contactez rapidement vos clients potentiels et organisez leurs visites.",
+        "en": "Contact prospects promptly and arrange their viewings."
+    },
+    "Dans l’immobilier, la rapidité de traitement des leads est essentielle. Nous accompagnons les agences, promoteurs et professionnels dans la qualification et le suivi de leurs prospects.": {
+        "fr": "Dans l’immobilier, la rapidité de traitement des clients potentiels est essentielle. Nous accompagnons les agences, promoteurs et professionnels dans la qualification et le suivi de leurs clients potentiels.",
+        "en": "In real estate, fast lead handling matters. We help agencies, developers and professionals qualify and follow up with prospects."
+    },
+    "Réponse automatique aux questions et capture de nouveaux leads.": {
+        "fr": "Réponse automatique aux questions et capture de nouveaux clients potentiels.",
+        "en": "Automatic answers to questions and capture of new leads."
+    },
+    "Centralisation des prospects, clients, appels et rendez-vous.": {
+        "fr": "Centralisation des clients potentiels, clients, appels et rendez-vous.",
+        "en": "Centralized prospects, customers, calls and appointments."
+    },
+    "Confirmation, relance et suivi automatique des prospects.": {
+        "fr": "Confirmation, relance et suivi automatique des clients potentiels.",
+        "en": "Automatic prospect confirmations, reminders and follow-ups."
+    },
+    "Automatisation des leads": {
+        "fr": "Automatisation des clients potentiels",
+        "en": "Lead automation"
+    },
+    "Site web, formulaire ou campagne publicitaire : une nouvelle demande peut déclencher automatiquement le traitement du prospect.": {
+        "fr": "Site web, formulaire ou campagne publicitaire : une nouvelle demande peut déclencher automatiquement le traitement du client potentiel.",
+        "en": "Website, form or advertising campaign: a new enquiry can automatically trigger prospect handling."
+    },
+    "L’IA identifie le besoin et qualifie la demande pour orienter chaque prospect vers la bonne action.": {
+        "fr": "L’IA identifie le besoin et qualifie la demande pour orienter chaque client potentiel vers la bonne action.",
+        "en": "AI identifies needs and qualifies enquiries to direct every prospect to the right action."
+    },
+    "Un SMS ou un email personnalisé confirme la réception de la demande et prépare la suite de la conversation.": {
+        "fr": "Un SMS ou un courriel personnalisé confirme la réception de la demande et prépare la suite de la conversation.",
+        "en": "A personalized SMS or email acknowledges the enquiry and prepares the next conversation."
+    },
+    "Un agent vocal IA ou un agent humain contacte le prospect selon son besoin et votre processus commercial.": {
+        "fr": "Un agent vocal IA ou un agent humain contacte le client potentiel selon son besoin et votre processus commercial.",
+        "en": "An AI voice agent or human agent contacts the prospect based on their needs and your sales process."
+    },
+    "Des relances par appel, SMS ou email accompagnent le prospect et assurent un suivi régulier.": {
+        "fr": "Des relances par appel, SMS ou courriel accompagnent le client potentiel et assurent un suivi régulier.",
+        "en": "Follow-ups by call, SMS or email guide prospects and maintain regular contact."
+    },
+    "Tous vos prospects au même endroit.": {
+        "fr": "Tous vos clients potentiels au même endroit.",
+        "en": "All your prospects in one place."
+    },
+    "Centralisez vos prospects, clients, appels, demandes, rendez-vous et interactions dans un CRM intelligent. Notre solution permet de mieux organiser vos données et de suivre chaque prospect tout au long de son parcours.": {
+        "fr": "Centralisez vos clients potentiels, clients, appels, demandes, rendez-vous et interactions dans un CRM intelligent. Notre solution permet de mieux organiser vos données et de suivre chaque client potentiel tout au long de son parcours.",
+        "en": "Centralize prospects, customers, calls, enquiries, appointments and interactions in a smart CRM. Our solution helps organize your data and track each prospect throughout their journey."
+    },
+    "Gestion et centralisation des leads": {
+        "fr": "Gestion et centralisation des clients potentiels",
+        "en": "Lead management and centralization"
+    },
+    "Qualification des prospects": {
+        "fr": "Qualification des clients potentiels",
+        "en": "Prospect qualification"
+    },
+    "Vos équipes disposent ainsi d’une vision claire de chaque prospect et de chaque opportunité commerciale.": {
+        "fr": "Vos équipes disposent ainsi d’une vision claire de chaque client potentiel et de chaque opportunité commerciale.",
+        "en": "Your teams have a clear view of every prospect and sales opportunity."
+    },
+    "Aucun prospect laissé sans réponse.": {
+        "fr": "Aucun client potentiel laissé sans réponse.",
+        "en": "No prospect left without a response."
+    },
+    "Lorsqu’un nouveau lead arrive depuis votre site web, formulaire, campagne publicitaire ou autre canal, son traitement peut être automatiquement déclenché. L’intelligence artificielle peut identifier le besoin du prospect, qualifier sa demande et déclencher les actions appropriées.": {
+        "fr": "Lorsqu’un nouveau client potentiel arrive depuis votre site web, formulaire, campagne publicitaire ou autre canal, son traitement peut être automatiquement déclenché. L’intelligence artificielle peut identifier le besoin du client potentiel, qualifier sa demande et déclencher les actions appropriées.",
+        "en": "When a new lead arrives from your website, a form, an advertising campaign or another channel, handling can begin automatically. AI can identify the prospect's needs, qualify the enquiry and trigger the right actions."
+    },
+    "Nouveau lead": {
+        "fr": "Nouveau client potentiel",
+        "en": "New lead"
+    },
+    "Cette automatisation permet de réduire les délais de réponse, améliorer le suivi des prospects et optimiser la conversion des leads.": {
+        "fr": "Cette automatisation permet de réduire les délais de réponse, améliorer le suivi des clients potentiels et optimiser la conversion des clients potentiels.",
+        "en": "This automation reduces response times, improves prospect follow-up and helps optimize lead conversion."
+    },
+    "Transformez les visiteurs de votre site web en prospects grâce à un chatbot intelligent alimenté par l’intelligence artificielle. Il comprend les demandes, répond aux questions fréquentes et collecte les coordonnées.": {
+        "fr": "Transformez les visiteurs de votre site web en clients potentiels grâce à un assistant de clavardage intelligent alimenté par l’intelligence artificielle. Il comprend les demandes, répond aux questions fréquentes et collecte les coordonnées.",
+        "en": "Turn website visitors into prospects with an AI-powered chatbot. It understands enquiries, answers common questions and collects contact details."
+    },
+    "Qualifier les prospects": {
+        "fr": "Qualifier les clients potentiels",
+        "en": "Qualify prospects"
+    },
+    "Générer des leads": {
+        "fr": "Générer des clients potentiels",
+        "en": "Generate leads"
+    },
+    "L’agent vocal IA automatise certaines conversations téléphoniques. Il peut être utilisé pour les appels entrants et sortants, la qualification de prospects, les relances ou encore la prise de rendez-vous.": {
+        "fr": "L’agent vocal IA automatise certaines conversations téléphoniques. Il peut être utilisé pour les appels entrants et sortants, la qualification de clients potentiels, les relances ou encore la prise de rendez-vous.",
+        "en": "The AI voice agent automates certain phone conversations. It can handle incoming and outgoing calls, qualify prospects, follow up and book appointments."
+    },
+    "Chaque interaction peut déclencher automatiquement l’envoi d’un SMS ou d’un email personnalisé. Les automatisations peuvent être déclenchées après :": {
+        "fr": "Chaque interaction peut déclencher automatiquement l’envoi d’un SMS ou d’un courriel personnalisé. Les automatisations peuvent être déclenchées après :",
+        "en": "Each interaction can automatically trigger a personalized SMS or email. Automations can follow:"
+    },
+    "Une demande de devis": {
+        "fr": "Une demande de soumission",
+        "en": "A quote request"
+    },
+    "Vous gagnez du temps tout en assurant un suivi régulier et professionnel de vos prospects.": {
+        "fr": "Vous gagnez du temps tout en assurant un suivi régulier et professionnel de vos clients potentiels.",
+        "en": "Save time while maintaining regular, professional follow-up with your prospects."
+    },
+    "L’IA peut accompagner votre prospect jusqu’à la prise de rendez-vous. Elle peut identifier son besoin, vérifier ses disponibilités, proposer un créneau et enregistrer le rendez-vous dans votre système.": {
+        "fr": "L’IA peut accompagner votre client potentiel jusqu’à la prise de rendez-vous. Elle peut identifier son besoin, vérifier ses disponibilités, proposer un créneau et enregistrer le rendez-vous dans votre système.",
+        "en": "AI can guide your prospect through to booking. It can identify their needs, check availability, offer a time slot and record the appointment in your system."
+    },
+    "Qualification des prospects, prise de rendez-vous, relance commerciale et suivi après-vente.": {
+        "fr": "Qualification des clients potentiels, prise de rendez-vous, relance commerciale et suivi après-vente.",
+        "en": "Prospect qualification, appointment booking, sales follow-ups and after-sales support."
+    },
+    "Qualification des prospects, appels sortants, collecte d’informations et prise de rendez-vous.": {
+        "fr": "Qualification des clients potentiels, appels sortants, collecte d’informations et prise de rendez-vous.",
+        "en": "Prospect qualification, outbound calls, information gathering and appointment booking."
+    },
+    "Génération de leads, qualification commerciale, téléprospection et suivi des prospects.": {
+        "fr": "Génération de clients potentiels, qualification commerciale, téléprospection et suivi des clients potentiels.",
+        "en": "Lead generation, sales qualification, telephone prospecting and prospect follow-up."
+    },
+    "Combinez intelligence artificielle et expertise humaine pour automatiser vos appels, qualifier vos prospects, gerer vos leads et prendre vos rendez-vous.": {
+        "fr": "Combinez intelligence artificielle et expertise humaine pour automatiser vos appels, qualifier vos clients potentiels, gerer vos clients potentiels et prendre vos rendez-vous.",
+        "en": "Combine AI and human expertise to automate calls, qualify prospects, manage leads and book appointments."
+    },
+    "Solutions IA pour centre d appels: chatbot, AI Voice Agent, CRM intelligent, automatisation leads, SMS, email et prise de rendez-vous.": {
+        "fr": "Solutions IA pour centre d appels: assistant de clavardage, AI Voice Agent, CRM intelligent, automatisation clients potentiels, SMS, courriel et prise de rendez-vous.",
+        "en": "AI call centre solutions: chatbots, voice agents, smart CRM, lead automation, SMS, email and appointment booking."
+    },
+    "De la reception d un nouveau prospect jusqu a la prise de rendez-vous, nous connectons les outils pour creer un parcours client automatise: Lead -> Qualification -> SMS -> Appel -> Relance -> Rendez-vous -> CRM.": {
+        "fr": "De la reception d un nouveau client potentiel jusqu a la prise de rendez-vous, nous connectons les outils pour creer un parcours client automatise: Lead -> Qualification -> SMS -> Appel -> Relance -> Rendez-vous -> CRM.",
+        "en": "From receiving a new prospect to booking an appointment, we connect your tools into an automated customer journey: Lead -> Qualification -> SMS -> Call -> Follow-up -> Appointment -> CRM."
+    },
+    "Centralisez vos prospects, clients, appels, demandes, rendez-vous et interactions dans un CRM intelligent.": {
+        "fr": "Centralisez vos clients potentiels, clients, appels, demandes, rendez-vous et interactions dans un CRM intelligent.",
+        "en": "Centralize your prospects, customers, calls, enquiries, appointments and interactions in a smart CRM."
+    },
+    "Lorsqu un nouveau lead arrive depuis votre site, formulaire ou campagne publicitaire, son traitement peut etre automatiquement declenche pour reduire les delais de reponse et optimiser la conversion.": {
+        "fr": "Lorsqu un nouveau client potentiel arrive depuis votre site, formulaire ou campagne publicitaire, son traitement peut etre automatiquement declenche pour reduire les delais de reponse et optimiser la conversion.",
+        "en": "When a new lead arrives from your website, form or advertising campaign, handling can start automatically to reduce response times and improve conversion."
+    },
+    "Transformez les visiteurs de votre site web en prospects grace a un chatbot intelligent disponible 24h/24.": {
+        "fr": "Transformez les visiteurs de votre site web en clients potentiels grace a un assistant de clavardage intelligent disponible 24h/24.",
+        "en": "Turn website visitors into prospects with an intelligent chatbot available around the clock."
+    },
+    "Chaque interaction peut declencher automatiquement l envoi d un SMS ou d un email personnalise: formulaire web, demande de devis, prise de rendez-vous, absence ou relance commerciale.": {
+        "fr": "Chaque interaction peut declencher automatiquement l envoi d un SMS ou d un courriel personnalise: formulaire web, demande de soumission, prise de rendez-vous, absence ou relance commerciale.",
+        "en": "Every interaction can trigger a personalized SMS or email: a web form, quote request, appointment, no-show or sales follow-up."
+    },
+    "Nous accompagnons les concessionnaires automobiles dans la gestion des appels, prospects et rendez-vous.": {
+        "fr": "Nous accompagnons les concessionnaires automobiles dans la gestion des appels, clients potentiels et rendez-vous.",
+        "en": "We help automotive dealerships manage calls, prospects and appointments."
+    },
+    "Qualification des leads, prise de rendez-vous, suivi des soumissions, relance commerciale, CRM et reactivation des prospects.": {
+        "fr": "Qualification des clients potentiels, prise de rendez-vous, suivi des soumissions, relance commerciale, CRM et reactivation des clients potentiels.",
+        "en": "Lead qualification, appointment booking, quote tracking, sales follow-ups, CRM and prospect reactivation."
+    },
+    "Selon votre activite, nous pouvons integrer chatbot IA, AI Voice Agent, CRM intelligent, SMS & Email Automation et automatisation des leads.": {
+        "fr": "Selon votre activite, nous pouvons integrer assistant de clavardage IA, AI Voice Agent, CRM intelligent, SMS & Email Automation et automatisation des clients potentiels.",
+        "en": "Depending on your business, we can integrate AI chatbots, voice agents, smart CRM, SMS and email automation, and lead automation."
+    },
+    "Dans le secteur automobile, chaque prospect compte. Nous accompagnons les concessionnaires dans la gestion des appels, prospects et rendez-vous.": {
+        "fr": "Dans le secteur automobile, chaque client potentiel compte. Nous accompagnons les concessionnaires dans la gestion des appels, clients potentiels et rendez-vous.",
+        "en": "In the automotive industry, every prospect counts. We help dealerships manage their calls, prospects and appointments."
+    },
+    "Gestion des appels, leads automobiles, rendez-vous service, relances, confirmations et campagnes de reactivation pour concessionnaires.": {
+        "fr": "Gestion des appels, clients potentiels automobiles, rendez-vous service, relances, confirmations et campagnes de reactivation pour concessionnaires.",
+        "en": "Call handling, automotive leads, service appointments, follow-ups, confirmations and reactivation campaigns for dealerships."
+    },
+    "Chaque nouveau prospect peut etre qualifie et enregistre dans votre CRM: vehicules neufs, occasions, demandes de prix, essais, financement et disponibilite.": {
+        "fr": "Chaque nouveau client potentiel peut etre qualifie et enregistre dans votre CRM: vehicules neufs, occasions, demandes de prix, essais, financement et disponibilite.",
+        "en": "Every new prospect can be qualified and recorded in your CRM: new and used vehicles, pricing, test drives, financing and availability."
+    },
+    "Chatbot IA -> Qualification des leads -> Appel -> Relance -> Rendez-vous -> CRM. L IA automatise certaines taches tandis que nos agents prennent en charge les conversations humaines.": {
+        "fr": "Assistant de clavardage IA -> Qualification des clients potentiels -> Appel -> Relance -> Rendez-vous -> CRM. L IA automatise certaines taches tandis que nos agents prennent en charge les conversations humaines.",
+        "en": "AI Chatbot -> Lead qualification -> Call -> Follow-up -> Appointment -> CRM. AI automates certain tasks while our agents handle human conversations."
+    },
+    "AlloCall accompagne votre entreprise avec des équipes dédiées pour gérer vos appels, \\n développer vos ventes et transformer davantage de prospects en clients.": {
+        "fr": "AlloCall accompagne votre entreprise avec des équipes dédiées pour gérer vos appels, \\n développer vos ventes et transformer davantage de clients potentiels en clients.",
+        "en": "AlloCall supports your business with dedicated teams to manage your calls, \\n grow your sales and turn more prospects into customers."
+    },
+    "Boostez vos ventes sans agrandir votre équipe. Nos télévendeurs contactent vos prospects, présentent votre offre et vous transmettent uniquement les opportunités qualifiées. Une force de vente externalisée, prête à performer dès le départ.": {
+        "fr": "Boostez vos ventes sans agrandir votre équipe. Nos télévendeurs contactent vos clients potentiels, présentent votre offre et vous transmettent uniquement les opportunités qualifiées. Une force de vente externalisée, prête à performer dès le départ.",
+        "en": "Grow your sales without expanding your team. Our telesales agents contact your prospects, present your offer and send you only qualified opportunities. An outsourced sales force ready to perform from day one."
+    },
+    "Ne laissez plus vos prospects sans réponse. AlloCall prend en charge la qualification, la relance et le suivi de vos leads afin d'augmenter votre taux de conversion.": {
+        "fr": "Ne laissez plus vos clients potentiels sans réponse. AlloCall prend en charge la qualification, la relance et le suivi de vos clients potentiels afin d'augmenter votre taux de conversion.",
+        "en": "Never leave prospects unanswered. AlloCall handles qualification, follow-up and lead tracking to improve your conversion rate."
+    },
+    "Nos agents contactent vos prospects et clients et prennent directement les rendez-vous dans votre calendrier. Un moyen simple et efficace de remplir l'agenda de votre équipe commerciale.": {
+        "fr": "Nos agents contactent vos clients potentiels et clients et prennent directement les rendez-vous dans votre calendrier. Un moyen simple et efficace de remplir l'agenda de votre équipe commerciale.",
+        "en": "Our agents contact your prospects and customers and book appointments directly in your calendar. A simple, effective way to fill your sales team's schedule."
+    },
+    "Équipe internationale :": {
+        "fr": "Canada",
+        "en": "Canada:"
+    },
+    "Équipe internationale (Maroc)": {
+        "fr": "Équipe internationale (Canada)",
+        "en": "International team (Canada)"
+    },
+    "Adresse administrative": {
+        "fr": "Adresse administrative",
+        "en": "Administrative address"
+    }
+,
+
+
+    "Pourquoi ALLO CALL ?": {
+    "fr": "Pourquoi ALLO CALL ?",
+    "en": "Why ALLO CALL?"
+},
+
+"Renforcez votre équipe sans alourdir votre structure.": {
+    "fr": "Renforcez votre équipe sans alourdir votre structure.",
+    "en": "Strengthen your team without adding to your overhead."
+},
+
+"ALLO CALL permet aux entreprises québécoises d'accéder à une équipe francophone qualifiée, disponible et intégrée à leurs processus, tout en gardant une meilleure maîtrise de leurs coûts opérationnels.": {
+    "fr": "ALLO CALL permet aux entreprises québécoises d’accéder à une équipe francophone qualifiée, disponible et intégrée à leurs processus, tout en gardant une meilleure maîtrise de leurs coûts opérationnels.",
+    "en": "ALLO CALL gives Quebec businesses access to a qualified, available French-speaking team that integrates into their processes while helping them maintain better control over operating costs."
+},
+
+"Équipe ALLO CALL spécialisée en relation client": {
+    "fr": "Équipe ALLO CALL spécialisée en service à la clientèle",
+    "en": "ALLO CALL customer service team"
+},
+
+"Une extension de votre entreprise": {
+    "fr": "Une extension de votre entreprise",
+    "en": "An extension of your business"
+},
+
+"Vos clients parlent avec une équipe formée à votre entreprise, à vos outils et à votre façon de travailler.": {
+    "fr": "Vos clients échangent avec une équipe formée à votre entreprise, à vos outils et à vos façons de faire.",
+    "en": "Your customers interact with a team trained in your business, your tools and your way of working."
+},
+
+"Accédez plus facilement aux talents": {
+    "fr": "Accédez plus facilement aux talents",
+    "en": "Access skilled talent more easily"
+},
+
+"Dans un marché où le recrutement d'agents de service client peut être difficile et coûteux, ALLO CALL vous donne accès à des professionnels francophones formés aux métiers de la relation client.": {
+    "fr": "Dans un marché où le recrutement d’agents de service à la clientèle peut être difficile et coûteux, ALLO CALL vous donne accès à des professionnels francophones formés aux métiers de la relation client.",
+    "en": "In a market where recruiting customer service agents can be difficult and costly, ALLO CALL gives you access to French-speaking professionals trained in customer relations."
+},
+
+"Vous pouvez ainsi renforcer rapidement votre capacité de traitement sans dépendre uniquement du recrutement local.": {
+    "fr": "Vous pouvez ainsi renforcer rapidement votre capacité de traitement sans dépendre uniquement du recrutement local.",
+    "en": "You can quickly increase your service capacity without relying solely on local recruitment."
+},
+
+"Gagnez en stabilité et en continuité": {
+    "fr": "Gagnez en stabilité et en continuité",
+    "en": "Gain stability and continuity"
+},
+
+"La qualité de votre service dépend aussi de la stabilité des personnes qui représentent votre entreprise. Nos équipes sont recrutées, formées et accompagnées afin d'assurer une meilleure continuité dans la gestion de vos appels et de votre relation client.": {
+    "fr": "La qualité de votre service dépend aussi de la stabilité des personnes qui représentent votre entreprise. Nos équipes sont recrutées, formées et accompagnées afin d’assurer une meilleure continuité dans la gestion de vos appels et de votre service à la clientèle.",
+    "en": "The quality of your service also depends on the stability of the people representing your business. Our teams are recruited, trained and supported to ensure greater continuity in call handling and customer service."
+},
+
+"Optimisez vos coûts opérationnels": {
+    "fr": "Optimisez vos coûts opérationnels",
+    "en": "Optimize your operating costs"
+},
+
+"Notre modèle vous permet de bénéficier d'une équipe professionnelle tout en réduisant les coûts associés au recrutement, à la formation, aux infrastructures et à la gestion d'une équipe interne.": {
+    "fr": "Notre modèle vous permet de bénéficier d’une équipe professionnelle tout en réduisant les coûts associés au recrutement, à la formation, aux infrastructures et à la gestion d’une équipe interne.",
+    "en": "Our model gives you access to a professional team while reducing costs related to recruitment, training, infrastructure and managing an in-house team."
+},
+
+"Vous conservez ainsi davantage de flexibilité pour investir dans votre croissance, votre acquisition client et le développement de votre entreprise au Québec.": {
+    "fr": "Vous conservez ainsi davantage de flexibilité pour investir dans votre croissance, votre acquisition de clients et le développement de votre entreprise au Québec.",
+    "en": "This gives you greater flexibility to invest in growth, customer acquisition and the development of your business in Quebec."
+},
+
+"Le principe est simple": {
+    "fr": "Le principe est simple",
+    "en": "The principle is simple"
+},
+
+"Vous gardez la maîtrise de votre relation client. Nous vous apportons les ressources, les outils et l'équipe nécessaires pour la faire évoluer.": {
+    "fr": "Vous gardez la maîtrise de votre relation client. Nous vous apportons les ressources, les outils et l’équipe nécessaires pour la faire évoluer.",
+    "en": "You stay in control of your customer relationships. We provide the resources, tools and team you need to scale them."
+}
+}

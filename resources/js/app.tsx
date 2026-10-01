@@ -14,7 +14,7 @@ declare global {
 const appName = site.name;
 
 createInertiaApp({
-    title: (title) => (title.includes(appName) ? title : `${title} | ${appName}`),
+    title: (title) => (title.toLowerCase().includes(appName.toLowerCase()) ? title : `${title} | ${appName}`),
     resolve: (name) => resolvePageComponent(`./pages/${name}.tsx`, import.meta.glob('./pages/**/*.tsx')),
     setup({ el, App, props }) {
         const root = createRoot(el);

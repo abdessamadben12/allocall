@@ -1,0 +1,212 @@
+{
+    "/": {
+        "fr": {
+            "title": "Allo Call | Centre de contact e-commerce au Québec",
+            "description": "Impartition du service à la clientèle : clavardage Shopify et Web, courriels, suivis de colis et accueil bilingue pour PME au Canada. Estimation en CAD."
+        },
+        "en": {
+            "title": "Allo Call | E-commerce contact centre in Canada",
+            "description": "Outsourced customer service: Shopify and web chat, email, parcel tracking and bilingual call answering for Canadian businesses. Get an estimate in CAD."
+        }
+    },
+    "/services": {
+        "fr": {
+            "title": "Services de centre d’appels pour PME au Québec et au Canada | ALLO CALL",
+            "description": "Explorez nos services bilingues : réception d’appels, service à la clientèle, suivi commercial, soutien technique et rendez-vous pour votre PME."
+        },
+        "en": {
+            "title": "Call centre services for Canadian small businesses | ALLO CALL",
+            "description": "Explore bilingual call answering, customer care, sales follow-up, technical support and appointment scheduling for your Canadian business."
+        }
+    },
+    "/apropos": {
+        "fr": {
+            "title": "AlloCall : une équipe bilingue pour les entreprises canadiennes",
+            "description": "Découvrez l’accompagnement AlloCall pour les PME du Québec et du Canada : agents, accueil bilingue et suivis adaptés à vos processus et à vos outils."
+        },
+        "en": {
+            "title": "About AlloCall | Bilingual support for Canadian businesses",
+            "description": "Learn how AlloCall supports businesses in Quebec and Canada with bilingual agents, call handling and follow-ups that fit existing tools and workflows."
+        }
+    },
+    "/contact": {
+        "fr": {
+            "title": "Communiquez avec AlloCall au Canada | Réception d’appels",
+            "description": "Joignez AlloCall au +1 514-850-9092 pour discuter de votre accueil téléphonique, de vos suivis et de votre service à la clientèle au Canada."
+        },
+        "en": {
+            "title": "Contact AlloCall Canada | Call answering and customer care",
+            "description": "Call AlloCall at +1 514-850-9092 to discuss bilingual call answering, follow-ups and customer service for your business in Quebec or Canada."
+        }
+    },
+    "/devis": {
+        "fr": {
+            "title": "Soumission pour un service de centre d’appels au Canada | ALLO CALL",
+            "description": "Précisez vos appels, vos langues de service et vos heures de couverture. Demandez une soumission adaptée à votre PME québécoise ou canadienne."
+        },
+        "en": {
+            "title": "Request a call centre service quote in Canada | ALLO CALL",
+            "description": "Share your call volume, service languages and coverage hours. Request a quote tailored to your business in Quebec or elsewhere in Canada."
+        }
+    },
+    "/solutions-ia": {
+        "fr": {
+            "title": "IA et agents humains pour le service à la clientèle | ALLO CALL",
+            "description": "Explorez les assistants conversationnels, agents vocaux et suivis automatisés, avec reprise humaine, pour vos échanges en français et en anglais."
+        },
+        "en": {
+            "title": "AI and human agents for Canadian customer service | ALLO CALL",
+            "description": "Explore chat assistants, voice tools and automated follow-ups with human handoffs for customer conversations in English and French."
+        }
+    },
+    "/industries": {
+        "fr": {
+            "title": "Centre d’appels par secteur au Québec et au Canada | ALLO CALL",
+            "description": "Des échanges adaptés à votre secteur : automobile, cliniques, chauffage et climatisation, construction, assurance et immobilier au Canada."
+        },
+        "en": {
+            "title": "Call centre support by industry in Canada | ALLO CALL",
+            "description": "Customer conversations tailored to Canadian dealerships, clinics, HVAC businesses, contractors, insurance brokers and real estate teams."
+        }
+    },
+    "/services/assistants-virtuels": {
+        "fr": {
+            "title": "Adjoint virtuel pour les PME du Québec | ALLO CALL",
+            "description": "Confiez vos appels, courriels et suivis administratifs à une équipe bilingue. Un service d’adjoint virtuel à définir selon vos besoins au Québec."
+        },
+        "en": {
+            "title": "Virtual assistant services for Canadian businesses | ALLO CALL",
+            "description": "Get bilingual support for calls, emails and administrative follow-ups. Discuss virtual assistant services suited to your Canadian business."
+        }
+    },
+    "/services/televente-appels-sortants": {
+        "fr": {
+            "title": "Télévente et prospection téléphonique au Canada | ALLO CALL",
+            "description": "Soutenez vos ventes avec la présentation de votre offre, la qualification des demandes et les suivis commerciaux en français et en anglais."
+        },
+        "en": {
+            "title": "Outbound sales and telephone outreach in Canada | ALLO CALL",
+            "description": "Support your sales team with service introductions, enquiry qualification and customer follow-ups in English and French across Canada."
+        }
+    },
+    "/services/gestion-leads": {
+        "fr": {
+            "title": "Qualification et suivi des clients potentiels | ALLO CALL Canada",
+            "description": "Organisez la qualification, les rappels et le suivi de vos clients potentiels au Canada. Des consignes et des outils définis avec votre équipe."
+        },
+        "en": {
+            "title": "Lead qualification and follow-up in Canada | ALLO CALL",
+            "description": "Organize lead qualification, callbacks and follow-ups for your Canadian business with workflows and tools agreed with your sales team."
+        }
+    },
+    "/services/prise-rendez-vous": {
+        "fr": {
+            "title": "Prise de rendez-vous pour entreprises au Québec | ALLO CALL",
+            "description": "Déléguez la prise de rendez-vous selon vos disponibilités, vos critères et vos fuseaux horaires. Un accompagnement bilingue pour votre entreprise."
+        },
+        "en": {
+            "title": "Appointment scheduling for Canadian businesses | ALLO CALL",
+            "description": "Delegate appointment scheduling around your availability, booking criteria and time zones. Explore bilingual support for your Canadian team."
+        }
+    },
+    "/services/service-clientele": {
+        "fr": {
+            "title": "Service à la clientèle bilingue au Canada | ALLO CALL",
+            "description": "Accueillez votre clientèle en français et en anglais. AlloCall accompagne vos réponses aux questions, vos suivis et vos transferts selon vos consignes."
+        },
+        "en": {
+            "title": "Bilingual customer service in Canada | ALLO CALL",
+            "description": "Welcome customers in English and French. AlloCall supports enquiries, follow-ups and transfers based on the instructions agreed with your team."
+        }
+    },
+    "/services/reception-telephonique": {
+        "fr": {
+            "title": "Réception d’appels bilingue pour PME au Québec | ALLO CALL",
+            "description": "Un accueil téléphonique en français et en anglais pour votre PME : messages, qualification et transferts selon les horaires et consignes convenus."
+        },
+        "en": {
+            "title": "Bilingual call answering service in Canada | ALLO CALL",
+            "description": "English and French call answering for your business: messages, enquiry qualification and transfers within agreed coverage hours and instructions."
+        }
+    },
+    "/services/support-technique-niveau-1": {
+        "fr": {
+            "title": "Soutien technique de niveau 1 au Canada | ALLO CALL",
+            "description": "Confiez les demandes techniques courantes à des agents qui suivent vos procédures et transmettent les situations complexes à votre équipe."
+        },
+        "en": {
+            "title": "Level 1 technical support in Canada | ALLO CALL",
+            "description": "Get support for routine technical enquiries with agents who follow your procedures and refer complex issues to your technical team."
+        }
+    },
+    "/services/confirmation-rappel-rendez-vous": {
+        "fr": {
+            "title": "Confirmation et rappels de rendez-vous au Canada | ALLO CALL",
+            "description": "Organisez les confirmations, rappels et demandes de report de vos rendez-vous selon les règles et canaux convenus avec votre entreprise."
+        },
+        "en": {
+            "title": "Appointment confirmations and reminders in Canada | ALLO CALL",
+            "description": "Organize appointment confirmations, reminders and rescheduling requests using the rules and communication channels agreed with your business."
+        }
+    },
+    "/industries/automobile": {
+        "fr": {
+            "title": "Réception d’appels pour concessionnaires au Québec | ALLO CALL",
+            "description": "Accueil bilingue, qualification des demandes et rendez-vous pour les concessionnaires automobiles du Québec et du Canada. Discutez de vos besoins."
+        },
+        "en": {
+            "title": "Call answering for Canadian car dealerships | ALLO CALL",
+            "description": "Bilingual call answering, enquiry qualification and appointments for dealerships in Quebec and across Canada. Discuss support for your team."
+        }
+    },
+    "/industries/sante": {
+        "fr": {
+            "title": "Accueil téléphonique et rendez-vous pour cliniques | ALLO CALL",
+            "description": "Un soutien à l’accueil et à la prise de rendez-vous pour les cliniques du Québec et du Canada, selon vos consignes administratives et de transfert."
+        },
+        "en": {
+            "title": "Call answering and scheduling for Canadian clinics | ALLO CALL",
+            "description": "Administrative call answering and appointment scheduling for clinics in Quebec and Canada, based on your intake and transfer instructions."
+        }
+    },
+    "/industries/hvac": {
+        "fr": {
+            "title": "Réception d’appels en chauffage et climatisation | ALLO CALL",
+            "description": "Qualifiez vos demandes de chauffage, de climatisation et de thermopompes. Un accueil bilingue et des suivis adaptés à votre entreprise au Canada."
+        },
+        "en": {
+            "title": "Call answering for Canadian heating and cooling businesses | ALLO CALL",
+            "description": "Qualify heating, cooling and heat pump enquiries with bilingual call answering and follow-up support suited to your Canadian HVAC business."
+        }
+    },
+    "/industries/construction": {
+        "fr": {
+            "title": "Suivi des soumissions en construction et rénovation | ALLO CALL",
+            "description": "Recevez vos demandes de soumission et organisez les rappels pendant vos chantiers. Un soutien bilingue pour les entrepreneurs du Québec et du Canada."
+        },
+        "en": {
+            "title": "Construction and renovation enquiry follow-up | ALLO CALL Canada",
+            "description": "Capture quote requests and arrange callbacks while your crew is on site. Bilingual support for contractors in Quebec and across Canada."
+        }
+    },
+    "/industries/assurance": {
+        "fr": {
+            "title": "Accueil téléphonique pour courtiers d’assurance | ALLO CALL",
+            "description": "Confiez l’accueil, la qualification administrative des demandes et les rendez-vous à une équipe qui suit les consignes de votre cabinet au Canada."
+        },
+        "en": {
+            "title": "Call answering for Canadian insurance brokers | ALLO CALL",
+            "description": "Get support with call intake, administrative enquiry qualification and appointments based on your Canadian brokerage’s instructions."
+        }
+    },
+    "/industries/immobilier": {
+        "fr": {
+            "title": "Suivi des demandes pour courtiers immobiliers | ALLO CALL Canada",
+            "description": "Qualifiez les demandes de renseignements et organisez les échanges avec vos courtiers. Un soutien bilingue pour votre équipe immobilière au Canada."
+        },
+        "en": {
+            "title": "Enquiry follow-up for Canadian real estate teams | ALLO CALL",
+            "description": "Qualify property enquiries and schedule conversations with your real estate team. Explore bilingual follow-up support for your Canadian business."
+        }
+    }
+}

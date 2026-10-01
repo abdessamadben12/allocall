@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use App\Support\EditorialContent;
+use App\Support\PublicRoutes;
 use App\Support\SeoMetadata;
 use Closure;
 use Illuminate\Foundation\Inspiring;
@@ -59,7 +61,9 @@ class HandleInertiaRequests extends Middleware
             'name' => config('app.name'),
             'appUrl' => rtrim(config('app.url'), '/'),
             'locale' => $request->is('en', 'en/*') ? 'en' : 'fr',
+            'publicPaths' => fn () => PublicRoutes::all(),
             'seo' => fn () => SeoMetadata::forRequest($request),
+            'faqs' => fn () => EditorialContent::faqs(PublicRoutes::logical('/'.$request->path()), app()->getLocale()),
             'quote' => ['message' => trim($message), 'author' => trim($author)],
             'auth' => [
                 'user' => $request->user(),

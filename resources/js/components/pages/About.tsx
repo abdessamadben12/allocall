@@ -51,25 +51,114 @@ export default function About() {
                     </Link>
                 </div>
             </section>
-            <section className="company-container company-intro">
-                <div>
-                    <p className="company-eyebrow">{t('Qui sommes-nous ?')}</p>
-                    <h2>{t('Le prolongement de votre équipe.')}</h2>
+         <section className="relative overflow-hidden bg-white py-5 lg:py-10">
+    <div className="mx-auto max-w-7xl px-6 lg:px-8">
+
+        {/* HEADER */}
+        <div className="mb-12 max-w-3xl lg:mb-16">
+            <div className="mb-5 flex items-center gap-3">
+                <span className="h-px w-10 bg-[#74B946]" />
+
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#74B946]">
+                    {t('Pourquoi ALLO CALL ?')}
+                </p>
+            </div>
+
+            <h2 className="text-4xl font-semibold leading-[1.1] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+                {t('Renforcez votre équipe sans alourdir votre structure.')}
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+                {t(
+                    "ALLO CALL permet aux entreprises québécoises d'accéder à une équipe francophone qualifiée, disponible et intégrée à leurs processus, tout en gardant une meilleure maîtrise de leurs coûts opérationnels.",
+                )}
+            </p>
+        </div>
+
+        {/* CONTENT */}
+        <div className="grid items-stretch w-full  gap-8 lg:grid-cols-1">
+            {/* BENEFITS */}
+            <div className="overflow-hidden  bg-[#F8FAF6]">
+
+                {/* ITEM 01 */}
+                <div className="grid gap-5 border-b border-slate-200 p-7 transition-all duration-300 hover:bg-white sm:p-9 lg:grid-cols-[70px_1fr]">
+                    <div>
+                        <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#74B946]/30 bg-[#74B946]/10 text-sm font-bold text-[#74B946]">
+                            01
+                        </span>
+                    </div>
+
+                    <div>
+                        <h3 className="mb-3 text-xl font-semibold tracking-tight text-slate-950 sm:text-2xl">
+                            {t('Accédez plus facilement aux talents')}
+                        </h3>
+
+                        <p className="text-base leading-8 text-slate-600">
+                            {t(
+                                "Dans un marché où le recrutement d'agents de service client peut être difficile et coûteux, ALLO CALL vous donne accès à des professionnels francophones formés aux métiers de la relation client.",
+                            )}
+                        </p>
+
+                        <p className="mt-4 text-base leading-8 text-slate-600">
+                            {t(
+                                'Vous pouvez ainsi renforcer rapidement votre capacité de traitement sans dépendre uniquement du recrutement local.',
+                            )}
+                        </p>
+                    </div>
                 </div>
-                <div>
-                    <p>
-                        {t(
-                            "ALLO CALL accompagne les entreprises dans la gestion de leurs appels, de leur relation client et de leur suivi commercial. Nous mettons à votre disposition des agents qui s'intègrent à vos processus et à vos outils.",
-                        )}
-                    </p>
-                    <p>
-                        {t(
-                            "PME, travailleurs autonomes ou grandes entreprises : nos services s'adaptent à votre activité pour vous permettre de vous concentrer sur vos clients et votre croissance.",
-                        )}
-                    </p>
-                    <p>{t('Nous accompagnons notamment les entreprises du Québec, avec une présence au Canada, au Maroc et en France.')}</p>
+
+                {/* ITEM 02 */}
+                <div className="grid gap-5 border-b border-slate-200 p-7 transition-all duration-300 hover:bg-white sm:p-9 lg:grid-cols-[70px_1fr]">
+                    <div>
+                        <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#74B946]/30 bg-[#74B946]/10 text-sm font-bold text-[#74B946]">
+                            02
+                        </span>
+                    </div>
+
+                    <div>
+                        <h3 className="mb-3 text-xl font-semibold tracking-tight text-slate-950 sm:text-2xl">
+                            {t('Gagnez en stabilité et en continuité')}
+                        </h3>
+
+                        <p className="text-base leading-8 text-slate-600">
+                            {t(
+                                "La qualité de votre service dépend aussi de la stabilité des personnes qui représentent votre entreprise. Nos équipes sont recrutées, formées et accompagnées afin d'assurer une meilleure continuité dans la gestion de vos appels et de votre relation client.",
+                            )}
+                        </p>
+                    </div>
                 </div>
-            </section>
+
+                {/* ITEM 03 */}
+                <div className="grid gap-5 p-7 transition-all duration-300 hover:bg-white sm:p-9 lg:grid-cols-[70px_1fr]">
+                    <div>
+                        <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#74B946]/30 bg-[#74B946]/10 text-sm font-bold text-[#74B946]">
+                            03
+                        </span>
+                    </div>
+
+                    <div>
+                        <h3 className="mb-3 text-xl font-semibold tracking-tight text-slate-950 sm:text-2xl">
+                            {t('Optimisez vos coûts opérationnels')}
+                        </h3>
+
+                        <p className="text-base leading-8 text-slate-600">
+                            {t(
+                                "Notre modèle vous permet de bénéficier d'une équipe professionnelle tout en réduisant les coûts associés au recrutement, à la formation, aux infrastructures et à la gestion d'une équipe interne.",
+                            )}
+                        </p>
+
+                        <p className="mt-4 text-base leading-8 text-slate-600">
+                            {t(
+                                "Vous conservez ainsi davantage de flexibilité pour investir dans votre croissance, votre acquisition client et le développement de votre entreprise au Québec.",
+                            )}
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
             <section className="company-expertise">
                 <div className="company-container">
                     <p className="company-eyebrow">{t('Nos métiers')}</p>

@@ -1,0 +1,167 @@
+[
+    {
+        "pages": ["/", "/services", "/contact", "/services/service-clientele", "/articles/accueil-bilingue", "/services/commerce-electronique"],
+        "fr": {
+            "question": "Est-ce que le service est offert en français et en anglais?",
+            "answer": "AlloCall propose un accueil et des suivis en français et en anglais pour les entreprises du Québec et du Canada. Les langues à couvrir, les scripts et la répartition des demandes sont à définir ensemble avant la mise en place."
+        },
+        "en": {
+            "question": "Is service available in English and French?",
+            "answer": "AlloCall offers call answering and follow-ups in English and French for businesses in Quebec and across Canada. Service languages, scripts and the mix of enquiries are agreed before implementation."
+        }
+    },
+    {
+        "pages": ["/", "/contact", "/devis", "/articles/choisir-reception-appels", "/services/commerce-electronique"],
+        "fr": {
+            "question": "Combien coûte un service de réception d’appels?",
+            "answer": "Le coût dépend notamment du volume d’appels, des tâches confiées aux agents, des langues et des heures de couverture. Demandez une soumission en précisant ces besoins; le prix et les modalités doivent être confirmés pour votre entreprise."
+        },
+        "en": {
+            "question": "How much does a call answering service cost?",
+            "answer": "Pricing depends on call volume, the tasks assigned to agents, service languages and coverage hours. Request a quote with these details so pricing and terms can be confirmed for your business."
+        }
+    },
+    {
+        "pages": ["/", "/services/reception-telephonique", "/devis", "/articles/choisir-reception-appels", "/services/commerce-electronique"],
+        "fr": {
+            "question": "Pouvez-vous répondre le soir ou la fin de semaine?",
+            "answer": "Les plages de couverture sont à convenir selon vos besoins et la disponibilité du service. Indiquez les jours, les heures et le fuseau horaire souhaités. Ne présumez pas qu’une couverture humaine 24 heures sur 24 est comprise sans confirmation écrite."
+        },
+        "en": {
+            "question": "Can you answer calls in the evenings or on weekends?",
+            "answer": "Coverage is agreed around your needs and service availability. Specify the days, hours and time zone required. Do not assume round-the-clock human coverage is included without written confirmation."
+        }
+    },
+    {
+        "pages": ["/", "/contact", "/services/reception-telephonique", "/articles/accueil-bilingue"],
+        "fr": {
+            "question": "Accompagnez-vous les entreprises à l’extérieur du Québec?",
+            "answer": "L’offre s’adresse aux entreprises du Québec et du Canada. Précisez les provinces desservies, les langues et les fuseaux horaires de votre clientèle pour définir les consignes d’accueil et de suivi."
+        },
+        "en": {
+            "question": "Do you support businesses outside Quebec?",
+            "answer": "The offering is intended for businesses in Quebec and across Canada. Share the provinces you serve, your customers’ languages and their time zones so call handling and follow-up instructions can be planned."
+        }
+    },
+    {
+        "pages": ["/services", "/services/reception-telephonique", "/apropos"],
+        "fr": {
+            "question": "Les agents peuvent-ils répondre au nom de mon entreprise?",
+            "answer": "Les agents peuvent suivre une formule d’accueil, des scripts et des règles de transfert définis avec vous. Préparez vos réponses aux questions courantes et indiquez les demandes qui doivent être transmises à votre équipe."
+        },
+        "en": {
+            "question": "Can agents answer on behalf of my business?",
+            "answer": "Agents can follow the greeting, scripts and transfer rules agreed with you. Prepare answers to common questions and identify requests that need to go to your team."
+        }
+    },
+    {
+        "pages": ["/services/prise-rendez-vous", "/services/confirmation-rappel-rendez-vous", "/articles/gestion-rendez-vous"],
+        "fr": {
+            "question": "Pouvez-vous utiliser mon agenda pour prendre des rendez-vous?",
+            "answer": "L’utilisation de votre agenda est à valider selon l’outil, les accès et les règles de réservation. Précisez les durées, les disponibilités, les fuseaux horaires et les situations qui exigent une validation avant de confirmer un rendez-vous."
+        },
+        "en": {
+            "question": "Can you use my calendar to schedule appointments?",
+            "answer": "Calendar use needs to be checked against the tool, access permissions and booking rules. Define appointment lengths, availability, time zones and situations that require approval before confirmation."
+        }
+    },
+    {
+        "pages": ["/services/confirmation-rappel-rendez-vous", "/articles/gestion-rendez-vous"],
+        "fr": {
+            "question": "Comment sont gérés les rappels et les annulations?",
+            "answer": "Le canal de rappel, le moment de l’envoi et les consignes d’annulation sont établis au départ. Les agents suivent les règles convenues pour confirmer, reporter ou transmettre une demande de modification. Les outils et canaux disponibles sont à confirmer dans le service proposé."
+        },
+        "en": {
+            "question": "How are reminders and cancellations handled?",
+            "answer": "The reminder channel, timing and cancellation instructions are agreed at the start. Agents follow those rules to confirm, reschedule or pass along a change request. Available tools and channels are confirmed in the proposed service."
+        }
+    },
+    {
+        "pages": ["/services/gestion-leads", "/services/televente-appels-sortants", "/services/assistants-virtuels"],
+        "fr": {
+            "question": "Qu’est-ce que le suivi des clients potentiels comprend?",
+            "answer": "Il peut comprendre la qualification des demandes, les rappels, la mise à jour des dossiers et la prise de rendez-vous. Les tâches, les critères de qualification et les outils utilisés sont définis avec vous; une vente ou un taux de conversion ne sont pas garantis."
+        },
+        "en": {
+            "question": "What does lead follow-up include?",
+            "answer": "It can include qualifying enquiries, callbacks, record updates and appointment scheduling. Tasks, qualification criteria and tools are agreed with you; a sale or conversion rate is not guaranteed."
+        }
+    },
+    {
+        "pages": ["/solutions-ia", "/articles/ia-et-humain", "/services/commerce-electronique"],
+        "fr": {
+            "question": "L’IA remplace-t-elle les agents humains?",
+            "answer": "L’approche proposée combine des outils d’automatisation et des agents. L’IA peut traiter des étapes répétitives dans un scénario défini; une demande complexe, une plainte ou une réponse incertaine doit pouvoir être reprise par une personne selon les règles convenues."
+        },
+        "en": {
+            "question": "Does AI replace human agents?",
+            "answer": "The proposed approach combines automation tools and agents. AI can handle repetitive steps within a defined workflow; complex requests, complaints and uncertain answers need a route to a person under the agreed handoff rules."
+        }
+    },
+    {
+        "pages": ["/solutions-ia", "/articles/ia-et-humain", "/contact", "/services/commerce-electronique"],
+        "fr": {
+            "question": "Où sont traités les appels et les renseignements de mes clients?",
+            "answer": "Ne déduisez pas le lieu de traitement du domaine allocall.ca ou d’un numéro canadien. Avant de commencer, demandez à confirmer les lieux d’intervention, les outils, les accès aux renseignements et les modalités de conservation applicables à votre service."
+        },
+        "en": {
+            "question": "Where are my calls and customer information handled?",
+            "answer": "The allocall.ca domain or a Canadian phone number does not establish where work is performed. Before starting, ask for confirmation of operating locations, tools, information access and retention arrangements for your service."
+        }
+    },
+    {
+        "pages": ["/devis", "/contact", "/apropos", "/services/commerce-electronique"],
+        "fr": {
+            "question": "Quels renseignements fournir pour obtenir une soumission?",
+            "answer": "Indiquez votre secteur, votre province, une estimation des appels, les langues souhaitées et les heures à couvrir. Ajoutez les tâches à déléguer et les outils déjà utilisés. Ces éléments permettent de préciser le périmètre et les modalités de la soumission."
+        },
+        "en": {
+            "question": "What should I provide when requesting a quote?",
+            "answer": "Include your industry, province, estimated call volume, preferred service languages and coverage hours. Add the tasks you want to delegate and the tools you already use. These details help define the scope and terms of the quote."
+        }
+    },
+    {
+        "pages": ["/services/support-technique-niveau-1", "/services/service-clientele", "/industries/sante"],
+        "fr": {
+            "question": "Que se passe-t-il si un agent ne peut pas répondre?",
+            "answer": "L’agent suit les consignes de transfert ou de rappel établies avec vous. Les demandes qui exigent une expertise technique, médicale ou professionnelle particulière doivent être orientées vers la personne compétente plutôt que recevoir une réponse improvisée."
+        },
+        "en": {
+            "question": "What happens when an agent cannot answer a question?",
+            "answer": "The agent follows the agreed transfer or callback instructions. Requests that need technical, medical or other professional expertise should go to the appropriate person rather than receive an improvised answer."
+        }
+    },
+    {
+        "pages": ["/services/commerce-electronique", "/articles/choisir-reception-appels"],
+        "fr": {
+            "question": "Pouvez-vous gérer le clavardage de ma boutique Shopify?",
+            "answer": "La gestion du clavardage Shopify et Web peut faire partie du service, avec des réponses et des règles de transfert définies par votre entreprise. Les accès, les applications et les intégrations nécessaires doivent être validés avant la mise en place."
+        },
+        "en": {
+            "question": "Can you manage live chat for my Shopify store?",
+            "answer": "Shopify and web live chat can be included with answers and handoff rules defined by your business. Access permissions, apps and required integrations need to be confirmed before implementation."
+        }
+    },
+    {
+        "pages": ["/services/commerce-electronique", "/devis", "/articles/choisir-reception-appels"],
+        "fr": {
+            "question": "Puis-je obtenir une estimation tarifaire en dollars canadiens?",
+            "answer": "Demandez une estimation en CAD en précisant vos plateformes, vos volumes de demandes, vos langues et vos heures de couverture. Faites confirmer les tâches incluses, les éventuels frais supplémentaires et les modalités de facturation avant de commencer."
+        },
+        "en": {
+            "question": "Can I get a pricing estimate in Canadian dollars?",
+            "answer": "Request an estimate in CAD with your platforms, enquiry volumes, service languages and coverage hours. Confirm included tasks, any additional charges and billing terms before starting."
+        }
+    },
+    {
+        "pages": ["/services/commerce-electronique"],
+        "fr": {
+            "question": "Le service comprend-il les suivis de colis et les paniers abandonnés?",
+            "answer": "Ces suivis peuvent être prévus dans le périmètre du service. Les agents utilisent les informations accessibles dans vos outils et vos consignes de communication. Les procédures de retour, les offres commerciales et les décisions de remboursement restent à définir avec vous."
+        },
+        "en": {
+            "question": "Can the service include parcel tracking and abandoned cart follow-up?",
+            "answer": "These tasks can be included in the service scope. Agents use the information available in your tools and your communication instructions. Return procedures, sales offers and refund decisions must be agreed with your team."
+        }
+    }
+]

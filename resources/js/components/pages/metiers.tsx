@@ -36,6 +36,13 @@ const imageSupportClient = '/images/services/support-technique-niveau-1.webp';
 
 const featuredServices: ServiceItem[] = [
     {
+        slug: 'commerce-electronique',
+        title: 'Centre d’appels e-commerce et soutien à la clientèle',
+        description: 'Clavardage Shopify et Web, courriels, suivis de colis et paniers abandonnés : une équipe bilingue pour votre boutique en ligne.',
+        imageUrl: imageServiceClientele,
+        icon: <Users size={23} />,
+    },
+    {
         slug: 'assistants-virtuels',
         title: 'Assistants virtuels',
         description: 'Une équipe à distance pour gérer vos appels, courriels, tâches administratives et suivis.',

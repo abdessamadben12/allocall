@@ -168,27 +168,9 @@ export default function Contact() {
 
                     {/* Informations */}
                     <div className="space-y-2">
-                        {/* Maroc */}
-                        <a
-                            href="tel:+212522484425"
-                            className="group flex items-center gap-4 rounded-xl px-3 py-4 transition-all duration-300 hover:bg-[#f4f8f1]"
-                        >
-                            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#eff7e9] text-[#598435] transition-all duration-300 group-hover:bg-[#74b946] group-hover:text-white">
-                                <Phone size={20} strokeWidth={1.8} />
-                            </div>
-
-                            <div className="min-w-0">
-                                <span className="mb-1 block text-[11px] font-semibold tracking-[0.08em] text-[#8a938b] uppercase">{t('Maroc')}</span>
-
-                                <span className="block text-[17px] font-semibold text-[#202722] transition-colors group-hover:text-[#598435]">
-                                    {t('+212 5 22 48 44 25')}
-                                </span>
-                            </div>
-                        </a>
-
                         {/* Canada */}
                         <a
-                            href="tel:+15146602337"
+                            href="tel:+15148509092"
                             className="group flex items-center gap-4 rounded-xl px-3 py-4 transition-all duration-300 hover:bg-[#f4f8f1]"
                         >
                             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#eff7e9] text-[#598435] transition-all duration-300 group-hover:bg-[#74b946] group-hover:text-white">
@@ -199,7 +181,25 @@ export default function Contact() {
                                 <span className="mb-1 block text-[11px] font-semibold tracking-[0.08em] text-[#8a938b] uppercase">{t('Canada')}</span>
 
                                 <span className="block text-[17px] font-semibold text-[#202722] transition-colors group-hover:text-[#598435]">
-                                    +1 (438) 699-1965
+                                    +1 514-850-9092
+                                </span>
+                            </div>
+                        </a>
+
+                        {/* Équipe internationale */}
+                        <a
+                            href="tel:+212522484425"
+                            className="group flex items-center gap-4 rounded-xl px-3 py-4 transition-all duration-300 hover:bg-[#f4f8f1]"
+                        >
+                            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#eff7e9] text-[#598435] transition-all duration-300 group-hover:bg-[#74b946] group-hover:text-white">
+                                <Phone size={20} strokeWidth={1.8} />
+                            </div>
+
+                            <div className="min-w-0">
+                                <span className="mb-1 block text-[11px] font-semibold tracking-[0.08em] text-[#8a938b] uppercase">{t('Canada')}</span>
+
+                                <span className="block text-[17px] font-semibold text-[#202722] transition-colors group-hover:text-[#598435]">
+                                    +212 5 22 48 44 25
                                 </span>
                             </div>
                         </a>
@@ -230,7 +230,7 @@ export default function Contact() {
 
                             <div className="min-w-0">
                                 <span className="mb-1 block text-[11px] font-semibold tracking-[0.08em] text-[#8a938b] uppercase">
-                                    {t('Adresse')}
+                                    {t('Adresse administrative')}
                                 </span>
 
                                 <p className="max-w-[290px] text-[16px] leading-7 font-semibold text-[#202722]">{t(site.address)}</p>

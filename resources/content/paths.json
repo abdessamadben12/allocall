@@ -1,0 +1,114 @@
+{
+    "/": {
+        "fr": "/",
+        "en": "/en"
+    },
+    "/services": {
+        "fr": "/services",
+        "en": "/en/services"
+    },
+    "/services/commerce-electronique": {
+        "fr": "/services/centre-appels-ecommerce-quebec",
+        "en": "/en/services/ecommerce-customer-support-canada"
+    },
+    "/apropos": {
+        "fr": "/a-propos",
+        "en": "/en/about"
+    },
+    "/contact": {
+        "fr": "/contact",
+        "en": "/en/contact"
+    },
+    "/devis": {
+        "fr": "/soumission",
+        "en": "/en/quote"
+    },
+    "/solutions-ia": {
+        "fr": "/solutions-ia-service-clientele",
+        "en": "/en/ai-customer-service"
+    },
+    "/industries": {
+        "fr": "/secteurs-activite",
+        "en": "/en/industries"
+    },
+    "/industries/automobile": {
+        "fr": "/secteurs-activite/concessionnaires-automobiles",
+        "en": "/en/industries/car-dealerships"
+    },
+    "/industries/sante": {
+        "fr": "/secteurs-activite/cliniques-medicales",
+        "en": "/en/industries/medical-clinics"
+    },
+    "/industries/hvac": {
+        "fr": "/secteurs-activite/chauffage-climatisation",
+        "en": "/en/industries/heating-cooling"
+    },
+    "/industries/construction": {
+        "fr": "/secteurs-activite/construction-renovation",
+        "en": "/en/industries/construction-renovation"
+    },
+    "/industries/assurance": {
+        "fr": "/secteurs-activite/courtiers-assurance",
+        "en": "/en/industries/insurance-brokers"
+    },
+    "/industries/immobilier": {
+        "fr": "/secteurs-activite/courtiers-immobiliers",
+        "en": "/en/industries/real-estate"
+    },
+    "/services/assistants-virtuels": {
+        "fr": "/services/adjoint-virtuel-quebec",
+        "en": "/en/services/virtual-assistant-canada"
+    },
+    "/services/televente-appels-sortants": {
+        "fr": "/services/televente-prospection-canada",
+        "en": "/en/services/outbound-sales-canada"
+    },
+    "/services/gestion-leads": {
+        "fr": "/services/suivi-clients-potentiels",
+        "en": "/en/services/lead-follow-up"
+    },
+    "/services/prise-rendez-vous": {
+        "fr": "/services/prise-rendez-vous-quebec",
+        "en": "/en/services/appointment-scheduling-canada"
+    },
+    "/services/service-clientele": {
+        "fr": "/services/service-clientele-bilingue",
+        "en": "/en/services/bilingual-customer-service"
+    },
+    "/services/reception-telephonique": {
+        "fr": "/services/reception-appels-quebec",
+        "en": "/en/services/call-answering-canada"
+    },
+    "/services/support-technique-niveau-1": {
+        "fr": "/services/soutien-technique-niveau-1",
+        "en": "/en/services/level-1-technical-support"
+    },
+    "/services/confirmation-rappel-rendez-vous": {
+        "fr": "/services/confirmation-rappel-rendez-vous",
+        "en": "/en/services/appointment-reminders"
+    },
+    "/articles": {
+        "fr": "/articles",
+        "en": "/en/articles"
+    },
+    "/faq": {
+        "fr": "/questions-frequentes",
+        "en": "/en/faq"
+    },
+    "/articles/choisir-reception-appels": {
+        "fr": "/articles/choisir-centre-appels-ecommerce-quebec",
+        "en": "/en/articles/choosing-ecommerce-contact-centre-canada"
+    },
+    "/articles/accueil-bilingue": {
+        "fr": "/articles/service-clientele-bilingue-canada",
+        "en": "/en/articles/bilingual-customer-service-canada"
+    },
+    "/articles/gestion-rendez-vous": {
+        "fr": "/articles/prise-rendez-vous-rappels-pme-quebec",
+        "en": "/en/articles/appointment-scheduling-reminders-small-business"
+    },
+    "/articles/ia-et-humain": {
+        "fr": "/articles/ia-agents-humains-service-clientele",
+        "en": "/en/articles/ai-human-agents-customer-service"
+    }
+}

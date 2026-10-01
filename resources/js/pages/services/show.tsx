@@ -58,7 +58,7 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
                                     </StaggerItem>
                                     <StaggerItem className="flex flex-wrap gap-3 pt-2">
                                         <Link
-                                            href={`/devis?service=${encodeURIComponent(service.title)}`}
+                                            href={`/devis?service=${encodeURIComponent(t(service.title))}`}
                                             className="inline-flex items-center gap-2 rounded-lg bg-[#74B946] px-7 py-4 text-sm font-bold tracking-wider text-white uppercase transition-colors hover:bg-[#659F3B]"
                                         >
                                             <span>{t('Demander une soumission gratuite')}</span>
@@ -126,7 +126,7 @@ export default function ServiceShowPage({ slug }: ServiceShowProps) {
                                     <p className="mt-4 text-sm leading-7 text-white/75">{t(service.ctaBody)}</p>
                                     <div className="mt-7 space-y-3">
                                         <Link
-                                            href={`/devis?service=${encodeURIComponent(service.title)}`}
+                                            href={`/devis?service=${encodeURIComponent(t(service.title))}`}
                                             className="flex w-full items-center justify-center gap-2 rounded-md bg-[#74B946] px-5 py-3 text-sm font-bold text-white uppercase transition-colors hover:bg-[#659F3B]"
                                         >
                                             {t('Demander une soumission gratuite')}

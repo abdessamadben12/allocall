@@ -22,10 +22,12 @@ export interface NavItem {
 }
 
 export interface SharedData {
+    publicPaths?: Record<string, Record<'fr' | 'en', string>>;
     locale: 'fr' | 'en';
     seo: {
         language: string;
         ogLocale: string;
+        ogType?: string;
         alternates: Record<string, string>;
         title: string;
         description: string;

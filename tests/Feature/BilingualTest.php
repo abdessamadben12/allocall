@@ -1,6 +1,7 @@
 <?php
 
 use App\Mail\ContactSubmitted;
+use App\Support\PublicRoutes;
 use Illuminate\Support\Facades\Mail;
 use Inertia\Testing\AssertableInertia as Assert;
 
@@ -10,7 +11,8 @@ beforeEach(function () {
 
 it('serves every English public page with translated metadata and reciprocal language links', function () {
     foreach (config('seo.english_pages') as $path => $metadata) {
-        $englishPath = '/en'.($path === '/' ? '' : $path);
+        $englishPath = PublicRoutes::path($path, 'en');
+        $frenchPath = PublicRoutes::path($path, 'fr');
         $response = $this->get($englishPath)->assertOk()->assertHeader('Content-Language', 'en');
         $response->assertInertia(fn (Assert $page) => $page
             ->where('locale', 'en')
@@ -18,7 +20,7 @@ it('serves every English public page with translated metadata and reciprocal lan
             ->where('seo.indexable', true)
             ->where('seo.title', $metadata['title'])
             ->where('seo.canonical', 'https://allocall.example'.$englishPath)
-            ->where('seo.alternates.fr-CA', 'https://allocall.example'.$path)
+            ->where('seo.alternates.fr-CA', 'https://allocall.example'.$frenchPath)
             ->where('seo.alternates.en-CA', 'https://allocall.example'.$englishPath)
         );
         $document = new DOMDocument;
@@ -28,14 +30,14 @@ it('serves every English public page with translated metadata and reciprocal lan
         expect($xpath->evaluate('string(//head/title)'))->toBe($metadata['title']);
         expect($xpath->evaluate('string(//head/meta[@name="description"]/@content)'))->toBe($metadata['description']);
         expect($xpath->query('//head/link[@rel="alternate"]'))->toHaveCount(3);
-        $this->get($path)->assertHeader('Content-Language', 'fr')
+        $this->get($frenchPath)->assertHeader('Content-Language', 'fr')
             ->assertInertia(fn (Assert $page) => $page->where('locale', 'fr')->where('seo.language', 'fr-CA'));
     }
 });
 
 it('keeps English aliases and unknown slugs consistent', function () {
     $this->get('/en/savoir-faire')->assertStatus(301)->assertRedirect('/en/services');
-    $this->get('/en/savoir-faire/assistants-virtuels')->assertStatus(301)->assertRedirect('/en/services/assistants-virtuels');
+    $this->get('/en/savoir-faire/assistants-virtuels')->assertStatus(301)->assertRedirect('/en/services/virtual-assistant-canada');
     $this->get('/en/services/unknown')->assertNotFound();
     $this->get('/en/industries/unknown')->assertNotFound();
     $this->get('/en/contact?utm_source=test')->assertInertia(fn (Assert $page) => $page->where('seo.canonical', 'https://allocall.example/en/contact'));

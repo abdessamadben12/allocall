@@ -1,0 +1,116 @@
+{
+    "fr": {
+        "title": "Centre d’appels e-commerce et soutien à la clientèle",
+        "description": "Impartition du service à la clientèle pour les boutiques en ligne au Québec et au Canada : clavardages, courriels, suivis de colis et demandes après-vente.",
+        "seoTitle": "Centre d’appels e-commerce au Québec | Allo Call",
+        "seoDescription": "Clavardage Shopify et Web, courriels, suivis de colis et paniers abandonnés. Des agents bilingues pour votre boutique en ligne. Estimation en CAD.",
+        "keywords": [
+            "centre d’appels e-commerce",
+            "impartition service à la clientèle",
+            "clavardage Shopify",
+            "soutien client fin de semaine",
+            "tarifs en CAD"
+        ],
+        "intro": "Optimisez l’expérience client de votre boutique en ligne. Nos équipes bilingues prennent en charge les échanges confiés à Allo Call selon vos consignes : questions avant l’achat, courriels, clavardages et suivis de commandes. Définissez la couverture de soir, de nuit ou de fin de semaine dont votre commerce a besoin.",
+        "sections": [
+            {
+                "title": "Gestion du clavardage Shopify et Web",
+                "body": "Proposez un accompagnement en français et en anglais sur vos plateformes de clavardage. Les accès, les outils Shopify et les informations consultables sont à valider avec votre équipe avant la mise en place.",
+                "items": [
+                    "Questions sur les produits et les étapes de commande",
+                    "Gestion des courriels et des clavardages",
+                    "Modération selon votre politique de communication",
+                    "Transmission des demandes qui nécessitent votre décision"
+                ]
+            },
+            {
+                "title": "Suivis de colis et gestion des paniers abandonnés",
+                "body": "Aidez votre clientèle à comprendre le statut de sa commande et les prochaines étapes. Les agents utilisent les renseignements fournis par vos outils; ils ne promettent pas un délai de livraison qu’ils ne peuvent pas confirmer.",
+                "items": [
+                    "Suivi des commandes et des colis",
+                    "Demandes de retour selon vos conditions",
+                    "Suivi des paniers abandonnés selon vos consignes de communication",
+                    "Coordination avec votre équipe lorsqu’une situation doit être résolue"
+                ]
+            },
+            {
+                "title": "Soutien à la clientèle le soir et la fin de semaine",
+                "body": "Ne laissez pas les demandes reçues après vos heures habituelles sans processus de suivi. Une couverture étendue, incluant une option 24/7, peut être étudiée selon le forfait et les disponibilités. Les plages horaires et les délais de réponse doivent être confirmés dans votre entente.",
+                "items": [
+                    "Agents bilingues en français et en anglais",
+                    "Plages de soir, de nuit et de fin de semaine à convenir",
+                    "Consignes pour les demandes urgentes et les transferts",
+                    "Suivi des demandes en attente entre les quarts de travail"
+                ]
+            },
+            {
+                "title": "Tarifs flexibles en CAD et intégration à vos outils",
+                "body": "Obtenez votre estimation tarifaire en CAD. Comparez les tâches, les langues et les plages de couverture pour établir votre budget de soutien. L’objectif est d’adapter vos ressources à votre volume de demandes; les économies dépendent de votre situation.",
+                "items": [
+                    "Solutions d’impartition sur mesure pour PME et commerces électroniques",
+                    "Périmètre, volume et modalités de facturation à préciser",
+                    "Intégration à vos outils CRM et plateformes de clavardage à valider",
+                    "Soutien technique de niveau 1 selon vos procédures"
+                ]
+            }
+        ],
+        "ctaTitle": "Votre boutique a besoin de soutien?",
+        "ctaBody": "Présentez vos plateformes, vos volumes et vos heures de couverture. Demandez une soumission en CAD pour votre service à la clientèle e-commerce.",
+        "details": ["Clavardage et courriels", "Suivis de colis", "Paniers abandonnés", "Accueil bilingue"],
+        "materials": ["Shopify et Web", "CRM", "Courriel", "Clavardage"]
+    },
+    "en": {
+        "title": "E-commerce call centre and customer support",
+        "description": "Outsourced customer service for online stores in Quebec and across Canada: live chat, email, parcel tracking and after-sales enquiries.",
+        "seoTitle": "E-commerce customer support in Canada | Allo Call",
+        "seoDescription": "Shopify and web chat, email, parcel tracking and abandoned cart follow-up. Bilingual support for your online store. Request an estimate in CAD.",
+        "keywords": ["e-commerce call centre", "outsourced customer service", "Shopify live chat", "weekend customer support", "pricing in CAD"],
+        "intro": "Improve your online store’s customer experience. Our bilingual teams handle the conversations assigned to Allo Call under your instructions: pre-purchase questions, emails, live chats and order follow-ups. Define the evening, overnight or weekend coverage your store needs.",
+        "sections": [
+            {
+                "title": "Shopify and web live chat management",
+                "body": "Offer support in English and French through your chat platforms. Access permissions, Shopify tools and available customer information need to be confirmed with your team before implementation.",
+                "items": [
+                    "Product and checkout questions",
+                    "Email and live chat management",
+                    "Moderation under your communication policy",
+                    "Escalation of requests that need your decision"
+                ]
+            },
+            {
+                "title": "Parcel tracking and abandoned cart follow-up",
+                "body": "Help customers understand their order status and next steps. Agents work with the information available in your tools rather than promising delivery times they cannot confirm.",
+                "items": [
+                    "Order and parcel tracking",
+                    "Return enquiries under your policies",
+                    "Abandoned cart follow-up under your communication instructions",
+                    "Coordination with your team when an issue needs a decision"
+                ]
+            },
+            {
+                "title": "Evening and weekend customer support",
+                "body": "Give after-hours enquiries a clear follow-up process. Extended coverage, including a 24/7 option, can be discussed based on the plan and availability. Coverage hours and response times must be confirmed in your agreement.",
+                "items": [
+                    "Bilingual agents in English and French",
+                    "Agreed evening, overnight and weekend coverage",
+                    "Instructions for urgent enquiries and handoffs",
+                    "Tracking open requests between shifts"
+                ]
+            },
+            {
+                "title": "Flexible pricing in CAD and tool integration",
+                "body": "Request a pricing estimate in CAD. Compare tasks, languages and coverage hours to plan your support budget. The aim is to match resources to enquiry volume; savings depend on your circumstances.",
+                "items": [
+                    "Tailored outsourcing for small businesses and online retailers",
+                    "An agreed scope, volume and billing terms",
+                    "CRM and live chat integration to be confirmed",
+                    "Level 1 technical support under your procedures"
+                ]
+            }
+        ],
+        "ctaTitle": "Does your online store need support?",
+        "ctaBody": "Tell us about your platforms, volumes and coverage hours. Request a quote in CAD for your e-commerce customer service.",
+        "details": ["Live chat and email", "Parcel tracking", "Abandoned cart follow-up", "Bilingual service"],
+        "materials": ["Shopify and web", "CRM", "Email", "Live chat"]
+    }
+}

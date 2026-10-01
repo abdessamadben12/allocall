@@ -9,6 +9,11 @@ import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
     {
+        title: 'Articles',
+        url: '/admin/articles',
+        icon: FileText,
+    },
+    {
         title: 'Dashboard',
         url: '/dashboard',
         icon: LayoutGrid,

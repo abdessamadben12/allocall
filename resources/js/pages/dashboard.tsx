@@ -61,6 +61,10 @@ export default function Dashboard({
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Dashboard" />
             <div className="flex h-full flex-1 flex-col gap-6 rounded-xl bg-neutral-900 p-6 text-white">
+                <div className="flex flex-wrap items-center justify-between gap-4 rounded-xl border border-white/10 p-5">
+                    <div><h2 className="text-xl font-semibold">Articles du site</h2><p className="mt-1 text-sm text-neutral-400">Rédigez vos articles en français et en anglais, puis publiez-les sur le site.</p></div>
+                    <Link href="/admin/articles/create" className="rounded-lg bg-[#74B946] px-5 py-3 font-semibold text-black">Ajouter un article</Link>
+                </div>
                 <div className="grid auto-rows-min gap-6 md:grid-cols-3">
                     <StatCard label="Messages recus" value={totalSubmissions} icon={<Mail className="h-6 w-6" />} />
                     <StatCard label="Contacts uniques" value={uniqueSenders} icon={<User className="h-6 w-6" />} />

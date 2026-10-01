@@ -18,7 +18,7 @@ export default function LanguageSwitcher() {
                     preserveScroll
                 >
                     <img
-                        src={language === 'fr' ? '/images/flags/fr.png' : '/images/flags/gb.png'}
+                        src={language === 'fr' ? '/images/flags/fr.svg' : '/images/flags/gb.svg'}
                         alt=""
                         width={30}
                         height={20}

@@ -27,6 +27,10 @@ const navItems = [
         href: '/apropos',
         label: 'Pourquoi AlloCall',
     },
+    // {
+    //     href: '/articles',
+    //     label: 'Articles',
+    // },
 
     {
         href: '/contact',
@@ -36,9 +40,9 @@ const navItems = [
 
 const topContacts = [
     {
-        label: 'Maroc',
-        value: '+212 5 22 48 44 25',
-        href: 'tel:+212522484425',
+        label: 'Québec',
+        value: '+1 514-850-9092',
+        href: 'tel:+15148509092',
         icon: Phone,
     },
     {
@@ -68,11 +72,10 @@ function isActive(href: string, currentPath: string) {
 }
 
 export default function Navbar() {
-    const { t, url } = useLocale();
+    const { t, path: currentPath } = useLocale();
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const currentPath = url.split(/[?#]/)[0].replace(/^\/en(?=\/|$)/, '') || '/';
 
     return (
         <header className="relative z-50 w-full">
@@ -91,7 +94,7 @@ export default function Navbar() {
                             <Phone size={14} className="text-[#74B946]" />
 
                             <span>
-                                <strong>{t('Maroc :')}</strong> {topContacts[0].value}
+                                <strong>{t('Québec :')}</strong> {topContacts[0].value}
                             </span>
                         </a>
 
@@ -104,7 +107,7 @@ export default function Navbar() {
                             <Phone size={14} className="text-[#74B946]" />
 
                             <span>
-                                <strong>{t('Canada :')}</strong> {topContacts[1].value}
+                                <strong>{t('Équipe internationale :')}</strong> {topContacts[1].value}
                             </span>
                         </a>
 

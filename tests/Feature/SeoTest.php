@@ -1,5 +1,6 @@
 <?php
 
+use App\Support\PublicRoutes;
 use App\Support\SeoMetadata;
 use Inertia\Testing\AssertableInertia as Assert;
 
@@ -9,7 +10,8 @@ beforeEach(function () {
 
 it('renders unique ALLO CALL metadata before JavaScript on every public page', function () {
     foreach (config('seo.pages') as $path => $metadata) {
-        $response = $this->get($path)->assertOk();
+        $canonicalPath = PublicRoutes::path($path);
+        $response = $this->get($canonicalPath)->assertOk();
         $document = new DOMDocument;
         @$document->loadHTML($response->getContent());
         $xpath = new DOMXPath($document);
@@ -21,23 +23,23 @@ it('renders unique ALLO CALL metadata before JavaScript on every public page', f
         expect($xpath->evaluate('string(//head/meta[@name="description"]/@content)'))->toBe($metadata['description']);
         expect($xpath->evaluate('string(//head/meta[@name="keywords"]/@content)'))->toBe(implode(', ', $metadata['keywords']));
         expect($xpath->query('//head/link[@rel="canonical"]'))->toHaveCount(1);
-        expect($xpath->evaluate('string(//head/link[@rel="canonical"]/@href)'))->toBe('https://allocall.example'.$path);
+        expect($xpath->evaluate('string(//head/link[@rel="canonical"]/@href)'))->toBe('https://allocall.example'.$canonicalPath);
         expect($xpath->evaluate('string(//head/meta[@property="og:image"]/@content)'))->toBe('https://allocall.example'.$metadata['image']);
         expect($document->saveHTML($head))->not->toContain('Alidade', 'alidade.ma', 'fonts.googleapis.com', 'fonts.gstatic.com');
         expect($xpath->query('//head/script[@type="application/ld+json"]'))->toHaveCount(1);
         $schema = json_decode($xpath->evaluate('string(//head/script[@type="application/ld+json"])'), true, flags: JSON_THROW_ON_ERROR);
         expect($schema['@graph'][0]['name'])->toBe('ALLO CALL');
-        expect($schema['@graph'][2]['url'])->toBe('https://allocall.example'.$path);
+        expect($schema['@graph'][2]['url'])->toBe('https://allocall.example'.$canonicalPath);
         expect(file_exists(public_path($metadata['image'])))->toBeTrue();
         $response->assertHeader('X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
     }
 });
 
 it('uses the same canonical metadata during Inertia navigation and strips query parameters', function () {
-    $this->get('/services/assistants-virtuels?utm_source=test')
+    $this->get('/services/adjoint-virtuel-quebec?utm_source=test')
         ->assertInertia(fn (Assert $page) => $page
             ->component('services/show')
-            ->where('seo.canonical', 'https://allocall.example/services/assistants-virtuels')
+            ->where('seo.canonical', 'https://allocall.example/services/adjoint-virtuel-quebec')
             ->where('seo.title', config('seo.pages')['/services/assistants-virtuels']['title'])
             ->where('seo.schema.@graph.3.@type', 'Service')
         );
@@ -47,8 +49,7 @@ it('publishes only canonical public URLs in the sitemap and robots file', functi
     $response = $this->get('/sitemap.xml')->assertOk();
     $xml = simplexml_load_string($response->getContent());
     $urls = array_map(fn ($url) => (string) $url->loc, iterator_to_array($xml->url, false));
-    $paths = array_keys(config('seo.pages'));
-    $paths = array_merge($paths, array_map(fn ($path) => '/en'.($path === '/' ? '' : $path), $paths));
+    $paths = collect(config('editorial.paths'))->flatMap(fn ($languages) => array_values($languages))->all();
     expect($urls)->toBe(array_map(fn ($path) => 'https://allocall.example'.$path, $paths));
     expect($response->getContent())->not->toContain('lastmod', '/login', '/dashboard', '/savoir-faire', 'alidade');
     $this->get('/robots.txt')->assertOk()->assertSee('Sitemap: https://allocall.example/sitemap.xml', false);
@@ -57,7 +58,7 @@ it('publishes only canonical public URLs in the sitemap and robots file', functi
 
 it('redirects duplicate service URLs permanently and rejects unknown slugs', function () {
     $this->get('/savoir-faire')->assertStatus(301)->assertRedirect('/services');
-    $this->get('/savoir-faire/assistants-virtuels')->assertStatus(301)->assertRedirect('/services/assistants-virtuels');
+    $this->get('/savoir-faire/assistants-virtuels')->assertStatus(301)->assertRedirect('/services/adjoint-virtuel-quebec');
     foreach (['/services/inconnu', '/industries/inconnu', '/savoir-faire/inconnu'] as $path) {
         $this->get($path)->assertNotFound();
     }
