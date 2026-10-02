@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>ALLO CALL</title>
+  <path fill="#74b946" d="M16 4h32a12 12 0 0 1 12 12v26a12 12 0 0 1-12 12H29L14 62l3-8h-1A12 12 0 0 1 4 42V16A12 12 0 0 1 16 4Z"/>
+  <path fill="#fff" fill-rule="evenodd" d="m28 15-13 30h9l2-6h12l2 6h9L36 15Zm4 10-4 8h8Z"/>
+</svg>

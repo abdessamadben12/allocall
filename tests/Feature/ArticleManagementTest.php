@@ -2,10 +2,9 @@
 
 use App\Models\Article;
 use App\Models\User;
-use Inertia\Testing\AssertableInertia as Assert;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use App\Support\RichArticleContent;
+use Inertia\Testing\AssertableInertia as Assert;
 
 beforeEach(function () {
     $this->withoutVite();
@@ -191,10 +190,43 @@ it('requires authentication for uploads and preview and rejects dangerous or ove
     $this->get('/article-media/missing.png')->assertNotFound();
 });
 
-it('uploads a video and serves byte ranges for playback', function () {
+it('uploads a video for playback', function () {
     Storage::fake('public');
     $this->actingAs(User::factory()->create());
     $response = $this->postJson('/admin/article-media', ['file' => UploadedFile::fake()->create('demo.mp4', 20, 'video/mp4')])->assertCreated();
     $response->assertJsonPath('type', 'video');
     $this->get($response->json('url'))->assertOk()->assertHeader('X-Content-Type-Options', 'nosniff');
+});
+
+it('automatically updates sitemap URLs and lastmod on publication changes', function () {
+    config(['seo.url' => 'https://allocall.ca']);
+    $this->actingAs(User::factory()->create());
+    $payload = articlePayload();
+    $this->post('/admin/articles', $payload)->assertSessionHasNoErrors();
+    $article = Article::sole();
+    $this->get('/sitemap.xml')->assertDontSee('/articles/nouveau-guide-test');
+    $this->travelTo(now()->addHour());
+    $payload['published'] = true;
+    $this->put('/admin/articles/'.$article->id, $payload)->assertSessionHasNoErrors();
+    $readEntries = function () {
+        $response = $this->get('/sitemap.xml')->assertOk();
+        expect($response->headers->get('Cache-Control'))->toContain('no-cache');
+        $xml = simplexml_load_string($response->getContent());
+
+        return collect(iterator_to_array($xml->url, false))->keyBy(fn ($entry) => (string) $entry->loc);
+    };
+    $entries = $readEntries();
+    foreach ($article->publicPaths() as $path) {
+        expect((string) $entries['https://allocall.ca'.$path]->lastmod)->toBe($article->fresh()->updated_at->toAtomString());
+        expect($entries['https://allocall.ca'.$path]->children('http://www.w3.org/1999/xhtml')->link)->toHaveCount(2);
+    }
+    $previousDate = (string) $entries['https://allocall.ca/articles/nouveau-guide-test']->lastmod;
+    $this->travel(1)->hours();
+    $payload['content']['fr']['title'] = 'Nouvelle version du guide';
+    $this->put('/admin/articles/'.$article->id, $payload)->assertSessionHasNoErrors();
+    expect((string) $readEntries()['https://allocall.ca/articles/nouveau-guide-test']->lastmod)->not->toBe($previousDate);
+    $payload['published'] = false;
+    $this->put('/admin/articles/'.$article->id, $payload)->assertSessionHasNoErrors();
+    $this->get('/sitemap.xml')->assertDontSee('/articles/nouveau-guide-test')->assertDontSee('/en/articles/new-test-guide');
+    $this->travelBack();
 });

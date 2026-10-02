@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ArticleMediaController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HeroImageController;
 use App\Http\Controllers\MaquetteController;
 use Illuminate\Support\Facades\Route;

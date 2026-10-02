@@ -75,3 +75,24 @@ it('falls back to the configured app URL without inventing a public domain', fun
     expect(SeoMetadata::baseUrl())->toBe('https://configured.example');
     $this->get('/robots.txt')->assertSee('https://configured.example/sitemap.xml', false);
 });
+
+it('advertises the live sitemap and keeps administration out of crawler paths', function () {
+    $this->get('/robots.txt')->assertOk()
+        ->assertSee('Sitemap: https://allocall.example/sitemap.xml', false)
+        ->assertSee('Disallow: /admin/', false)->assertSee('Disallow: /dashboard', false)
+        ->assertDontSee('Disallow: /articles', false)->assertDontSee('Disallow: /favicon', false);
+    expect(file_exists(public_path('sitemap.xml')))->toBeFalse();
+});
+
+it('declares square favicons with browser and Apple fallbacks', function () {
+    $this->withoutVite();
+    $this->get('/')->assertOk()->assertSee('href="/favicon.ico"', false)
+        ->assertSee('href="/favicon.svg"', false)->assertSee('href="/favicon-96x96.png"', false)
+        ->assertSee('href="/apple-touch-icon.png"', false);
+    foreach (['favicon-96x96.png' => 96, 'apple-touch-icon.png' => 180] as $file => $size) {
+        $image = getimagesize(public_path($file));
+        expect($image[0])->toBe($size)->and($image[1])->toBe($size);
+    }
+    expect(file_get_contents(public_path('favicon.svg')))->toContain('viewBox="0 0 64 64"');
+    expect(substr(file_get_contents(public_path('favicon.ico')), 0, 4))->toBe("\x00\x00\x01\x00");
+});

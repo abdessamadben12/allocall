@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ContactController;
+use App\Models\Article;
 use App\Support\EditorialContent;
 use App\Support\PublicRoutes;
 use App\Support\SeoMetadata;
@@ -66,21 +67,34 @@ foreach (['fr' => '', 'en' => '/en'] as $locale => $prefix) {
 
 Route::get('sitemap.xml', function () {
     $base = SeoMetadata::baseUrl();
-    $urls = collect(PublicRoutes::all())->flatMap(function ($languages) use ($base) {
-        return collect($languages)->map(function ($path) use ($base, $languages) {
+    $paths = config('editorial.paths');
+    $modified = [];
+    foreach (Article::publishedArticles() as $article) {
+        $key = '/articles/'.$article->editorialKey();
+        $paths[$key] = $article->publicPaths();
+        $modified[$key] = $article->updated_at->toAtomString();
+    }
+    $urls = collect($paths)->flatMap(function ($languages, $key) use ($base, $modified) {
+        return collect($languages)->map(function ($path) use ($base, $languages, $modified, $key) {
             $alternates = collect($languages)->map(fn ($alternate, $locale) => sprintf(
                 '<xhtml:link rel="alternate" hreflang="%s-CA" href="%s"/>',
                 $locale, htmlspecialchars($base.$alternate, ENT_XML1 | ENT_QUOTES, 'UTF-8')
             ))->implode('');
 
-            return '<url><loc>'.htmlspecialchars($base.$path, ENT_XML1 | ENT_QUOTES, 'UTF-8').'</loc>'.$alternates.'</url>';
+            $lastmod = isset($modified[$key]) ? '<lastmod>'.htmlspecialchars($modified[$key], ENT_XML1 | ENT_QUOTES, 'UTF-8').'</lastmod>' : '';
+
+            return '<url><loc>'.htmlspecialchars($base.$path, ENT_XML1 | ENT_QUOTES, 'UTF-8').'</loc>'.$lastmod.$alternates.'</url>';
         })->values();
     })->implode('');
 
-    return response('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'.$urls.'</urlset>', 200, ['Content-Type' => 'application/xml; charset=UTF-8']);
+    return response('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'.$urls.'</urlset>', 200, ['Content-Type' => 'application/xml; charset=UTF-8', 'Cache-Control' => 'no-cache, max-age=0, must-revalidate']);
 })->name('sitemap');
 
-Route::get('robots.txt', fn () => response("User-agent: *\nAllow: /\n\nSitemap: ".SeoMetadata::baseUrl()."/sitemap.xml\n", 200, ['Content-Type' => 'text/plain; charset=UTF-8']))->name('robots');
+Route::get('robots.txt', fn () => response(
+    "User-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /dashboard\nDisallow: /messages\nDisallow: /maquettes\nDisallow: /hero-images\nDisallow: /settings\n\nSitemap: ".SeoMetadata::baseUrl()."/sitemap.xml\n",
+    200,
+    ['Content-Type' => 'text/plain; charset=UTF-8', 'Cache-Control' => 'no-cache, max-age=0, must-revalidate']
+))->name('robots');
 
 // Keep existing utility pages outside the indexable content catalog.
 Route::get('articles/{slug}', [ArticleController::class, 'show'])->name('articles.dynamic');

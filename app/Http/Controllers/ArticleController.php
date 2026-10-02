@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Support\EditorialContent;
 use App\Support\RichArticleContent;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 
 class ArticleController extends Controller

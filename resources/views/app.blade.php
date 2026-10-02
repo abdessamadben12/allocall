@@ -50,8 +50,10 @@
             <link rel="preload" href="{{ $seo['preloadImage'] }}" as="image" fetchpriority="high">
         @endif
 
-        <link rel="icon" type="image/png" href="/images/logo-allocall.png">
-        <link rel="apple-touch-icon" href="/images/logo-allocall.png">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+        <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
 
         <!-- Google tag (gtag.js) -->

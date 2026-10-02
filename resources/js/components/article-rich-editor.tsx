@@ -208,7 +208,12 @@ export default function ArticleRichEditor({
         } else if (dialog === 'image') {
             const attrs = { src: url, alt, title: caption, width };
             if (editor.isActive('image')) editor.chain().focus().updateAttributes('image', attrs).run();
-            else editor.chain().focus().insertContent({ type: 'image', attrs }).run();
+            else
+                editor
+                    .chain()
+                    .focus()
+                    .insertContentAt(editor.state.selection.to, [{ type: 'image', attrs }, { type: 'paragraph' }])
+                    .run();
         } else {
             const embed = embedUrl(url);
             if (!embed && !/\.(mp4|webm)(\?.*)?$/i.test(url)) {
@@ -218,7 +223,12 @@ export default function ArticleRichEditor({
             editor
                 .chain()
                 .focus()
-                .insertContent({ type: embed ? 'embed' : 'video', attrs: { src: embed ?? url, title: caption || 'Vidéo' } })
+                .insertContentAt(
+                    editor.isActive('video') || editor.isActive('embed')
+                        ? { from: editor.state.selection.from, to: editor.state.selection.to }
+                        : editor.state.selection.to,
+                    [{ type: embed ? 'embed' : 'video', attrs: { src: embed ?? url, title: caption || 'Vidéo' } }, { type: 'paragraph' }],
+                )
                 .run();
         }
         setDialog(null);

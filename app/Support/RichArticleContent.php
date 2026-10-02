@@ -189,6 +189,7 @@ class RichArticleContent
 
             return '<iframe src="'.$src.'" title="'.e($attrs['title'] ?: 'Vidéo').'" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>';
         }
+
         return match ($type) {
             'doc' => $inner,
             'paragraph' => '<p'.$style.'>'.$inner.'</p>',
