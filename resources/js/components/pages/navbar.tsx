@@ -27,6 +27,10 @@ const navItems = [
         href: '/apropos',
         label: 'Pourquoi AlloCall',
     },
+    {
+        href: '/articles',
+        label: 'Articles',
+    },
 
     {
         href: '/contact',
@@ -43,8 +47,8 @@ const topContacts = [
     },
     {
         label: 'Canada',
-        value: '+1 (438) 699-1965',
-        href: 'tel:+14386991965',
+        value: '+1 514-850-9092',
+        href: 'tel:+15148509092',
         icon: Phone,
     },
     {

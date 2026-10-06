@@ -21,6 +21,20 @@ class SeoMetadata
         if ($page && $english) {
             $page = array_replace(config('seo.pages')[$path], $page);
         }
+        $article = null;
+        if ($path === '/articles') {
+            $page = ArticleCatalog::indexPage($english ? 'en' : 'fr');
+        } elseif (str_starts_with($path, '/articles/')) {
+            $article = ArticleCatalog::find(substr($path, strlen('/articles/')), $english ? 'en' : 'fr');
+            $page = $article ? [
+                // Keep titles short enough to avoid truncation in search results.
+                'title' => mb_strlen($article['seoTitle']) > 52 ? $article['seoTitle'] : $article['seoTitle'].' | ALLO CALL',
+                'description' => $article['description'],
+                'keywords' => $article['keywords'],
+                'image' => $article['image'],
+                'preloadImage' => true,
+            ] : null;
+        }
         $language = $english ? 'en-CA' : 'fr-CA';
         $base = self::baseUrl();
         $localizedBase = $base.($english ? '/en' : '');
@@ -74,10 +88,20 @@ class SeoMetadata
             $graph[] = ['@type' => 'Service', '@id' => $canonical.'#service', 'name' => $name, 'description' => $description, 'url' => $canonical, 'image' => $image, 'provider' => ['@id' => $organization['@id']]];
             $graph[2]['mainEntity'] = ['@id' => $canonical.'#service'];
         }
+        if ($article) {
+            $graph[] = [
+                '@type' => 'BlogPosting', '@id' => $canonical.'#article', 'mainEntityOfPage' => ['@id' => $canonical.'#webpage'],
+                'headline' => $article['title'], 'description' => $article['description'], 'image' => $image,
+                'datePublished' => $article['published'], 'dateModified' => $article['updated'], 'inLanguage' => $language,
+                'articleSection' => $article['category'], 'keywords' => implode(', ', $article['keywords']),
+                'author' => ['@id' => $organization['@id']], 'publisher' => ['@id' => $organization['@id']],
+            ];
+            $graph[2]['mainEntity'] = ['@id' => $canonical.'#article'];
+        }
         if ($page && $path !== '/') {
             $crumbs = [['@type' => 'ListItem', 'position' => 1, 'name' => $english ? 'Home' : 'Accueil', 'item' => $english ? $localizedBase : $base.'/']];
             $parent = '/'.explode('/', trim($path, '/'))[0];
-            if ($parent !== $path && isset(config('seo.pages')[$parent])) {
+            if ($parent !== $path && (isset(config('seo.pages')[$parent]) || $parent === '/articles')) {
                 $crumbs[] = ['@type' => 'ListItem', 'position' => 2, 'name' => ucfirst(trim($parent, '/')), 'item' => $localizedBase.$parent];
             }
             $crumbs[] = ['@type' => 'ListItem', 'position' => count($crumbs) + 1, 'name' => $name, 'item' => $canonical];
@@ -88,7 +112,11 @@ class SeoMetadata
         return [
             'language' => $language,
             'ogLocale' => str_replace('-', '_', $language),
-            'alternates' => $page ? ['fr-CA' => $base.$path, 'en-CA' => $base.'/en'.($path === '/' ? '' : $path), 'x-default' => $base.$path] : [],
+            // Article slugs differ per language, so their alternates come from the article itself.
+            'alternates' => $article
+                ? ['fr-CA' => $base.$article['alternates']['fr'], 'en-CA' => $base.$article['alternates']['en'], 'x-default' => $base.$article['alternates']['fr']]
+                : ($page ? ['fr-CA' => $base.$path, 'en-CA' => $base.'/en'.($path === '/' ? '' : $path), 'x-default' => $base.$path] : []),
+            'ogType' => $article ? 'article' : 'website',
             'title' => $title, 'description' => $description, 'keywords' => $page['keywords'] ?? [],
             'canonical' => $canonical, 'image' => $image, 'indexable' => $page !== null,
             'robots' => $page ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' : 'noindex, nofollow',

@@ -239,13 +239,19 @@ export function useLocale() {
      */
     const switchHref = useCallback(
         (target: Locale) => {
+            // Article slugs are translated, so the server provides the matching URL.
+            const alternate = props.seo?.alternates?.[target === 'en' ? 'en-CA' : 'fr-CA'];
+            if (alternate && /^\/(en\/)?articles\/./.test(url)) {
+                return new URL(alternate).pathname;
+            }
+
             return languagePath(
                 url,
                 target,
                 props.appUrl,
             );
         },
-        [url, props.appUrl],
+        [url, props.appUrl, props.seo],
     );
 
     return {

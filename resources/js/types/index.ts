@@ -33,6 +33,7 @@ export interface SharedData {
         canonical: string;
         image: string;
         robots: string;
+        ogType?: string;
         schema: Record<string, unknown>;
     };
     name: string;

@@ -99,9 +99,9 @@ export default function MyQuotes({ onNavigateToRequest }: MyQuotesProps) {
                                 <FileText size={24} />
                             </div>
                             <div className="space-y-1">
-                                <h3 className="text-alidade-navy text-sm font-bold uppercase">{t('Aucun devis enregistré')}</h3>
+                                <h3 className="text-alidade-navy text-sm font-bold uppercase">{t('Aucun soumission enregistré')}</h3>
                                 <p className="text-xs font-light text-gray-400">
-                                    {t("Vous n'avez pas encore soumis de demande de devis ou de projet via nos formulaires.")}
+                                    {t("Vous n’avez pas encore soumis de demande de soumission ou de projet au moyen de nos formulaires.")}
                                 </p>
                             </div>
                             <button
@@ -221,7 +221,7 @@ export default function MyQuotes({ onNavigateToRequest }: MyQuotesProps) {
                                                     <span>{t('Étude Technique par : Youssef El Alami')}</span>
                                                     <span
                                                         className="h-1.5 w-1.5 rounded-full bg-emerald-500"
-                                                        title={t("Chargé d'affaire en ligne")}
+                                                        title={t("Conseiller en ligne")}
                                                     />
                                                 </div>
                                                 <p className="text-[11px] leading-relaxed font-light text-gray-500">

@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ArticleMediaController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HeroImageController;
 use App\Http\Controllers\MaquetteController;
+use App\Models\Article;
 use App\Support\SeoMetadata;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -59,6 +62,10 @@ Route::get('services/{service}', function (string $service) {
     return Inertia::render('services/show', ['slug' => $service]);
 })->name('services.show');
 
+Route::get('articles', [ArticleController::class, 'list'])->name('articles');
+Route::get('articles/{slug}', [ArticleController::class, 'show'])->name('articles.show');
+Route::get('article-media/{filename}', [ArticleMediaController::class, 'show'])->name('article-media.show');
+
 Route::get('savoir-faire', function () {
     return redirect('/services', 301);
 })->name('savoir-faire');
@@ -72,10 +79,19 @@ Route::get('savoir-faire/{service}', function (string $service) {
 Route::get('sitemap.xml', function () {
     $paths = array_keys(config('seo.pages'));
     $paths = array_merge($paths, array_map(fn (string $path) => '/en'.($path === '/' ? '' : $path), $paths));
+    $paths = array_merge($paths, ['/articles', '/en/articles']);
+    $modified = [];
+    foreach (Article::publishedArticles() as $article) {
+        foreach ($article->publicPaths() as $path) {
+            $paths[] = $path;
+            $modified[$path] = $article->updated_at->toAtomString();
+        }
+    }
     $urls = collect($paths)
         ->map(fn (string $path) => sprintf(
-            '<url><loc>%s</loc></url>',
-            htmlspecialchars(SeoMetadata::baseUrl().$path, ENT_XML1 | ENT_QUOTES, 'UTF-8')
+            '<url><loc>%s</loc>%s</url>',
+            htmlspecialchars(SeoMetadata::baseUrl().$path, ENT_XML1 | ENT_QUOTES, 'UTF-8'),
+            isset($modified[$path]) ? '<lastmod>'.$modified[$path].'</lastmod>' : ''
         ))
         ->implode('');
 
@@ -107,6 +123,8 @@ Route::prefix('en')->name('en.')->group(function () {
     Route::get('services', fn () => Inertia::render('services/index'))->name('services');
     Route::get('solutions-ia', fn () => Inertia::render('solutions-ia'))->name('solutions-ia');
     Route::get('industries', fn () => Inertia::render('industries/index'))->name('industries');
+    Route::get('articles', [ArticleController::class, 'list'])->name('articles');
+    Route::get('articles/{slug}', [ArticleController::class, 'show'])->name('articles.show');
     Route::get('services/{service}', function (string $service) {
         abort_unless(isset(config('seo.pages')['/services/'.$service]), 404);
 
@@ -144,6 +162,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('hero-images', [HeroImageController::class, 'index'])->name('hero-images.index');
     Route::post('hero-images', [HeroImageController::class, 'store'])->name('hero-images.store');
     Route::delete('hero-images/{heroImage}', [HeroImageController::class, 'destroy'])->name('hero-images.destroy');
+
+    Route::post('admin/article-media', [ArticleMediaController::class, 'store'])->middleware('throttle:30,1')->name('admin.article-media.store');
+    Route::post('admin/articles/preview', [ArticleController::class, 'preview'])->name('admin.articles.preview');
+    Route::resource('admin/articles', ArticleController::class)->except(['show'])->names('admin.articles');
 });
 
 require __DIR__.'/settings.php';

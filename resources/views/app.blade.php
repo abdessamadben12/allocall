@@ -26,7 +26,7 @@
                 <link inertia="alternate:{{ $language }}" rel="alternate" hreflang="{{ $language }}" href="{{ $url }}">
             @endforeach
             <meta inertia="og:locale" property="og:locale" content="{{ $seo['ogLocale'] }}">
-            <meta inertia="og:type" property="og:type" content="website">
+            <meta inertia="og:type" property="og:type" content="{{ $seo['ogType'] ?? 'website' }}">
             <meta inertia="og:site_name" property="og:site_name" content="ALLO CALL">
             <meta inertia="og:title" property="og:title" content="{{ $seo['title'] }}">
             <meta inertia="og:description" property="og:description" content="{{ $seo['description'] }}">

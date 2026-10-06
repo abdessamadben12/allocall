@@ -1,0 +1,1 @@
+import{j as i}from"./ui-Ba4j7OqQ.js";import{u as s}from"./i18n-roBKE8w-.js";import{$ as e}from"./inertia-SOERDnsj.js";import"./i18n-DWkK9jAk.js";function f({href:o,...r}){const{href:t}=s();return i.jsx(e,{...r,href:typeof o=="string"?t(o):o})}export{f as Link};

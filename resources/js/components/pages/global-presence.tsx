@@ -81,7 +81,7 @@ export default function GlobalPresenceSection() {
 
                     <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-gray-500 sm:text-base lg:text-lg">
                         {t(
-                            "Une organisation connectée entre l'Amérique du Nord, l'Europe et l'Afrique pour offrir un service client fluide, rapide et adapté à vos marchés.",
+                            "Une organisation pensée pour les entreprises du Québec et du Canada, afin d’offrir un service à la clientèle fluide, rapide et adapté à votre marché.",
                         )}
                     </p>
                 </Reveal>
