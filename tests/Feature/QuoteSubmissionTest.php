@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 beforeEach(function () {
-    config(['mail.contact_to' => 'contact@allocall.ma', 'mail.contact_to_secondary' => 'allocallmaroc@gmail.com']);
+    config(['mail.contact_to' => 'contact@allocall.ca', 'mail.contact_to_secondary' => 'allocallmaroc@gmail.com']);
     Mail::fake();
     Storage::fake();
 });
@@ -39,7 +39,7 @@ it('stores and sends both public forms to the two configured recipients', functi
     }
     Mail::assertSentCount(1);
     Mail::assertSent(ContactSubmitted::class, fn ($mail) => count($mail->to) === 2
-        && $mail->hasTo('contact@allocall.ma') && $mail->hasTo('allocallmaroc@gmail.com')
+        && $mail->hasTo('contact@allocall.ca') && $mail->hasTo('allocallmaroc@gmail.com')
         && $mail->contactMessage->is($message)
         && $mail->envelope()->replyTo[0]->address === 'marie@example.com');
 })->with([['/soumission', 'quote'], ['/en/quote', 'quote'], ['/contact', 'contact'], ['/en/contact', 'contact']]);
@@ -67,15 +67,15 @@ it('rejects invalid quotes and files without sending mail', function () {
 });
 
 it('does not send duplicates or allow visitors to choose recipients', function () {
-    config(['mail.contact_to_secondary' => ' contact@allocall.ma ']);
+    config(['mail.contact_to_secondary' => ' contact@allocall.ca ']);
     $payload = quotePayload();
     $payload['recipient'] = 'untrusted@example.com';
     $this->post('/soumission', $payload)->assertSessionHasNoErrors();
-    Mail::assertSent(ContactSubmitted::class, fn ($mail) => count($mail->to) === 1 && $mail->hasTo('contact@allocall.ma') && ! $mail->hasTo('untrusted@example.com'));
+    Mail::assertSent(ContactSubmitted::class, fn ($mail) => count($mail->to) === 1 && $mail->hasTo('contact@allocall.ca') && ! $mail->hasTo('untrusted@example.com'));
 });
 
 it('keeps the quote and displays an error when SMTP fails', function () {
-    Mail::shouldReceive('to')->once()->with(['contact@allocall.ma', 'allocallmaroc@gmail.com'])->andReturnSelf();
+    Mail::shouldReceive('to')->once()->with(['contact@allocall.ca', 'allocallmaroc@gmail.com'])->andReturnSelf();
     Mail::shouldReceive('send')->once()->andThrow(new RuntimeException('Test SMTP failure'));
     $this->from('/en/quote')->post('/en/quote', quotePayload())->assertRedirect('/en/quote')
         ->assertSessionHas('error', fn ($error) => str_starts_with($error, 'Your message was saved'))

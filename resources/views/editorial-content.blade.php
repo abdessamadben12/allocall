@@ -2,6 +2,7 @@
     $english = $page['props']['locale'] === 'en';
     $locale = $english ? 'en' : 'fr';
     $article = $editorial['article'] ?? null;
+    $local = in_array($editorial['kind'], ['location', 'locations'], true);
     $publicPath = fn ($path) => \App\Support\PublicRoutes::path($path, $locale);
 @endphp
 <div class="company-page min-h-screen bg-[#fafafa] text-alidade-navy">
@@ -22,12 +23,12 @@
             <div class="company-container">
                 <h1>{{ $editorial['title'] }}</h1>
                 <p>{{ $editorial['summary'] }}</p>
-                @if ($article)
+                @if ($article && !$local)
                     <p>{{ $english ? 'By the ALLO CALL team · Updated ' : 'Par l’équipe ALLO CALL · Mis à jour le ' }}<time datetime="{{ $article['updated'] }}">{{ $article['updated'] }}</time></p>
                 @endif
             </div>
         </section>
-        @if ($editorial['kind'] === 'index')
+        @if (in_array($editorial['kind'], ['index', 'locations'], true))
             <section class="company-container grid gap-8 py-16 md:grid-cols-2">
                 @foreach ($editorial['articles'] as $item)
                     <article class="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
@@ -36,7 +37,7 @@
                             <p>{{ $item['category'] }}</p>
                             <h2 class="mt-3 text-2xl font-bold"><a href="{{ $item['path'] }}">{{ $item['title'] }}</a></h2>
                             <p class="mt-4 leading-7 text-gray-600">{{ $item['description'] }}</p>
-                            <a class="mt-6 inline-block font-semibold text-[#487e2e]" href="{{ $item['path'] }}">{{ $english ? 'Read the guide' : 'Lire le guide' }}</a>
+                            <a class="mt-6 inline-block font-semibold text-[#487e2e]" href="{{ $item['path'] }}">{{ $local ? ($english ? 'See local services' : 'Voir les services locaux') : ($english ? 'Read the guide' : 'Lire le guide') }}</a>
                         </div>
                     </article>
                 @endforeach
@@ -73,7 +74,7 @@
                 <div class="flex flex-wrap gap-6 rounded-xl bg-[#111827] p-7 text-white">
                     <a href="{{ $article['relatedService'] }}">{{ $english ? 'Explore the service' : 'Découvrir le service' }}</a>
                     <a href="{{ $publicPath('/devis') }}">{{ $english ? 'Request a quote' : 'Demander une soumission' }}</a>
-                    <a href="{{ $publicPath('/articles') }}">{{ $english ? 'All articles' : 'Tous les articles' }}</a>
+                    <a href="{{ $publicPath($local ? '/villes' : '/articles') }}">{{ $local ? ($english ? 'All service areas' : 'Toutes les régions') : ($english ? 'All articles' : 'Tous les articles') }}</a>
                 </div>
             </article>
         @endif
@@ -93,9 +94,10 @@
     <footer class="bg-[#111827] px-6 py-10 text-white">
         <nav class="mx-auto flex max-w-7xl flex-wrap gap-6">
             <a href="tel:+15148509092">+1 514-850-9092</a>
-            <a href="mailto:contact@allocall.ma">contact@allocall.ma</a>
+            <a href="mailto:contact@allocall.ca">contact@allocall.ca</a>
             <a href="{{ $publicPath('/articles') }}">Articles</a>
             <a href="{{ $publicPath('/faq') }}">FAQ</a>
+            <a href="{{ $publicPath('/villes') }}">{{ $english ? 'Service areas' : 'Régions desservies' }}</a>
         </nav>
     </footer>
 </div>

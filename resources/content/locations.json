@@ -1,0 +1,406 @@
+{
+    "montreal": {
+        "image": "/images/services/reception-telephonique.webp",
+        "service": "/services/reception-telephonique",
+        "updated": "2026-10-06",
+        "fr": {
+            "city": "Montréal",
+            "title": "Centre d’appels pour les PME de Montréal",
+            "seoTitle": "Centre d’appels à Montréal pour PME",
+            "description": "Réception d’appels, service à la clientèle bilingue et prise de rendez-vous pour les PME de Montréal. Agents formés à votre entreprise.",
+            "keywords": [
+                "centre d'appels Montréal",
+                "réception d'appels Montréal",
+                "service à la clientèle bilingue Montréal",
+                "réceptionniste virtuelle Montréal",
+                "prise de rendez-vous Montréal"
+            ],
+            "summary": "ALLO CALL prend en charge les appels, les suivis et les rendez-vous des entreprises montréalaises, en français et en anglais, selon vos heures et vos scripts.",
+            "sections": [
+                {
+                    "heading": "Une clientèle montréalaise bilingue et exigeante",
+                    "paragraphs": [
+                        "À Montréal, une même PME reçoit souvent des appels en français et en anglais, parfois au cours de la même heure. Vos clients s’attendent à être accueillis en français, comme le prévoit la Charte de la langue française, tout en pouvant poursuivre en anglais lorsqu’ils le demandent.",
+                        "Nos agents suivent un script d’accueil validé avec vous, choisissent la langue au premier échange et notent la préférence du client pour les suivis. Votre image reste cohérente, que l’appel vienne du Plateau, de Saint-Laurent ou de l’extérieur de l’île."
+                    ]
+                },
+                {
+                    "heading": "Les services les plus demandés par les entreprises de Montréal",
+                    "paragraphs": [
+                        "Les commerces, cliniques, entrepreneurs et boutiques en ligne de la métropole nous confient surtout les appels qu’ils ne peuvent pas prendre pendant les heures de pointe, les soirs et les fins de semaine."
+                    ],
+                    "items": [
+                        "Réception d’appels et prise de messages selon vos consignes",
+                        "Service à la clientèle bilingue par téléphone, courriel et clavardage",
+                        "Prise de rendez-vous et rappels pour réduire les absences",
+                        "Qualification et suivi des demandes de soumission",
+                        "Soutien commercial lors des périodes chargées"
+                    ]
+                },
+                {
+                    "heading": "Des horaires adaptés au rythme de la métropole",
+                    "paragraphs": [
+                        "Nous travaillons à l’heure de l’Est et définissons avec vous la couverture nécessaire : débordement pendant la journée, soirées, fins de semaine ou périodes ciblées comme les soldes, la rentrée ou la saison des déménagements.",
+                        "Chaque appel est consigné et transmis selon vos règles : courriel, CRM, agenda partagé ou transfert immédiat vers un membre de votre équipe."
+                    ]
+                },
+                {
+                    "heading": "Comment démarrer",
+                    "paragraphs": [
+                        "Présentez-nous votre volume d’appels, vos langues de service et les tâches à confier. Nous préparons ensemble les scripts, les réponses aux questions fréquentes et les règles de transfert, puis nous proposons une soumission en dollars canadiens."
+                    ]
+                }
+            ]
+        },
+        "en": {
+            "city": "Montreal",
+            "title": "Call centre services for Montreal businesses",
+            "seoTitle": "Call centre in Montreal for small businesses",
+            "description": "Call answering, bilingual customer service and appointment setting for Montreal small businesses, with agents trained on your company.",
+            "keywords": [
+                "call centre Montreal",
+                "answering service Montreal",
+                "bilingual customer service Montreal",
+                "virtual receptionist Montreal",
+                "appointment setting Montreal"
+            ],
+            "summary": "ALLO CALL handles calls, follow-ups and appointments for Montreal businesses in English and French, following your hours and your scripts.",
+            "sections": [
+                {
+                    "heading": "A bilingual and demanding Montreal clientele",
+                    "paragraphs": [
+                        "In Montreal, a single small business often receives calls in French and English within the same hour. Customers expect to be greeted in French, as provided by Quebec’s Charter of the French language, while being able to continue in English when they ask.",
+                        "Our agents follow a greeting script approved by you, choose the language at the first exchange and record each customer’s preference for follow-ups. Your image stays consistent, whether the call comes from the Plateau, Saint-Laurent or off the island."
+                    ]
+                },
+                {
+                    "heading": "The services Montreal businesses ask for most",
+                    "paragraphs": [
+                        "Retailers, clinics, contractors and online stores in the city mostly rely on us for the calls they cannot take during peak hours, evenings and weekends."
+                    ],
+                    "items": [
+                        "Call answering and message taking according to your instructions",
+                        "Bilingual customer service by phone, email and live chat",
+                        "Appointment setting and reminders to reduce no-shows",
+                        "Qualification and follow-up of quote requests",
+                        "Sales support during busy periods"
+                    ]
+                },
+                {
+                    "heading": "Coverage hours that fit the city’s pace",
+                    "paragraphs": [
+                        "We work on Eastern Time and agree with you on the coverage you need: daytime overflow, evenings, weekends or targeted periods such as sales events, back-to-school or moving season.",
+                        "Every call is logged and passed on according to your rules: email, CRM, shared calendar or an immediate transfer to someone on your team."
+                    ]
+                },
+                {
+                    "heading": "How to get started",
+                    "paragraphs": [
+                        "Tell us about your call volume, service languages and the tasks you want to delegate. We prepare the scripts, answers to frequent questions and transfer rules together, then send a quote in Canadian dollars."
+                    ]
+                }
+            ]
+        }
+    },
+    "quebec": {
+        "image": "/images/services/service-clientele.webp",
+        "service": "/services/service-clientele",
+        "updated": "2026-10-06",
+        "fr": {
+            "city": "Québec",
+            "title": "Centre d’appels pour les entreprises de la ville de Québec",
+            "seoTitle": "Centre d’appels à Québec pour PME",
+            "description": "Réception d’appels, service à la clientèle en français et prise de rendez-vous pour les PME de la ville de Québec et de Lévis.",
+            "keywords": [
+                "centre d'appels Québec",
+                "réception d'appels ville de Québec",
+                "service à la clientèle Québec",
+                "secrétariat téléphonique Québec",
+                "centre d'appels Lévis"
+            ],
+            "summary": "ALLO CALL accompagne les entreprises de la région de Québec avec un accueil téléphonique en français, des suivis rigoureux et une couverture adaptée à vos saisons.",
+            "sections": [
+                {
+                    "heading": "Un accueil en français, d’abord",
+                    "paragraphs": [
+                        "Dans la région de la Capitale-Nationale, la très grande majorité de vos clients s’attend à être servie en français. Nos agents utilisent un vocabulaire québécois et un ton adapté à votre entreprise, avec des scripts validés avant la mise en service.",
+                        "Lorsqu’un visiteur ou un client de l’extérieur préfère l’anglais, l’agent peut poursuivre dans cette langue et indiquer cette préférence dans le dossier."
+                    ]
+                },
+                {
+                    "heading": "Des besoins qui varient selon les saisons",
+                    "paragraphs": [
+                        "Tourisme, événements, rénovation, déneigement ou cliniques : plusieurs secteurs de Québec et de Lévis connaissent des pointes d’appels prévisibles. Une couverture externe absorbe ces périodes sans embaucher pour quelques semaines."
+                    ],
+                    "items": [
+                        "Débordement d’appels pendant les périodes de forte demande",
+                        "Prise de rendez-vous et confirmations pour cliniques et professionnels",
+                        "Suivi des demandes de soumission pour entrepreneurs",
+                        "Service à la clientèle pour commerces et boutiques en ligne"
+                    ]
+                },
+                {
+                    "heading": "Vos outils et vos règles de transfert",
+                    "paragraphs": [
+                        "Nous travaillons dans votre agenda, votre CRM ou votre système de billets lorsque c’est possible. Les demandes urgentes sont transférées selon la liste de personnes et les heures que vous fixez.",
+                        "Un résumé de chaque appel est transmis à votre équipe pour que personne n’ait à rappeler un client sans contexte."
+                    ]
+                },
+                {
+                    "heading": "Comment démarrer",
+                    "paragraphs": [
+                        "Indiquez-nous vos heures à couvrir, vos types d’appels et vos saisons chargées. Nous vous proposons un périmètre clair et une soumission en dollars canadiens."
+                    ]
+                }
+            ]
+        },
+        "en": {
+            "city": "Quebec City",
+            "title": "Call centre services for Quebec City businesses",
+            "seoTitle": "Call centre in Quebec City for businesses",
+            "description": "Call answering, French-first customer service and appointment setting for small businesses in Quebec City, Lévis and the surrounding region.",
+            "keywords": [
+                "call centre Quebec City",
+                "answering service Quebec City",
+                "customer service Quebec City",
+                "virtual receptionist Quebec City",
+                "call centre Lévis"
+            ],
+            "summary": "ALLO CALL supports businesses in the Quebec City region with French-first call answering, careful follow-ups and coverage that fits your busy seasons.",
+            "sections": [
+                {
+                    "heading": "French-first customer service",
+                    "paragraphs": [
+                        "In the Capitale-Nationale region, the vast majority of your customers expect service in French. Our agents use Quebec terminology and a tone suited to your business, with scripts approved before launch.",
+                        "When a visitor or out-of-province customer prefers English, the agent can continue in English and record that preference in the file."
+                    ]
+                },
+                {
+                    "heading": "Needs that change with the seasons",
+                    "paragraphs": [
+                        "Tourism, events, renovation, snow removal and clinics: many businesses in Quebec City and Lévis see predictable call peaks. External coverage absorbs those periods without hiring for a few weeks."
+                    ],
+                    "items": [
+                        "Call overflow during high-demand periods",
+                        "Appointment setting and confirmations for clinics and professionals",
+                        "Quote request follow-up for contractors",
+                        "Customer service for retailers and online stores"
+                    ]
+                },
+                {
+                    "heading": "Your tools and your transfer rules",
+                    "paragraphs": [
+                        "We work in your calendar, CRM or ticketing system whenever possible. Urgent requests are transferred according to the contact list and hours you set.",
+                        "A summary of every call is sent to your team, so nobody has to call a customer back without context."
+                    ]
+                },
+                {
+                    "heading": "How to get started",
+                    "paragraphs": [
+                        "Tell us the hours to cover, the types of calls and your busy seasons. We propose a clear scope and a quote in Canadian dollars."
+                    ]
+                }
+            ]
+        }
+    },
+    "laval": {
+        "image": "/images/services/prise-rendez-vous.webp",
+        "service": "/services/prise-rendez-vous",
+        "updated": "2026-10-06",
+        "fr": {
+            "city": "Laval",
+            "title": "Centre d’appels pour les PME de Laval et des Laurentides",
+            "seoTitle": "Centre d’appels à Laval pour PME",
+            "description": "Réception d’appels, prise de rendez-vous et suivi des soumissions pour les PME de Laval, de la Rive-Nord et des Laurentides.",
+            "keywords": [
+                "centre d'appels Laval",
+                "réception d'appels Laval",
+                "prise de rendez-vous Laval",
+                "réceptionniste virtuelle Laval",
+                "centre d'appels Rive-Nord"
+            ],
+            "summary": "ALLO CALL aide les entreprises de Laval et de la Rive-Nord à répondre à chaque appel, à confirmer leurs rendez-vous et à suivre leurs demandes de soumission.",
+            "sections": [
+                {
+                    "heading": "Ne plus manquer d’appels pendant que vous êtes sur le terrain",
+                    "paragraphs": [
+                        "Entrepreneurs en rénovation, entreprises de chauffage et de climatisation, cliniques et courtiers : à Laval comme sur la Rive-Nord, beaucoup de PME passent leur journée chez les clients. Un appel manqué devient souvent une soumission perdue.",
+                        "Nos agents répondent en votre nom, qualifient la demande avec vos questions et transmettent un résumé clair pour que vous puissiez rappeler au bon moment."
+                    ]
+                },
+                {
+                    "heading": "Ce que nous prenons en charge",
+                    "paragraphs": ["Le périmètre est défini avec vous selon vos priorités et votre volume d’appels."],
+                    "items": [
+                        "Accueil téléphonique en français et en anglais",
+                        "Prise de rendez-vous dans votre agenda en ligne",
+                        "Confirmations et rappels de rendez-vous",
+                        "Qualification des demandes de soumission",
+                        "Relance des clients qui n’ont pas donné suite"
+                    ]
+                },
+                {
+                    "heading": "Une couverture qui suit vos pointes",
+                    "paragraphs": [
+                        "Printemps pour la rénovation, premières chaleurs pour la climatisation, automne pour le chauffage : nous ajustons la couverture aux périodes où vos appels augmentent, à l’heure de l’Est.",
+                        "Les urgences sont transférées selon vos consignes, et chaque appel est consigné pour votre équipe."
+                    ]
+                },
+                {
+                    "heading": "Comment démarrer",
+                    "paragraphs": [
+                        "Parlez-nous de votre secteur, de vos heures à couvrir et des informations à recueillir. Nous préparons le script avec vous et vous transmettons une soumission en dollars canadiens."
+                    ]
+                }
+            ]
+        },
+        "en": {
+            "city": "Laval",
+            "title": "Call centre services for Laval and North Shore businesses",
+            "seoTitle": "Call centre in Laval for small businesses",
+            "description": "Call answering, appointment setting and quote follow-up for small businesses in Laval, the North Shore and the Laurentians.",
+            "keywords": [
+                "call centre Laval",
+                "answering service Laval",
+                "appointment setting Laval",
+                "virtual receptionist Laval",
+                "call centre North Shore Montreal"
+            ],
+            "summary": "ALLO CALL helps businesses in Laval and on the North Shore answer every call, confirm appointments and follow up on quote requests.",
+            "sections": [
+                {
+                    "heading": "Stop missing calls while you are on site",
+                    "paragraphs": [
+                        "Renovation contractors, heating and cooling companies, clinics and brokers: in Laval and on the North Shore, many small businesses spend their day at customers’ locations. A missed call often becomes a lost quote.",
+                        "Our agents answer on your behalf, qualify the request with your questions and send a clear summary so you can call back at the right time."
+                    ]
+                },
+                {
+                    "heading": "What we handle",
+                    "paragraphs": ["The scope is defined with you according to your priorities and call volume."],
+                    "items": [
+                        "Call answering in English and French",
+                        "Appointment booking in your online calendar",
+                        "Appointment confirmations and reminders",
+                        "Quote request qualification",
+                        "Follow-up with customers who have not responded"
+                    ]
+                },
+                {
+                    "heading": "Coverage that follows your peaks",
+                    "paragraphs": [
+                        "Spring for renovation, the first heat wave for air conditioning, autumn for heating: we adjust coverage to the periods when your calls increase, on Eastern Time.",
+                        "Emergencies are transferred according to your instructions, and every call is logged for your team."
+                    ]
+                },
+                {
+                    "heading": "How to get started",
+                    "paragraphs": [
+                        "Tell us about your industry, the hours to cover and the information to collect. We prepare the script with you and send a quote in Canadian dollars."
+                    ]
+                }
+            ]
+        }
+    },
+    "gatineau": {
+        "image": "/images/hero/allocall-contact.webp",
+        "service": "/services/service-clientele",
+        "updated": "2026-10-06",
+        "fr": {
+            "city": "Gatineau",
+            "title": "Centre d’appels bilingue pour les entreprises de Gatineau et d’Ottawa",
+            "seoTitle": "Centre d’appels bilingue à Gatineau",
+            "description": "Service à la clientèle bilingue, réception d’appels et prise de rendez-vous pour les PME de Gatineau qui servent aussi la clientèle d’Ottawa.",
+            "keywords": [
+                "centre d'appels Gatineau",
+                "centre d'appels bilingue Gatineau",
+                "réception d'appels Outaouais",
+                "service à la clientèle Ottawa-Gatineau",
+                "réceptionniste virtuelle Gatineau"
+            ],
+            "summary": "ALLO CALL accompagne les entreprises de l’Outaouais qui servent une clientèle des deux côtés de la rivière, en français comme en anglais.",
+            "sections": [
+                {
+                    "heading": "Une clientèle des deux côtés de la rivière",
+                    "paragraphs": [
+                        "Une PME de Gatineau sert souvent des clients d’Ottawa et de l’est de l’Ontario. Le bilinguisme n’est pas un atout optionnel : c’est la condition pour répondre à toute votre clientèle.",
+                        "Nos agents accueillent en français, passent à l’anglais selon la préférence du client et suivent les mêmes scripts dans les deux langues pour une information identique."
+                    ]
+                },
+                {
+                    "heading": "Des règles différentes au Québec et en Ontario",
+                    "paragraphs": [
+                        "Les règles linguistiques et certaines règles de protection des renseignements personnels diffèrent d’une province à l’autre. Nous adaptons les messages, les consentements et les documents remis au client selon vos consignes et la province de votre clientèle."
+                    ],
+                    "items": [
+                        "Accueil bilingue et choix de la langue au premier échange",
+                        "Prise de rendez-vous et rappels",
+                        "Service à la clientèle par téléphone, courriel et clavardage",
+                        "Suivi des demandes de soumission"
+                    ]
+                },
+                {
+                    "heading": "Vos outils, vos heures",
+                    "paragraphs": [
+                        "Nous travaillons à l’heure de l’Est, comme Gatineau et Ottawa, et dans vos outils lorsque c’est possible : agenda, CRM ou système de billets.",
+                        "Chaque appel donne lieu à un résumé transmis à votre équipe, avec la langue de préférence du client."
+                    ]
+                },
+                {
+                    "heading": "Comment démarrer",
+                    "paragraphs": [
+                        "Présentez-nous la répartition de votre clientèle, vos langues de service et vos heures à couvrir. Nous préparons une soumission en dollars canadiens."
+                    ]
+                }
+            ]
+        },
+        "en": {
+            "city": "Gatineau",
+            "title": "Bilingual call centre for Gatineau and Ottawa businesses",
+            "seoTitle": "Bilingual call centre in Gatineau",
+            "description": "Bilingual customer service, call answering and appointment setting for Gatineau small businesses that also serve customers in Ottawa.",
+            "keywords": [
+                "call centre Gatineau",
+                "bilingual call centre Gatineau",
+                "answering service Outaouais",
+                "customer service Ottawa-Gatineau",
+                "virtual receptionist Gatineau"
+            ],
+            "summary": "ALLO CALL supports Outaouais businesses that serve customers on both sides of the river, in French and in English.",
+            "sections": [
+                {
+                    "heading": "Customers on both sides of the river",
+                    "paragraphs": [
+                        "A Gatineau small business often serves customers in Ottawa and Eastern Ontario. Bilingual service is not an optional extra: it is how you reach your entire customer base.",
+                        "Our agents greet callers in French, switch to English based on the customer’s preference and follow the same scripts in both languages so the information is identical."
+                    ]
+                },
+                {
+                    "heading": "Different rules in Quebec and Ontario",
+                    "paragraphs": [
+                        "Language rules and some privacy rules differ between provinces. We adapt messages, consents and the documents sent to customers according to your instructions and your customers’ province."
+                    ],
+                    "items": [
+                        "Bilingual greeting and language choice at the first exchange",
+                        "Appointment setting and reminders",
+                        "Customer service by phone, email and live chat",
+                        "Quote request follow-up"
+                    ]
+                },
+                {
+                    "heading": "Your tools, your hours",
+                    "paragraphs": [
+                        "We work on Eastern Time, like Gatineau and Ottawa, and in your tools whenever possible: calendar, CRM or ticketing system.",
+                        "Every call produces a summary for your team, including the customer’s preferred language."
+                    ]
+                },
+                {
+                    "heading": "How to get started",
+                    "paragraphs": [
+                        "Tell us how your customers are split, your service languages and the hours to cover. We prepare a quote in Canadian dollars."
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -31,8 +31,8 @@ it('serves canonical Canadian URLs and redirects legacy URLs without losing quer
     }
 });
 
-it('renders four complete bilingual articles and their FAQ answers in HTML without JavaScript', function () {
-    expect(config('editorial.articles'))->toHaveCount(4);
+it('renders six complete bilingual articles and their FAQ answers in HTML without JavaScript', function () {
+    expect(config('editorial.articles'))->toHaveCount(6);
     foreach (['fr', 'en'] as $locale) {
         foreach (EditorialContent::articles($locale) as $article) {
             $response = $this->get($article['path'])->assertOk();

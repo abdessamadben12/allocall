@@ -29,34 +29,61 @@ class SeoMetadata
         $description = $page['description'] ?? 'ALLO CALL accompagne votre entreprise dans la gestion des appels et de la relation client.';
         $image = $base.($page['image'] ?? '/images/hero/allocall-call-cnter.webp');
         $name = explode(' | ', $title)[0];
+        $business = config('seo.business');
+        $local = filled($business['street'] ?? null);
+        $areas = [
+            ...array_map(fn ($city) => ['@type' => 'City', 'name' => $city], config('seo.service_areas', [])),
+            ['@type' => 'AdministrativeArea', 'name' => 'Québec'],
+            ['@type' => 'Country', 'name' => 'Canada'],
+        ];
         $organization = [
-            '@type' => 'Organization',
+            '@type' => $local ? 'ProfessionalService' : 'Organization',
             '@id' => $base.'/#organization',
             'name' => 'ALLO CALL',
             'alternateName' => ['AlloCall', 'Allocall'],
             'url' => $base.'/',
             'logo' => $base.'/images/logo-allocall.png',
             'image' => $base.'/images/logo-allocall.png',
-            'email' => 'contact@allocall.ma',
+            'email' => 'contact@allocall.ca',
             'telephone' => '+15148509092',
-            'address' => [
+            'address' => $local ? array_filter([
+                '@type' => 'PostalAddress',
+                'streetAddress' => $business['street'],
+                'addressLocality' => $business['locality'],
+                'addressRegion' => $business['region'],
+                'postalCode' => $business['postal_code'],
+                'addressCountry' => 'CA',
+            ]) : [
                 '@type' => 'PostalAddress',
                 'streetAddress' => '3, Avenue 2 Mars Residence Marwa 5eme etage',
                 'addressLocality' => 'Casablanca',
                 'addressCountry' => 'MA',
             ],
-            'areaServed' => ['Canada', 'Québec'],
+            'areaServed' => $areas,
+            'knowsLanguage' => ['fr-CA', 'en-CA'],
             'contactPoint' => [
                 [
                     '@type' => 'ContactPoint',
                     'telephone' => '+15148509092',
                     'contactType' => 'customer service',
-                    'email' => 'contact@allocall.ma',
+                    'email' => 'contact@allocall.ca',
                     'areaServed' => ['CA'],
                     'availableLanguage' => ['French', 'English'],
                 ],
             ],
         ];
+        if ($local && filled($business['latitude']) && filled($business['longitude'])) {
+            $organization['geo'] = ['@type' => 'GeoCoordinates', 'latitude' => (float) $business['latitude'], 'longitude' => (float) $business['longitude']];
+        }
+        if ($local && $business['hours']) {
+            $organization['openingHours'] = $business['hours'];
+        }
+        if ($local && filled($business['price_range'])) {
+            $organization['priceRange'] = $business['price_range'];
+        }
+        if ($business['same_as'] ?? []) {
+            $organization['sameAs'] = $business['same_as'];
+        }
         $graph = [
             $organization,
             [
@@ -72,6 +99,10 @@ class SeoMetadata
         ];
         if ($page && str_starts_with($path, '/services/')) {
             $graph[] = ['@type' => 'Service', '@id' => $canonical.'#service', 'name' => $name, 'description' => $description, 'url' => $canonical, 'image' => $image, 'areaServed' => ['Canada', 'Québec'], 'provider' => ['@id' => $organization['@id']]];
+            $graph[2]['mainEntity'] = ['@id' => $canonical.'#service'];
+        }
+        if ($page && isset($page['city'])) {
+            $graph[] = ['@type' => 'Service', '@id' => $canonical.'#service', 'name' => $name, 'description' => $description, 'url' => $canonical, 'image' => $image, 'serviceType' => $english ? 'Call centre' : 'Centre d’appels', 'areaServed' => ['@type' => 'City', 'name' => $page['city']], 'availableLanguage' => ['French', 'English'], 'provider' => ['@id' => $organization['@id']]];
             $graph[2]['mainEntity'] = ['@id' => $canonical.'#service'];
         }
         if ($page && $path !== '/') {

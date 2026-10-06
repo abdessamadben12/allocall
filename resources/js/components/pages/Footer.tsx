@@ -29,7 +29,7 @@ const contactInfo = {
         href: 'tel:+15148509092',
     },
 
-    email: 'contact@allocall.ma',
+    email: 'contact@allocall.ca',
 };
 
 /* =========================================================
@@ -58,8 +58,15 @@ const socialLinks = [
    FOOTER
 ========================================================= */
 
+const serviceAreas = [
+    { href: '/villes/montreal', fr: 'Montréal', en: 'Montreal' },
+    { href: '/villes/quebec', fr: 'Québec', en: 'Quebec City' },
+    { href: '/villes/laval', fr: 'Laval', en: 'Laval' },
+    { href: '/villes/gatineau', fr: 'Gatineau', en: 'Gatineau' },
+];
+
 const Footer: React.FC<{ showFaq?: boolean }> = ({ showFaq = true }) => {
-    const { t } = useLocale();
+    const { t, locale } = useLocale();
 
     return (
         <>
@@ -190,6 +197,19 @@ const Footer: React.FC<{ showFaq?: boolean }> = ({ showFaq = true }) => {
                 {/* =====================================================
                 COPYRIGHT
             ===================================================== */}
+
+                <nav aria-label={t('Régions desservies')} className="border-t border-gray-800 px-6 py-5">
+                    <div className="container mx-auto flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-gray-300">
+                        <Link href="/villes" className="font-semibold text-white hover:text-[#74B946]">
+                            {t('Régions desservies')}
+                        </Link>
+                        {serviceAreas.map((area) => (
+                            <Link key={area.href} href={area.href} className="hover:text-[#74B946]">
+                                {t('Centre d’appels')} {area[locale]}
+                            </Link>
+                        ))}
+                    </div>
+                </nav>
 
                 <div className="border-t border-gray-800 bg-[#0C1421] py-6">
                     <div className="container mx-auto flex flex-col items-center justify-center gap-2 px-6 md:flex-row">

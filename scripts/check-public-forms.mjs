@@ -41,16 +41,14 @@ try {
     await page.locator('#quote-desc-input').waitFor();
     assert.equal(await page.locator('#quote-desc-input').inputValue(), 'Virtual assistant');
     await fillQuote();
-    await page.locator('#quote-file-input').setInputFiles({ name: 'brief.pdf', mimeType: 'application/pdf', buffer: Buffer.from('%PDF-1.4\nBrowser test document') });
     await page.locator('#quote-submit-btn').click();
     await page.waitForFunction(() => document.querySelector('#quote-submit-btn').disabled);
     await page.getByRole('status').filter({ hasText: 'Your message has been sent successfully!' }).waitFor();
     assert.equal(await page.locator('#quote-name-input').inputValue(), '');
     assert.equal(await page.locator('#quote-desc-input').inputValue(), '');
-    assert.equal(await page.locator('#quote-file-input').evaluate(input => input.files.length), 0);
     assert.equal(requests.length, 1);
     assert.equal(requests[0].path, '/en/devis');
-    for (const expected of ['name="full_name"', 'Browser Test', 'name="request_type"', 'quote', '2500 CAD', 'brief.pdf']) assert.ok(requests[0].body.includes(expected), expected);
+    for (const expected of ['name="full_name"', 'Browser Test', 'name="request_type"', 'quote', '2500 CAD']) assert.ok(requests[0].body.includes(expected), expected);
     assert.equal(await page.evaluate(() => localStorage.getItem('allocall_quotes')), null);
 
     outcome = 'failure';
@@ -89,7 +87,7 @@ try {
         await page.screenshot({ path: path.join(folder, `quote-form-${width}.png`) });
     }
     assert.deepEqual(errors, []);
-    console.log('Quote and contact browser checks passed: localized POST, attachment, success/reset, failure preservation, validation, responsive layout. No real emails sent.');
+    console.log('Quote and contact browser checks passed: localized POST, success/reset, failure preservation, validation, responsive layout. No real emails sent.');
 } finally {
     await browser.close();
 }

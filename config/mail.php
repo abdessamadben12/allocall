@@ -123,7 +123,7 @@ return [
 
     'smtp_requires_authentication' => env('MAIL_SMTP_AUTH', true),
 
-    'contact_to' => env('CONTACT_MAIL_TO', 'contact@allocall.ma'),
+    'contact_to' => env('CONTACT_MAIL_TO', 'contact@allocall.ca'),
     'contact_to_secondary' => env('CONTACT_MAIL_TO_SECONDARY', 'allocallmaroc@gmail.com'),
 
 ];

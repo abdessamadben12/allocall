@@ -46,3 +46,18 @@ presentation sont en WebP et prechargees seulement sur la page concernee.
 Les PNG originaux sont conserves. Apache peut activer le cache des images et
 polices ainsi que la compression via les modules optionnels du `.htaccess`.
 Pour Nginx, ces reglages doivent etre appliques dans la configuration du serveur.
+
+## Local SEO (Quebec)
+
+City pages live in `resources/content/locations.json` (logical paths `/villes/{key}` in
+`paths.json`, hub at `/villes`). They reuse the editorial template, get a `Service` schema
+with `areaServed` set to the city, and are added to the sitemap automatically. Local FAQs
+are attached through the `pages` field of `faqs.json`.
+
+The organization schema lists the Quebec service areas from `config('seo.service_areas')`.
+It stays an `Organization` with the head-office address until `BUSINESS_STREET` is set;
+with a real Quebec address it becomes a `ProfessionalService` and also publishes
+`BUSINESS_LOCALITY`, `BUSINESS_POSTAL_CODE`, `BUSINESS_LATITUDE`/`BUSINESS_LONGITUDE`,
+`BUSINESS_HOURS` (e.g. `Mo-Fr 08:00-18:00`) and `BUSINESS_PRICE_RANGE`. `BUSINESS_SAME_AS`
+(comma-separated profile URLs) is published in both cases. Never enter an address that
+the business does not actually use: it must match the Google Business Profile.

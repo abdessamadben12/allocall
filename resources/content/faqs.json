@@ -163,5 +163,49 @@
             "question": "Can the service include parcel tracking and abandoned cart follow-up?",
             "answer": "These tasks can be included in the service scope. Agents use the information available in your tools and your communication instructions. Return procedures, sales offers and refund decisions must be agreed with your team."
         }
+    },
+    {
+        "pages": ["/villes", "/villes/montreal", "/villes/laval", "/villes/quebec", "/villes/gatineau"],
+        "fr": {
+            "question": "Quelles régions du Québec desservez-vous?",
+            "answer": "AlloCall prend en charge les appels des entreprises de Montréal, de Laval, de la ville de Québec, de Gatineau et de partout au Québec et au Canada. Le service se fait à distance : seuls vos heures, vos langues et vos outils déterminent la mise en place."
+        },
+        "en": {
+            "question": "Which regions of Quebec do you serve?",
+            "answer": "AlloCall handles calls for businesses in Montreal, Laval, Quebec City, Gatineau and everywhere else in Quebec and Canada. The service is delivered remotely, so only your hours, languages and tools shape the setup."
+        }
+    },
+    {
+        "pages": ["/villes", "/villes/montreal", "/villes/laval", "/villes/quebec", "/villes/gatineau", "/articles/loi-96-service-client"],
+        "fr": {
+            "question": "Vos agents accueillent-ils les clients en français?",
+            "answer": "Oui. Chaque appel est accueilli en français, avec un vocabulaire adapté au Québec, puis l’agent poursuit en anglais lorsque le client le demande. Les scripts sont validés avec vous avant la mise en service."
+        },
+        "en": {
+            "question": "Do your agents greet customers in French?",
+            "answer": "Yes. Every call is greeted in French using Quebec terminology, then the agent continues in English when the customer asks. Scripts are approved with you before launch."
+        }
+    },
+    {
+        "pages": ["/villes/gatineau"],
+        "fr": {
+            "question": "Pouvez-vous servir nos clients d’Ottawa en anglais?",
+            "answer": "Oui. Pour les entreprises de l’Outaouais, nos agents passent à l’anglais dès que le client le souhaite et suivent les mêmes scripts dans les deux langues. La préférence linguistique est notée pour les suivis."
+        },
+        "en": {
+            "question": "Can you serve our Ottawa customers in English?",
+            "answer": "Yes. For Outaouais businesses, our agents switch to English as soon as the customer prefers and follow the same scripts in both languages. The language preference is recorded for follow-ups."
+        }
+    },
+    {
+        "pages": ["/articles/loi-25-centre-appels"],
+        "fr": {
+            "question": "Comment protégez-vous les renseignements personnels de nos clients?",
+            "answer": "Les mesures de protection, l’accès aux renseignements, la conservation des enregistrements et la procédure en cas d’incident sont précisés par écrit dans l’entente de service, conformément à vos obligations sous la Loi 25."
+        },
+        "en": {
+            "question": "How do you protect our customers’ personal information?",
+            "answer": "Protection measures, access to information, retention of recordings and the incident procedure are set out in writing in the service agreement, in line with your obligations under Law 25."
+        }
     }
 ]

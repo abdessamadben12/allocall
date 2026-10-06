@@ -10,11 +10,12 @@ export const site = {
     whatsapp: '+15148509092',
     whatsappMessage: 'Bonjour ALLO CALL, je souhaite obtenir des informations sur vos services.',
 
-    email: 'contact@allocall.ma',
+    email: 'contact@allocall.ca',
     address: 'Québec, Canada',
 
-    // TODO: remplacer par l'embed de l'adresse exacte (Google Maps → Partager → Intégrer une carte).
-    mapEmbedUrl: 'https://maps.google.com/maps?q=Casablanca%2C%20Maroc&z=12&output=embed',
+    // Zone desservie au Québec. Remplacer par l'embed de l'adresse exacte dès qu'un bureau existe
+    // (Google Maps → Partager → Intégrer une carte).
+    mapEmbedUrl: 'https://maps.google.com/maps?q=Montr%C3%A9al%2C%20QC%2C%20Canada&z=10&output=embed',
 
     // Renseigner une URL pour faire apparaître l'icône correspondante (vide = icône masquée).
     socials: {

@@ -22,12 +22,10 @@ import {
     ShieldCheck,
     Sparkles,
     Star,
-    Upload,
     User,
     Wallet,
-    X,
 } from 'lucide-react';
-import { ChangeEvent, DragEvent, FormEvent, useRef, useState } from 'react';
+import { FormEvent, useState } from 'react';
 
 interface QuoteRequestProps {
     preFilledSummary: string;
@@ -60,9 +58,9 @@ export default function QuotePage() {
 type SubmissionStatus = { success?: string; error?: string };
 
 function QuoteRequest({ preFilledSummary, preFilledCost, onClearPreFill, onNavigateToContact }: QuoteRequestProps) {
-    const { t, locale, href } = useLocale();
+    const { t, href } = useLocale();
     const { submissionStatus } = usePage<{ submissionStatus?: SubmissionStatus }>().props;
-    const { data, setData, post, processing, progress, errors, reset, clearErrors, setError } = useForm({
+    const { data, setData, post, processing, errors, reset } = useForm({
         request_type: 'quote',
         full_name: '',
         email: '',
@@ -70,31 +68,7 @@ function QuoteRequest({ preFilledSummary, preFilledCost, onClearPreFill, onNavig
         project_type: 'Service à la clientèle',
         message: preFilledSummary,
         budget: preFilledCost ? `${preFilledCost} $ CAD` : '',
-        attachment: null as File | null,
     });
-    const fileInputRef = useRef<HTMLInputElement>(null);
-    const fileName = data.attachment?.name;
-    const fileSize = data.attachment ? `${(data.attachment.size / (1024 * 1024)).toFixed(2)} ${locale === 'en' ? 'MB' : 'Mo'}` : '';
-
-    function selectFile(file?: File) {
-        if (processing || !file) return;
-        clearErrors('attachment');
-        if (file.size > 10 * 1024 * 1024) {
-            setError('attachment', t('Le fichier ne doit pas dépasser 10 Mo.'));
-            setData('attachment', null);
-            if (fileInputRef.current) fileInputRef.current.value = '';
-            return;
-        }
-        setData('attachment', file);
-    }
-
-    const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => selectFile(event.target.files?.[0]);
-    const handleDragOver = (event: DragEvent) => event.preventDefault();
-    const handleDrop = (event: DragEvent) => {
-        event.preventDefault();
-        selectFile(event.dataTransfer.files[0]);
-    };
-
     function handleSubmit(event: FormEvent) {
         event.preventDefault();
         if (processing) return;
@@ -106,7 +80,6 @@ function QuoteRequest({ preFilledSummary, preFilledCost, onClearPreFill, onNavig
                     reset();
                     setData('message', '');
                     setData('budget', '');
-                    if (fileInputRef.current) fileInputRef.current.value = '';
                     onClearPreFill();
                 }
             },
@@ -438,87 +411,6 @@ function QuoteRequest({ preFilledSummary, preFilledCost, onClearPreFill, onNavig
                                             </div>
                                         </div>
 
-                                        {/* FICHIERS */}
-
-                                        <div className="space-y-1">
-                                            <label className="block text-[10px] font-bold tracking-widest text-gray-400 uppercase">
-                                                {t('Ajouter un document (optionnel)')}
-                                            </label>
-
-                                            <div
-                                                onDragOver={handleDragOver}
-                                                onDrop={handleDrop}
-                                                onClick={() => !processing && fileInputRef.current?.click()}
-                                                role="button"
-                                                tabIndex={processing ? -1 : 0}
-                                                aria-disabled={processing}
-                                                onKeyDown={(event) => {
-                                                    if (event.key === 'Enter' || event.key === ' ') {
-                                                        event.preventDefault();
-                                                        if (!processing) fileInputRef.current?.click();
-                                                    }
-                                                }}
-                                                className="hover:border-alidade-gold/50 flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-gray-200 bg-gray-50 p-4 text-center transition-all hover:bg-gray-50/50"
-                                            >
-                                                <input
-                                                    type="file"
-                                                    ref={fileInputRef}
-                                                    onChange={handleFileChange}
-                                                    onClick={(event) => event.stopPropagation()}
-                                                    accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.webp"
-                                                    className="hidden"
-                                                    id="quote-file-input"
-                                                    name="attachment"
-                                                    aria-label={t('Ajouter un document (optionnel)')}
-                                                    aria-invalid={!!errors.attachment}
-                                                />
-
-                                                <Upload size={18} className="text-gray-400" />
-
-                                                <div className="text-xs font-light text-gray-500">
-                                                    {fileName ? (
-                                                        <span className="text-alidade-navy font-bold">
-                                                            {fileName}{' '}
-                                                            <span className="text-[10px] font-light text-gray-400">
-                                                                {t('(')}
-                                                                {fileSize}
-                                                                {t(')')}
-                                                            </span>
-                                                        </span>
-                                                    ) : (
-                                                        <span>
-                                                            {t('Glissez votre document ici ou')}{' '}
-                                                            <span className="text-alidade-gold font-bold underline">
-                                                                {t('choisissez un fichier')}
-                                                            </span>
-                                                        </span>
-                                                    )}
-                                                </div>
-
-                                                <span className="text-[9px] text-gray-400">
-                                                    {t('Scripts, cahier des charges, liste de besoins ou document de référence')}
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                        {data.attachment && (
-                                            <button
-                                                type="button"
-                                                onClick={() => {
-                                                    setData('attachment', null);
-                                                    clearErrors('attachment');
-                                                    if (fileInputRef.current) fileInputRef.current.value = '';
-                                                }}
-                                                className="inline-flex items-center gap-2 text-sm text-gray-600"
-                                            >
-                                                <X size={16} aria-hidden="true" /> {t('Retirer le fichier')}
-                                            </button>
-                                        )}
-                                        {progress && (
-                                            <p role="status" className="text-sm text-gray-600">
-                                                {t('Téléversement : {0} %', [progress.percentage ?? 0])}
-                                            </p>
-                                        )}
                                         {/* BUTTON */}
 
                                         <div className="pt-2">

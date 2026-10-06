@@ -54,7 +54,7 @@ test('uses Canadian slugs for navigation and language switching', () => {
 });
 
 test('preserves non-content links and external URLs', () => {
-    for (const value of ['#faq', 'mailto:contact@allocall.ma', 'tel:+15148509092', '/images/logo-allocall.png', '/dashboard', '//external.example/services', 'https://external.example/services']) {
+    for (const value of ['#faq', 'mailto:contact@allocall.ca', 'tel:+15148509092', '/images/logo-allocall.png', '/dashboard', '//external.example/services', 'https://external.example/services']) {
         assert.equal(routing.publicLanguagePath(value, 'en', 'https://allocall.ca'), value);
     }
     assert.equal(routing.publicLanguagePath('https://allocall.ca/soumission?source=home', 'en', 'https://allocall.ca'), '/en/quote?source=home');

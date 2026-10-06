@@ -7,7 +7,9 @@
             "customer service outsourcing",
             "telephone answering",
             "telesales",
-            "lead management"
+            "lead management",
+            "call centre Montreal",
+            "answering service Quebec"
         ]
     },
     "/services": {
@@ -36,7 +38,7 @@
         "keywords": [
             "contact ALLO CALL",
             "call centre Canada",
-            "call centre Morocco",
+            "call centre Montreal",
             "customer service"
         ]
     },
@@ -137,7 +139,8 @@
         "keywords": [
             "virtual assistant Quebec",
             "virtual secretary",
-            "administrative outsourcing"
+            "administrative outsourcing",
+            "virtual assistant Montreal"
         ]
     },
     "/services/televente-appels-sortants": {
@@ -147,7 +150,8 @@
             "telesales",
             "outbound calls",
             "B2B telemarketing",
-            "telephone prospecting"
+            "telephone prospecting",
+            "telesales Montreal"
         ]
     },
     "/services/gestion-leads": {
@@ -167,7 +171,8 @@
             "appointment setting",
             "B2B appointments",
             "telephone prospecting",
-            "calendar management"
+            "calendar management",
+            "appointment setting Montreal"
         ]
     },
     "/services/service-clientele": {
@@ -176,7 +181,9 @@
         "keywords": [
             "outsourced customer service",
             "customer support",
-            "call centre Canada"
+            "call centre Canada",
+            "bilingual customer service Montreal",
+            "bilingual call centre Quebec"
         ]
     },
     "/services/reception-telephonique": {
@@ -185,7 +192,9 @@
         "keywords": [
             "telephone answering",
             "virtual receptionist",
-            "inbound call centre"
+            "inbound call centre",
+            "answering service Montreal",
+            "virtual receptionist Quebec"
         ]
     },
     "/services/support-technique-niveau-1": {

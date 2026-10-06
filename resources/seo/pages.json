@@ -7,7 +7,9 @@
             "externalisation relation client",
             "réception téléphonique",
             "télévente",
-            "gestion de leads"
+            "gestion de leads",
+            "centre d'appels Montréal",
+            "réception d'appels PME Québec"
         ],
         "image": "/images/hero/gestion-leads.webp",
         "preloadImage": true
@@ -43,7 +45,7 @@
         "keywords": [
             "contact ALLO CALL",
             "centre d'appels Canada",
-            "centre d'appels Maroc",
+            "centre d'appels Montréal",
             "relation client"
         ],
         "image": "/images/hero/allocall-contact.webp",
@@ -166,7 +168,8 @@
             "assistante virtuelle Québec",
             "secrétaire virtuelle",
             "télésecrétariat",
-            "externalisation administrative"
+            "externalisation administrative",
+            "adjointe virtuelle Montréal"
         ],
         "image": "/images/services/assistante-virtuelle.webp",
         "preloadImage": true
@@ -178,7 +181,8 @@
             "télévente Québec",
             "prospection téléphonique",
             "télémarketing B2B",
-            "équipe commerciale externalisée"
+            "équipe commerciale externalisée",
+            "télévente Montréal"
         ],
         "image": "/images/services/televente-appels-sortants.webp",
         "preloadImage": true
@@ -202,7 +206,8 @@
             "prise de rendez-vous",
             "appointment setting Québec",
             "téléprospection B2B",
-            "rendez-vous qualifiés"
+            "rendez-vous qualifiés",
+            "prise de rendez-vous Montréal"
         ],
         "image": "/images/services/prise-rendez-vous.webp",
         "preloadImage": true
@@ -214,7 +219,9 @@
             "service à la clientèle",
             "support client externalisé",
             "centre d'appels entrant",
-            "relation client"
+            "relation client",
+            "service à la clientèle Montréal",
+            "centre d'appels bilingue Québec"
         ],
         "image": "/images/services/service-clientele.webp",
         "preloadImage": true
@@ -226,7 +233,9 @@
             "réception téléphonique",
             "réceptionniste virtuelle",
             "permanence téléphonique",
-            "answering service Québec"
+            "answering service Québec",
+            "réception d'appels Montréal",
+            "réceptionniste virtuelle Québec"
         ],
         "image": "/images/services/reception-telephonique.webp",
         "preloadImage": true

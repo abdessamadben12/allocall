@@ -110,5 +110,33 @@
     "/articles/ia-et-humain": {
         "fr": "/articles/ia-agents-humains-service-clientele",
         "en": "/en/articles/ai-human-agents-customer-service"
+    },
+    "/articles/loi-96-service-client": {
+        "fr": "/articles/loi-96-service-clientele-francais",
+        "en": "/en/articles/bill-96-french-customer-service"
+    },
+    "/articles/loi-25-centre-appels": {
+        "fr": "/articles/loi-25-centre-appels-renseignements-personnels",
+        "en": "/en/articles/law-25-call-centre-privacy"
+    },
+    "/villes": {
+        "fr": "/regions-desservies",
+        "en": "/en/service-areas"
+    },
+    "/villes/montreal": {
+        "fr": "/centre-appels-montreal",
+        "en": "/en/call-centre-montreal"
+    },
+    "/villes/quebec": {
+        "fr": "/centre-appels-quebec",
+        "en": "/en/call-centre-quebec-city"
+    },
+    "/villes/laval": {
+        "fr": "/centre-appels-laval",
+        "en": "/en/call-centre-laval"
+    },
+    "/villes/gatineau": {
+        "fr": "/centre-appels-gatineau",
+        "en": "/en/call-centre-gatineau"
     }
 }

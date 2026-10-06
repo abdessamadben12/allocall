@@ -5,7 +5,7 @@ use App\Models\ContactMessage;
 use Illuminate\Support\Facades\Mail;
 
 beforeEach(function () {
-    config(['mail.contact_to' => 'contact@allocall.ma']);
+    config(['mail.contact_to' => 'contact@allocall.ca']);
     Mail::fake();
 });
 
@@ -25,7 +25,7 @@ it('stores and emails a contact with only the four visible fields', function () 
         ->and($message->project_type)->toBeNull()
         ->and($message->attachment_path)->toBeNull();
 
-    Mail::assertSent(ContactSubmitted::class, fn ($mail) => $mail->hasTo('contact@allocall.ma') && $mail->contactMessage->is($message)
+    Mail::assertSent(ContactSubmitted::class, fn ($mail) => $mail->hasTo('contact@allocall.ca') && $mail->contactMessage->is($message)
     );
 });
 

@@ -11,7 +11,7 @@
     },
     "/services": {
         "fr": {
-            "title": "Services de centre d’appels pour PME au Québec et au Canada | ALLO CALL",
+            "title": "Services de centre d’appels pour PME au Québec | ALLO CALL",
             "description": "Explorez nos services bilingues : réception d’appels, service à la clientèle, suivi commercial, soutien technique et rendez-vous pour votre PME."
         },
         "en": {
@@ -41,7 +41,7 @@
     },
     "/devis": {
         "fr": {
-            "title": "Soumission pour un service de centre d’appels au Canada | ALLO CALL",
+            "title": "Soumission pour un centre d’appels au Canada | ALLO CALL",
             "description": "Précisez vos appels, vos langues de service et vos heures de couverture. Demandez une soumission adaptée à votre PME québécoise ou canadienne."
         },
         "en": {
@@ -175,7 +175,7 @@
             "description": "Qualifiez vos demandes de chauffage, de climatisation et de thermopompes. Un accueil bilingue et des suivis adaptés à votre entreprise au Canada."
         },
         "en": {
-            "title": "Call answering for Canadian heating and cooling businesses | ALLO CALL",
+            "title": "Call answering for Canadian HVAC businesses | ALLO CALL",
             "description": "Qualify heating, cooling and heat pump enquiries with bilingual call answering and follow-up support suited to your Canadian HVAC business."
         }
     },

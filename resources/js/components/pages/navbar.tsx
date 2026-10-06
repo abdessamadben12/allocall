@@ -53,8 +53,8 @@ const topContacts = [
     },
     {
         label: null,
-        value: 'contact@allocall.ma',
-        href: 'mailto:contact@allocall.ma',
+        value: 'contact@allocall.ca',
+        href: 'mailto:contact@allocall.ca',
         icon: Mail,
     },
 ];

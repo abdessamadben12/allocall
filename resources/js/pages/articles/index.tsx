@@ -22,7 +22,7 @@ interface Article {
 }
 
 interface Editorial {
-    kind: 'index' | 'article' | 'faq';
+    kind: 'index' | 'article' | 'faq' | 'locations' | 'location';
     title: string;
     summary: string;
     articles?: Article[];
@@ -33,6 +33,8 @@ export default function ArticlesPage({ editorial }: { editorial: Editorial }) {
     const { locale } = useLocale();
     const english = locale === 'en';
     const article = editorial.article;
+    const local = editorial.kind === 'location' || editorial.kind === 'locations';
+    const areasLabel = english ? 'Service areas' : 'Régions desservies';
     const headings =
         article?.headings ?? article?.sections.map((section, index) => ({ id: `section-${index + 1}`, heading: section.heading, level: 2 })) ?? [];
     const updated = article
@@ -52,7 +54,15 @@ export default function ArticlesPage({ editorial }: { editorial: Editorial }) {
                         <nav aria-label={english ? 'Breadcrumb' : 'Fil d’Ariane'} className="mb-6 flex flex-wrap gap-2 text-sm text-white/80">
                             <Link href="/">{english ? 'Home' : 'Accueil'}</Link>
                             <span aria-hidden="true">/</span>
-                            {article ? (
+                            {editorial.kind === 'location' && article ? (
+                                <>
+                                    <Link href="/villes">{areasLabel}</Link>
+                                    <span aria-hidden="true">/</span>
+                                    <span>{article.category}</span>
+                                </>
+                            ) : editorial.kind === 'locations' ? (
+                                <span>{areasLabel}</span>
+                            ) : article ? (
                                 <>
                                     <Link href="/articles">Articles</Link>
                                     <span aria-hidden="true">/</span>
@@ -64,7 +74,7 @@ export default function ArticlesPage({ editorial }: { editorial: Editorial }) {
                         </nav>
                         <h1>{editorial.title}</h1>
                         <p className="max-w-3xl">{editorial.summary}</p>
-                        {article && (
+                        {article && !local && (
                             <p className="mt-6 text-sm">
                                 {english ? 'By the ALLO CALL team · Updated ' : 'Par l’équipe ALLO CALL · Mis à jour le '}
                                 <time dateTime={article.updated}>{updated}</time>
@@ -73,8 +83,8 @@ export default function ArticlesPage({ editorial }: { editorial: Editorial }) {
                     </div>
                 </section>
 
-                {editorial.kind === 'index' && (
-                    <section aria-label={english ? 'Our guides' : 'Nos guides'} className="company-container py-16">
+                {(editorial.kind === 'index' || editorial.kind === 'locations') && (
+                    <section aria-label={local ? areasLabel : english ? 'Our guides' : 'Nos guides'} className="company-container py-16">
                         <div className="grid gap-8 md:grid-cols-2">
                             {editorial.articles?.map((item) => (
                                 <article key={item.path} className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
@@ -88,7 +98,13 @@ export default function ArticlesPage({ editorial }: { editorial: Editorial }) {
                                         </h2>
                                         <p className="mt-4 leading-7 text-gray-600">{item.description}</p>
                                         <Link href={item.path} className="mt-6 inline-flex items-center gap-2 font-semibold text-[#487e2e]">
-                                            {english ? 'Read the guide' : 'Lire le guide'}
+                                            {local
+                                                ? english
+                                                    ? 'See local services'
+                                                    : 'Voir les services locaux'
+                                                : english
+                                                  ? 'Read the guide'
+                                                  : 'Lire le guide'}
                                             <ArrowRight size={17} aria-hidden="true" />
                                         </Link>
                                     </div>
@@ -140,7 +156,9 @@ export default function ArticlesPage({ editorial }: { editorial: Editorial }) {
                             </div>
                         </div>
                         <aside className="order-first h-fit rounded-xl border border-gray-200 bg-white p-6 lg:sticky lg:top-8 lg:order-last">
-                            <h2 className="font-bold">{english ? 'In this guide' : 'Dans ce guide'}</h2>
+                            <h2 className="font-bold">
+                                {local ? (english ? 'On this page' : 'Sur cette page') : english ? 'In this guide' : 'Dans ce guide'}
+                            </h2>
                             <ol className="mt-4 list-decimal space-y-4 pl-5 text-sm leading-6">
                                 {headings.map((section) => (
                                     <li key={section.id}>
@@ -153,8 +171,8 @@ export default function ArticlesPage({ editorial }: { editorial: Editorial }) {
                             <a href="#faq" className="mt-5 block text-sm font-semibold text-[#487e2e]">
                                 {english ? 'Frequently asked questions' : 'Questions fréquentes'}
                             </a>
-                            <Link href="/articles" className="mt-5 block border-t border-gray-100 pt-4 text-sm font-semibold">
-                                {english ? 'All articles' : 'Tous les articles'}
+                            <Link href={local ? '/villes' : '/articles'} className="mt-5 block border-t border-gray-100 pt-4 text-sm font-semibold">
+                                {local ? (english ? 'All service areas' : 'Toutes les régions') : english ? 'All articles' : 'Tous les articles'}
                             </Link>
                         </aside>
                     </article>

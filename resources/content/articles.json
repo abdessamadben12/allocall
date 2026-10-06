@@ -7,6 +7,13 @@
             "title": "Comment choisir un centre d’appels e-commerce pour votre boutique au Québec?",
             "seoTitle": "Choisir un centre d’appels e-commerce au Québec",
             "description": "Clavardage Shopify, courriels, suivis de colis, horaires et tarifs en CAD : les critères pour choisir le soutien de votre boutique en ligne.",
+            "keywords": [
+                "centre d'appels e-commerce Québec",
+                "service client boutique en ligne",
+                "soutien Shopify",
+                "clavardage e-commerce",
+                "impartition service à la clientèle"
+            ],
             "summary": "Pour choisir un centre de contact e-commerce, comparez les tâches prises en charge, les langues, les horaires et les accès à vos outils. Une soumission en CAD doit préciser la couverture réelle et les conditions du service.",
             "category": "Commerce électronique",
             "sections": [
@@ -56,6 +63,13 @@
             "title": "How to choose an e-commerce contact centre for your Canadian online store",
             "seoTitle": "Choosing an e-commerce contact centre in Canada",
             "description": "Compare Shopify chat, email, parcel tracking, coverage hours and pricing in CAD before choosing support for your Canadian online store.",
+            "keywords": [
+                "e-commerce contact centre Canada",
+                "online store customer service",
+                "Shopify support",
+                "live chat support",
+                "outsourced customer service"
+            ],
             "summary": "When choosing an e-commerce contact centre, compare tasks, languages, hours and access to your tools. A quote in CAD should spell out actual coverage and service terms.",
             "category": "E-commerce",
             "sections": [
@@ -108,8 +122,15 @@
         "service": "/services/service-clientele",
         "fr": {
             "title": "Service à la clientèle bilingue : organiser un accueil cohérent au Québec et au Canada",
-            "seoTitle": "Organiser un service à la clientèle bilingue au Canada",
+            "seoTitle": "Accueil bilingue en service à la clientèle au Canada",
             "description": "Scripts, vocabulaire québécois, choix de langue et suivis : une méthode pratique pour offrir un accueil cohérent en français et en anglais.",
+            "keywords": [
+                "service à la clientèle bilingue",
+                "accueil téléphonique bilingue",
+                "centre d'appels bilingue Canada",
+                "service client français anglais",
+                "réception d'appels Québec"
+            ],
             "summary": "Un service bilingue ne se limite pas à traduire un message d’accueil. Les agents ont besoin des mêmes renseignements, des mêmes limites de réponse et d’un processus de suivi clair dans les deux langues.",
             "category": "Service bilingue",
             "sections": [
@@ -153,6 +174,13 @@
             "title": "Bilingual customer service: a consistent welcome across Quebec and Canada",
             "seoTitle": "Organizing bilingual customer service in Canada",
             "description": "Build consistent English and French customer service with shared scripts, clear language choices, Canadian terminology and reliable follow-ups.",
+            "keywords": [
+                "bilingual customer service Canada",
+                "bilingual call answering",
+                "French English customer support",
+                "bilingual call centre",
+                "Quebec call answering"
+            ],
             "summary": "Bilingual service takes more than translating a greeting. Agents need the same information, clear limits on what they can answer and a consistent follow-up process in both languages.",
             "category": "Bilingual service",
             "sections": [
@@ -201,6 +229,13 @@
             "title": "Prise de rendez-vous et rappels : une méthode simple pour les PME québécoises",
             "seoTitle": "Prise de rendez-vous et rappels pour PME au Québec",
             "description": "Définissez vos disponibilités, vos questions de qualification et vos rappels pour simplifier les rendez-vous de votre PME au Québec et au Canada.",
+            "keywords": [
+                "prise de rendez-vous PME",
+                "rappels de rendez-vous",
+                "gestion d'agenda externalisée",
+                "prise de rendez-vous Québec",
+                "qualification de prospects"
+            ],
             "summary": "Une prise de rendez-vous utile confirme le besoin, le bon interlocuteur, la plage horaire et la prochaine étape. Les rappels complètent ce processus; ils ne remplacent pas des consignes de réservation claires.",
             "category": "Rendez-vous et suivis",
             "sections": [
@@ -242,8 +277,15 @@
         },
         "en": {
             "title": "Appointment scheduling and reminders: a practical approach for Canadian small businesses",
-            "seoTitle": "Appointment scheduling and reminders for small businesses",
+            "seoTitle": "Appointment scheduling and reminders for SMBs",
             "description": "Set booking rules, qualification questions and reminders that make appointments easier to manage for your business in Quebec and across Canada.",
+            "keywords": [
+                "appointment scheduling service",
+                "appointment reminders",
+                "outsourced appointment setting",
+                "small business scheduling Canada",
+                "lead qualification"
+            ],
             "summary": "A useful booking confirms the customer’s needs, the right person, the appointment time and the next step. Reminders support that process; they do not replace clear scheduling instructions.",
             "category": "Appointments and follow-ups",
             "sections": [
@@ -292,6 +334,13 @@
             "title": "IA et agents humains : comment les combiner en service à la clientèle?",
             "seoTitle": "IA et agents humains en service à la clientèle",
             "description": "Choisir les tâches à automatiser, préparer les réponses et prévoir le transfert à un agent : un guide pratique pour les entreprises canadiennes.",
+            "keywords": [
+                "IA service à la clientèle",
+                "agent virtuel IA",
+                "automatisation relation client",
+                "centre d'appels IA Canada",
+                "transfert vers agent humain"
+            ],
             "summary": "L’IA peut soutenir l’accueil et les tâches répétitives lorsque ses réponses reposent sur des renseignements validés. Un agent humain doit pouvoir reprendre l’échange quand la demande dépasse le scénario prévu ou nécessite du jugement.",
             "category": "IA et relation client",
             "sections": [
@@ -335,6 +384,7 @@
             "title": "AI and human agents: how to combine them in customer service",
             "seoTitle": "Combining AI and human agents in customer service",
             "description": "Choose tasks to automate, prepare approved answers and plan handoffs to people with this practical guide for Canadian businesses.",
+            "keywords": ["AI customer service", "AI virtual agent", "customer service automation", "AI call centre Canada", "human agent handoff"],
             "summary": "AI can support intake and repetitive tasks when its answers draw on approved information. A human agent needs a way to take over when a request falls outside the planned workflow or calls for judgement.",
             "category": "AI and customer care",
             "sections": [
@@ -370,6 +420,210 @@
                     "paragraphs": [
                         "Test routine, ambiguous and unrelated requests. Check answer accuracy, handoffs and the quality of summaries sent to agents. A quick but incorrect answer can create extra work for your team.",
                         "With AlloCall, you can discuss how agents and automation tools could work together for your business. Define the scenario, languages and human handoff first, then confirm integrations and coverage in the agreed service scope."
+                    ]
+                }
+            ]
+        }
+    },
+    "loi-96-service-client": {
+        "image": "/images/services/service-clientele.webp",
+        "updated": "2026-10-06",
+        "service": "/services/service-clientele",
+        "fr": {
+            "title": "Loi 96 : servir vos clients en français au téléphone et en ligne",
+            "seoTitle": "Loi 96 et service à la clientèle en français",
+            "description": "Ce que la Loi 96 change pour l’accueil téléphonique, les courriels et le clavardage de votre PME au Québec, et comment préparer votre service client.",
+            "keywords": [
+                "Loi 96 service client",
+                "Charte de la langue française entreprise",
+                "service à la clientèle en français",
+                "accueil téléphonique Québec",
+                "centre d'appels francophone"
+            ],
+            "summary": "Au Québec, vos clients ont le droit d’être informés et servis en français. Pour un service client externalisé, cela se traduit par des scripts, des courriels et des outils pensés d’abord en français, puis offerts en anglais au besoin.",
+            "category": "Réglementation au Québec",
+            "sections": [
+                {
+                    "heading": "Ce que la Loi 96 renforce",
+                    "paragraphs": [
+                        "Adoptée en 2022, la Loi sur la langue officielle et commune du Québec, le français, a modifié la Charte de la langue française. Elle renforce notamment le droit des consommateurs d’être informés et servis en français par les entreprises qui font affaire au Québec.",
+                        "Pour une PME, ce droit s’applique au premier contact comme aux suivis : accueil téléphonique, messages vocaux, courriels, clavardage, factures et documents remis au client."
+                    ]
+                },
+                {
+                    "heading": "Ce que cela implique pour votre accueil téléphonique",
+                    "paragraphs": [
+                        "Le plus simple est d’accueillir chaque appel en français, puis de poursuivre en anglais lorsque le client le demande. Le service en anglais reste possible : il s’ajoute au français sans le remplacer."
+                    ],
+                    "items": [
+                        "Message d’accueil et boîte vocale en français",
+                        "Scripts rédigés d’abord en français, puis traduits",
+                        "Réponses écrites et modèles de courriels disponibles en français",
+                        "Préférence linguistique notée au dossier du client"
+                    ]
+                },
+                {
+                    "heading": "Externaliser sans perdre le contrôle de la langue",
+                    "paragraphs": [
+                        "Lorsque vous confiez vos appels à un centre de contact, les obligations envers vos clients restent les vôtres. Demandez des agents capables de servir dans un français soigné, avec le vocabulaire courant au Québec, et validez les scripts avant la mise en service.",
+                        "Prévoyez aussi des écoutes ou des revues régulières d’échanges pour vérifier la qualité de la langue et la cohérence des réponses en français et en anglais."
+                    ]
+                },
+                {
+                    "heading": "Pour aller plus loin",
+                    "paragraphs": [
+                        "Les exigences varient selon la taille de l’entreprise, le type de document et le secteur. Cet article ne constitue pas un avis juridique : l’Office québécois de la langue française publie des guides pour les entreprises, et un conseiller juridique peut valider votre situation."
+                    ]
+                }
+            ]
+        },
+        "en": {
+            "title": "Bill 96: serving customers in French by phone and online",
+            "seoTitle": "Bill 96 and French-language customer service",
+            "description": "What Quebec’s Bill 96 means for your business’s phone greeting, emails and live chat, and how to prepare your customer service in French.",
+            "keywords": [
+                "Bill 96 customer service",
+                "Charter of the French language business",
+                "French customer service Quebec",
+                "Quebec call answering",
+                "French-speaking call centre"
+            ],
+            "summary": "In Quebec, customers have the right to be informed and served in French. For outsourced customer service, that means scripts, emails and tools designed in French first, with English offered when needed.",
+            "category": "Quebec regulations",
+            "sections": [
+                {
+                    "heading": "What Bill 96 reinforces",
+                    "paragraphs": [
+                        "Passed in 2022, the Act respecting French, the official and common language of Québec amended the Charter of the French language. Among other things, it reinforces consumers’ right to be informed and served in French by businesses operating in Quebec.",
+                        "For a small business, this right applies to the first contact and to every follow-up: phone greeting, voicemail, email, live chat, invoices and documents given to customers."
+                    ]
+                },
+                {
+                    "heading": "What it means for your phone greeting",
+                    "paragraphs": [
+                        "The simplest approach is to greet every call in French, then continue in English when the customer asks. English service remains possible: it is added to French rather than replacing it."
+                    ],
+                    "items": [
+                        "Greeting message and voicemail in French",
+                        "Scripts written in French first, then translated",
+                        "Written answers and email templates available in French",
+                        "Language preference recorded in the customer file"
+                    ]
+                },
+                {
+                    "heading": "Outsourcing without losing control of language",
+                    "paragraphs": [
+                        "When you hand your calls to a contact centre, your obligations to customers remain yours. Ask for agents who can serve in polished French with common Quebec terminology, and approve scripts before launch.",
+                        "Plan regular call reviews to check language quality and the consistency of answers in French and English."
+                    ]
+                },
+                {
+                    "heading": "Going further",
+                    "paragraphs": [
+                        "Requirements vary with company size, document type and industry. This article is not legal advice: the Office québécois de la langue française publishes guides for businesses, and a legal adviser can confirm your situation."
+                    ]
+                }
+            ]
+        }
+    },
+    "loi-25-centre-appels": {
+        "image": "/images/services/reception-telephonique.webp",
+        "updated": "2026-10-06",
+        "service": "/services/reception-telephonique",
+        "fr": {
+            "title": "Loi 25 : protéger les renseignements personnels avec un centre d’appels",
+            "seoTitle": "Loi 25 et centre d’appels : guide pour PME",
+            "description": "Contrat écrit, consentement, enregistrement des appels et évaluation des facteurs relatifs à la vie privée : la Loi 25 appliquée à votre centre d’appels.",
+            "keywords": [
+                "Loi 25 centre d'appels",
+                "protection des renseignements personnels Québec",
+                "Loi 25 PME",
+                "enregistrement des appels consentement",
+                "évaluation des facteurs relatifs à la vie privée"
+            ],
+            "summary": "Confier vos appels à un fournisseur, c’est lui communiquer des renseignements personnels sur vos clients. La Loi 25 encadre cette communication : contrat écrit, mesures de sécurité, consentement et, hors Québec, évaluation préalable.",
+            "category": "Réglementation au Québec",
+            "sections": [
+                {
+                    "heading": "La Loi 25 en bref",
+                    "paragraphs": [
+                        "La Loi 25 a modernisé la Loi sur la protection des renseignements personnels dans le secteur privé. Ses obligations sont entrées en vigueur par étapes entre 2022 et 2024 et s’appliquent à toutes les entreprises qui recueillent des renseignements personnels au Québec, peu importe leur taille.",
+                        "Parmi les obligations principales : désigner une personne responsable de la protection des renseignements personnels, publier une politique de confidentialité, tenir un registre des incidents de confidentialité et obtenir un consentement clair."
+                    ]
+                },
+                {
+                    "heading": "Ce qui change quand vous externalisez vos appels",
+                    "paragraphs": [
+                        "Un centre d’appels voit des noms, des numéros de téléphone, des adresses et parfois des renseignements plus sensibles. La loi permet de confier ces renseignements à un fournisseur, à condition de l’encadrer."
+                    ],
+                    "items": [
+                        "Un contrat écrit précisant les mesures de protection et l’usage permis des renseignements",
+                        "Un accès limité aux seuls agents qui en ont besoin",
+                        "Une procédure pour signaler rapidement tout incident de confidentialité",
+                        "La destruction ou le retour des renseignements à la fin du mandat"
+                    ]
+                },
+                {
+                    "heading": "Enregistrement des appels et consentement",
+                    "paragraphs": [
+                        "Si les appels sont enregistrés pour la qualité ou la formation, informez le client dès le début de l’appel et expliquez la raison. Ne conservez les enregistrements que le temps nécessaire et définissez qui peut y accéder.",
+                        "Les scripts doivent aussi éviter de recueillir des renseignements inutiles : ne demandez que ce qui sert au traitement de la demande."
+                    ]
+                },
+                {
+                    "heading": "Fournisseur à l’extérieur du Québec",
+                    "paragraphs": [
+                        "Avant de communiquer des renseignements personnels à l’extérieur du Québec, la loi exige une évaluation des facteurs relatifs à la vie privée. Elle tient compte de la sensibilité des renseignements, des fins de leur utilisation, des mesures de protection prévues au contrat et du régime juridique du lieu de traitement.",
+                        "Demandez à votre fournisseur la description de ses mesures de sécurité et intégrez-les au contrat. Cet article ne constitue pas un avis juridique : la Commission d’accès à l’information publie des guides pour les entreprises."
+                    ]
+                }
+            ]
+        },
+        "en": {
+            "title": "Law 25: protecting personal information with a call centre",
+            "seoTitle": "Law 25 and call centres: a guide for SMBs",
+            "description": "Written contracts, consent, call recording and privacy impact assessments: how Quebec’s Law 25 applies when you outsource your calls.",
+            "keywords": [
+                "Law 25 call centre",
+                "Quebec privacy law",
+                "Law 25 small business",
+                "call recording consent Quebec",
+                "privacy impact assessment Quebec"
+            ],
+            "summary": "Outsourcing your calls means sharing your customers’ personal information with a provider. Law 25 governs that sharing: a written contract, security measures, consent and, outside Quebec, a prior assessment.",
+            "category": "Quebec regulations",
+            "sections": [
+                {
+                    "heading": "Law 25 at a glance",
+                    "paragraphs": [
+                        "Law 25 modernized Quebec’s Act respecting the protection of personal information in the private sector. Its obligations came into force in stages between 2022 and 2024 and apply to every business that collects personal information in Quebec, regardless of size.",
+                        "Key obligations include appointing a person in charge of protecting personal information, publishing a privacy policy, keeping a register of confidentiality incidents and obtaining clear consent."
+                    ]
+                },
+                {
+                    "heading": "What changes when you outsource your calls",
+                    "paragraphs": [
+                        "A call centre sees names, phone numbers, addresses and sometimes more sensitive information. The law allows you to share this information with a provider, as long as it is properly governed."
+                    ],
+                    "items": [
+                        "A written contract setting out protection measures and permitted uses",
+                        "Access limited to the agents who need it",
+                        "A procedure to report any confidentiality incident quickly",
+                        "Destruction or return of the information when the mandate ends"
+                    ]
+                },
+                {
+                    "heading": "Call recording and consent",
+                    "paragraphs": [
+                        "If calls are recorded for quality or training, tell customers at the start of the call and explain why. Keep recordings only as long as necessary and define who can access them.",
+                        "Scripts should also avoid collecting unnecessary information: only ask for what is needed to handle the request."
+                    ]
+                },
+                {
+                    "heading": "Providers outside Quebec",
+                    "paragraphs": [
+                        "Before personal information is communicated outside Quebec, the law requires a privacy impact assessment. It considers the sensitivity of the information, the purposes of its use, the protection measures in the contract and the legal framework where it will be processed.",
+                        "Ask your provider to describe its security measures and include them in the contract. This article is not legal advice: the Commission d’accès à l’information publishes guides for businesses."
                     ]
                 }
             ]
